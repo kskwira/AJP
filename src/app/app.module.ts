@@ -22,6 +22,15 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FlipCardModule } from "./flip-card/flip-card.module";
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from "./auth-service.service";
 
 
 @NgModule({
@@ -29,6 +38,11 @@ import { FlipCardModule } from "./flip-card/flip-card.module";
     AppComponent,
     TaskComponent,
     TaskDialogComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     CommonModule,
@@ -42,14 +56,17 @@ import { FlipCardModule } from "./flip-card/flip-card.module";
     MatDialogModule,
     MatInputModule,
     FormsModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    FlipCardModule
+    FlipCardModule,
+    provideAuth(() => getAuth()),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

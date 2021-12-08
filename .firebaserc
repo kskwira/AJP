@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ajp-project-a1157": {
+      "hosting": {
+        "AJP": [
+          "ajp-project-a1157"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ajp-project-a1157"
+  }
+}
