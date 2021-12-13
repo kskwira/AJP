@@ -8,14 +8,19 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 import { AuthGuard } from "./shared/guard/auth.guard";
+import {KanbanComponent} from "./kanban/kanban.component";
+import {FlipCardComponent} from "./flip-card/flip-card.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},
+/*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
   { path: 'sign-in', component: SignInComponent},
   { path: 'register-user', component: SignUpComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent }
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'kanban', component: KanbanComponent},
+  { path: 'flipcard', component: FlipCardComponent}
+
 ];
 
 @NgModule({
