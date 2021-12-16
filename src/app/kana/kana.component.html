@@ -1,0 +1,5 @@
+
+<mat-card class="item" *ngIf="kana" (dblclick)="edit.emit(kana)">
+  <h2>{{ kana.sign}}</h2>
+  <p>{{ kana.reading}}</p>
+</mat-card>

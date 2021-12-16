@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {Task} from "../task/task";
 import {MatDialog} from "@angular/material/dialog";
@@ -25,8 +25,8 @@ export class KanbanComponent  {
   inProgress = getObservable(this.store.collection('inProgress')) as Observable<Task[]>;
   done = getObservable(this.store.collection('done')) as Observable<Task[]>;
 
-  constructor(private dialog: MatDialog, private store: AngularFirestore) {
-  }
+  constructor(private dialog: MatDialog, private store: AngularFirestore) {}
+
   newTask(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '270px',

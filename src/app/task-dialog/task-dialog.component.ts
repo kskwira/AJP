@@ -2,7 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {Task} from "../task/task";
 
-
 @Component({
   selector: 'app-task-dialog',
   templateUrl: './task-dialog.component.html',
@@ -30,7 +29,7 @@ export interface TaskDialogData {
   task: Partial<Task>;
   enableDelete: boolean;
 }
-export  interface TaskDialogResult {
+export interface TaskDialogResult {
   task: Task;
   delete?: boolean;
 }

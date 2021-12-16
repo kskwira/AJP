@@ -18,16 +18,19 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FlipCardModule } from "./flip-card/flip-card.module";
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { DashboardComponent } from './login/dashboard/dashboard.component';
+import { SignInComponent } from './login/sign-in/sign-in.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './login/verify-email/verify-email.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from "./auth-service.service";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import {AngularMaterialModule} from "./angular-material.module";
+import { KanaComponent } from './kana/kana.component';
+import { KanaDialogComponent } from './kana-dialog/kana-dialog.component';
+import { NewKanaComponent } from './new-kana/new-kana.component';
 
 
 @NgModule({
@@ -42,6 +45,9 @@ import {AngularMaterialModule} from "./angular-material.module";
     VerifyEmailComponent,
     NavBarComponent,
     KanbanComponent,
+    KanaComponent,
+    KanaDialogComponent,
+    NewKanaComponent,
   ],
   imports: [
     CommonModule,
