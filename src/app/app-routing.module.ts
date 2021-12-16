@@ -9,8 +9,7 @@ import { VerifyEmailComponent } from './login/verify-email/verify-email.componen
 
 import { AuthGuard } from "./shared/guard/auth.guard";
 import {KanbanComponent} from "./kanban/kanban.component";
-import {FlipCardComponent} from "./flip-card/flip-card.component";
-import {NewKanaComponent} from "./new-kana/new-kana.component";
+import {SignsComponent} from "./kana/signs/signs.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -20,9 +19,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'kanban', component: KanbanComponent},
-  { path: 'flipcard', component: FlipCardComponent},
-  { path: 'kana', component: NewKanaComponent}
-
+  { path: 'kana', component: SignsComponent}
 ];
 
 @NgModule({

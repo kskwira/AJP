@@ -7,6 +7,7 @@
   <input matInput cdkFocusInitial [(ngModel)]="data.kana.reading" />
 </mat-form-field>
 <div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="{data: data.kana }">OK</button>
+  <button mat-button [mat-dialog-close]="{kana: data.kana }">OK</button>
   <button mat-button (click)="cancel()">Cancel</button>
 </div>
+

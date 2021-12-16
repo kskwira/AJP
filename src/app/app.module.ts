@@ -29,8 +29,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import {AngularMaterialModule} from "./angular-material.module";
 import { KanaComponent } from './kana/kana.component';
-import { KanaDialogComponent } from './kana-dialog/kana-dialog.component';
-import { NewKanaComponent } from './new-kana/new-kana.component';
+import { KanaDialogComponent } from './kana/kana-dialog/kana-dialog.component';
+import { SignsComponent } from './kana/signs/signs.component';
 
 
 @NgModule({
@@ -47,7 +47,7 @@ import { NewKanaComponent } from './new-kana/new-kana.component';
     KanbanComponent,
     KanaComponent,
     KanaDialogComponent,
-    NewKanaComponent,
+    SignsComponent,
   ],
   imports: [
     CommonModule,
