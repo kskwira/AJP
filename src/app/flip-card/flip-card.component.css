@@ -16,6 +16,7 @@
   border-radius: 6px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+  font-size: 90px;
 }
 
 .card .front,
@@ -40,6 +41,7 @@
 }
 
 .arrow-icon {
+  font-size: 20px;
   position: absolute;
   right: 5px;
   bottom: 5px;
