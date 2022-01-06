@@ -31,6 +31,9 @@ import {AngularMaterialModule} from "./angular-material.module";
 import { KanaComponent } from './kana/kana.component';
 import { KanaDialogComponent } from './kana/kana-dialog/kana-dialog.component';
 import { SignsComponent } from './kana/signs/signs.component';
+import { AddKatakanaComponent } from './components/add-katakana/add-katakana.component';
+import { KatakanaListComponent } from './components/katakana-list/katakana-list.component';
+import { KatakanaDetailsComponent } from './components/katakana-details/katakana-details.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { SignsComponent } from './kana/signs/signs.component';
     KanaComponent,
     KanaDialogComponent,
     SignsComponent,
+    AddKatakanaComponent,
+    KatakanaListComponent,
+    KatakanaDetailsComponent,
   ],
   imports: [
     CommonModule,

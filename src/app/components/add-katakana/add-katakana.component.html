@@ -1,0 +1,33 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="sign">Sign</label>
+      <input
+        type="text"
+        class="form-control"
+        id="sign"
+        required
+        [(ngModel)]="katakana.sign"
+        name="reading"
+        />
+    </div>
+
+    <div class="form-group">
+      <label for="reading">Reading</label>
+      <input
+        class="form-control"
+        id="reading"
+        required
+        [(ngModel)]="katakana.reading"
+        name="reading"
+      />
+    </div>
+
+    <button (click)="saveKatakana()" class="mat-button">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>Submitted successfully!</h4>
+    <button class="mat-button" (click)="newKatakana()">Add</button>
+  </div>
+</div>

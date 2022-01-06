@@ -1,0 +1,39 @@
+<div *ngIf="currentKatakana" class="edit-form">
+  <h4>Katakana</h4>
+  <form>
+    <div class="form-group">
+      <label for="sign">Reading</label>
+      <input
+        type="text"
+        class="form-control"
+        id="sign"
+        [(ngModel)]="currentKatakana.reading"
+        name="reading"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Sign</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="currentKatakana.sign"
+        name="description"
+      />
+    </div>
+  </form>
+
+  <button class="badge badge-danger mr-2" (click)="deleteKatakana()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success" (click)="updateKatakana()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentKatakana">
+  <br />
+  <p>Cannot access this Katakana...</p>
+</div>

@@ -10,16 +10,20 @@ import { VerifyEmailComponent } from './login/verify-email/verify-email.componen
 import { AuthGuard } from "./shared/guard/auth.guard";
 import {KanbanComponent} from "./kanban/kanban.component";
 import {SignsComponent} from "./kana/signs/signs.component";
+import {KatakanaListComponent} from "./components/katakana-list/katakana-list.component";
+import {AddKatakanaComponent} from "./components/add-katakana/add-katakana.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
-  { path: 'sign-in', component: SignInComponent},
-  { path: 'register-user', component: SignUpComponent},
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'register-user', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'kanban', component: KanbanComponent},
-  { path: 'kana', component: SignsComponent}
+  { path: 'kanban', component: KanbanComponent },
+  { path: 'kana', component: SignsComponent },
+  { path: 'katakana', component: KatakanaListComponent },
+  { path: 'add', component: AddKatakanaComponent }
 ];
 
 @NgModule({
