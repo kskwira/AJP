@@ -18,13 +18,25 @@ export class KatakanaListComponent implements OnInit {
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
-    this.retrieveKatakana()
+    this.retrieveSingleKatakana()
   }
 
   refreshList(): void {
     this.currentKatakana = undefined;
     this.currentIndex = -1;
     this.retrieveKatakana();
+  }
+
+  retrieveSingleKatakana(): any {
+    this.kanaService.getOne().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.katakana = data;
+    });
   }
 
   retrieveKatakana(): void {
