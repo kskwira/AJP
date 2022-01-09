@@ -1,28 +1,47 @@
-<div class="list row">
-  <div class="col-md-6">
-    <h4>Katakana List</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let katakana of katakana; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveKatakana(katakana, i)"
-      >
-        {{ katakana.sign }}
-      </li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <div *ngIf="currentKatakana">
-      <app-katakana-details
-        (refreshList)="refreshList()"
-        [katakana]="currentKatakana"
-      ></app-katakana-details>
-    </div>
+<!--<div class="list row">-->
+<!--  <div class="col-md-6">-->
+<!--    <h4>Katakana List</h4>-->
+<!--    <ul class="list-group">-->
+<!--      <li-->
+<!--        class="list-group-item"-->
+<!--        *ngFor="let katakana of katakana; let i = index"-->
+<!--        [class.active]="i == currentIndex"-->
+<!--        (click)="setActiveKatakana(katakana, i)"-->
+<!--      >-->
+<!--        {{ katakana.sign }}-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div class="col-md-6">-->
+<!--    <div *ngIf="currentKatakana">-->
+<!--      <app-katakana-details-->
+<!--        (refreshList)="refreshList()"-->
+<!--        [katakana]="currentKatakana"-->
+<!--      ></app-katakana-details>-->
+<!--    </div>-->
 
-    <div *ngIf="!currentKatakana">
-      <br />
-      <p>Please click on Katakana...</p>
-    </div>
-  </div>
+<!--    <div *ngIf="!currentKatakana">-->
+<!--      <br />-->
+<!--      <p>Please click on Katakana...</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<div class="card" *ngIf="katakana">
+  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
+    <mat-grid-tile *ngFor="let katakana of katakana">
+      <mat-card class="item">
+        <app-flip-card>
+          <flip-card-front>
+            <p>{{ katakana.sign}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p>{{ katakana.reading}}</p>
+          </flip-card-back>
+        </app-flip-card>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

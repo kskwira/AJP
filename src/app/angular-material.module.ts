@@ -11,6 +11,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import {MatListModule} from '@angular/material/list';
     MatTabsModule,
     MatExpansionModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
   ]
 })
 export class AngularMaterialModule { }
