@@ -9,7 +9,8 @@ import { AuthGuard } from "./shared/guard/auth.guard";
 import {KanbanComponent} from "./kanban/kanban.component";
 import {SignsComponent} from "./kana/signs/signs.component";
 import {KatakanaListComponent} from "./components/katakana-list/katakana-list.component";
-import {AddKatakanaComponent} from "./components/add-katakana/add-katakana.component";
+import {HiraganaListComponent} from "./components/hiragana-list/hiragana-list.component";
+import {AddKanaComponent} from "./components/add-kana/add-kana.component";
 import {SelectQuizLevelComponent} from "./components/select-quiz-level/select-quiz-level.component";
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'kanban', component: KanbanComponent },
   { path: 'kana', component: SignsComponent },
   { path: 'katakana', component: KatakanaListComponent },
-  { path: 'add', component: AddKatakanaComponent },
+  { path: 'hiragana', component: HiraganaListComponent },
+  { path: 'add', component: AddKanaComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent }
 ];
 

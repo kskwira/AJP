@@ -1,4 +1,4 @@
-export class Katakana {
+export class Kana {
   id?: string;
   sign?: string;
   reading?: string;

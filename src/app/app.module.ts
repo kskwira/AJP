@@ -31,10 +31,11 @@ import {AngularMaterialModule} from "./angular-material.module";
 import { KanaComponent } from './kana/kana.component';
 import { KanaDialogComponent } from './kana/kana-dialog/kana-dialog.component';
 import { SignsComponent } from './kana/signs/signs.component';
-import { AddKatakanaComponent } from './components/add-katakana/add-katakana.component';
+import { AddKanaComponent } from './components/add-kana/add-kana.component';
 import { KatakanaListComponent } from './components/katakana-list/katakana-list.component';
-import { KatakanaDetailsComponent } from './components/katakana-details/katakana-details.component';
+import { KanaDetailsComponent } from './components/kana-details/kana-details.component';
 import { SelectQuizLevelComponent } from './components/select-quiz-level/select-quiz-level.component';
+import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.component';
 
 
 @NgModule({
@@ -52,10 +53,11 @@ import { SelectQuizLevelComponent } from './components/select-quiz-level/select-
     KanaComponent,
     KanaDialogComponent,
     SignsComponent,
-    AddKatakanaComponent,
+    AddKanaComponent,
     KatakanaListComponent,
-    KatakanaDetailsComponent,
+    KanaDetailsComponent,
     SelectQuizLevelComponent,
+    HiraganaListComponent,
   ],
   imports: [
     CommonModule,

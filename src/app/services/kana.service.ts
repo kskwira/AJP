@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
-import { Katakana } from "../models/katakana.model";
+import { Kana } from "../models/kana.model";
 import firebase from "firebase/compat/app";
 import firestore = firebase.firestore;
 
@@ -8,35 +8,54 @@ import firestore = firebase.firestore;
   providedIn: 'root'
 })
 export class KanaService {
-  private dbPath = '/katakana';
+  private katakanaDbPath = '/katakana';
+  private hiraganaDbPath = '/hiragana';
 
-  katakanaRef: AngularFirestoreCollection<Katakana>;
-  singleKatakanaRef: AngularFirestoreCollection<Katakana>;
+  katakanaRef: AngularFirestoreCollection<Kana>;
+  hiraganaRef: AngularFirestoreCollection<Kana>;
+  singleKanaRef: AngularFirestoreCollection<Kana>;
 
   constructor(private db: AngularFirestore) {
-    this.katakanaRef = db.collection(this.dbPath);
-    this.singleKatakanaRef = db.collection(this.dbPath,
+    this.katakanaRef = db.collection(this.katakanaDbPath);
+    this.hiraganaRef = db.collection(this.hiraganaDbPath);
+    this.singleKanaRef = db.collection(this.hiraganaDbPath,
         ref => ref.where(firestore.FieldPath.documentId(), '==', 'uERNQsV8GNkmjIhXhd2X'));
   }
 
-  getAll(): AngularFirestoreCollection<Katakana> {
+  getAllKatakana(): AngularFirestoreCollection<Kana> {
     return this.katakanaRef;
   }
 
-  getOne(): AngularFirestoreCollection<Katakana> {
-    return this.singleKatakanaRef;
-  }
-
-  create(katakana: Katakana): any {
+  createKatakana(katakana: Kana): any {
     return this.katakanaRef.add({ ...katakana})
   }
 
-  update(id: string, data: any): Promise<void> {
+  updateKatakana(id: string, data: any): Promise<void> {
     return this.katakanaRef.doc(id).update(data);
   }
 
-  delete(id: string): Promise<void> {
+  deleteKatakana(id: string): Promise<void> {
     return this.katakanaRef.doc(id).delete();
+  }
+
+  getAllHiragana(): AngularFirestoreCollection<Kana> {
+    return this.hiraganaRef;
+  }
+
+  createHiragana(hiragana: Kana): any {
+    return this.hiraganaRef.add({ ...hiragana})
+  }
+
+  updateHiragana(id: string, data: any): Promise<void> {
+    return this.hiraganaRef.doc(id).update(data);
+  }
+
+  deleteHiragana(id: string): Promise<void> {
+    return this.hiraganaRef.doc(id).delete();
+  }
+
+  getOneKana(): AngularFirestoreCollection<Kana> {
+    return this.singleKanaRef;
   }
 
 }

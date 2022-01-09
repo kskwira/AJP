@@ -4,47 +4,47 @@ import { map } from "rxjs/operators";
 import { Kana } from "../../models/kana.model";
 
 @Component({
-  selector: 'app-katakana-list',
-  templateUrl: './katakana-list.component.html',
-  styleUrls: ['./katakana-list.component.css']
+  selector: 'app-hiragana-list',
+  templateUrl: './hiragana-list.component.html',
+  styleUrls: ['./hiragana-list.component.css']
 })
-export class KatakanaListComponent implements OnInit {
+export class HiraganaListComponent implements OnInit {
 
-  katakana?: Kana[];
-  currentKatakana?: Kana;
+  hiragana?: Kana[];
+  currentHiragana?: Kana;
   currentIndex = -1;
   title = '';
 
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
-    this.retrieveKatakana()
+    this.retrieveHiragana()
   }
 
   refreshList(): void {
-    this.currentKatakana = undefined;
+    this.currentHiragana = undefined;
     this.currentIndex = -1;
-    this.retrieveKatakana();
+    this.retrieveHiragana();
   }
 
-  retrieveKatakana(): void {
-    this.kanaService.getAllKatakana().snapshotChanges().pipe(
+  retrieveHiragana(): void {
+    this.kanaService.getAllHiragana().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data() })
         )
       )
     ).subscribe(data => {
-      this.katakana = data;
+      this.hiragana = data;
     });
   }
 
-  setActiveKatakana(katakana: Kana, index: number): void {
-    this.currentKatakana = katakana;
+  setActiveHiragana(hiragana: Kana, index: number): void {
+    this.currentHiragana = hiragana;
     this.currentIndex = index;
   }
 
-  retrieveSingleKatakana(): any {
+  retrieveSingleHiragana(): any {
     this.kanaService.getOneKana().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
@@ -52,7 +52,8 @@ export class KatakanaListComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.katakana = data;
+      this.hiragana = data;
     });
   }
+
 }

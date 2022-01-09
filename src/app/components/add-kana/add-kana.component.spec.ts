@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddKatakanaComponent } from './add-katakana.component';
+import { AddKanaComponent } from './add-kana.component';
 
-describe('AddKatakanaComponent', () => {
-  let component: AddKatakanaComponent;
-  let fixture: ComponentFixture<AddKatakanaComponent>;
+describe('AddKanaComponent', () => {
+  let component: AddKanaComponent;
+  let fixture: ComponentFixture<AddKanaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddKatakanaComponent ]
+      declarations: [ AddKanaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddKatakanaComponent);
+    fixture = TestBed.createComponent(AddKanaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

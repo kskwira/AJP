@@ -8,7 +8,7 @@
         class="form-control"
         id="id"
         required
-        [(ngModel)]="katakana.id"
+        [(ngModel)]="kana.id"
         name="id"
       />
     </div>
@@ -20,7 +20,7 @@
         class="form-control"
         id="sign"
         required
-        [(ngModel)]="katakana.sign"
+        [(ngModel)]="kana.sign"
         name="reading"
         />
     </div>
@@ -32,7 +32,7 @@
         class="form-control"
         id="reading"
         required
-        [(ngModel)]="katakana.reading"
+        [(ngModel)]="kana.reading"
         name="reading"
       />
     </div>
@@ -44,17 +44,17 @@
         class="form-control"
         id="level"
         required
-        [(ngModel)]="katakana.level"
+        [(ngModel)]="kana.level"
         name="level"
       />
     </div>
 
 
-    <button (click)="saveKatakana()" class="mat-button">Submit</button>
+    <button (click)="saveKana()" class="mat-button">Submit</button>
   </div>
 
   <div *ngIf="submitted">
     <h4>Submitted successfully!</h4>
-    <button class="mat-button" (click)="newKatakana()">Add</button>
+    <button class="mat-button" (click)="newKana()">Add</button>
   </div>
 </div>
