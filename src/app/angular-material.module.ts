@@ -8,6 +8,9 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatTabsModule} from "@angular/material/tabs";
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -23,6 +26,9 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatInputModule,
     MatMenuModule,
     MatTabsModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatListModule
   ]
 })
 export class AngularMaterialModule { }

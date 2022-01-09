@@ -34,6 +34,7 @@ import { SignsComponent } from './kana/signs/signs.component';
 import { AddKatakanaComponent } from './components/add-katakana/add-katakana.component';
 import { KatakanaListComponent } from './components/katakana-list/katakana-list.component';
 import { KatakanaDetailsComponent } from './components/katakana-details/katakana-details.component';
+import { SelectQuizLevelComponent } from './components/select-quiz-level/select-quiz-level.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { KatakanaDetailsComponent } from './components/katakana-details/katakana
     AddKatakanaComponent,
     KatakanaListComponent,
     KatakanaDetailsComponent,
+    SelectQuizLevelComponent,
   ],
   imports: [
     CommonModule,
