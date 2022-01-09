@@ -18,7 +18,7 @@ export class KatakanaListComponent implements OnInit {
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
-    this.retrieveSingleKatakana()
+    this.retrieveKatakana()
   }
 
   refreshList(): void {

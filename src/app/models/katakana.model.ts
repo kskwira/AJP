@@ -1,5 +1,6 @@
 export class Katakana {
   id?: string;
   sign?: string;
-  reading?: string
+  reading?: string;
+  level?: string;
 }

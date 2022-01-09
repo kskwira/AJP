@@ -24,7 +24,7 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './login/verify-email/verify-email.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from "./auth-service.service";
+import { AuthService } from "./services/auth-service.service";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import {AngularMaterialModule} from "./angular-material.module";
