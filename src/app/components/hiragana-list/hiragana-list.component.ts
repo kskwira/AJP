@@ -9,7 +9,7 @@ import { Kana } from "../../models/kana.model";
   styleUrls: ['./hiragana-list.component.css']
 })
 export class HiraganaListComponent implements OnInit {
-
+  answered = false;
   hiragana?: Kana[];
   currentHiragana?: Kana;
   currentIndex = -1;
@@ -54,6 +54,10 @@ export class HiraganaListComponent implements OnInit {
     ).subscribe(data => {
       this.hiragana = data;
     });
+  }
+
+  answering(){
+    this.answered = !this.answered
   }
 
 }

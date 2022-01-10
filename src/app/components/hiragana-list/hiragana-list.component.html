@@ -41,6 +41,9 @@
             <p>{{ hiragana.reading}}</p>
           </flip-card-back>
         </app-flip-card>
+        <input type="text" id="single" #zgaduje>
+        <button type="submit" (click)="answering()">Sprawdź</button>
+        <p *ngIf="hiragana.reading == zgaduje.value" >Poprawna odpowiedź</p>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
