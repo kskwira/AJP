@@ -12,6 +12,10 @@ export class KanaService {
   private hiraganaDbPath = '/hiragana';
 
   katakanaRef: AngularFirestoreCollection<Kana>;
+  hiraganaLevelOne: AngularFirestoreCollection<Kana>;
+  hiraganaLevelTwo: AngularFirestoreCollection<Kana>;
+  katakanaLevelOne: AngularFirestoreCollection<Kana>;
+  katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
   singleKanaRef: AngularFirestoreCollection<Kana>;
 
@@ -20,10 +24,33 @@ export class KanaService {
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
     this.singleKanaRef = db.collection(this.hiraganaDbPath,
         ref => ref.where(firestore.FieldPath.documentId(), '==', 'uERNQsV8GNkmjIhXhd2X'));
+    this.hiraganaLevelOne = db.collection(this.hiraganaDbPath,
+      ref => ref.where('level', '==',1))
+    this.hiraganaLevelTwo = db.collection(this.hiraganaDbPath,
+      ref => ref.where('level', '==',2))
+    this.katakanaLevelOne = db.collection(this.katakanaDbPath,
+        ref => ref.where('level', '==',1))
+    this.katakanaLevelTwo = db.collection(this.katakanaDbPath,
+      ref => ref.where('level', '==',2))
+
   }
 
   getAllKatakana(): AngularFirestoreCollection<Kana> {
-    return this.katakanaRef;
+    return this.katakanaLevelOne;
+  }
+
+  getSpecificLevel(level: number, type: string): AngularFirestoreCollection<Kana>{
+    if (type == 'katakana') {
+      if (level == 1)
+        return this.katakanaLevelOne;
+      else (level == 2)
+        return this.katakanaLevelTwo;
+    }
+    else (type == 'hiragana')
+      if (level == 1)
+        return this.hiraganaLevelOne;
+      else (level == 2)
+        return this.hiraganaLevelTwo;
   }
 
   createKatakana(katakana: Kana): any {

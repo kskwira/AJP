@@ -28,7 +28,7 @@ export class HiraganaListComponent implements OnInit {
   }
 
   retrieveHiragana(): void {
-    this.kanaService.getAllHiragana().snapshotChanges().pipe(
+    this.kanaService.getSpecificLevel(2, 'hiragana').snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data() })

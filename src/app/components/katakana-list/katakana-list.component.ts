@@ -28,7 +28,7 @@ export class KatakanaListComponent implements OnInit {
   }
 
   retrieveKatakana(): void {
-    this.kanaService.getAllKatakana().snapshotChanges().pipe(
+    this.kanaService.getSpecificLevel(2, 'katakana').snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data() })
