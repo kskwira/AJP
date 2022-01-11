@@ -1,27 +1,42 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="Rejestracja">
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile>
+    <mat-grid-list cols="3" rowHeight="3:3">
+      <mat-grid-tile >
         <mat-card class="user-card">
           <mat-card-header>
             <h2> Poznajmy się :) </h2>
           </mat-card-header>
           <mat-card-content>
-            <div class="formGroup">
-              <input type="email" class="formControl" placeholder="Addres Email" #userEmail required>
-            </div>
-            <div class="formGroup">
-              <input type="password" class="formControl" placeholder="Hasło" #userPwd required>
-            </div>
+            <ng-form class="formGroup">
+              <mat-form-field appearance="fill">
+                <mat-label>Podaj swoje imię</mat-label>
+                <input matInput type="text" class="formControl" placeholder="Imię"  #userFirstName required>
+              </mat-form-field>
+              <br/>
+              <mat-form-field appearance="fill">
+                <mat-label>Podaj swoje nazwisko</mat-label>
+                <input matInput type="text" class="formControl" placeholder="Nazwisko"  #userLastName required>
+              </mat-form-field>
+              <br/>
+              <mat-form-field appearance="fill">
+                <mat-label>Podaj swój adres email</mat-label>
+                <input matInput type="email" class="formControl" placeholder="pat@example.com" [formControl]="email" #userEmail required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+              <br/>
+              <mat-form-field appearance="fill">
+                <mat-label>Podaj swoje hasło</mat-label>
+                <input matInput type="password" class="formControl" placeholder="Hasło"  #userPassword required>
+              </mat-form-field>
+            </ng-form>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="authService.SignUp(userEmail.value, userPwd.value)">Zarejestruj</button>
+            <button mat-raised-button color="primary" (click)="authService.SignUp(userEmail.value, userPassword.value)">Zarejestruj</button>
           </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
-
       <mat-grid-tile>
-        <mat-card>
+        <mat-card class="user-card">
           <div class="redirectToLogin">
         <span>
           <h2>Masz już konto?</h2>
@@ -31,8 +46,6 @@
           </div>
         </mat-card>
       </mat-grid-tile>
-
-
       <mat-grid-tile>
         <mat-card class="user-card">
           <mat-card-header>
@@ -47,7 +60,6 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
-
     </mat-grid-list>
   </mat-tab>
 </mat-tab-group>

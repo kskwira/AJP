@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User} from "../shared/services/user";
+import { UserModel} from "../models/user.model";
 import { AngularFireAuth} from "@angular/fire/compat/auth";
 import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
 import { Router } from "@angular/router";
@@ -108,10 +108,11 @@ sign up with username/password and sign in with social auth
 provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const userData: User = {
+    const userData: UserModel = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      firstName: user.firstName = 'aaa',
+      lastName: user.lastName = 'bbb',
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
     }

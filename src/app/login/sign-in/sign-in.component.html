@@ -1,21 +1,34 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="Logowanie">
-    <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-list cols="3" rowHeight="3:3">
       <mat-grid-tile>
        <mat-card class="user-card">
        <mat-card-header>
           <h2> Witamy ponownie ! </h2>
        </mat-card-header>
          <mat-card-content>
-            <div class="formGroup">
-              <input type="text" class="formControl" placeholder="Nazwa użytkownika" #userName required>
-            </div>
-            <div class="formGroup">
-              <input type="password" class="formControl" placeholder="Hasło" #userPassword required>
-            </div>
+           <ng-form class="formGroup">
+             <mat-form-field appearance="fill">
+               <mat-label>Podaj swój adres email</mat-label>
+               <input matInput type="email" class="formControl" placeholder="pat@example.com" [formControl]="email" #userEmail required>
+               <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+             </mat-form-field>
+           <br/>
+             <mat-form-field appearance="fill">
+               <mat-label>Podaj swoje hasło</mat-label>
+               <input matInput type="password" class="formControl" placeholder="Hasło"  #userPassword required>
+             </mat-form-field>
+           </ng-form>
+
+<!--           <div class="formGroup">-->
+<!--              <input type="text" class="formControl" placeholder="Nazwa użytkownika" #userEmail required>-->
+<!--            </div>-->
+<!--            <div class="formGroup">-->
+<!--              <input type="password" class="formControl" placeholder="Hasło" #userPassword required>-->
+<!--            </div>-->
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Zaloguj</button>
+            <button mat-raised-button color="primary" (click)="authService.SignIn(userEmail.value, userPassword.value)">Zaloguj</button>
             <button mat-raised-button routerLink="/forgot-password">Przypomnij hasło</button>
           </mat-card-actions>
         </mat-card>

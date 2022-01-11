@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TaskComponent } from './task/task.component';
 import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { environment } from 'src/environments/environment';
@@ -59,25 +59,26 @@ import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.
     SelectQuizLevelComponent,
     HiraganaListComponent,
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    DragDropModule,
+    imports: [
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        DragDropModule,
 
-    FormsModule,
-    AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    FlipCardModule,
-    provideAuth(() => getAuth()),
-    AppRoutingModule,
-    AngularMaterialModule
+        FormsModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideDatabase(() => getDatabase()),
+        provideFirestore(() => getFirestore()),
+        FlipCardModule,
+        provideAuth(() => getAuth()),
+        AppRoutingModule,
+        AngularMaterialModule,
+        ReactiveFormsModule
 
-  ],
+    ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

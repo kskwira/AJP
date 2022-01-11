@@ -3,3 +3,7 @@ mat-grid-tile{
   align-content: flex-start;
 
 }
+
+.formGroup .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
