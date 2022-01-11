@@ -1,38 +1,53 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Rejestracja">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="user-card">
+          <mat-card-header>
+            <h2> Poznajmy się :) </h2>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="formGroup">
+              <input type="email" class="formControl" placeholder="Addres Email" #userEmail required>
+            </div>
+            <div class="formGroup">
+              <input type="password" class="formControl" placeholder="Hasło" #userPwd required>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="authService.SignUp(userEmail.value, userPwd.value)">Zarejestruj</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
 
-    <div class="authBlock">
-      <h3>Sign Up</h3>
+      <mat-grid-tile>
+        <mat-card>
+          <div class="redirectToLogin">
+        <span>
+          <h2>Masz już konto?</h2>
+            <h2>Zaloguj się tutaj</h2></span>
+            <br/>
+            <button mat-raised-button color="accent" routerLink="/sign-in"> Logowanie </button>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
 
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-      </div>
 
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
-      </div>
+      <mat-grid-tile>
+        <mat-card class="user-card">
+          <mat-card-header>
+            <h2> Zaloguj się z Google </h2>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click)="authService.GoogleAuth()">
+                <mat-icon>mail</mat-icon>  Google
+              </button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
 
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
-    </div>
-  </div>
-
-</div>
+    </mat-grid-list>
+  </mat-tab>
+</mat-tab-group>

@@ -1,41 +1,54 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Logowanie">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+       <mat-card class="user-card">
+       <mat-card-header>
+          <h2> Witamy ponownie ! </h2>
+       </mat-card-header>
+         <mat-card-content>
+            <div class="formGroup">
+              <input type="text" class="formControl" placeholder="Nazwa użytkownika" #userName required>
+            </div>
+            <div class="formGroup">
+              <input type="password" class="formControl" placeholder="Hasło" #userPassword required>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Zaloguj</button>
+            <button mat-raised-button routerLink="/forgot-password">Przypomnij hasło</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
 
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
-      </div>
+      <mat-grid-tile>
+        <mat-card>
+          <div class="redirectToLogin">
+        <span>
+          <h2>Nie posiadasz jeszcze konta?</h2>
+            <h2>Załóż je tutaj</h2></span>
+            <br/>
+            <button mat-raised-button color="warn" routerLink="/register-user"> Rejestracja</button>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
 
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
 
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-      </div>
+        <mat-grid-tile>
+        <mat-card class="user-card">
+          <mat-card-header>
+            <h2> Zaloguj się z Google </h2>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card-actions>
+                    <button mat-raised-button (click)="authService.GoogleAuth()">
+                      <mat-icon>mail</mat-icon>Login with Google
+                    </button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+        </mat-grid-tile>
 
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
-    </div>
-
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-    </div>
-
-  </div>
-</div>
+    </mat-grid-list>
+  </mat-tab>
+</mat-tab-group>

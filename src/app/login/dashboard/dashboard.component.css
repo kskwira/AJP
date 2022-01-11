@@ -1,0 +1,10 @@
+.user-card {
+  max-width: 400px;
+  margin-left: 1.5%;
+  margin-top: 1.5%;
+}
+
+.user-header-image {
+  background-image: url("src/assets/user.png");
+  background-size: cover;
+}
