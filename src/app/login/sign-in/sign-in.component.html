@@ -18,19 +18,12 @@
                <mat-label>Podaj swoje hasło</mat-label>
                <input matInput type="password" class="formControl" placeholder="Hasło"  #userPassword required>
              </mat-form-field>
+             <mat-card-actions>
+               <button mat-raised-button color="primary" (click)="authService.SignIn(userEmail.value, userPassword.value)">Zaloguj</button>
+               <button mat-raised-button routerLink="/forgot-password">Przypomnij hasło</button>
+             </mat-card-actions>
            </ng-form>
-
-<!--           <div class="formGroup">-->
-<!--              <input type="text" class="formControl" placeholder="Nazwa użytkownika" #userEmail required>-->
-<!--            </div>-->
-<!--            <div class="formGroup">-->
-<!--              <input type="password" class="formControl" placeholder="Hasło" #userPassword required>-->
-<!--            </div>-->
           </mat-card-content>
-          <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="authService.SignIn(userEmail.value, userPassword.value)">Zaloguj</button>
-            <button mat-raised-button routerLink="/forgot-password">Przypomnij hasło</button>
-          </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
 

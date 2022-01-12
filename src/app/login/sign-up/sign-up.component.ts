@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService} from "../../services/auth-service.service";
-import {FormControl, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up',
@@ -9,18 +9,54 @@ import {FormControl, Validators} from "@angular/forms";
 })
 export class SignUpComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email])
+  form: FormGroup = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+  submitted = false;
 
-  constructor(public authService: AuthService) { }
+  // email = new FormControl('', [Validators.required, Validators.email])
 
-  ngOnInit() { }
+  constructor(public authService: AuthService, private formBuilder: FormBuilder) { }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'Prosze podać email';
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+        firstName: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        lastName: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
+      },
+    );
+  }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+
+    if (this.form.invalid) {
+      return;
     }
 
-    return this.email.hasError('email') ? 'Niepoprawny email' : '';
+    this.authService.SignIn(this.form.value.email, this.form.value.password);
+    console.log(JSON.stringify(this.form.value, null, 2));
   }
+
+  onReset(): void {
+    this.submitted = false;
+    this.form.reset();
+  }
+
+  // getErrorMessage() {
+  //   if (this.email.hasError('required')) {
+  //     return 'Prosze podać email';
+  //   }
+  //
+  //   return this.email.hasError('email') ? 'Niepoprawny email' : '';
+  // }
 
 }

@@ -111,8 +111,8 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
     const userData: UserModel = {
       uid: user.uid,
       email: user.email,
-      firstName: user.firstName = 'aaa',
-      lastName: user.lastName = 'bbb',
+      firstName: user.firstName='aaa',
+      lastName: user.lastName='bbb',
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
     }
