@@ -89,7 +89,7 @@
                 <input matInput type="text" class="formControl" placeholder="Nazwisko" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
                 <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
                   <div *ngIf="f['lastName'].errors['required']">Nazwisko jest wymagane</div>
-                  <div *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 6 znaków</div>
+                  <div *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 3 znaki</div>
                   <div *ngIf="f['lastName'].errors['maxlength']">Nazwisko nie może przekraczać 20 znaków</div>
                 </div>
               </mat-form-field>

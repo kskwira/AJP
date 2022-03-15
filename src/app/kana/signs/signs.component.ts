@@ -4,7 +4,6 @@ import { Kana} from "../kana";
 import {MatDialog} from "@angular/material/dialog";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import {KanaDialogComponent, KanaDialogResult} from "../kana-dialog/kana-dialog.component";
-import {CdkDragDrop, transferArrayItem} from "@angular/cdk/drag-drop";
 
 const getObservable = (collection: AngularFirestoreCollection<Kana>) => {
   const subject = new BehaviorSubject<Kana[]>([]);

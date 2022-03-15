@@ -18,8 +18,10 @@ export class KanaService {
   katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
   singleKanaRef: AngularFirestoreCollection<Kana>;
+  firstNineKana: AngularFirestoreCollection<Kana>;
 
   constructor(private db: AngularFirestore) {
+
     this.katakanaRef = db.collection(this.katakanaDbPath);
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
     this.singleKanaRef = db.collection(this.hiraganaDbPath,
@@ -32,11 +34,26 @@ export class KanaService {
         ref => ref.where('level', '==',1))
     this.katakanaLevelTwo = db.collection(this.katakanaDbPath,
       ref => ref.where('level', '==',2))
-
+    this.firstNineKana = db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',1).orderBy('id').limit(1))
   }
+
 
   getAllKatakana(): AngularFirestoreCollection<Kana> {
     return this.katakanaLevelOne;
+  }
+
+  getFirstNine():AngularFirestoreCollection<Kana>{
+    let x: number
+    x = Math.floor(Math.random() * (107 - 1 + 1)) + 1;
+    this.firstNineKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',x).orderBy('id').limit(1))
+    return this.firstNineKana
+  }
+
+  getOneRandom(id: number):AngularFirestoreCollection<Kana>{
+
+    let random = Math.floor(Math.random() * (107 - 1 + 1)) + 1;
+
+    return this.getAllHiragana()
   }
 
   getSpecificLevel(level: number, type: string): AngularFirestoreCollection<Kana>{

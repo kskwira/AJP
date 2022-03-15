@@ -18,13 +18,25 @@ export class HiraganaListComponent implements OnInit {
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
-    this.retrieveHiragana()
+
   }
 
   refreshList(): void {
     this.currentHiragana = undefined;
     this.currentIndex = -1;
     this.retrieveHiragana();
+  }
+
+  retrieveNineHiragana(): void {
+    this.kanaService.getFirstNine().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.hiragana = data;
+    });
   }
 
   retrieveHiragana(): void {

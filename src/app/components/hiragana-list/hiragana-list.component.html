@@ -27,7 +27,10 @@
 <!--  </div>-->
 <!--</div>-->
 
-
+<div>
+  <button (click)="retrieveHiragana()">Wyświetl wszystkie</button>
+  <button (click)="retrieveNineHiragana()">Pobierz 9</button>
+</div>
 
 <div class="card" *ngIf="hiragana">
   <mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
@@ -47,4 +50,7 @@
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+</div>
+<div>
+
 </div>
