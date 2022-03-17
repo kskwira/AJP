@@ -77,40 +77,40 @@
               <mat-form-field class="formGroup" appearance="fill">
                 <mat-label>Podaj swoje imię</mat-label>
                 <input matInput type="text" class="formControl" placeholder="Imię" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
-                <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
-                  <div *ngIf="f['firstName'].errors['required']">Imię jest wymagane</div>
-                  <div *ngIf="f['firstName'].errors['minlength']">Imię musi mieć przynajmniej 6 znaków</div>
-                  <div *ngIf="f['firstName'].errors['maxlength']">Imię nie może przekraczać 20 znaków</div>
-                </div>
+                <mat-error *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                  <mat-error *ngIf="f['firstName'].errors['required']">Imię jest wymagane</mat-error>
+                  <mat-error *ngIf="f['firstName'].errors['minlength']">Imię musi mieć przynajmniej 6 znaków</mat-error>
+                  <mat-error *ngIf="f['firstName'].errors['maxlength']">Imię nie może przekraczać 20 znaków</mat-error>
+                </mat-error>
               </mat-form-field>
               <br/>
               <mat-form-field class="formGroup" appearance="fill">
                 <mat-label>Podaj swoje nazwisko</mat-label>
                 <input matInput type="text" class="formControl" placeholder="Nazwisko" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
-                <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
-                  <div *ngIf="f['lastName'].errors['required']">Nazwisko jest wymagane</div>
-                  <div *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 3 znaki</div>
-                  <div *ngIf="f['lastName'].errors['maxlength']">Nazwisko nie może przekraczać 20 znaków</div>
-                </div>
+                <mat-error *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                  <mat-error *ngIf="f['lastName'].errors['required']">Nazwisko jest wymagane</mat-error>
+                  <mat-error *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 6 znaków</mat-error>
+                  <mat-error *ngIf="f['lastName'].errors['maxlength']">Nazwisko nie może przekraczać 20 znaków</mat-error>
+                </mat-error>
               </mat-form-field>
               <br/>
               <mat-form-field class="formGroup" appearance="fill">
                 <mat-label>Podaj swój adres email</mat-label>
                 <input matInput type="email" class="formControl" placeholder="pat@example.com" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
-                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                  <div *ngIf="f['email'].errors['required']">Email jest wymagany</div>
-                  <div *ngIf="f['email'].errors['email']">Nieprawidłowy email</div>
-                </div>
+                <mat-error *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                  <mat-error *ngIf="f['email'].errors['required']">Email jest wymagany</mat-error>
+                  <mat-error *ngIf="f['email'].errors['email']">Nieprawidłowy email</mat-error>
+                </mat-error>
               </mat-form-field>
               <br/>
               <mat-form-field class="formGroup" appearance="fill">
                 <mat-label>Podaj swoje hasło</mat-label>
                 <input matInput type="password" class="formControl" placeholder="Hasło" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
-                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                  <div *ngIf="f['password'].errors['required']">Hasło jest wymagane</div>
-                  <div *ngIf="f['password'].errors['minlength']">Hasło musi mieć przynajmniej 6 znaków</div>
-                  <div *ngIf="f['password'].errors['maxlength']">Hasło nie może przekraczać 40 znaków</div>
-                </div>
+                <mat-error *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                  <mat-error *ngIf="f['password'].errors['required']">Hasło jest wymagane</mat-error>
+                  <mat-error *ngIf="f['password'].errors['minlength']">Hasło musi mieć przynajmniej 6 znaków</mat-error>
+                  <mat-error *ngIf="f['password'].errors['maxlength']">Hasło nie może przekraczać 40 znaków</mat-error>
+                </mat-error>
               </mat-form-field>
               <mat-card-actions class="formGroup">
                 <button mat-raised-button type="submit" color="primary">Zarejestruj</button>

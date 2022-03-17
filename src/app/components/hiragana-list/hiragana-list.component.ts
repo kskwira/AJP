@@ -14,6 +14,7 @@ export class HiraganaListComponent implements OnInit {
   currentHiragana?: Kana;
   currentIndex = -1;
   title = '';
+  result = null;
 
   constructor(private kanaService: KanaService) { }
 
@@ -68,8 +69,17 @@ export class HiraganaListComponent implements OnInit {
     });
   }
 
-  answering(){
-    this.answered = !this.answered
+  answering(answer: string, reading?: string){
+    this.answered = !this.answered;
+
+    if (reading == answer) {
+      // @ts-ignore
+      this.result = "Poprawna odpowiedź";
+    }
+    else {
+      // @ts-ignore
+      this.result = "Zła odpowiedź";
+    }
   }
 
 }

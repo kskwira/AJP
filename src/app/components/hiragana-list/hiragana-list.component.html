@@ -27,6 +27,7 @@
 <!--  </div>-->
 <!--</div>-->
 
+
 <div>
   <button (click)="retrieveHiragana()">Wyświetl wszystkie</button>
   <button (click)="retrieveNineHiragana()">Pobierz 9</button>
@@ -36,7 +37,7 @@
   <mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
     <mat-grid-tile *ngFor="let hiragana of hiragana">
       <mat-card class="item">
-        <app-flip-card>
+        <app-flip-card [toggleProperty] = answered>
           <flip-card-front>
             <p>{{ hiragana.sign}}</p>
           </flip-card-front>
@@ -44,13 +45,10 @@
             <p>{{ hiragana.reading}}</p>
           </flip-card-back>
         </app-flip-card>
-        <input type="text" id="single" #zgaduje>
-        <button type="submit" (click)="answering()">Sprawdź</button>
-        <p *ngIf="hiragana.reading == zgaduje.value" >Poprawna odpowiedź</p>
+        <input type="text" id="single" #guess>
+        <button type="submit" (click)="answering(guess.value, hiragana.reading)">Sprawdź</button>
+        <p>{{result}}</p>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-</div>
-<div>
-
 </div>
