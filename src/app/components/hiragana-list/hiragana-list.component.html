@@ -30,7 +30,7 @@
 
 <div>
   <button (click)="retrieveHiragana()">Wyświetl wszystkie</button>
-  <button (click)="retrieveNineHiragana()">Pobierz 9</button>
+  <button (click)="retrieveOneHiragana()">Pobierz 1</button>
 </div>
 
 <div class="card" *ngIf="hiragana">
@@ -46,7 +46,7 @@
           </flip-card-back>
         </app-flip-card>
         <input type="text" id="single" #guess>
-        <button type="submit" (click)="answering(guess.value, hiragana.reading)">Sprawdź</button>
+        <button type="submit" (click)="answering(guess.value, hiragana.reading)" [disabled]="answered">Sprawdź</button>
         <p>{{result}}</p>
       </mat-card>
     </mat-grid-tile>

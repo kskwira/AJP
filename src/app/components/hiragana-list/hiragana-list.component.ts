@@ -14,7 +14,7 @@ export class HiraganaListComponent implements OnInit {
   currentHiragana?: Kana;
   currentIndex = -1;
   title = '';
-  result = null;
+  result = '';
 
   constructor(private kanaService: KanaService) { }
 
@@ -28,8 +28,10 @@ export class HiraganaListComponent implements OnInit {
     this.retrieveHiragana();
   }
 
-  retrieveNineHiragana(): void {
-    this.kanaService.getFirstNine().snapshotChanges().pipe(
+  retrieveOneHiragana(): void {
+    this.answered = false;
+    this.result = '';
+    this.kanaService.getSingleRandomKana().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data() })
@@ -73,13 +75,10 @@ export class HiraganaListComponent implements OnInit {
     this.answered = !this.answered;
 
     if (reading == answer) {
-      // @ts-ignore
       this.result = "Poprawna odpowiedź";
     }
     else {
-      // @ts-ignore
       this.result = "Zła odpowiedź";
     }
   }
-
 }

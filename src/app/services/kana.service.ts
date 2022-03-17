@@ -18,7 +18,7 @@ export class KanaService {
   katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
   singleKanaRef: AngularFirestoreCollection<Kana>;
-  firstNineKana: AngularFirestoreCollection<Kana>;
+  singleRandomKana: AngularFirestoreCollection<Kana> | undefined;
 
   constructor(private db: AngularFirestore) {
 
@@ -34,7 +34,7 @@ export class KanaService {
         ref => ref.where('level', '==',1))
     this.katakanaLevelTwo = db.collection(this.katakanaDbPath,
       ref => ref.where('level', '==',2))
-    this.firstNineKana = db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',1).orderBy('id').limit(1))
+    // this.firstNineKana = db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',1).orderBy('id').limit(1))
   }
 
 
@@ -42,11 +42,11 @@ export class KanaService {
     return this.katakanaLevelOne;
   }
 
-  getFirstNine():AngularFirestoreCollection<Kana>{
+  getSingleRandomKana():AngularFirestoreCollection<Kana>{
     let x: number
     x = Math.floor(Math.random() * (107 - 1 + 1)) + 1;
-    this.firstNineKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',x).orderBy('id').limit(1))
-    return this.firstNineKana
+    this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',x).orderBy('id').limit(1))
+    return this.singleRandomKana
   }
 
   getOneRandom(id: number):AngularFirestoreCollection<Kana>{
