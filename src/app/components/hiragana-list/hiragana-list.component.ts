@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KanaService } from "../../services/kana.service";
 import { map } from "rxjs/operators";
 import { Kana } from "../../models/kana.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-hiragana-list',
@@ -15,20 +16,24 @@ export class HiraganaListComponent implements OnInit {
   currentIndex = -1;
   title = '';
   result = '';
+  routeParam: number = 0;
 
-  constructor(private kanaService: KanaService) { }
+  constructor(private route: ActivatedRoute, private kanaService: KanaService) { }
 
   ngOnInit(): void {
-
+    this.route.params.subscribe(params => {
+      this.routeParam = params['level'];
+    });
+    console.log(this.routeParam)
   }
 
-  refreshList(): void {
-    this.currentHiragana = undefined;
-    this.currentIndex = -1;
-    this.retrieveHiragana();
-  }
+  // refreshList(): void {
+  //   this.currentHiragana = undefined;
+  //   this.currentIndex = -1;
+  //   this.retrieveHiragana();
+  // }
 
-  retrieveOneHiragana(): void {
+  retrieveOneRandomHiragana(): void {
     this.answered = false;
     this.result = '';
     this.kanaService.getSingleRandomKana().snapshotChanges().pipe(
@@ -42,8 +47,8 @@ export class HiraganaListComponent implements OnInit {
     });
   }
 
-  retrieveHiragana(): void {
-    this.kanaService.getSpecificLevel(2, 'hiragana').snapshotChanges().pipe(
+  retrieveAllHiraganaByLevel(level: number): void {
+    this.kanaService.getSpecificLevel(level, 'hiragana').snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data() })

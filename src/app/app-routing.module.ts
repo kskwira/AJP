@@ -23,7 +23,9 @@ const routes: Routes = [
   { path: 'kanban', component: KanbanComponent },
   { path: 'kana', component: SignsComponent },
   { path: 'katakana', component: KatakanaListComponent },
+  { path: 'katakana/:level', component: KatakanaListComponent },
   { path: 'hiragana', component: HiraganaListComponent },
+  { path: 'quiz/hiragana/:level', component: HiraganaListComponent },
   { path: 'add', component: AddKanaComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent }
 ];
