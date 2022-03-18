@@ -47,6 +47,20 @@ export class HiraganaListComponent implements OnInit {
     });
   }
 
+  retrieveOneRandomHiraganaByLevel(level: number): void {
+    this.answered = false;
+    this.result = '';
+    this.kanaService.getSingleRandomKanaByLevel(level).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+      this.hiragana = data;
+    });
+  }
+
   retrieveAllHiraganaByLevel(level: number): void {
     this.kanaService.getSpecificLevel(level, 'hiragana').snapshotChanges().pipe(
       map(changes =>

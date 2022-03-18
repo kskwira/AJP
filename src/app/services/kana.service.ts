@@ -51,6 +51,23 @@ export class KanaService {
     return this.singleRandomKana
   }
 
+  getSingleRandomKanaByLevel(level: number):AngularFirestoreCollection<Kana>{
+    if (level == 1) {
+      let x: number
+      x = Math.floor(Math.random() * 46) + 1;
+      console.log(x);
+      this.singleRandomKanaByLevel = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', x))
+      return this.singleRandomKanaByLevel
+    }
+    else {
+      let x: number
+      x = Math.floor(Math.random() * (107 - 47 + 1) + 47);
+      console.log(x);
+      this.singleRandomKanaByLevel = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', x))
+      return this.singleRandomKanaByLevel
+    }
+  }
+
   getSpecificLevel(level: number, type: string): AngularFirestoreCollection<Kana>{
     if (type == 'katakana') {
       if (level == 1)
