@@ -51,6 +51,12 @@ export class KanaService {
     return this.singleRandomKana
   }
 
+  getSingleKanaById(id: number):AngularFirestoreCollection<Kana>{
+    this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', id))
+    return this.singleRandomKana
+  }
+
+
   getSingleRandomKanaByLevel(level: number):AngularFirestoreCollection<Kana>{
     if (level == 1) {
       let x: number
