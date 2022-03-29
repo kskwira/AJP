@@ -76,6 +76,8 @@ export class HiraganaListComponent implements OnInit {
   }
 
   testSession(id: number): void {
+    this.answered = false;
+    this.result = '';
       this.kanaService.getSingleKanaById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
@@ -136,10 +138,11 @@ export class HiraganaListComponent implements OnInit {
 
     if (reading == answer) {
       this.result = "Poprawna odpowiedź";
-
+      this.i = this.i +1
     }
     else {
       this.result = "Zła odpowiedź";
+      this.i = this.i +1
     }
   }
 
