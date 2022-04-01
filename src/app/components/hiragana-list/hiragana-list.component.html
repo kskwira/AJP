@@ -32,13 +32,13 @@
   <button mat-stroked-button color="primary" (click)="retrieveAllHiraganaByLevel(routeParam)">Wyświetl wszystkie</button>
   <button mat-stroked-button color="primary" (click)="retrieveOneRandomHiraganaByLevel(routeParam)">Pobierz 1</button>
   <button mat-stroked-button color="primary" (click)="testSession(orderArray[0])">Rozpocznij quiz</button>
-  <input matInput type="number" #amount>
+<!--  <input matInput type="number" #amount>-->
 </div>
 
-  <mat-grid-list cols="3" rowHeight="320px" gutterSize="4px">
-    <mat-grid-tile *ngFor="let hiragana of hiragana">
-      <mat-card class="user-card">
-        <mat-card-content>
+<mat-grid-list cols="3" rowHeight="320px" gutterSize="4px">
+  <mat-grid-tile *ngFor="let hiragana of hiragana">
+    <mat-card class="user-card">
+      <mat-card-content>
         <app-flip-card [toggleProperty] = answered>
           <flip-card-front>
             <p>{{ hiragana.sign}}</p>
@@ -50,32 +50,11 @@
         <mat-card-actions >
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading)" [disabled]="answered">Sprawdź</button>
-          <button mat-raised-button color="primary" type="submit" (click)="testSession(orderArray[i])" [disabled]="!answered">Następny znak</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="orderArray[numberAnswered]<=arrayEnd" (click)="testSession(orderArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
           <br/>
           <mat-error>{{result}}</mat-error>
         </mat-card-actions>
-        </mat-card-content>
-      </mat-card>
-<!--      *ngFor="let item of orderArray"-->
-<!--      <mat-card class="user-card"  >-->
-<!--        <mat-card-content *ngFor="let item of orderArray">-->
-<!--          <app-flip-card [toggleProperty] = answered>-->
-<!--            <flip-card-front>-->
-<!--              <p>{{ hiragana.sign}}</p>-->
-<!--            </flip-card-front>-->
-<!--            <flip-card-back>-->
-<!--              <p>{{ hiragana.id}}</p>-->
-<!--            </flip-card-back>-->
-<!--          </app-flip-card>-->
-<!--          <mat-card-actions>-->
-<!--            <input matInput type="text" id="test" #guess1>-->
-<!--            <button mat-raised-button color="primary" type="submit" (click)="answering2(guess1.value, hiragana.reading)" >Sprawdź</button>-->
-<!--            <button mat-raised-button color="primary" type="submit" (click)="testSession(orderArray[i])">Następny znak</button>-->
-<!--            <br/>-->
-<!--            <mat-error>{{result}}</mat-error>-->
-<!--          </mat-card-actions>-->
-<!--        </mat-card-content>-->
-<!--      </mat-card>-->
-    </mat-grid-tile>
-  </mat-grid-list>
-
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -28,12 +28,18 @@
 <!--</div>-->
 
 
+<div>
+  <button mat-stroked-button color="primary" (click)="retrieveAllKatakanaByLevel(routeParam)">Wyświetl wszystkie</button>
+  <button mat-stroked-button color="primary" (click)="retrieveOneRandomKatakanaByLevel(routeParam)">Pobierz 1</button>
+  <button mat-stroked-button color="primary" (click)="testSession(orderArray[0])">Rozpocznij quiz</button>
+  <!--  <input matInput type="number" #amount>-->
+</div>
 
-<div class="card" *ngIf="katakana">
-  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
-    <mat-grid-tile *ngFor="let katakana of katakana">
-      <mat-card class="item">
-        <app-flip-card>
+<mat-grid-list cols="3" rowHeight="320px" gutterSize="4px">
+  <mat-grid-tile *ngFor="let katakana of katakana">
+    <mat-card class="user-card">
+      <mat-card-content>
+        <app-flip-card [toggleProperty] = answered>
           <flip-card-front>
             <p>{{ katakana.sign}}</p>
           </flip-card-front>
@@ -41,7 +47,14 @@
             <p>{{ katakana.reading}}</p>
           </flip-card-back>
         </app-flip-card>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+        <mat-card-actions >
+          <input matInput type="text" id="single" #guess>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, katakana.reading)" [disabled]="answered">Sprawdź</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="orderArray[numberAnswered]<=arrayEnd" (click)="testSession(orderArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
+          <br/>
+          <mat-error>{{result}}</mat-error>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
