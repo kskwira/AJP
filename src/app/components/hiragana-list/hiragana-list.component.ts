@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { KanaService } from "../../services/kana.service";
-import { map } from "rxjs/operators";
-import { Kana } from "../../models/kana.model";
+import {Component, OnInit} from '@angular/core';
+import {KanaService} from "../../services/kana.service";
+import {map} from "rxjs/operators";
+import {Kana} from "../../models/kana.model";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -20,6 +20,7 @@ export class HiraganaListComponent implements OnInit {
   randomNumber = 0;
   numberAnswered = 0;
   arrayEnd = 0;
+  numberOfCorrect = 0;
   orderArray = [];
   answered = false;
 
@@ -71,6 +72,10 @@ export class HiraganaListComponent implements OnInit {
     ).subscribe(data => {
       this.hiragana = data;
     });
+  }
+
+  score(correct: number, total: number): number{
+    return correct / total
   }
 
   testSession(id: number): void {
@@ -137,6 +142,7 @@ export class HiraganaListComponent implements OnInit {
     if (reading == answer) {
       this.result = "Poprawna odpowiedź";
       this.numberAnswered = this.numberAnswered +1
+      this.numberOfCorrect = this.numberOfCorrect +1
     }
     else {
       this.result = "Zła odpowiedź";

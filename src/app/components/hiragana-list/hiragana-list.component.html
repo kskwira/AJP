@@ -58,3 +58,10 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+<div *ngIf="numberAnswered>=arrayEnd">
+  <mat-card>
+  <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+  <p>Ilość poprawnych odpowiedzi: {{numberOfCorrect}}</p>
+<p>Wynik wynosi: {{score(numberOfCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+  </mat-card>
+</div>
