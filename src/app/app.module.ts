@@ -36,6 +36,10 @@ import { KatakanaListComponent } from './components/katakana-list/katakana-list.
 import { KanaDetailsComponent } from './components/kana-details/kana-details.component';
 import { SelectQuizLevelComponent } from './components/select-quiz-level/select-quiz-level.component';
 import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.component';
+import { SelectLearningLevelComponent } from './components/select-learning-level/select-learning-level.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import { HiraganaLearningComponent } from './components/hiragana-learning/hiragana-learning.component';
+import { KatakanaLearningComponent } from './components/katakana-learning/katakana-learning.component';
 
 
 @NgModule({
@@ -58,6 +62,9 @@ import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.
     KanaDetailsComponent,
     SelectQuizLevelComponent,
     HiraganaListComponent,
+    SelectLearningLevelComponent,
+    HiraganaLearningComponent,
+    KatakanaLearningComponent,
   ],
     imports: [
         CommonModule,
@@ -76,7 +83,8 @@ import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.
         provideAuth(() => getAuth()),
         AppRoutingModule,
         AngularMaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatCheckboxModule
 
     ],
   providers: [AuthService],

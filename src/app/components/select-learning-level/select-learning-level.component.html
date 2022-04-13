@@ -1,0 +1,83 @@
+<mat-list>
+
+  <mat-list-item>Hiragana</mat-list-item>
+  <form [formGroup]="kanaSelection" (ngSubmit)="onSubmit('hiragana')">
+    <div class="checkbox-row">
+      <mat-checkbox formControlName="a" >a i u e o</mat-checkbox>
+      <mat-checkbox formControlName="ka" >ka ki ku ke ko</mat-checkbox>
+      <mat-checkbox formControlName="sa" >sa shi su se so</mat-checkbox>
+      <mat-checkbox formControlName="ta" >ta chi tsu te to</mat-checkbox>
+      <mat-checkbox formControlName="na" >na ni nu ne no</mat-checkbox>
+      <mat-checkbox formControlName="ha" >ha hi fu he ho</mat-checkbox>
+      <mat-checkbox formControlName="ma" >ma mi mu me mo</mat-checkbox>
+      <mat-checkbox formControlName="ya" >ya yu yo</mat-checkbox>
+      <mat-checkbox formControlName="ra" >ra ri ru re ro</mat-checkbox>
+      <mat-checkbox formControlName="wa" >wa wo n</mat-checkbox>
+      <br />
+      <br />
+      <mat-checkbox formControlName="ga" >ga gi gu ge go</mat-checkbox>
+      <mat-checkbox formControlName="za" >za ji zu ze zo</mat-checkbox>
+      <mat-checkbox formControlName="da" >da (d)ji (d)zu de do</mat-checkbox>
+      <mat-checkbox formControlName="ba" >ba bi bu be bo</mat-checkbox>
+      <mat-checkbox formControlName="pa" >pa pi pu pe po</mat-checkbox>
+      <mat-checkbox formControlName="kya" >kya kyu kyo</mat-checkbox>
+      <mat-checkbox formControlName="sha" >sha shu sho</mat-checkbox>
+      <mat-checkbox formControlName="cha" >cha chu cho</mat-checkbox>
+      <mat-checkbox formControlName="nya" >nya nyu nyo</mat-checkbox>
+      <mat-checkbox formControlName="hya" >hya hyu hyo</mat-checkbox>
+      <mat-checkbox formControlName="mya" >mya myu myo</mat-checkbox>
+      <mat-checkbox formControlName="rya" >rya ryu ryo</mat-checkbox>
+      <mat-checkbox formControlName="gya" >gya gyu gyo</mat-checkbox>
+      <mat-checkbox formControlName="ja" >ja ju jo</mat-checkbox>
+      <mat-checkbox formControlName="dja" >(d)ja (d)ju (d)jo</mat-checkbox>
+      <mat-checkbox formControlName="bya" >bya byu byo</mat-checkbox>
+      <mat-checkbox formControlName="pya" >pya pyu pyo</mat-checkbox>
+      <br />
+      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+<!--      <p> {{kanaSelection.value | json}} </p>-->
+    </div>
+    <br />
+  </form>
+  <mat-divider></mat-divider>
+
+  <mat-list-item>Katakana</mat-list-item>
+  <form [formGroup]="kanaSelection" (ngSubmit)="onSubmit('katakana')">
+    <div class="checkbox-row">
+      <mat-checkbox formControlName="a" >a i u e o</mat-checkbox>
+      <mat-checkbox formControlName="ka" >ka ki ku ke ko</mat-checkbox>
+      <mat-checkbox formControlName="sa" >sa shi su se so</mat-checkbox>
+      <mat-checkbox formControlName="ta" >ta chi tsu te to</mat-checkbox>
+      <mat-checkbox formControlName="na" >na ni nu ne no</mat-checkbox>
+      <mat-checkbox formControlName="ha" >ha hi fu he ho</mat-checkbox>
+      <mat-checkbox formControlName="ma" >ma mi mu me mo</mat-checkbox>
+      <mat-checkbox formControlName="ya" >ya yu yo</mat-checkbox>
+      <mat-checkbox formControlName="ra" >ra ri ru re ro</mat-checkbox>
+      <mat-checkbox formControlName="wa" >wa wo n</mat-checkbox>
+      <br />
+      <br />
+      <mat-checkbox formControlName="ga" >ga gi gu ge go</mat-checkbox>
+      <mat-checkbox formControlName="za" >za ji zu ze zo</mat-checkbox>
+      <mat-checkbox formControlName="da" >da (d)ji (d)zu de do</mat-checkbox>
+      <mat-checkbox formControlName="ba" >ba bi bu be bo</mat-checkbox>
+      <mat-checkbox formControlName="pa" >pa pi pu pe po</mat-checkbox>
+      <mat-checkbox formControlName="kya" >kya kyu kyo</mat-checkbox>
+      <mat-checkbox formControlName="sha" >sha shu sho</mat-checkbox>
+      <mat-checkbox formControlName="cha" >cha chu cho</mat-checkbox>
+      <mat-checkbox formControlName="nya" >nya nyu nyo</mat-checkbox>
+      <mat-checkbox formControlName="hya" >hya hyu hyo</mat-checkbox>
+      <mat-checkbox formControlName="mya" >mya myu myo</mat-checkbox>
+      <mat-checkbox formControlName="rya" >rya ryu ryo</mat-checkbox>
+      <mat-checkbox formControlName="gya" >gya gyu gyo</mat-checkbox>
+      <mat-checkbox formControlName="ja" >ja ju jo</mat-checkbox>
+      <mat-checkbox formControlName="dja" >(d)ja (d)ju (d)jo</mat-checkbox>
+      <mat-checkbox formControlName="bya" >bya byu byo</mat-checkbox>
+      <mat-checkbox formControlName="pya" >pya pyu pyo</mat-checkbox>
+      <br />
+      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+      <!--      <p> {{kanaSelection.value | json}} </p>-->
+    </div>
+    <br />
+  </form>
+  <mat-divider></mat-divider>
+
+</mat-list>

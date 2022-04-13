@@ -1,0 +1,17 @@
+section {
+  display: table;
+}
+
+.checkbox-row {
+  display: table-cell;
+  width: 600px;
+}
+
+mat-checkbox {
+  margin: 8px;
+  width: 130px;
+}
+
+button {
+  margin: 8px;
+}

@@ -1,0 +1,35 @@
+<div>
+  <button mat-stroked-button color="primary" (click)="testSession(orderArray[0])">Rozpocznij quiz</button>
+  <!--  <input matInput type="number" #amount>-->
+</div>
+
+<mat-grid-list cols="3" rowHeight="320px" gutterSize="4px">
+  <mat-grid-tile *ngFor="let katakana of katakana">
+    <mat-card class="user-card">
+      <mat-card-content>
+        <app-flip-card [toggleProperty] = answered>
+          <flip-card-front>
+            <p>{{ katakana.sign}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p>{{ katakana.reading}}</p>
+          </flip-card-back>
+        </app-flip-card>
+        <mat-card-actions >
+          <input matInput type="text" id="single" #guess>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, katakana.reading)" [disabled]="answered">Sprawdź</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="orderArray[numberAnswered]<=arrayEnd" (click)="testSession(orderArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
+          <br/>
+          <mat-error>{{result}}</mat-error>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<div *ngIf="numberAnswered>=orderArray.length">
+  <mat-card>
+    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+    <p>Ilość poprawnych odpowiedzi: {{numberOfCorrect}}</p>
+    <p>Wynik wynosi: {{score(numberOfCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+  </mat-card>
+</div>

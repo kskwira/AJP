@@ -12,6 +12,9 @@ import {KatakanaListComponent} from "./components/katakana-list/katakana-list.co
 import {HiraganaListComponent} from "./components/hiragana-list/hiragana-list.component";
 import {AddKanaComponent} from "./components/add-kana/add-kana.component";
 import {SelectQuizLevelComponent} from "./components/select-quiz-level/select-quiz-level.component";
+import {SelectLearningLevelComponent} from "./components/select-learning-level/select-learning-level.component";
+import {HiraganaLearningComponent} from "./components/hiragana-learning/hiragana-learning.component";
+import {KatakanaLearningComponent} from "./components/katakana-learning/katakana-learning.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -23,11 +26,14 @@ const routes: Routes = [
   { path: 'kanban', component: KanbanComponent },
   { path: 'kana', component: SignsComponent },
   { path: 'katakana', component: KatakanaListComponent },
-  { path: 'katakana/:level', component: KatakanaListComponent },
+  { path: 'quiz/katakana/:level', component: KatakanaListComponent },
   { path: 'hiragana', component: HiraganaListComponent },
   { path: 'quiz/hiragana/:level', component: HiraganaListComponent },
   { path: 'add', component: AddKanaComponent },
-  { path: 'select-quiz-level', component: SelectQuizLevelComponent }
+  { path: 'select-quiz-level', component: SelectQuizLevelComponent },
+  { path: 'select-learning-level', component: SelectLearningLevelComponent },
+  { path: 'learning/hiragana', component: HiraganaLearningComponent },
+  { path: 'learning/katakana', component: KatakanaLearningComponent }
 ];
 
 @NgModule({

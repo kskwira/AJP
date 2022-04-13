@@ -10,6 +10,7 @@ import firestore = firebase.firestore;
 export class KanaService {
   private katakanaDbPath = '/katakana';
   private hiraganaDbPath = '/hiragana';
+  kanaSetList = new Set<number>();
 
   katakanaRef: AngularFirestoreCollection<Kana>;
   hiraganaLevelOne: AngularFirestoreCollection<Kana>;
@@ -37,6 +38,11 @@ export class KanaService {
     // this.firstNineKana = db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',1).orderBy('id').limit(1))
   }
 
+
+  setLearningId(id: Set<number>) {
+    this.kanaSetList = id;
+  }
+
   getAllKatakana(): AngularFirestoreCollection<Kana> {
     return this.katakanaLevelOne;
   }
@@ -56,7 +62,6 @@ export class KanaService {
     this.singleRandomKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', x))
     return this.singleRandomKana
   }
-
   getSingleHiraganaById(id: number):AngularFirestoreCollection<Kana>{
     this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', id))
     return this.singleRandomKana
