@@ -2,25 +2,15 @@
   <div [ngClass]="toggleProperty ? 'flipped' : ''" class="card">
     <div class="front">
       <ng-content select="flip-card-front"></ng-content>
-      <div class="arrow-icon" (click)="toggle()">
-        <i class="ion-ios-arrow-back"></i>
-      </div>
+<!--      <div class="arrow-icon" (click)="toggle()">-->
+<!--        <i class="ion-ios-arrow-back"></i>-->
+<!--      </div>-->
     </div>
     <div class="back">
       <ng-content select="flip-card-back"></ng-content>
-      <div class="arrow-icon" (click)="toggle()">
-        <i class="ion-ios-arrow-back"></i>
-      </div>
+<!--      <div class="arrow-icon" (click)="toggle()">-->
+<!--        <i class="ion-ios-arrow-back"></i>-->
+<!--      </div>-->
     </div>
   </div>
 </div>
-
-<!--
-<app-flip-card>
-  <flip-card-front>
-    <h2>FRONT</h2>
-  </flip-card-front>
-  <flip-card-back>
-    <h2>BACK</h2>
-  </flip-card-back>
-</app-flip-card>-->

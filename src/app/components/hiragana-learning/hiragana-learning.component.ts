@@ -11,15 +11,18 @@ import {map} from "rxjs/operators";
 export class HiraganaLearningComponent implements OnInit {
 
   hiragana?: Kana[];
+  hiraganaLearn?: Kana[];
   title = '';
   result = '';
   routeParam: number = 0;
   randomNumber = 0;
   numberAnswered = 0;
-  arrayEnd = 0;
+  numberLearned = 0;
+  arrayLastId = 0;
   numberOfCorrect = 0;
   orderArray = [];
   answered = false;
+  learning = true;
 
 
   constructor(private kanaService: KanaService) { }
@@ -30,7 +33,7 @@ export class HiraganaLearningComponent implements OnInit {
       this.orderArray.push(v);
       console.log(v);
     }
-    this.arrayEnd = this.orderArray[this.orderArray.length-1];
+    this.arrayLastId = this.orderArray[this.orderArray.length-1];
     console.log(this.orderArray);
   }
 
@@ -38,19 +41,34 @@ export class HiraganaLearningComponent implements OnInit {
     return correct / total
   }
 
-  testSession(id: number): void {
-    this.answered = false;
-    this.result = '';
-    this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+  learnSession(id: number): void {
+    this.numberLearned += 1;
+    if (this.numberLearned <= this.orderArray.length) {
+      this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({id: c.payload.doc.id, ...c.payload.doc.data()})
+          )
         )
-      )
-    ).subscribe(data => {
-      this.hiragana = data;
-    });
-    console.log(this.numberAnswered);
+      ).subscribe(data => {
+        this.hiraganaLearn = data;
+      });
+    }
+    else {
+      this.answered = false;
+      this.result = '';
+      this.learning = false;
+      this.hiraganaLearn = undefined;
+      this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({id: c.payload.doc.id, ...c.payload.doc.data()})
+          )
+        )
+      ).subscribe(data => {
+        this.hiragana = data;
+      });
+    }
   }
 
   answering(answer: string, reading?: string) {
