@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {KanaService} from "../../services/kana.service";
 import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth-service.service";
 
 @Component({
   selector: 'app-select-learning-level',
@@ -13,7 +14,7 @@ export class SelectLearningLevelComponent implements OnInit {
   kanaSelection: FormGroup;
   kanaSetList = new Set<number>();
 
-  constructor(fb: FormBuilder, private kanaService: KanaService, private router: Router) {
+  constructor(fb: FormBuilder, private kanaService: KanaService, private router: Router, public authService: AuthService) {
     this.kanaSelection = fb.group({
       a: false,
       ka: false,

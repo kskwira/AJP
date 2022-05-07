@@ -37,23 +37,21 @@ export class AuthService {
   SignIn(email: any, password: any  ) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        });
-        this.SetUserData(result.user);
+        this.router.navigate(['dashboard']);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
   // Sign up with email/password
-  SignUp(email: any, password: any ) {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
+  SignUp(formData: any ) {
+    return this.afAuth.createUserWithEmailAndPassword(formData.email, formData.password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
+        this.UpdateProfile(formData);
         this.SendVerificationMail();
-        this.SetUserData(result.user);
+        this.SetUserDataSignUp(result.user, formData);
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -65,6 +63,15 @@ export class AuthService {
       return user?.sendEmailVerification();
     }).then(() => {
       this.router.navigate(['verify-email-address']);
+    })
+  }
+
+  // update displayName and photoURL when new user sign up
+  UpdateProfile(userData: any) {
+    return this.afAuth.currentUser.then((user) => {
+      return user?.updateProfile({
+        displayName: userData.firstName,
+        photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoMva5-CUwFU3POWm6uJbysmC86IdtGE4Gqg&usqp=CAU"});
     })
   }
 
@@ -106,6 +113,24 @@ export class AuthService {
   /* Setting up user data when sign in with username/password,
 sign up with username/password and sign in with social auth
 provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
+  SetUserDataSignUp(user: any, formData: any) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    const userData: UserModel = {
+      uid: user.uid,
+      email: user.email,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      displayName: formData.firstName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified,
+      phoneNumber: "444",
+      providerId: ""
+    }
+    return userRef.set(userData, {
+      merge: true
+    })
+  }
+
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const userData: UserModel = {
@@ -113,8 +138,11 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       email: user.email,
       firstName: user.firstName='aaa',
       lastName: user.lastName='bbb',
+      displayName: "aaa bbb",
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      phoneNumber: "444",
+      providerId: ""
     }
     return userRef.set(userData, {
       merge: true

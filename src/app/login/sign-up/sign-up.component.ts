@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
       return;
     }
 
-    this.authService.SignIn(this.form.value.email, this.form.value.password);
+    this.authService.SignUp(this.form.value);
     console.log(JSON.stringify(this.form.value, null, 2));
   }
 

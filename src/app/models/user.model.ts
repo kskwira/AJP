@@ -1,8 +1,8 @@
-export interface UserModel {
-  uid: string;
-  email: string;
+import firebase from "firebase/compat";
+import UserInfo = firebase.UserInfo;
+
+export interface UserModel extends UserInfo{
   firstName: string;
   lastName: string;
-  photoURL: string;
   emailVerified: boolean;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/auth-service.service";
 
 @Component({
   selector: 'app-select-quiz-level',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectQuizLevelComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
