@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../services/auth-service.service";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-select-quiz-level',
@@ -8,9 +8,16 @@ import {AuthService} from "../../services/auth-service.service";
 })
 export class SelectQuizLevelComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  userData: any; // Save logged in user data
+
+  constructor(public afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
+    this.afAuth.currentUser.then((user) => {
+      if(user) {
+        this.userData = user;
+      }
+    });
   }
 
 }

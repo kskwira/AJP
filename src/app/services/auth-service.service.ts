@@ -1,8 +1,8 @@
-import { Injectable, NgZone } from '@angular/core';
-import { UserModel} from "../models/user.model";
-import { AngularFireAuth} from "@angular/fire/compat/auth";
-import { AngularFirestore, AngularFirestoreDocument } from "@angular/fire/compat/firestore";
-import { Router } from "@angular/router";
+import {Injectable, NgZone} from '@angular/core';
+import {UserModel} from "../models/user.model";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/compat/firestore";
+import {Router} from "@angular/router";
 import firebase from "firebase/compat/app";
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 
@@ -109,12 +109,32 @@ export class AuthService {
       })
   }
 
-
   /* Setting up user data when sign in with username/password,
 sign up with username/password and sign in with social auth
 provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserDataSignUp(user: any, formData: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    // const progress = {
+    //   1: {
+    //     reading: "a",
+    //     timesGuessed: 2,
+    //     timeStamp: 4,
+    //   },
+    //   level: 3
+    // }
+    // const progress2 = {
+    //   i: {
+    //     signID: 2,
+    //     timesGuessed: 2,
+    //     timeStamp: 0,
+    //   },
+    //   level: 0
+    // }
+    // const progressMap = new Map<number, Progress> ([
+    //   [1, progress],
+    //   [2, progress2]
+    // ])
+
     const userData: UserModel = {
       uid: user.uid,
       email: user.email,
@@ -122,9 +142,23 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       lastName: formData.lastName,
       displayName: formData.firstName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-      phoneNumber: "444",
-      providerId: ""
+      phoneNumber: "",
+      providerId: "",
+      hiraganaProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesGuessed: 2,
+          timeStamp: 4,
+        },
+        2: {
+          reading: "i",
+          timesGuessed: 2,
+          timeStamp: 4,
+        }
+      },
+      // // @ts-ignore
+      // hiraganaProgressMap: Object.fromEntries(progressMap),
     }
     return userRef.set(userData, {
       merge: true
@@ -140,9 +174,21 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       lastName: user.lastName='bbb',
       displayName: "aaa bbb",
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-      phoneNumber: "444",
-      providerId: ""
+      phoneNumber: "",
+      providerId: "",
+      hiraganaProgressObject: {
+        1: {
+          reading: "a",
+          timesGuessed: 2,
+          timeStamp: 4,
+        },
+        2: {
+          reading: "i",
+          timesGuessed: 2,
+          timeStamp: 4,
+        },
+        level: 2
+      },
     }
     return userRef.set(userData, {
       merge: true
@@ -156,6 +202,4 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       this.router.navigate(['sign-in']);
     })
   }
-
-
 }

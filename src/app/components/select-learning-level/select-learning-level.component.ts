@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {KanaService} from "../../services/kana.service";
 import {Router} from "@angular/router";
-import {AuthService} from "../../services/auth-service.service";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-select-learning-level',
@@ -11,10 +11,12 @@ import {AuthService} from "../../services/auth-service.service";
 })
 export class SelectLearningLevelComponent implements OnInit {
 
+  userData: any; // Save logged in user data
+
   kanaSelection: FormGroup;
   kanaSetList = new Set<number>();
 
-  constructor(fb: FormBuilder, private kanaService: KanaService, private router: Router, public authService: AuthService) {
+  constructor(fb: FormBuilder, private kanaService: KanaService, private router: Router, public afAuth: AngularFireAuth) {
     this.kanaSelection = fb.group({
       a: false,
       ka: false,
@@ -47,6 +49,11 @@ export class SelectLearningLevelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.afAuth.currentUser.then((user) => {
+      if(user) {
+        this.userData = user;
+      }
+    });
   }
 
   onSubmit(type: string): void {

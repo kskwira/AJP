@@ -1,4 +1,4 @@
-<div class="row" *ngIf="authService.userData as user">
+<div class="row" *ngIf="userData as user">
   <mat-card class="user-card">
     <mat-card-header>
       <div mat-card-avatar class="user-header-image"></div>
@@ -9,9 +9,39 @@
       <p>Email: <strong>{{user.email}}</strong></p>
       <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
       <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
+      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
+      <p>Last sign in time: <strong>{{user.metadata.lastSignInTime}}</strong></p>
+      <p>Creation time: <strong>{{user.metadata.creationTime}}</strong></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
+<!--      <button mat-stroked-button color="warn" (click)="retrieveUserDocumentById(user.uid)">retrieve current user</button>-->
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+<div class="row" *ngIf="currentUser as user" >
+  <mat-card class="user-card">
+    <mat-card-header>
+      <div mat-card-avatar class="user-header-image"></div>
+      <mat-card-title><h1>Hello: <strong>{{user.displayName}}</strong></h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>UserModel ID: <strong>{{user.uid}}</strong></p>
+      <p>Email: <strong>{{user.email}}</strong></p>
+      <p>First Name: <strong>{{user.firstName}}</strong></p>
+      <p>Last Name: <strong>{{user.lastName}}</strong></p>
+      <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
+      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
+      <p>Hiragana Progress Level: <strong>{{user.hiraganaProgressObject.level}}</strong></p>
+      <p>Hiragana Progress Object: <strong>{{user.hiraganaProgressObject | json}}</strong></p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<p>{{currentUser | json}}</p>
+<button mat-stroked-button color="primary" (click)="update()">Update Level</button>
