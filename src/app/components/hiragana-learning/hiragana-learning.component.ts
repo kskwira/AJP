@@ -12,38 +12,57 @@ export class HiraganaLearningComponent implements OnInit {
 
   hiragana?: Kana[];
   hiraganaLearn?: Kana[];
-  title = '';
   result = '';
-  routeParam: number = 0;
-  randomNumber = 0;
   numberAnswered = 0;
-  numberLearned = 0;
-  arrayLastId = 0;
-  numberOfCorrect = 0;
-  orderArray = [];
+  numberAnsweredCorrect = 0;
+  sortedArray: number[] = [];
+  sortedArrayIndex = 0;
+  randomizedArray: number[] = [];
+  randomizedArrayIndex = 0;
   answered = false;
-  learning = true;
+  learningEnd = false;
+  quizEnd = false;
 
 
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
     for (let v of this.kanaService.kanaSetList) {
-      // @ts-ignore
-      this.orderArray.push(v);
-      console.log(v);
+      this.sortedArray.push(v);
     }
-    this.arrayLastId = this.orderArray[this.orderArray.length-1];
-    console.log(this.orderArray);
+
+    this.randomizedArray.push(...this.sortedArray);
+    this.shuffleArray(this.randomizedArray);
+
+    for (let v of this.kanaService.kanaSetList) {
+      this.sortedArray.push(v);
+    }
+
+    console.log(this.sortedArray);
+    console.log(this.randomizedArray);
   }
 
-  score(correct: number, total: number): number{
-    return correct / total
+  //The Fisher-Yates algorithm
+  shuffleArray(array: Array<number>): Array<number> {
+    let m = array.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
   }
 
   learnSession(id: number): void {
-    this.numberLearned += 1;
-    if (this.numberLearned <= this.orderArray.length) {
+    this.sortedArrayIndex += 1;
+
+    if (this.sortedArrayIndex <= this.sortedArray.length) {
       this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
@@ -55,9 +74,9 @@ export class HiraganaLearningComponent implements OnInit {
       });
     }
     else {
-      this.answered = false;
       this.result = '';
-      this.learning = false;
+      this.answered = false;
+      this.learningEnd = true;
       this.hiraganaLearn = undefined;
       this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
         map(changes =>
@@ -76,12 +95,29 @@ export class HiraganaLearningComponent implements OnInit {
 
     if (reading == answer) {
       this.result = "Poprawna odpowiedź";
+      this.randomizedArray.splice(this.randomizedArrayIndex, 1);
       this.numberAnswered = this.numberAnswered + 1
-      this.numberOfCorrect = this.numberOfCorrect + 1
-    } else {
+      this.numberAnsweredCorrect = this.numberAnsweredCorrect + 1
+      console.log("index when correct = " + this.randomizedArrayIndex);
+      console.log(this.randomizedArray)
+    }
+    else {
       this.result = "Zła odpowiedź";
       this.numberAnswered = this.numberAnswered + 1
+      this.randomizedArrayIndex++;
+      console.log("index when fail = " + this.randomizedArrayIndex);
+      console.log(this.randomizedArray)
     }
+
+    if (this.randomizedArrayIndex >= this.randomizedArray.length)
+      this.randomizedArrayIndex = 0;
+
+    if (!this.randomizedArray.length)
+      this.quizEnd = true;
+  }
+
+  score(correct: number, total: number): number{
+    return correct / total
   }
 
 }

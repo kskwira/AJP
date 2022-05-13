@@ -1,30 +1,11 @@
 <div>
-  <button mat-stroked-button color="primary" (click)="learnSession(orderArray[0])">Rozpocznij naukę</button>
+  <button mat-stroked-button color="primary" (click)="learnSession(sortedArray[sortedArrayIndex])">Rozpocznij naukę</button>
   <!--  <input matInput type="number" #amount>-->
 </div>
 <mat-grid-list cols="2" rowHeight="480px" gutterSize="4px">
   <mat-grid-tile>
-    <mat-card *ngFor="let hiragana of hiragana" class="user-card">
-      <mat-card-content>
-        <app-flip-card [toggleProperty] = answered>
-          <flip-card-front>
-            <p>{{ hiragana.sign}}</p>
-          </flip-card-front>
-          <flip-card-back>
-            <p>{{ hiragana.reading}}</p>
-          </flip-card-back>
-        </app-flip-card>
-        <mat-card-actions>
-          <input matInput type="text" id="single" #guess>
-          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading)" [disabled]="answered">Sprawdź</button>
-          <button mat-raised-button color="primary" type="submit" *ngIf="orderArray[numberAnswered]<=arrayLastId" (click)="learnSession(orderArray[numberAnswered])" [disabled]="!answered">Następny znak Q</button>
-          <br/>
-          <mat-error>{{result}}</mat-error>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
     <mat-card *ngFor="let hiraganaLearn of hiraganaLearn" class="user-card">
-      <mat-card-content *ngIf="learning">
+      <mat-card-content *ngIf="!learningEnd">
         <app-flip-card>
           <flip-card-front>
             <p>{{ hiraganaLearn.sign}}</p>
@@ -43,19 +24,38 @@
           </flip-card-back>
         </app-flip-card>
         <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit" *ngIf="orderArray[numberLearned]<=arrayLastId; else lastSign" (click)="learnSession(orderArray[numberLearned])" >Następny znak</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="sortedArrayIndex < sortedArray.length; else lastSign" (click)="learnSession(sortedArray[sortedArrayIndex])" >Następny znak nauka</button>
           <ng-template #lastSign>
-            <button mat-raised-button color="primary" type="submit" (click)="learnSession(orderArray[numberAnswered])" >Następny znak Q</button>
+            <button mat-raised-button color="primary" type="submit" (click)="learnSession(randomizedArray[randomizedArrayIndex])" >Start Quiz</button>
           </ng-template>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let hiragana of hiragana" class="user-card">
+      <mat-card-content>
+        <app-flip-card [toggleProperty] = answered>
+          <flip-card-front>
+            <p>{{ hiragana.sign}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p>{{ hiragana.reading}}</p>
+          </flip-card-back>
+        </app-flip-card>
+        <mat-card-actions>
+          <input matInput type="text" id="single" #guess>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading)" [disabled]="answered">Sprawdź</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="learnSession(randomizedArray[randomizedArrayIndex])" [disabled]="!answered">Następny znak Quiz</button>
+          <br/>
+          <mat-error>{{result}}</mat-error>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
-<div *ngIf="numberAnswered>=orderArray.length">
+<div *ngIf="quizEnd">
   <mat-card>
     <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
-    <p>Ilość poprawnych odpowiedzi: {{numberOfCorrect}}</p>
-    <p>Wynik wynosi: {{score(numberOfCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+    <p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
   </mat-card>
 </div>

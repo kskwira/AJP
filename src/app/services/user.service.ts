@@ -3,6 +3,8 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import {UserModel} from "../models/user.model";
 import firebase from "firebase/compat/app";
 import firestore = firebase.firestore;
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,17 @@ export class UserService {
 
   constructor(private db: AngularFirestore) {
     this.userRef = db.collection(this.usersDbPath);
+  }
+
+  getProfileType(id: string): Observable<string> {
+
+    return this.db
+      .collection('users')
+      .doc(id)
+      .valueChanges()
+      .pipe(map((doc: any) => {
+        return doc.userType;
+      }));
   }
 
   getAllUsers(): AngularFirestoreCollection<UserModel> {
