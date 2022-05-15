@@ -3,7 +3,7 @@
 <mat-list>
 
   <mat-list-item>Hiragana</mat-list-item>
-  <form *ngIf="hiraganaLevel" [formGroup]="hiraganaSelection" (ngSubmit)="onSubmit('hiragana')">
+  <form *ngIf="timeOut" [formGroup]="hiraganaSelection" (ngSubmit)="onSubmit('hiragana')">
     <div class="checkbox-row">
       <mat-checkbox formControlName="a" >a i u e o</mat-checkbox>
       <mat-checkbox formControlName="ka" >ka ki ku ke ko</mat-checkbox>
@@ -43,7 +43,7 @@
   <mat-divider></mat-divider>
 
   <mat-list-item>Katakana</mat-list-item>
-  <form [formGroup]="katakanaSelection" (ngSubmit)="onSubmit('katakana')">
+  <form *ngIf="timeOut" [formGroup]="katakanaSelection" (ngSubmit)="onSubmit('katakana')">
     <div class="checkbox-row">
       <mat-checkbox formControlName="a" >a i u e o</mat-checkbox>
       <mat-checkbox formControlName="ka" >ka ki ku ke ko</mat-checkbox>

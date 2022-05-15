@@ -10,7 +10,6 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 export class NavBarComponent implements OnInit {
 
   constructor(public afAuth: AngularFireAuth, public authService: AuthService) {
-    this.authService.SignOut()
   }
 
   ngOnInit(): void {

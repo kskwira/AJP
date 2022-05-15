@@ -21,77 +21,87 @@ export class SelectLearningLevelComponent implements OnInit {
   isDisabled = true;
   hiraganaLevel = 0;
   katakanaLevel = 0;
+  timeOut = false;
 
   constructor(private fb: FormBuilder, private kanaService: KanaService, private router: Router,
               public afAuth: AngularFireAuth, private userService: UserService) {
-    this.hiraganaSelection = fb.group({
-      a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'hiragana')}),
-      ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'hiragana')}),
-      sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'hiragana')}),
-      ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'hiragana')}),
-      na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'hiragana')}),
-      ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'hiragana')}),
-      ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'hiragana')}),
-      ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'hiragana')}),
-      ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'hiragana')}),
-      wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'hiragana')}),
-      ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'hiragana')}),
-      za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'hiragana')}),
-      da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'hiragana')}),
-      ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'hiragana')}),
-      pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'hiragana')}),
-      kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'hiragana')}),
-      sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'hiragana')}),
-      cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'hiragana')}),
-      nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'hiragana')}),
-      hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'hiragana')}),
-      mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'hiragana')}),
-      rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'hiragana')}),
-      gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'hiragana')}),
-      ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'hiragana')}),
-      dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'hiragana')}),
-      bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'hiragana')}),
-      pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'hiragana')}),
-    });
-    this.katakanaSelection = fb.group({
-      a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'katakana')}),
-      ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'katakana')}),
-      sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'katakana')}),
-      ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'katakana')}),
-      na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'katakana')}),
-      ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'katakana')}),
-      ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'katakana')}),
-      ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'katakana')}),
-      ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'katakana')}),
-      wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'katakana')}),
-      ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'katakana')}),
-      za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'katakana')}),
-      da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'katakana')}),
-      ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'katakana')}),
-      pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'katakana')}),
-      kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'katakana')}),
-      sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'katakana')}),
-      cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'katakana')}),
-      nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'katakana')}),
-      hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'katakana')}),
-      mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'katakana')}),
-      rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'katakana')}),
-      gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'katakana')}),
-      ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'katakana')}),
-      dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'katakana')}),
-      bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'katakana')}),
-      pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'katakana')}),
-    });
-  }
 
-  ngOnInit(): void {
     this.afAuth.currentUser.then((user) => {
-      if(user) {
+      if (user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
       }
     });
-    console.log(this.hiraganaLevel)
+
+    this.hiraganaSelection = fb.group({});
+    this.katakanaSelection = fb.group({});
+  }
+
+  ngOnInit() {
+
+    setTimeout(() => {
+      this.hiraganaSelection = this.fb.group({
+        a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'hiragana')}),
+        ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'hiragana')}),
+        sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'hiragana')}),
+        ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'hiragana')}),
+        na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'hiragana')}),
+        ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'hiragana')}),
+        ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'hiragana')}),
+        ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'hiragana')}),
+        ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'hiragana')}),
+        wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'hiragana')}),
+        ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'hiragana')}),
+        za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'hiragana')}),
+        da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'hiragana')}),
+        ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'hiragana')}),
+        pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'hiragana')}),
+        kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'hiragana')}),
+        sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'hiragana')}),
+        cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'hiragana')}),
+        nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'hiragana')}),
+        hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'hiragana')}),
+        mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'hiragana')}),
+        rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'hiragana')}),
+        gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'hiragana')}),
+        ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'hiragana')}),
+        dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'hiragana')}),
+        bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'hiragana')}),
+        pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'hiragana')}),
+      });
+      this.katakanaSelection = this.fb.group({
+        a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'katakana')}),
+        ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'katakana')}),
+        sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'katakana')}),
+        ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'katakana')}),
+        na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'katakana')}),
+        ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'katakana')}),
+        ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'katakana')}),
+        ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'katakana')}),
+        ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'katakana')}),
+        wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'katakana')}),
+        ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'katakana')}),
+        za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'katakana')}),
+        da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'katakana')}),
+        ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'katakana')}),
+        pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'katakana')}),
+        kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'katakana')}),
+        sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'katakana')}),
+        cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'katakana')}),
+        nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'katakana')}),
+        hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'katakana')}),
+        mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'katakana')}),
+        rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'katakana')}),
+        gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'katakana')}),
+        ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'katakana')}),
+        dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'katakana')}),
+        bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'katakana')}),
+        pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'katakana')}),
+      });
+      this.timeOut = true;
+      console.log("Inside timeout " + this.hiraganaLevel)
+    }, 2000)
+    console.log("Outside timeout " + this.hiraganaLevel)
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -99,7 +109,7 @@ export class SelectLearningLevelComponent implements OnInit {
       .then((result) => {
         this.currentUser = result.data()
         this.hiraganaLevel = this.currentUser.hiraganaProgressObject.level;
-        console.log(this.hiraganaLevel)
+        console.log("In retrieveDoc " + this.hiraganaLevel)
       });
   }
 
@@ -118,6 +128,75 @@ export class SelectLearningLevelComponent implements OnInit {
         case 'ta':
           return this.hiraganaLevel < 4;
 
+        case 'na':
+          return this.hiraganaLevel < 5;
+
+        case 'ha':
+          return this.hiraganaLevel < 6;
+
+        case 'ma':
+          return this.hiraganaLevel < 7;
+
+        case 'ya':
+          return this.hiraganaLevel < 8;
+
+        case 'ra':
+          return this.hiraganaLevel < 9;
+
+        case 'wa':
+          return this.hiraganaLevel < 10;
+
+        case 'ga':
+          return this.hiraganaLevel < 11;
+
+        case 'za':
+          return this.hiraganaLevel < 12;
+
+        case 'da':
+          return this.hiraganaLevel < 13;
+
+        case 'ba':
+          return this.hiraganaLevel < 14;
+
+        case 'pa':
+          return this.hiraganaLevel < 15;
+
+        case 'kya':
+          return this.hiraganaLevel < 16;
+
+        case 'sha':
+          return this.hiraganaLevel < 17;
+
+        case 'cha':
+          return this.hiraganaLevel < 18;
+
+        case 'nya':
+          return this.hiraganaLevel < 19;
+
+        case 'hya':
+          return this.hiraganaLevel < 20;
+
+        case 'mya':
+          return this.hiraganaLevel < 21;
+
+        case 'rya':
+          return this.hiraganaLevel < 22;
+
+        case 'gya':
+          return this.hiraganaLevel < 23;
+
+        case 'ja':
+          return this.hiraganaLevel < 24;
+
+        case 'dja':
+          return this.hiraganaLevel < 25;
+
+        case 'bya':
+          return this.hiraganaLevel < 26;
+
+        case 'pya':
+          return this.hiraganaLevel < 27;
+
         default:
           return true;
       }
@@ -135,6 +214,75 @@ export class SelectLearningLevelComponent implements OnInit {
 
         case 'ta':
           return this.katakanaLevel < 4;
+
+        case 'na':
+          return this.katakanaLevel < 5;
+
+        case 'ha':
+          return this.katakanaLevel < 6;
+
+        case 'ma':
+          return this.katakanaLevel < 7;
+
+        case 'ya':
+          return this.katakanaLevel < 8;
+
+        case 'ra':
+          return this.katakanaLevel < 9;
+
+        case 'wa':
+          return this.katakanaLevel < 10;
+
+        case 'ga':
+          return this.katakanaLevel < 11;
+
+        case 'za':
+          return this.katakanaLevel < 12;
+
+        case 'da':
+          return this.katakanaLevel < 13;
+
+        case 'ba':
+          return this.katakanaLevel < 14;
+
+        case 'pa':
+          return this.katakanaLevel < 15;
+
+        case 'kya':
+          return this.katakanaLevel < 16;
+
+        case 'sha':
+          return this.katakanaLevel < 17;
+
+        case 'cha':
+          return this.katakanaLevel < 18;
+
+        case 'nya':
+          return this.katakanaLevel < 19;
+
+        case 'hya':
+          return this.katakanaLevel < 20;
+
+        case 'mya':
+          return this.katakanaLevel < 21;
+
+        case 'rya':
+          return this.katakanaLevel < 22;
+
+        case 'gya':
+          return this.katakanaLevel < 23;
+
+        case 'ja':
+          return this.katakanaLevel < 24;
+
+        case 'dja':
+          return this.katakanaLevel < 25;
+
+        case 'bya':
+          return this.katakanaLevel < 26;
+
+        case 'pya':
+          return this.katakanaLevel < 27;
 
         default:
           return true;
