@@ -15,6 +15,8 @@ import {SelectQuizLevelComponent} from "./components/select-quiz-level/select-qu
 import {SelectLearningLevelComponent} from "./components/select-learning-level/select-learning-level.component";
 import {HiraganaLearningComponent} from "./components/hiragana-learning/hiragana-learning.component";
 import {KatakanaLearningComponent} from "./components/katakana-learning/katakana-learning.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
+import {HelpComponent} from "./help/help.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'select-quiz-level', component: SelectQuizLevelComponent },
   { path: 'select-learning-level', component: SelectLearningLevelComponent },
   { path: 'learning/hiragana', component: HiraganaLearningComponent },
+  { path: 'about-us', component: AboutUsComponent},
+  { path: 'help' , component: HelpComponent},
   { path: 'learning/katakana', component: KatakanaLearningComponent }
 ];
 

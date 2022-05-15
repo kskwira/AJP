@@ -1,0 +1,7 @@
+img{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  max-height: 80%;
+}

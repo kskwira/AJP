@@ -40,6 +40,8 @@ import { SelectLearningLevelComponent } from './components/select-learning-level
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HiraganaLearningComponent } from './components/hiragana-learning/hiragana-learning.component';
 import { KatakanaLearningComponent } from './components/katakana-learning/katakana-learning.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
@@ -65,6 +67,8 @@ import { KatakanaLearningComponent } from './components/katakana-learning/kataka
     SelectLearningLevelComponent,
     HiraganaLearningComponent,
     KatakanaLearningComponent,
+    AboutUsComponent,
+    HelpComponent,
   ],
     imports: [
         CommonModule,
