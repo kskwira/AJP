@@ -114,26 +114,6 @@ sign up with username/password and sign in with social auth
 provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserDataSignUp(user: any, formData: any) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    // const progress = {
-    //   1: {
-    //     reading: "a",
-    //     timesGuessed: 2,
-    //     timeStamp: 4,
-    //   },
-    //   level: 3
-    // }
-    // const progress2 = {
-    //   i: {
-    //     signID: 2,
-    //     timesGuessed: 2,
-    //     timeStamp: 0,
-    //   },
-    //   level: 0
-    // }
-    // const progressMap = new Map<number, Progress> ([
-    //   [1, progress],
-    //   [2, progress2]
-    // ])
 
     const userData: UserModel = {
       uid: user.uid,
@@ -144,17 +124,57 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       photoURL: user.photoURL,
       phoneNumber: "",
       providerId: "",
+      isAdmin: false,
       hiraganaProgressObject: {
         level: 1,
         1: {
           reading: "a",
-          timesGuessed: 2,
-          timeStamp: 4,
+          timesCorrect: [],
+          timesAnswered: 0,
         },
         2: {
           reading: "i",
-          timesGuessed: 2,
-          timeStamp: 4,
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      katakanaProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
+        },
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      kanjiProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
+        },
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      vocabularyProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
+        },
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
         }
       },
       // // @ts-ignore
@@ -176,18 +196,58 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       photoURL: user.photoURL,
       phoneNumber: "",
       providerId: "",
+      isAdmin: false,
       hiraganaProgressObject: {
+        level: 1,
         1: {
           reading: "a",
-          timesGuessed: 2,
-          timeStamp: 4,
+          timesCorrect: [],
+          timesAnswered: 0,
         },
         2: {
           reading: "i",
-          timesGuessed: 2,
-          timeStamp: 4,
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      katakanaProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
         },
-        level: 2
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      kanjiProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
+        },
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
+      },
+      vocabularyProgressObject: {
+        level: 1,
+        1: {
+          reading: "a",
+          timesCorrect: [],
+          timesAnswered: 0,
+        },
+        2: {
+          reading: "i",
+          timesCorrect: [],
+          timesAnswered: 0,
+        }
       },
     }
     return userRef.set(userData, {

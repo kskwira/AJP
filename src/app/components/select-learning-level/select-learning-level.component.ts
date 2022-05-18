@@ -21,6 +21,8 @@ export class SelectLearningLevelComponent implements OnInit {
   isDisabled = true;
   hiraganaLevel = 0;
   katakanaLevel = 0;
+  kanjiLevel = 0;
+  vocabularyLevel = 0;
   timeOut = false;
 
   constructor(private fb: FormBuilder, private kanaService: KanaService, private router: Router,
@@ -109,6 +111,9 @@ export class SelectLearningLevelComponent implements OnInit {
       .then((result) => {
         this.currentUser = result.data()
         this.hiraganaLevel = this.currentUser.hiraganaProgressObject.level;
+        this.katakanaLevel = this.currentUser.katakanaProgressObject.level;
+        this.kanjiLevel = this.currentUser.kanjiProgressObject.level;
+        this.vocabularyLevel = this.currentUser.vocabularyProgressObject.level;
         console.log("In retrieveDoc " + this.hiraganaLevel)
       });
   }

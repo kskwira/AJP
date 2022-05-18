@@ -5,14 +5,17 @@ export interface Progress {
   level: number;
   [signID: number]: {
     reading: string;
-    timesGuessed: number;
-    timeStamp: number;
+    timesCorrect: Array<number>;
+    timesAnswered: number;
   },
 }
 
 export interface UserModel extends UserInfo{
   firstName: string;
   lastName: string;
+  isAdmin: boolean;
   hiraganaProgressObject: Progress;
-  // hiraganaProgressMap: Map <number, Progress>;
+  katakanaProgressObject: Progress;
+  kanjiProgressObject: Progress;
+  vocabularyProgressObject: Progress;
 }

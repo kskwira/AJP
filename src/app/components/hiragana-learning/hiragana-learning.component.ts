@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {KanaService} from "../../services/kana.service";
 import {Kana} from "../../models/kana.model";
 import {map} from "rxjs/operators";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-hiragana-learning',
@@ -9,6 +11,9 @@ import {map} from "rxjs/operators";
   styleUrls: ['./hiragana-learning.component.css']
 })
 export class HiraganaLearningComponent implements OnInit {
+
+  userData: any; // Save logged in user data
+  currentUser: any;
 
   hiragana?: Kana[];
   hiraganaLearn?: Kana[];
@@ -19,12 +24,20 @@ export class HiraganaLearningComponent implements OnInit {
   sortedArrayIndex = 0;
   randomizedArray: number[] = [];
   randomizedArrayIndex = 0;
+  hiraganaLevel = 0;
   answered = false;
   learningEnd = false;
   quizEnd = false;
 
 
-  constructor(private kanaService: KanaService) { }
+  constructor(private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
+    this.afAuth.currentUser.then((user) => {
+      if (user) {
+        this.userData = user;
+        this.retrieveUserDocumentById(user.uid);
+      }
+    });
+  }
 
   ngOnInit(): void {
     for (let v of this.kanaService.kanaSetList) {
@@ -32,14 +45,26 @@ export class HiraganaLearningComponent implements OnInit {
     }
 
     this.randomizedArray.push(...this.sortedArray);
+    this.randomizedArray.push(...this.sortedArray);
     this.shuffleArray(this.randomizedArray);
-
-    for (let v of this.kanaService.kanaSetList) {
-      this.sortedArray.push(v);
-    }
 
     console.log(this.sortedArray);
     console.log(this.randomizedArray);
+  }
+
+  retrieveUserDocumentById(userId: string): void {
+    this.userService.getSingleUserDocumentById(userId).ref.get()
+      .then((result) => {
+        this.currentUser = result.data()
+        this.hiraganaLevel = this.currentUser.hiraganaProgressObject.level;
+        console.log("In retrieveDoc " + this.hiraganaLevel)
+      });
+  }
+
+  update(): void {
+    this.currentUser.hiraganaProgressObject.level += 1;
+    this.currentUser.hiraganaProgressObject[1].timesGuessed +=1;
+    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
   }
 
   //The Fisher-Yates algorithm
@@ -112,8 +137,10 @@ export class HiraganaLearningComponent implements OnInit {
     if (this.randomizedArrayIndex >= this.randomizedArray.length)
       this.randomizedArrayIndex = 0;
 
-    if (!this.randomizedArray.length)
+    if (!this.randomizedArray.length) {
       this.quizEnd = true;
+      this.update();
+    }
   }
 
   score(correct: number, total: number): number{
