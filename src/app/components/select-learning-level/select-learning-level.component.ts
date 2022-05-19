@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {KanaService} from "../../services/kana.service";
 import {Router} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -15,15 +15,53 @@ export class SelectLearningLevelComponent implements OnInit {
   userData: any; // Save logged in user data
   currentUser: any;
 
-  hiraganaSelection: FormGroup;
-  katakanaSelection: FormGroup;
   kanaSetList = new Set<number>();
-  isDisabled = true;
   hiraganaLevel = 0;
   katakanaLevel = 0;
   kanjiLevel = 0;
   vocabularyLevel = 0;
-  timeOut = false;
+  levelUp = false;
+
+  hiraganaForm: FormGroup;
+  katakanaForm: FormGroup;
+
+  singsData = [
+    { id: 1, name: "a" },
+    { id: 2, name: "ka" },
+    { id: 3, name: "sa" },
+    { id: 4, name: "ta" },
+    { id: 5, name: "na" },
+    { id: 6, name: "ha" },
+    { id: 7, name: "ma" },
+    { id: 8, name: "ya" },
+    { id: 9, name: "ra" },
+    { id: 10, name: "wa" },
+    { id: 11, name: "ga" },
+    { id: 12, name: "za" },
+    { id: 13, name: "da" },
+    { id: 14, name: "ba" },
+    { id: 15, name: "pa" },
+    { id: 16, name: "kya" },
+    { id: 17, name: "sha" },
+    { id: 18, name: "cha" },
+    { id: 19, name: "nya" },
+    { id: 20, name: "hya" },
+    { id: 21, name: "mya" },
+    { id: 22, name: "rya" },
+    { id: 23, name: "gya" },
+    { id: 24, name: "ja" },
+    { id: 25, name: "dja" },
+    { id: 26, name: "bya" },
+    { id: 27, name: "pya" }
+  ];
+
+  get hiraganaSignsFormArray() {
+    return this.hiraganaForm.controls['signs'] as FormArray;
+  }
+
+  get katakanaSignsFormArray() {
+    return this.katakanaForm.controls['signs'] as FormArray;
+  }
 
   constructor(private fb: FormBuilder, private kanaService: KanaService, private router: Router,
               public afAuth: AngularFireAuth, private userService: UserService) {
@@ -35,75 +73,23 @@ export class SelectLearningLevelComponent implements OnInit {
       }
     });
 
-    this.hiraganaSelection = fb.group({});
-    this.katakanaSelection = fb.group({});
+    this.hiraganaForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
+    this.katakanaForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
   }
 
   ngOnInit() {
+    this.addCheckboxesToForm();
+  }
 
-    setTimeout(() => {
-      this.hiraganaSelection = this.fb.group({
-        a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'hiragana')}),
-        ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'hiragana')}),
-        sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'hiragana')}),
-        ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'hiragana')}),
-        na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'hiragana')}),
-        ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'hiragana')}),
-        ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'hiragana')}),
-        ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'hiragana')}),
-        ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'hiragana')}),
-        wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'hiragana')}),
-        ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'hiragana')}),
-        za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'hiragana')}),
-        da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'hiragana')}),
-        ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'hiragana')}),
-        pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'hiragana')}),
-        kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'hiragana')}),
-        sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'hiragana')}),
-        cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'hiragana')}),
-        nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'hiragana')}),
-        hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'hiragana')}),
-        mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'hiragana')}),
-        rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'hiragana')}),
-        gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'hiragana')}),
-        ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'hiragana')}),
-        dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'hiragana')}),
-        bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'hiragana')}),
-        pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'hiragana')}),
-      });
-      this.katakanaSelection = this.fb.group({
-        a: new FormControl({value: false, disabled: this.checkDisableKana('a', 'katakana')}),
-        ka: new FormControl({value: false, disabled: this.checkDisableKana('ka', 'katakana')}),
-        sa: new FormControl({value: false, disabled: this.checkDisableKana('sa', 'katakana')}),
-        ta: new FormControl({value: false, disabled: this.checkDisableKana('ta', 'katakana')}),
-        na: new FormControl({value: false, disabled: this.checkDisableKana('na', 'katakana')}),
-        ha: new FormControl({value: false, disabled: this.checkDisableKana('ha', 'katakana')}),
-        ma: new FormControl({value: false, disabled: this.checkDisableKana('ma', 'katakana')}),
-        ya: new FormControl({value: false, disabled: this.checkDisableKana('ya', 'katakana')}),
-        ra: new FormControl({value: false, disabled: this.checkDisableKana('ra', 'katakana')}),
-        wa: new FormControl({value: false, disabled: this.checkDisableKana('wa', 'katakana')}),
-        ga: new FormControl({value: false, disabled: this.checkDisableKana('ga', 'katakana')}),
-        za: new FormControl({value: false, disabled: this.checkDisableKana('za', 'katakana')}),
-        da: new FormControl({value: false, disabled: this.checkDisableKana('da', 'katakana')}),
-        ba: new FormControl({value: false, disabled: this.checkDisableKana('ba', 'katakana')}),
-        pa: new FormControl({value: false, disabled: this.checkDisableKana('pa', 'katakana')}),
-        kya: new FormControl({value: false, disabled: this.checkDisableKana('kya', 'katakana')}),
-        sha: new FormControl({value: false, disabled: this.checkDisableKana('sha', 'katakana')}),
-        cha: new FormControl({value: false, disabled: this.checkDisableKana('cha', 'katakana')}),
-        nya: new FormControl({value: false, disabled: this.checkDisableKana('nya', 'katakana')}),
-        hya: new FormControl({value: false, disabled: this.checkDisableKana('hya', 'katakana')}),
-        mya: new FormControl({value: false, disabled: this.checkDisableKana('mya', 'katakana')}),
-        rya: new FormControl({value: false, disabled: this.checkDisableKana('rya', 'katakana')}),
-        gya: new FormControl({value: false, disabled: this.checkDisableKana('gya', 'katakana')}),
-        ja: new FormControl({value: false, disabled: this.checkDisableKana('ja', 'katakana')}),
-        dja: new FormControl({value: false, disabled: this.checkDisableKana('dja', 'katakana')}),
-        bya: new FormControl({value: false, disabled: this.checkDisableKana('bya', 'katakana')}),
-        pya: new FormControl({value: false, disabled: this.checkDisableKana('pya', 'katakana')}),
-      });
-      this.timeOut = true;
-      console.log("Inside timeout " + this.hiraganaLevel)
-    }, 2000)
-    console.log("Outside timeout " + this.hiraganaLevel)
+  private addCheckboxesToForm() {
+    this.singsData.forEach(() => this.hiraganaSignsFormArray.push(new FormControl(false)));
+    this.singsData.forEach(() => this.katakanaSignsFormArray.push(new FormControl(false)));
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -296,178 +282,203 @@ export class SelectLearningLevelComponent implements OnInit {
   }
 
   onSubmit(type: string): void {
+    const selectedHiraganaSignIds = this.hiraganaForm.value.signs
+      .map((checked: any, i: number) => checked ? this.singsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    const selectedKatakanaSignIds = this.katakanaForm.value.signs
+      .map((checked: any, i: number) => checked ? this.singsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    console.log("Hiragana: ", selectedHiraganaSignIds);
+    console.log("Katakana: ", selectedKatakanaSignIds);
+
     if (type == "hiragana") {
-      if (this.hiraganaSelection.value.a)
-        this.kanaSetList.add(1).add(2).add(3).add(4).add(5)
+      for (let i = 0; i < selectedHiraganaSignIds.length; i++) {
+        if (selectedHiraganaSignIds[i] == 1)
+          this.kanaSetList.add(1).add(2).add(3).add(4).add(5);
 
-      if (this.hiraganaSelection.value.ka)
-        this.kanaSetList.add(6).add(7).add(8).add(9).add(10)
+        if (selectedHiraganaSignIds[i] == 2)
+          this.kanaSetList.add(6).add(7).add(8).add(9).add(10);
 
-      if (this.hiraganaSelection.value.sa)
-        this.kanaSetList.add(11).add(12).add(13).add(14).add(15)
+        if (selectedHiraganaSignIds[i] == 3)
+          this.kanaSetList.add(11).add(12).add(13).add(14).add(15);
 
-      if (this.hiraganaSelection.value.ta)
-        this.kanaSetList.add(16).add(17).add(18).add(19).add(20)
+        if (selectedHiraganaSignIds[i] == 4)
+          this.kanaSetList.add(16).add(17).add(18).add(19).add(20);
 
-      if (this.hiraganaSelection.value.na)
-        this.kanaSetList.add(21).add(22).add(23).add(24).add(25)
+        if (selectedHiraganaSignIds[i] == 5)
+          this.kanaSetList.add(21).add(22).add(23).add(24).add(25)
 
-      if (this.hiraganaSelection.value.ha)
-        this.kanaSetList.add(26).add(27).add(28).add(29).add(30)
+        if (selectedHiraganaSignIds[i] == 6)
+          this.kanaSetList.add(26).add(27).add(28).add(29).add(30)
 
-      if (this.hiraganaSelection.value.ma)
-        this.kanaSetList.add(31).add(32).add(33).add(34).add(35)
+        if (selectedHiraganaSignIds[i] == 7)
+          this.kanaSetList.add(31).add(32).add(33).add(34).add(35)
 
-      if (this.hiraganaSelection.value.ya)
-        this.kanaSetList.add(36).add(37).add(38)
+        if (selectedHiraganaSignIds[i] == 8)
+          this.kanaSetList.add(36).add(37).add(38)
 
-      if (this.hiraganaSelection.value.ra)
-        this.kanaSetList.add(39).add(40).add(41).add(42).add(43)
+        if (selectedHiraganaSignIds[i] == 9)
+          this.kanaSetList.add(39).add(40).add(41).add(42).add(43)
 
-      if (this.hiraganaSelection.value.wa)
-        this.kanaSetList.add(44).add(45).add(46)
+        if (selectedHiraganaSignIds[i] == 10)
+          this.kanaSetList.add(44).add(45).add(46)
 
-      if (this.hiraganaSelection.value.ga)
-        this.kanaSetList.add(47).add(48).add(49).add(50).add(51)
+        if (selectedHiraganaSignIds[i] == 11)
+          this.kanaSetList.add(47).add(48).add(49).add(50).add(51)
 
-      if (this.hiraganaSelection.value.za)
-        this.kanaSetList.add(52).add(53).add(54).add(55).add(56)
+        if (selectedHiraganaSignIds[i] == 12)
+          this.kanaSetList.add(52).add(53).add(54).add(55).add(56)
 
-      if (this.hiraganaSelection.value.da)
-        this.kanaSetList.add(57).add(58).add(59).add(60).add(61)
+        if (selectedHiraganaSignIds[i] == 13)
+          this.kanaSetList.add(57).add(58).add(59).add(60).add(61)
 
-      if (this.hiraganaSelection.value.ba)
-        this.kanaSetList.add(62).add(63).add(64).add(65).add(66)
+        if (selectedHiraganaSignIds[i] == 14)
+          this.kanaSetList.add(62).add(63).add(64).add(65).add(66)
 
-      if (this.hiraganaSelection.value.pa)
-        this.kanaSetList.add(67).add(68).add(69).add(70).add(71)
+        if (selectedHiraganaSignIds[i] == 15)
+          this.kanaSetList.add(67).add(68).add(69).add(70).add(71)
 
-      if (this.hiraganaSelection.value.kya)
-        this.kanaSetList.add(72).add(73).add(74)
+        if (selectedHiraganaSignIds[i] == 16)
+          this.kanaSetList.add(72).add(73).add(74)
 
-      if (this.hiraganaSelection.value.sha)
-        this.kanaSetList.add(75).add(76).add(77)
+        if (selectedHiraganaSignIds[i] == 17)
+          this.kanaSetList.add(75).add(76).add(77)
 
-      if (this.hiraganaSelection.value.cha)
-        this.kanaSetList.add(78).add(79).add(80)
+        if (selectedHiraganaSignIds[i] == 18)
+          this.kanaSetList.add(78).add(79).add(80)
 
-      if (this.hiraganaSelection.value.nya)
-        this.kanaSetList.add(81).add(82).add(83)
+        if (selectedHiraganaSignIds[i] == 19)
+          this.kanaSetList.add(81).add(82).add(83)
 
-      if (this.hiraganaSelection.value.hya)
-        this.kanaSetList.add(84).add(85).add(86)
+        if (selectedHiraganaSignIds[i] == 20)
+          this.kanaSetList.add(84).add(85).add(86)
 
-      if (this.hiraganaSelection.value.mya)
-        this.kanaSetList.add(87).add(88).add(89)
+        if (selectedHiraganaSignIds[i] == 21)
+          this.kanaSetList.add(87).add(88).add(89)
 
-      if (this.hiraganaSelection.value.rya)
-        this.kanaSetList.add(90).add(91).add(92)
+        if (selectedHiraganaSignIds[i] == 22)
+          this.kanaSetList.add(90).add(91).add(92)
 
-      if (this.hiraganaSelection.value.gya)
-        this.kanaSetList.add(93).add(94).add(95)
+        if (selectedHiraganaSignIds[i] == 23)
+          this.kanaSetList.add(93).add(94).add(95)
 
-      if (this.hiraganaSelection.value.ja)
-        this.kanaSetList.add(96).add(97).add(98)
+        if (selectedHiraganaSignIds[i] == 24)
+          this.kanaSetList.add(96).add(97).add(98)
 
-      if (this.hiraganaSelection.value.dja)
-        this.kanaSetList.add(99).add(100).add(101)
+        if (selectedHiraganaSignIds[i] == 25)
+          this.kanaSetList.add(99).add(100).add(101)
 
-      if (this.hiraganaSelection.value.bya)
-        this.kanaSetList.add(102).add(103).add(104)
+        if (selectedHiraganaSignIds[i] == 26)
+          this.kanaSetList.add(102).add(103).add(104)
 
-      if (this.hiraganaSelection.value.pya)
-        this.kanaSetList.add(105).add(106).add(107)
+        if (selectedHiraganaSignIds[i] == 27)
+          this.kanaSetList.add(105).add(106).add(107)
+      }
+      console.log("Set in Hiragana: ", this.kanaSetList);
+      if (selectedHiraganaSignIds.includes(this.hiraganaLevel))
+        this.levelUp = true;
+
     }
     else if (type == "katakana") {
-      if (this.katakanaSelection.value.a)
-        this.kanaSetList.add(1).add(2).add(3).add(4).add(5)
+      for (let i = 0; i < selectedKatakanaSignIds.length; i++) {
+        if (selectedKatakanaSignIds[i] == 1)
+          this.kanaSetList.add(1).add(2).add(3).add(4).add(5);
 
-      if (this.katakanaSelection.value.ka)
-        this.kanaSetList.add(6).add(7).add(8).add(9).add(10)
+        if (selectedKatakanaSignIds[i] == 2)
+          this.kanaSetList.add(6).add(7).add(8).add(9).add(10);
 
-      if (this.katakanaSelection.value.sa)
-        this.kanaSetList.add(11).add(12).add(13).add(14).add(15)
+        if (selectedKatakanaSignIds[i] == 3)
+          this.kanaSetList.add(11).add(12).add(13).add(14).add(15);
 
-      if (this.katakanaSelection.value.ta)
-        this.kanaSetList.add(16).add(17).add(18).add(19).add(20)
+        if (selectedKatakanaSignIds[i] == 4)
+          this.kanaSetList.add(16).add(17).add(18).add(19).add(20);
 
-      if (this.katakanaSelection.value.na)
-        this.kanaSetList.add(21).add(22).add(23).add(24).add(25)
+        if (selectedKatakanaSignIds[i] == 5)
+          this.kanaSetList.add(21).add(22).add(23).add(24).add(25)
 
-      if (this.katakanaSelection.value.ha)
-        this.kanaSetList.add(26).add(27).add(28).add(29).add(30)
+        if (selectedKatakanaSignIds[i] == 6)
+          this.kanaSetList.add(26).add(27).add(28).add(29).add(30)
 
-      if (this.katakanaSelection.value.ma)
-        this.kanaSetList.add(31).add(32).add(33).add(34).add(35)
+        if (selectedKatakanaSignIds[i] == 7)
+          this.kanaSetList.add(31).add(32).add(33).add(34).add(35)
 
-      if (this.katakanaSelection.value.ya)
-        this.kanaSetList.add(36).add(37).add(38)
+        if (selectedKatakanaSignIds[i] == 8)
+          this.kanaSetList.add(36).add(37).add(38)
 
-      if (this.katakanaSelection.value.ra)
-        this.kanaSetList.add(39).add(40).add(41).add(42).add(43)
+        if (selectedKatakanaSignIds[i] == 9)
+          this.kanaSetList.add(39).add(40).add(41).add(42).add(43)
 
-      if (this.katakanaSelection.value.wa)
-        this.kanaSetList.add(44).add(45).add(46)
+        if (selectedKatakanaSignIds[i] == 10)
+          this.kanaSetList.add(44).add(45).add(46)
 
-      if (this.katakanaSelection.value.ga)
-        this.kanaSetList.add(47).add(48).add(49).add(50).add(51)
+        if (selectedKatakanaSignIds[i] == 11)
+          this.kanaSetList.add(47).add(48).add(49).add(50).add(51)
 
-      if (this.katakanaSelection.value.za)
-        this.kanaSetList.add(52).add(53).add(54).add(55).add(56)
+        if (selectedKatakanaSignIds[i] == 12)
+          this.kanaSetList.add(52).add(53).add(54).add(55).add(56)
 
-      if (this.katakanaSelection.value.da)
-        this.kanaSetList.add(57).add(58).add(59).add(60).add(61)
+        if (selectedKatakanaSignIds[i] == 13)
+          this.kanaSetList.add(57).add(58).add(59).add(60).add(61)
 
-      if (this.katakanaSelection.value.ba)
-        this.kanaSetList.add(62).add(63).add(64).add(65).add(66)
+        if (selectedKatakanaSignIds[i] == 14)
+          this.kanaSetList.add(62).add(63).add(64).add(65).add(66)
 
-      if (this.katakanaSelection.value.pa)
-        this.kanaSetList.add(67).add(68).add(69).add(70).add(71)
+        if (selectedKatakanaSignIds[i] == 15)
+          this.kanaSetList.add(67).add(68).add(69).add(70).add(71)
 
-      if (this.katakanaSelection.value.kya)
-        this.kanaSetList.add(72).add(73).add(74)
+        if (selectedKatakanaSignIds[i] == 16)
+          this.kanaSetList.add(72).add(73).add(74)
 
-      if (this.katakanaSelection.value.sha)
-        this.kanaSetList.add(75).add(76).add(77)
+        if (selectedKatakanaSignIds[i] == 17)
+          this.kanaSetList.add(75).add(76).add(77)
 
-      if (this.katakanaSelection.value.cha)
-        this.kanaSetList.add(78).add(79).add(80)
+        if (selectedKatakanaSignIds[i] == 18)
+          this.kanaSetList.add(78).add(79).add(80)
 
-      if (this.katakanaSelection.value.nya)
-        this.kanaSetList.add(81).add(82).add(83)
+        if (selectedKatakanaSignIds[i] == 19)
+          this.kanaSetList.add(81).add(82).add(83)
 
-      if (this.katakanaSelection.value.hya)
-        this.kanaSetList.add(84).add(85).add(86)
+        if (selectedKatakanaSignIds[i] == 20)
+          this.kanaSetList.add(84).add(85).add(86)
 
-      if (this.katakanaSelection.value.mya)
-        this.kanaSetList.add(87).add(88).add(89)
+        if (selectedKatakanaSignIds[i] == 21)
+          this.kanaSetList.add(87).add(88).add(89)
 
-      if (this.katakanaSelection.value.rya)
-        this.kanaSetList.add(90).add(91).add(92)
+        if (selectedKatakanaSignIds[i] == 22)
+          this.kanaSetList.add(90).add(91).add(92)
 
-      if (this.katakanaSelection.value.gya)
-        this.kanaSetList.add(93).add(94).add(95)
+        if (selectedKatakanaSignIds[i] == 23)
+          this.kanaSetList.add(93).add(94).add(95)
 
-      if (this.katakanaSelection.value.ja)
-        this.kanaSetList.add(96).add(97).add(98)
+        if (selectedKatakanaSignIds[i] == 24)
+          this.kanaSetList.add(96).add(97).add(98)
 
-      if (this.katakanaSelection.value.dja)
-        this.kanaSetList.add(99).add(100).add(101)
+        if (selectedKatakanaSignIds[i] == 25)
+          this.kanaSetList.add(99).add(100).add(101)
 
-      if (this.katakanaSelection.value.bya)
-        this.kanaSetList.add(102).add(103).add(104)
+        if (selectedKatakanaSignIds[i] == 26)
+          this.kanaSetList.add(102).add(103).add(104)
 
-      if (this.katakanaSelection.value.pya)
-        this.kanaSetList.add(105).add(106).add(107)
+        if (selectedKatakanaSignIds[i] == 27)
+          this.kanaSetList.add(105).add(106).add(107)
+      }
+      console.log("Set in Katakana: ", this.kanaSetList);
+      if (selectedKatakanaSignIds.includes(this.katakanaLevel))
+        this.levelUp = true;
+
     }
 
-    console.log(this.kanaSetList);
+    console.log("Level: ", this.levelUp)
+
     this.kanaService.setLearningId(this.kanaSetList);
 
     if (type == "hiragana")
       this.router.navigate(['/learning/hiragana']);
     else
       this.router.navigate(['/learning/katakana']);
+
   }
 
 }
