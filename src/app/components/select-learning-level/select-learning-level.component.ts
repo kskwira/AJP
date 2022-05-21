@@ -20,7 +20,6 @@ export class SelectLearningLevelComponent implements OnInit {
   katakanaLevel = 0;
   kanjiLevel = 0;
   vocabularyLevel = 0;
-  levelUp = false;
 
   hiraganaForm: FormGroup;
   katakanaForm: FormGroup;
@@ -104,181 +103,14 @@ export class SelectLearningLevelComponent implements OnInit {
       });
   }
 
-  checkDisableKana(sign: string, type: string): boolean {
+  checkDisableKana(signId: number, type: string): boolean {
     if (type == "hiragana") {
-      switch (sign) {
-        case 'a':
-          return this.hiraganaLevel < 1;
-
-        case 'ka':
-          return this.hiraganaLevel < 2;
-
-        case 'sa':
-          return this.hiraganaLevel < 3;
-
-        case 'ta':
-          return this.hiraganaLevel < 4;
-
-        case 'na':
-          return this.hiraganaLevel < 5;
-
-        case 'ha':
-          return this.hiraganaLevel < 6;
-
-        case 'ma':
-          return this.hiraganaLevel < 7;
-
-        case 'ya':
-          return this.hiraganaLevel < 8;
-
-        case 'ra':
-          return this.hiraganaLevel < 9;
-
-        case 'wa':
-          return this.hiraganaLevel < 10;
-
-        case 'ga':
-          return this.hiraganaLevel < 11;
-
-        case 'za':
-          return this.hiraganaLevel < 12;
-
-        case 'da':
-          return this.hiraganaLevel < 13;
-
-        case 'ba':
-          return this.hiraganaLevel < 14;
-
-        case 'pa':
-          return this.hiraganaLevel < 15;
-
-        case 'kya':
-          return this.hiraganaLevel < 16;
-
-        case 'sha':
-          return this.hiraganaLevel < 17;
-
-        case 'cha':
-          return this.hiraganaLevel < 18;
-
-        case 'nya':
-          return this.hiraganaLevel < 19;
-
-        case 'hya':
-          return this.hiraganaLevel < 20;
-
-        case 'mya':
-          return this.hiraganaLevel < 21;
-
-        case 'rya':
-          return this.hiraganaLevel < 22;
-
-        case 'gya':
-          return this.hiraganaLevel < 23;
-
-        case 'ja':
-          return this.hiraganaLevel < 24;
-
-        case 'dja':
-          return this.hiraganaLevel < 25;
-
-        case 'bya':
-          return this.hiraganaLevel < 26;
-
-        case 'pya':
-          return this.hiraganaLevel < 27;
-
-        default:
-          return true;
-      }
+      return (signId > this.hiraganaLevel);
     }
-    else {
-      switch (sign) {
-        case 'a':
-          return this.katakanaLevel < 1;
-
-        case 'ka':
-          return this.katakanaLevel < 2;
-
-        case 'sa':
-          return this.katakanaLevel < 3;
-
-        case 'ta':
-          return this.katakanaLevel < 4;
-
-        case 'na':
-          return this.katakanaLevel < 5;
-
-        case 'ha':
-          return this.katakanaLevel < 6;
-
-        case 'ma':
-          return this.katakanaLevel < 7;
-
-        case 'ya':
-          return this.katakanaLevel < 8;
-
-        case 'ra':
-          return this.katakanaLevel < 9;
-
-        case 'wa':
-          return this.katakanaLevel < 10;
-
-        case 'ga':
-          return this.katakanaLevel < 11;
-
-        case 'za':
-          return this.katakanaLevel < 12;
-
-        case 'da':
-          return this.katakanaLevel < 13;
-
-        case 'ba':
-          return this.katakanaLevel < 14;
-
-        case 'pa':
-          return this.katakanaLevel < 15;
-
-        case 'kya':
-          return this.katakanaLevel < 16;
-
-        case 'sha':
-          return this.katakanaLevel < 17;
-
-        case 'cha':
-          return this.katakanaLevel < 18;
-
-        case 'nya':
-          return this.katakanaLevel < 19;
-
-        case 'hya':
-          return this.katakanaLevel < 20;
-
-        case 'mya':
-          return this.katakanaLevel < 21;
-
-        case 'rya':
-          return this.katakanaLevel < 22;
-
-        case 'gya':
-          return this.katakanaLevel < 23;
-
-        case 'ja':
-          return this.katakanaLevel < 24;
-
-        case 'dja':
-          return this.katakanaLevel < 25;
-
-        case 'bya':
-          return this.katakanaLevel < 26;
-
-        case 'pya':
-          return this.katakanaLevel < 27;
-
-        default:
-          return true;
-      }
+    else if (type == "katakana") {
+      return (signId > this.katakanaLevel);
     }
+    return true;
   }
 
   onSubmit(type: string): void {
@@ -378,7 +210,9 @@ export class SelectLearningLevelComponent implements OnInit {
       }
       console.log("Set in Hiragana: ", this.kanaSetList);
       if (selectedHiraganaSignIds.includes(this.hiraganaLevel))
-        this.levelUp = true;
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
 
     }
     else if (type == "katakana") {
@@ -466,11 +300,10 @@ export class SelectLearningLevelComponent implements OnInit {
       }
       console.log("Set in Katakana: ", this.kanaSetList);
       if (selectedKatakanaSignIds.includes(this.katakanaLevel))
-        this.levelUp = true;
-
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
     }
-
-    console.log("Level: ", this.levelUp)
 
     this.kanaService.setLearningId(this.kanaSetList);
 

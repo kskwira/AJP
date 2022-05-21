@@ -28,6 +28,7 @@ export class HiraganaLearningComponent implements OnInit {
   answered = false;
   learningEnd = false;
   quizEnd = false;
+  doLevelUp: any;
 
 
   constructor(private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
@@ -48,6 +49,8 @@ export class HiraganaLearningComponent implements OnInit {
     this.randomizedArray.push(...this.sortedArray);
     this.shuffleArray(this.randomizedArray);
 
+    this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
+    console.log("levelUp onInit: ", this.doLevelUp);
     console.log(this.sortedArray);
     console.log(this.randomizedArray);
   }
@@ -61,7 +64,7 @@ export class HiraganaLearningComponent implements OnInit {
       });
   }
 
-  update(): void {
+  levelUp(): void {
     this.currentUser.hiraganaProgressObject.level += 1;
     this.currentUser.hiraganaProgressObject[1].timesGuessed +=1;
     this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
@@ -139,7 +142,9 @@ export class HiraganaLearningComponent implements OnInit {
 
     if (!this.randomizedArray.length) {
       this.quizEnd = true;
-      this.update();
+      if (this.doLevelUp) {
+        this.levelUp();
+      }
     }
   }
 

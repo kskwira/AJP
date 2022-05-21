@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/comp
 import { Kana } from "../models/kana.model";
 import firebase from "firebase/compat/app";
 import firestore = firebase.firestore;
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,13 @@ export class KanaService {
   private katakanaDbPath = '/katakana';
   private hiraganaDbPath = '/hiragana';
   kanaSetList = new Set<number>();
+
+  private levelUpSource = new BehaviorSubject<boolean>(false);
+  currentLevelUpValue = this.levelUpSource.asObservable();
+
+  changeLevelUpValue (value: boolean) {
+    this.levelUpSource.next(value);
+  }
 
   katakanaRef: AngularFirestoreCollection<Kana>;
   hiraganaLevelOne: AngularFirestoreCollection<Kana>;
