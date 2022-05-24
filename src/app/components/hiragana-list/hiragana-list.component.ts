@@ -3,6 +3,8 @@ import {KanaService} from "../../services/kana.service";
 import {map} from "rxjs/operators";
 import {Kana} from "../../models/kana.model";
 import {ActivatedRoute} from "@angular/router";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-hiragana-list',
@@ -11,71 +13,72 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class HiraganaListComponent implements OnInit {
 
-  hiragana?: Kana[];
-  currentHiragana?: Kana;
-  currentIndex = -1;
-  title = '';
+  userData: any; // Save logged in user data
+  currentUser: any;
+
+  hiragana: Kana[] = [];
   result = '';
   routeParam: number = 0;
-  randomNumber = 0;
   numberAnswered = 0;
-  arrayEnd = 0;
-  numberOfCorrect = 0;
-  orderArray = [];
+  numberAnsweredCorrect = 0;
+  orderArray: number[] = [];
   answered = false;
+  quizEnd = false;
 
-  constructor(private route: ActivatedRoute, private kanaService: KanaService) { }
+  constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
+    this.afAuth.currentUser.then((user) => {
+      if (user) {
+        this.userData = user;
+        this.retrieveUserDocumentById(user.uid);
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.routeParam = params['level'];
     });
-    console.log(this.routeParam)
     this.generateArray(this.routeParam)
   }
 
+  retrieveUserDocumentById(userId: string): void {
+    this.userService.getSingleUserDocumentById(userId).ref.get()
+      .then((result) => {
+        this.currentUser = result.data();
+      });
+  }
+
   generateArray(level: number) {
-    if (level == 1) {
-      while (this.orderArray.length < 46) {
-        this.randomNumber = Math.floor(Math.random() * 46) + 1;
-        // @ts-ignore
-        if (this.orderArray.indexOf(this.randomNumber) === -1) this.orderArray.push(this.randomNumber);
-      }
-      this.arrayEnd = 46;
-      console.log(this.orderArray);
+      if (level == 1) {
+        this.orderArray = Array.from({length: 46}, (_, i) => i + 1);
+        this.shuffleArray(this.orderArray)
+        console.log("arr: ", this.orderArray);
     } else {
-      while (this.orderArray.length < 61) {
-        this.randomNumber = Math.floor(Math.random() * (108 - 47) + 47);
-        // @ts-ignore
-        if (this.orderArray.indexOf(this.randomNumber) === -1) this.orderArray.push(this.randomNumber);
-      }
-      this.arrayEnd = 107;
-      console.log(this.orderArray);
+        this.orderArray = Array.from({length: 61}, (_, i) => i + 47);
+        this.shuffleArray(this.orderArray)
+        console.log("arr: ", this.orderArray);
     }
   }
 
-  // refreshList(): void {
-  //   this.currentHiragana = undefined;
-  //   this.currentIndex = -1;
-  //   this.retrieveHiragana();
-  // }
+  //The Fisher-Yates algorithm
+  shuffleArray(array: Array<number>): Array<number> {
+    let m = array.length, t, i;
 
-  retrieveOneRandomHiragana(): void {
-    this.answered = false;
-    this.result = '';
-    this.kanaService.getSingleRandomHiragana().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      this.hiragana = data;
-    });
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
   }
 
-  score(correct: number, total: number): number{
-    return correct / total
+  signProgressUp(): void {
+    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
   }
 
   testSession(id: number): void {
@@ -93,60 +96,64 @@ export class HiraganaListComponent implements OnInit {
     console.log(this.numberAnswered);
   }
 
-  retrieveOneRandomHiraganaByLevel(level: number): void {
-    this.answered = false;
-    this.result = '';
-    this.kanaService.getSingleRandomHiraganaByLevel(level).snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      this.hiragana = data;
-    });
-  }
-
-  retrieveAllHiraganaByLevel(level: number): void {
-    this.kanaService.getSpecificLevel(level, 'hiragana').snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      this.hiragana = data;
-    });
-  }
-
-  setActiveHiragana(hiragana: Kana, index: number): void {
-    this.currentHiragana = hiragana;
-    this.currentIndex = index;
-  }
-
-  retrieveSingleHiragana(): any {
-    this.kanaService.getOneKana().snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c =>
-          ({id: c.payload.doc.id, ...c.payload.doc.data() })
-        )
-      )
-    ).subscribe(data => {
-      this.hiragana = data;
-    });
-  }
-
-  answering(answer: string, reading?: string) {
+  answering(answer: string, reading: string, sign: string, id: string) {
     this.answered = !this.answered;
 
     if (reading == answer) {
       this.result = "Poprawna odpowiedź";
-      this.numberAnswered = this.numberAnswered +1
-      this.numberOfCorrect = this.numberOfCorrect +1
+      this.numberAnswered = this.numberAnswered +1;
+      this.numberAnsweredCorrect = this.numberAnsweredCorrect +1;
+
+      if (typeof this.currentUser.hiraganaProgressObject[id] === 'undefined') {
+        this.currentUser.hiraganaProgressObject[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [1]};
+        console.log("new progress success")
+      }
+      else {
+        this.currentUser.hiraganaProgressObject[id].timesAnswered += 1;
+
+        if (this.currentUser.hiraganaProgressObject[id].timesCorrect.length >=5) {
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.shift();
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(1);
+        }
+        else {
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(1);
+        }
+        console.log("old progress success")
+      }
+
     }
     else {
       this.result = "Zła odpowiedź";
-      this.numberAnswered = this.numberAnswered +1
+      this.numberAnswered = this.numberAnswered +1;
+
+      if (typeof this.currentUser.hiraganaProgressObject[id] === 'undefined') {
+        this.currentUser.hiraganaProgressObject[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [0]};
+        console.log("new progress fail")
+      }
+      else {
+        this.currentUser.hiraganaProgressObject[id].timesAnswered += 1;
+
+        if (this.currentUser.hiraganaProgressObject[id].timesCorrect.length >=5) {
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.shift();
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(0);
+        }
+        else {
+          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(0);
+        }
+        console.log("old progress fail")
+      }
     }
+
+    if (this.numberAnswered >= this.orderArray.length) {
+      this.quizEnd = true;
+      console.log(this.currentUser.hiraganaProgressObject);
+      this.signProgressUp();
+    }
+
   }
+
+  score(correct: number, total: number): number{
+    return correct / total;
+  }
+
 }

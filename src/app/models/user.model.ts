@@ -5,6 +5,7 @@ export interface Progress {
   level: number;
   [signID: number]: {
     reading: string;
+    sign: string;
     timesCorrect: Array<number>;
     timesAnswered: number;
   },

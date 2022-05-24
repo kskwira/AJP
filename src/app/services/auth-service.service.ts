@@ -129,53 +129,37 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       katakanaProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       kanjiProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       vocabularyProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       // // @ts-ignore
       // hiraganaProgressMap: Object.fromEntries(progressMap),
@@ -201,53 +185,37 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       katakanaProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       kanjiProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
       vocabularyProgressObject: {
         level: 1,
         1: {
           reading: "a",
+          sign: "あ",
           timesCorrect: [],
           timesAnswered: 0,
         },
-        2: {
-          reading: "i",
-          timesCorrect: [],
-          timesAnswered: 0,
-        }
       },
     }
     return userRef.set(userData, {

@@ -66,7 +66,6 @@ export class HiraganaLearningComponent implements OnInit {
 
   levelUp(): void {
     this.currentUser.hiraganaProgressObject.level += 1;
-    this.currentUser.hiraganaProgressObject[1].timesGuessed +=1;
     this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
   }
 
