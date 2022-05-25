@@ -1,9 +1,9 @@
 <div>
-  <button mat-stroked-button color="primary" (click)="testSession(orderArray[0])">Rozpocznij quiz</button>
+  <button mat-stroked-button color="primary" (click)="testSession(idArray[0])">Rozpocznij quiz</button>
 </div>
 
 <mat-grid-list cols="2" rowHeight="480px" gutterSize="4px">
-  <mat-grid-tile *ngFor="let hiragana of hiragana">
+  <mat-grid-tile *ngFor="let hiragana of hiraganaArray">
     <mat-card class="user-card">
       <mat-card-content>
         <app-flip-card [toggleProperty] = answered>
@@ -17,7 +17,7 @@
         <mat-card-actions >
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading!, hiragana.sign!, hiragana.id!)" [disabled]="answered">Sprawdź</button>
-          <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(orderArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
+          <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
           <br/>
           <mat-error>{{result}}</mat-error>
         </mat-card-actions>

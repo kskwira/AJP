@@ -32,10 +32,10 @@ import { KanaComponent } from './kana/kana.component';
 import { KanaDialogComponent } from './kana/kana-dialog/kana-dialog.component';
 import { SignsComponent } from './kana/signs/signs.component';
 import { AddKanaComponent } from './components/add-kana/add-kana.component';
-import { KatakanaListComponent } from './components/katakana-list/katakana-list.component';
+import { KatakanaQuizComponent } from './components/katakana-quiz/katakana-quiz.component';
 import { KanaDetailsComponent } from './components/kana-details/kana-details.component';
 import { SelectQuizLevelComponent } from './components/select-quiz-level/select-quiz-level.component';
-import { HiraganaListComponent } from './components/hiragana-list/hiragana-list.component';
+import { HiraganaQuizComponent } from './components/hiragana-quiz/hiragana-quiz.component';
 import { SelectLearningLevelComponent } from './components/select-learning-level/select-learning-level.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HiraganaLearningComponent } from './components/hiragana-learning/hiragana-learning.component';
@@ -60,10 +60,10 @@ import { HelpComponent } from './help/help.component';
     KanaDialogComponent,
     SignsComponent,
     AddKanaComponent,
-    KatakanaListComponent,
+    KatakanaQuizComponent,
     KanaDetailsComponent,
     SelectQuizLevelComponent,
-    HiraganaListComponent,
+    HiraganaQuizComponent,
     SelectLearningLevelComponent,
     HiraganaLearningComponent,
     KatakanaLearningComponent,

@@ -125,44 +125,10 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       phoneNumber: "",
       providerId: "",
       isAdmin: false,
-      hiraganaProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      katakanaProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      kanjiProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      vocabularyProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      // // @ts-ignore
-      // hiraganaProgressMap: Object.fromEntries(progressMap),
+      progressHiragana: { level: 1 },
+      progressKatakana: { level: 1 },
+      progressKanji: { level: 1 },
+      progressVocabulary: { level: 1 }
     }
     return userRef.set(userData, {
       merge: true
@@ -181,42 +147,10 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       phoneNumber: "",
       providerId: "",
       isAdmin: false,
-      hiraganaProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      katakanaProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      kanjiProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
-      vocabularyProgressObject: {
-        level: 1,
-        1: {
-          reading: "a",
-          sign: "あ",
-          timesCorrect: [],
-          timesAnswered: 0,
-        },
-      },
+      progressHiragana: { level: 1 },
+      progressKatakana: { level: 1 },
+      progressKanji: { level: 1 },
+      progressVocabulary: { level: 1 }
     }
     return userRef.set(userData, {
       merge: true

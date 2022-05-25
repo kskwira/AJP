@@ -13,9 +13,9 @@ import {UserService} from "../../services/user.service";
 export class DashboardComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  users: UserModel[] | undefined;
   currentUser: any;
-  currentIndex = -1;
+
+  users: UserModel[] = [];
 
   constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService) { }
 
@@ -24,8 +24,6 @@ export class DashboardComponent implements OnInit {
       if(user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
-        // this.retrieveUsers();
-        // this.retrieveUserById(user.uid);
       }
     });
   }
@@ -61,15 +59,9 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  // setActiveUser(user: UserModel, index: number): void {
-  //   this.currentUser = user;
-  //   this.currentIndex = index;
-  // }
-
   update(): void {
-    this.currentUser.hiraganaProgressObject.level += 1;
-    this.currentUser.hiraganaProgressObject[1].timesAnswered +=1;
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
+    this.currentUser.progressHiragana.level += 1;
+    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
   }
 
 }

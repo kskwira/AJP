@@ -5,11 +5,11 @@ import { Kana } from "../../models/kana.model";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-  selector: 'app-katakana-list',
-  templateUrl: './katakana-list.component.html',
-  styleUrls: ['./katakana-list.component.css']
+  selector: 'app-katakana-quiz',
+  templateUrl: './katakana-quiz.component.html',
+  styleUrls: ['./katakana-quiz.component.css']
 })
-export class KatakanaListComponent implements OnInit {
+export class KatakanaQuizComponent implements OnInit {
 
   katakana?: Kana[];
   currentKatakana?: Kana;

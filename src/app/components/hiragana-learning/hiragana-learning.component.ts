@@ -15,15 +15,15 @@ export class HiraganaLearningComponent implements OnInit {
   userData: any; // Save logged in user data
   currentUser: any;
 
-  hiragana?: Kana[];
-  hiraganaLearn?: Kana[];
+  hiraganaQuizArray: Kana[] = [];
+  hiraganaLearnArray: Kana[] = [];
   result = '';
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
-  sortedArray: number[] = [];
-  sortedArrayIndex = 0;
-  randomizedArray: number[] = [];
-  randomizedArrayIndex = 0;
+  sortedIdArray: number[] = [];
+  sortedIdArrayIndex = 0;
+  randomizedIdArray: number[] = [];
+  randomizedIdArrayIndex = 0;
   hiraganaLevel = 0;
   answered = false;
   learningEnd = false;
@@ -42,31 +42,32 @@ export class HiraganaLearningComponent implements OnInit {
 
   ngOnInit(): void {
     for (let v of this.kanaService.kanaSetList) {
-      this.sortedArray.push(v);
+      this.sortedIdArray.push(v);
     }
 
-    this.randomizedArray.push(...this.sortedArray);
-    this.randomizedArray.push(...this.sortedArray);
-    this.shuffleArray(this.randomizedArray);
+    this.randomizedIdArray.push(...this.sortedIdArray);
+    this.randomizedIdArray.push(...this.sortedIdArray);
+    this.shuffleArray(this.randomizedIdArray);
 
     this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
     console.log("levelUp onInit: ", this.doLevelUp);
-    console.log(this.sortedArray);
-    console.log(this.randomizedArray);
+    console.log(this.sortedIdArray);
+    console.log(this.randomizedIdArray);
   }
 
   retrieveUserDocumentById(userId: string): void {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
-        this.hiraganaLevel = this.currentUser.hiraganaProgressObject.level;
+        console.log("In retrieveDoc " + this.currentUser)
+        // this.hiraganaLevel = this.currentUser.progressHiragana.level;
         console.log("In retrieveDoc " + this.hiraganaLevel)
       });
   }
 
   levelUp(): void {
-    this.currentUser.hiraganaProgressObject.level += 1;
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
+    this.currentUser.progressHiragana.level += 1;
+    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
   }
 
   //The Fisher-Yates algorithm
@@ -87,9 +88,9 @@ export class HiraganaLearningComponent implements OnInit {
   }
 
   learnSession(id: number): void {
-    this.sortedArrayIndex += 1;
+    this.sortedIdArrayIndex += 1;
 
-    if (this.sortedArrayIndex <= this.sortedArray.length) {
+    if (this.sortedIdArrayIndex <= this.sortedIdArray.length) {
       this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
@@ -97,14 +98,14 @@ export class HiraganaLearningComponent implements OnInit {
           )
         )
       ).subscribe(data => {
-        this.hiraganaLearn = data;
+        this.hiraganaLearnArray = data;
       });
     }
     else {
       this.result = '';
       this.answered = false;
       this.learningEnd = true;
-      this.hiraganaLearn = undefined;
+      this.hiraganaLearnArray.splice(0, this.hiraganaLearnArray.length);
       this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
@@ -112,34 +113,34 @@ export class HiraganaLearningComponent implements OnInit {
           )
         )
       ).subscribe(data => {
-        this.hiragana = data;
+        this.hiraganaQuizArray = data;
       });
     }
   }
 
-  answering(answer: string, reading?: string) {
+  answering(answer: string, reading: string) {
     this.answered = !this.answered;
 
     if (reading == answer) {
       this.result = "Poprawna odpowiedź";
-      this.randomizedArray.splice(this.randomizedArrayIndex, 1);
+      this.randomizedIdArray.splice(this.randomizedIdArrayIndex, 1);
       this.numberAnswered = this.numberAnswered + 1
       this.numberAnsweredCorrect = this.numberAnsweredCorrect + 1
-      console.log("index when correct = " + this.randomizedArrayIndex);
-      console.log(this.randomizedArray)
+      console.log("index when correct = " + this.randomizedIdArrayIndex);
+      console.log(this.randomizedIdArray)
     }
     else {
       this.result = "Zła odpowiedź";
       this.numberAnswered = this.numberAnswered + 1
-      this.randomizedArrayIndex++;
-      console.log("index when fail = " + this.randomizedArrayIndex);
-      console.log(this.randomizedArray)
+      this.randomizedIdArrayIndex++;
+      console.log("index when fail = " + this.randomizedIdArrayIndex);
+      console.log(this.randomizedIdArray)
     }
 
-    if (this.randomizedArrayIndex >= this.randomizedArray.length)
-      this.randomizedArrayIndex = 0;
+    if (this.randomizedIdArrayIndex >= this.randomizedIdArray.length)
+      this.randomizedIdArrayIndex = 0;
 
-    if (!this.randomizedArray.length) {
+    if (!this.randomizedIdArray.length) {
       this.quizEnd = true;
       if (this.doLevelUp) {
         this.levelUp();

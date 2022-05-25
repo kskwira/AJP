@@ -95,10 +95,10 @@ export class SelectLearningLevelComponent implements OnInit {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
-        this.hiraganaLevel = this.currentUser.hiraganaProgressObject.level;
-        this.katakanaLevel = this.currentUser.katakanaProgressObject.level;
-        this.kanjiLevel = this.currentUser.kanjiProgressObject.level;
-        this.vocabularyLevel = this.currentUser.vocabularyProgressObject.level;
+        this.hiraganaLevel = this.currentUser.progressHiragana.level;
+        this.katakanaLevel = this.currentUser.progressKatakana.level;
+        this.kanjiLevel = this.currentUser.progressKanji.level;
+        this.vocabularyLevel = this.currentUser.progressVocabulary.level;
         console.log("In retrieveDoc " + this.hiraganaLevel)
       });
   }

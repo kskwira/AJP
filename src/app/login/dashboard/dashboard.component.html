@@ -15,7 +15,6 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
-<!--      <button mat-stroked-button color="warn" (click)="retrieveUserDocumentById(user.uid)">retrieve current user</button>-->
     </mat-card-actions>
   </mat-card>
 </div>
@@ -34,8 +33,8 @@
       <p>Last Name: <strong>{{user.lastName}}</strong></p>
       <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
       <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
-      <p>Hiragana Progress Level: <strong>{{user.hiraganaProgressObject.level}}</strong></p>
-      <p>Hiragana Progress Object: <strong>{{user.hiraganaProgressObject | json}}</strong></p>
+      <p>Hiragana Progress Level: <strong>{{user.progressHiragana.level}}</strong></p>
+      <p>Hiragana Progress Object: <strong>{{user.progressHiragana | json}}</strong></p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
@@ -44,4 +43,4 @@
 </div>
 
 <p>{{currentUser | json}}</p>
-<button mat-stroked-button color="primary" (click)="update()">Update Level</button>
+<button mat-stroked-button color="primary" (click)="update()">Level Up Hiragana</button>

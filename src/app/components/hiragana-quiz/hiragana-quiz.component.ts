@@ -7,21 +7,21 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
 
 @Component({
-  selector: 'app-hiragana-list',
-  templateUrl: './hiragana-list.component.html',
-  styleUrls: ['./hiragana-list.component.css']
+  selector: 'app-hiragana-quiz',
+  templateUrl: './hiragana-quiz.component.html',
+  styleUrls: ['./hiragana-quiz.component.css']
 })
-export class HiraganaListComponent implements OnInit {
+export class HiraganaQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser: any;
 
-  hiragana: Kana[] = [];
+  hiraganaArray: Kana[] = [];
   result = '';
   routeParam: number = 0;
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
-  orderArray: number[] = [];
+  idArray: number[] = [];
   answered = false;
   quizEnd = false;
 
@@ -50,13 +50,13 @@ export class HiraganaListComponent implements OnInit {
 
   generateArray(level: number) {
       if (level == 1) {
-        this.orderArray = Array.from({length: 46}, (_, i) => i + 1);
-        this.shuffleArray(this.orderArray)
-        console.log("arr: ", this.orderArray);
+        this.idArray = Array.from({length: 46}, (_, i) => i + 1);
+        this.shuffleArray(this.idArray)
+        console.log("arr: ", this.idArray);
     } else {
-        this.orderArray = Array.from({length: 61}, (_, i) => i + 47);
-        this.shuffleArray(this.orderArray)
-        console.log("arr: ", this.orderArray);
+        this.idArray = Array.from({length: 61}, (_, i) => i + 47);
+        this.shuffleArray(this.idArray)
+        console.log("arr: ", this.idArray);
     }
   }
 
@@ -78,7 +78,7 @@ export class HiraganaListComponent implements OnInit {
   }
 
   signProgressUp(): void {
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.hiraganaProgressObject);
+    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
   }
 
   testSession(id: number): void {
@@ -91,7 +91,7 @@ export class HiraganaListComponent implements OnInit {
           )
         )
       ).subscribe(data => {
-        this.hiragana = data;
+        this.hiraganaArray = data;
       });
     console.log(this.numberAnswered);
   }
@@ -104,19 +104,19 @@ export class HiraganaListComponent implements OnInit {
       this.numberAnswered = this.numberAnswered +1;
       this.numberAnsweredCorrect = this.numberAnsweredCorrect +1;
 
-      if (typeof this.currentUser.hiraganaProgressObject[id] === 'undefined') {
-        this.currentUser.hiraganaProgressObject[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [1]};
+      if (typeof this.currentUser.progressHiragana[id] === 'undefined') {
+        this.currentUser.progressHiragana[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [1]};
         console.log("new progress success")
       }
       else {
-        this.currentUser.hiraganaProgressObject[id].timesAnswered += 1;
+        this.currentUser.progressHiragana[id].timesAnswered += 1;
 
-        if (this.currentUser.hiraganaProgressObject[id].timesCorrect.length >=5) {
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.shift();
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(1);
+        if (this.currentUser.progressHiragana[id].timesCorrect.length >=5) {
+          this.currentUser.progressHiragana[id].timesCorrect.shift();
+          this.currentUser.progressHiragana[id].timesCorrect.push(1);
         }
         else {
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(1);
+          this.currentUser.progressHiragana[id].timesCorrect.push(1);
         }
         console.log("old progress success")
       }
@@ -126,27 +126,27 @@ export class HiraganaListComponent implements OnInit {
       this.result = "Zła odpowiedź";
       this.numberAnswered = this.numberAnswered +1;
 
-      if (typeof this.currentUser.hiraganaProgressObject[id] === 'undefined') {
-        this.currentUser.hiraganaProgressObject[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [0]};
+      if (typeof this.currentUser.progressHiragana[id] === 'undefined') {
+        this.currentUser.progressHiragana[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [0]};
         console.log("new progress fail")
       }
       else {
-        this.currentUser.hiraganaProgressObject[id].timesAnswered += 1;
+        this.currentUser.progressHiragana[id].timesAnswered += 1;
 
-        if (this.currentUser.hiraganaProgressObject[id].timesCorrect.length >=5) {
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.shift();
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(0);
+        if (this.currentUser.progressHiragana[id].timesCorrect.length >=5) {
+          this.currentUser.progressHiragana[id].timesCorrect.shift();
+          this.currentUser.progressHiragana[id].timesCorrect.push(0);
         }
         else {
-          this.currentUser.hiraganaProgressObject[id].timesCorrect.push(0);
+          this.currentUser.progressHiragana[id].timesCorrect.push(0);
         }
         console.log("old progress fail")
       }
     }
 
-    if (this.numberAnswered >= this.orderArray.length) {
+    if (this.numberAnswered >= this.idArray.length) {
       this.quizEnd = true;
-      console.log(this.currentUser.hiraganaProgressObject);
+      console.log(this.currentUser.progressHiragana);
       this.signProgressUp();
     }
 

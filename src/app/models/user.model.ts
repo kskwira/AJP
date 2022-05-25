@@ -11,12 +11,12 @@ export interface Progress {
   },
 }
 
-export interface UserModel extends UserInfo{
+export interface UserModel extends UserInfo {
   firstName: string;
   lastName: string;
   isAdmin: boolean;
-  hiraganaProgressObject: Progress;
-  katakanaProgressObject: Progress;
-  kanjiProgressObject: Progress;
-  vocabularyProgressObject: Progress;
+  progressHiragana: Progress;
+  progressKatakana: Progress;
+  progressKanji: Progress;
+  progressVocabulary: Progress;
 }

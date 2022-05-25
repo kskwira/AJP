@@ -8,8 +8,8 @@ import { VerifyEmailComponent } from './login/verify-email/verify-email.componen
 import { AuthGuard } from "./shared/guard/auth.guard";
 import {KanbanComponent} from "./kanban/kanban.component";
 import {SignsComponent} from "./kana/signs/signs.component";
-import {KatakanaListComponent} from "./components/katakana-list/katakana-list.component";
-import {HiraganaListComponent} from "./components/hiragana-list/hiragana-list.component";
+import {KatakanaQuizComponent} from "./components/katakana-quiz/katakana-quiz.component";
+import {HiraganaQuizComponent} from "./components/hiragana-quiz/hiragana-quiz.component";
 import {AddKanaComponent} from "./components/add-kana/add-kana.component";
 import {SelectQuizLevelComponent} from "./components/select-quiz-level/select-quiz-level.component";
 import {SelectLearningLevelComponent} from "./components/select-learning-level/select-learning-level.component";
@@ -27,10 +27,10 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'kanban', component: KanbanComponent },
   { path: 'kana', component: SignsComponent },
-  { path: 'katakana', component: KatakanaListComponent },
-  { path: 'quiz/katakana/:level', component: KatakanaListComponent },
-  { path: 'hiragana', component: HiraganaListComponent },
-  { path: 'quiz/hiragana/:level', component: HiraganaListComponent },
+  { path: 'katakana', component: KatakanaQuizComponent },
+  { path: 'quiz/katakana/:level', component: KatakanaQuizComponent },
+  { path: 'hiragana', component: HiraganaQuizComponent },
+  { path: 'quiz/hiragana/:level', component: HiraganaQuizComponent },
   { path: 'add', component: AddKanaComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent },
   { path: 'select-learning-level', component: SelectLearningLevelComponent },

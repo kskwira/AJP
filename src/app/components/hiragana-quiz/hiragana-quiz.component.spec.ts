@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HiraganaListComponent } from './hiragana-list.component';
+import { HiraganaQuizComponent } from './hiragana-quiz.component';
 
 describe('HiraganaListComponent', () => {
-  let component: HiraganaListComponent;
-  let fixture: ComponentFixture<HiraganaListComponent>;
+  let component: HiraganaQuizComponent;
+  let fixture: ComponentFixture<HiraganaQuizComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HiraganaListComponent ]
+      declarations: [ HiraganaQuizComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HiraganaListComponent);
+    fixture = TestBed.createComponent(HiraganaQuizComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

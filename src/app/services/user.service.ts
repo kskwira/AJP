@@ -33,7 +33,7 @@ export class UserService {
 
   updateUserProgress(userID: string, progressData: any): Promise<void> {
     return this.userRef.doc(userID).update({
-      hiraganaProgressObject: progressData
+      progressHiragana: progressData
     });
   }
 
