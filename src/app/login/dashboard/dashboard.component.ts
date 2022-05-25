@@ -17,15 +17,20 @@ export class DashboardComponent implements OnInit {
 
   users: UserModel[] = [];
 
-  constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService) { }
-
-  ngOnInit(): void {
-    this.afAuth.currentUser.then((user) => {
-      if(user) {
+  constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService) {
+    this.afAuth.onAuthStateChanged((user) => {
+      if (user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
       }
+      else {
+        console.log("User failed to load");
+      }
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   retrieveUsers(): void {

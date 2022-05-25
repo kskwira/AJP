@@ -32,10 +32,13 @@ export class HiraganaLearningComponent implements OnInit {
 
 
   constructor(private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
-    this.afAuth.currentUser.then((user) => {
+    this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
+      }
+      else {
+        console.log("User failed to load");
       }
     });
   }

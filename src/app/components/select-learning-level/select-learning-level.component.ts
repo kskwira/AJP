@@ -65,10 +65,13 @@ export class SelectLearningLevelComponent implements OnInit {
   constructor(private fb: FormBuilder, private kanaService: KanaService, private router: Router,
               public afAuth: AngularFireAuth, private userService: UserService) {
 
-    this.afAuth.currentUser.then((user) => {
+    this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
+      }
+      else {
+        console.log("User failed to load");
       }
     });
 
