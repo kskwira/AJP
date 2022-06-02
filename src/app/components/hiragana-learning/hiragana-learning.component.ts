@@ -70,7 +70,7 @@ export class HiraganaLearningComponent implements OnInit {
 
   levelUp(): void {
     this.currentUser.progressHiragana.level += 1;
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
   }
 
   //The Fisher-Yates algorithm

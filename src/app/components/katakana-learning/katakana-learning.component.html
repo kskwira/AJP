@@ -7,14 +7,14 @@
   <mat-grid-tile *ngFor="let katakana of katakana">
     <mat-card class="user-card">
       <mat-card-content>
-        <app-flip-card [toggleProperty] = answered>
+        <flip-card [toggleProperty] = answered>
           <flip-card-front>
             <p>{{ katakana.sign}}</p>
           </flip-card-front>
           <flip-card-back>
             <p>{{ katakana.reading}}</p>
           </flip-card-back>
-        </app-flip-card>
+        </flip-card>
         <mat-card-actions >
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, katakana.reading)" [disabled]="answered">Sprawdź</button>

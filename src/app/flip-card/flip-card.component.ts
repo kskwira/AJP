@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-flip-card',
+  selector: 'flip-card',
   templateUrl: './flip-card.component.html',
   styleUrls: ['./flip-card.component.css']
 })

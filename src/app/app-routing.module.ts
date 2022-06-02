@@ -17,6 +17,7 @@ import {HiraganaLearningComponent} from "./components/hiragana-learning/hiragana
 import {KatakanaLearningComponent} from "./components/katakana-learning/katakana-learning.component";
 import {AboutUsComponent} from "./about-us/about-us.component";
 import {HelpComponent} from "./help/help.component";
+import {KanjiQuizComponent} from "./components/kanji-quiz/kanji-quiz.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -27,10 +28,9 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'kanban', component: KanbanComponent },
   { path: 'kana', component: SignsComponent },
-  { path: 'katakana', component: KatakanaQuizComponent },
   { path: 'quiz/katakana/:level', component: KatakanaQuizComponent },
-  { path: 'hiragana', component: HiraganaQuizComponent },
   { path: 'quiz/hiragana/:level', component: HiraganaQuizComponent },
+  { path: 'quiz/kanji/:level', component: KanjiQuizComponent },
   { path: 'add', component: AddKanaComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent },
   { path: 'select-learning-level', component: SelectLearningLevelComponent },

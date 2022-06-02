@@ -4,6 +4,9 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserModel} from "../../models/user.model";
 import {map} from "rxjs/operators";
 import {UserService} from "../../services/user.service";
+import {KanaService} from "../../services/kana.service";
+import {Kanji} from "../../models/kanji.model";
+import kanji from "../../../assets/kanji_list.json";
 
 @Component({
   selector: 'app-dashboard',
@@ -16,8 +19,10 @@ export class DashboardComponent implements OnInit {
   currentUser: any;
 
   users: UserModel[] = [];
+  kanjiList: Kanji[] = kanji;
 
-  constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService) {
+  constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService,
+              private kanaService: KanaService) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;
@@ -66,7 +71,11 @@ export class DashboardComponent implements OnInit {
 
   update(): void {
     this.currentUser.progressHiragana.level += 1;
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
+  }
+
+  uploadKanji(): void {
+    this.kanjiList.forEach((value) => this.kanaService.createKanji(value))
   }
 
 }

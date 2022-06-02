@@ -82,7 +82,7 @@ export class HiraganaQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
-    this.userService.updateUserProgress(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
   }
 
   testSession(id: number): void {

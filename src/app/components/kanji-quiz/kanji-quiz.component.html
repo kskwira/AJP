@@ -3,20 +3,25 @@
 </div>
 
 <mat-grid-list cols="2" rowHeight="480px" gutterSize="4px">
-  <mat-grid-tile *ngFor="let hiragana of hiraganaArray">
-    <mat-card class="user-card">
+  <mat-grid-tile *ngFor="let kanji of kanjiArray">
+    <mat-card >
       <mat-card-content>
         <flip-card [toggleProperty] = answered>
           <flip-card-front>
-            <p>{{ hiragana.sign}}</p>
+            <p class="kanji-front">{{kanji.sign}}</p>
           </flip-card-front>
           <flip-card-back>
-            <p>{{ hiragana.reading}}</p>
+            <p class="kanji-back-meaning" *ngFor="let meaning of kanji.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="kanji-back">Kunyomi: {{kanji.kunyomi!.join(", ")}}</p>
+            <p class="kanji-back">Onyomi: {{kanji.onyomi!.join(", ")}}</p>
           </flip-card-back>
         </flip-card>
         <mat-card-actions >
           <input matInput type="text" id="single" #guess>
-          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading!, hiragana.sign!, hiragana.id!)" [disabled]="answered">Sprawdź</button>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, kanji.meaning!, kanji.sign!, kanji.id!)" [disabled]="answered">Sprawdź</button>
           <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
           <br/>
           <mat-error>{{result}}</mat-error>
@@ -27,8 +32,8 @@
 </mat-grid-list>
 <div *ngIf="quizEnd">
   <mat-card>
-  <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
-  <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
-<p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+    <p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
   </mat-card>
 </div>

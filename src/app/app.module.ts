@@ -42,6 +42,7 @@ import { HiraganaLearningComponent } from './components/hiragana-learning/hiraga
 import { KatakanaLearningComponent } from './components/katakana-learning/katakana-learning.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HelpComponent } from './help/help.component';
+import { KanjiQuizComponent } from './components/kanji-quiz/kanji-quiz.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { HelpComponent } from './help/help.component';
     KatakanaLearningComponent,
     AboutUsComponent,
     HelpComponent,
+    KanjiQuizComponent,
   ],
     imports: [
         CommonModule,

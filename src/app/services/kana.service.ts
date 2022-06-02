@@ -4,6 +4,7 @@ import { Kana } from "../models/kana.model";
 import firebase from "firebase/compat/app";
 import firestore = firebase.firestore;
 import {BehaviorSubject} from "rxjs";
+import {Kanji} from "../models/kanji.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import {BehaviorSubject} from "rxjs";
 export class KanaService {
   private katakanaDbPath = '/katakana';
   private hiraganaDbPath = '/hiragana';
+  private kanjiDbPath = '/kanji';
   kanaSetList = new Set<number>();
 
   private levelUpSource = new BehaviorSubject<boolean>(false);
@@ -26,13 +28,16 @@ export class KanaService {
   katakanaLevelOne: AngularFirestoreCollection<Kana>;
   katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
+  kanjiRef: AngularFirestoreCollection<Kanji>;
   singleKanaRef: AngularFirestoreCollection<Kana>;
   singleRandomKana: AngularFirestoreCollection<Kana> | undefined;
+  singleRandomKanji: AngularFirestoreCollection<Kanji> | undefined;
   singleRandomKanaByLevel: AngularFirestoreCollection<Kana> | undefined;
 
   constructor(private db: AngularFirestore) {
     this.katakanaRef = db.collection(this.katakanaDbPath);
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
+    this.kanjiRef = db.collection(this.kanjiDbPath);
     this.singleKanaRef = db.collection(this.hiraganaDbPath,
         ref => ref.where(firestore.FieldPath.documentId(), '==', 'uERNQsV8GNkmjIhXhd2X'));
     this.hiraganaLevelOne = db.collection(this.hiraganaDbPath,
@@ -78,6 +83,11 @@ export class KanaService {
   getSingleKatakanaById(id: number):AngularFirestoreCollection<Kana>{
     this.singleRandomKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', id))
     return this.singleRandomKana
+  }
+
+  getSingleKanjiById(id: number):AngularFirestoreCollection<Kanji>{
+    this.singleRandomKanji = this.db.collection(this.kanjiDbPath, ref => ref.where('id', '==', id))
+    return this.singleRandomKanji
   }
 
   getSingleRandomHiraganaByLevel(level: number):AngularFirestoreCollection<Kana>{
@@ -157,6 +167,10 @@ export class KanaService {
 
   getOneKana(): AngularFirestoreCollection<Kana> {
     return this.singleKanaRef;
+  }
+
+  createKanji(kanji: Kanji): any {
+    return this.kanjiRef.add({ ...kanji})
   }
 
 }

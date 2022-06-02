@@ -31,9 +31,15 @@ export class UserService {
     return this.userRefDocument = this.db.doc(`users/${id}`);
   }
 
-  updateUserProgress(userID: string, progressData: any): Promise<void> {
+  updateUserProgressHiragana(userID: string, progressData: any): Promise<void> {
     return this.userRef.doc(userID).update({
       progressHiragana: progressData
+    });
+  }
+
+  updateUserProgressKanji(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressKanji: progressData
     });
   }
 

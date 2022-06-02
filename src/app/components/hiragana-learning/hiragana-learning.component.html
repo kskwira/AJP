@@ -6,23 +6,23 @@
   <mat-grid-tile>
     <mat-card *ngFor="let hiraganaLearn of hiraganaLearnArray" class="user-card">
       <mat-card-content *ngIf="!learningEnd">
-        <app-flip-card>
+        <flip-card>
           <flip-card-front>
             <p>{{ hiraganaLearn.sign}}</p>
           </flip-card-front>
           <flip-card-back>
             <p>{{ hiraganaLearn.reading}}</p>
           </flip-card-back>
-        </app-flip-card>
+        </flip-card>
         <br/>
-        <app-flip-card [toggleProperty]="true">
+        <flip-card [toggleProperty]="true">
           <flip-card-front>
             <p>{{ hiraganaLearn.sign}}</p>
           </flip-card-front>
           <flip-card-back>
             <p>{{ hiraganaLearn.reading}}</p>
           </flip-card-back>
-        </app-flip-card>
+        </flip-card>
         <mat-card-actions>
           <button mat-raised-button color="primary" type="submit" *ngIf="sortedIdArrayIndex < sortedIdArray.length; else lastSign" (click)="learnSession(sortedIdArray[sortedIdArrayIndex])" >Następny znak nauka</button>
           <ng-template #lastSign>
@@ -33,14 +33,14 @@
     </mat-card>
     <mat-card *ngFor="let hiragana of hiraganaQuizArray" class="user-card">
       <mat-card-content>
-        <app-flip-card [toggleProperty] = answered>
+        <flip-card [toggleProperty] = answered>
           <flip-card-front>
             <p>{{ hiragana.sign}}</p>
           </flip-card-front>
           <flip-card-back>
             <p>{{ hiragana.reading}}</p>
           </flip-card-back>
-        </app-flip-card>
+        </flip-card>
         <mat-card-actions>
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading!)" [disabled]="answered">Sprawdź</button>
