@@ -156,7 +156,7 @@
     "onyomiRomaji": ["ken"],
     "kunyomi": ["み(る)", "み(せる)"],
     "kunyomiRomaji": ["mi(ru)", "mi(seru)"],
-    "meaning": ["zobacz", "nadzieje", "szanse", "pomysł", "opinia", "spójrz", "widoczne"],
+    "meaning": ["zobacz", "nadzieje", "szanse", "pomysł"],
     "level": 2
   },
   {
@@ -376,7 +376,7 @@
     "onyomiRomaji": ["ka", "ge"],
     "kunyomi": ["した", "しも", "もと", "さ(げる)", "くだ(る)", "お(ろす)"],
     "kunyomiRomaji": ["shita", "shimo", "moto", "sa(geru)", "kuda(ru)", "o(rosu)"],
-    "meaning": ["poniżej", "w dół", "schodzić", "dawać", "nisko", "gorszy"],
+    "meaning": ["poniżej", "w dół", "schodzić", "dawać"],
     "level": 4
   },
   {
@@ -386,7 +386,7 @@
     "onyomiRomaji": ["rai", "tai"],
     "kunyomi": ["く(る)", "きた(る)", "き", "こ"],
     "kunyomiRomaji": ["ku(ru)", "kita(ru)", "ki", "ko"],
-    "meaning": ["przyjdź", "z powodu", "następny", "powód", "stań się"],
+    "meaning": ["przyjdź", "z powodu", "następny", "powód"],
     "level": 4
   },
   {
@@ -396,7 +396,7 @@
     "onyomiRomaji": ["ki", "ke"],
     "kunyomi": ["いき"],
     "kunyomiRomaji": ["iki"],
-    "meaning": ["duch", "umysł", "powietrze", "atmosfera", "nastrój"],
+    "meaning": ["duch", "umysł", "powietrze", "atmosfera"],
     "level": 4
   },
   {
@@ -496,7 +496,7 @@
     "onyomiRomaji": ["sen"],
     "kunyomi": ["さき", "ま(ず)"],
     "kunyomiRomaji": ["saki", "ma(zu)"],
-    "meaning": ["przed", "z wyprzedzeniem", "poprzedni", "przyszłość", "pierwszeństwo"],
+    "meaning": ["przed", "z wyprzedzeniem", "poprzedni", "przyszłość"],
     "level": 5
   },
   {
