@@ -13,7 +13,7 @@ export class KanaService {
   private katakanaDbPath = '/katakana';
   private hiraganaDbPath = '/hiragana';
   private kanjiDbPath = '/kanji';
-  kanaSetList = new Set<number>();
+  idSetList = new Set<number>();
 
   private levelUpSource = new BehaviorSubject<boolean>(false);
   currentLevelUpValue = this.levelUpSource.asObservable();
@@ -53,7 +53,7 @@ export class KanaService {
 
 
   setLearningId(id: Set<number>) {
-    this.kanaSetList = id;
+    this.idSetList = id;
   }
 
   getAllKatakana(): AngularFirestoreCollection<Kana> {
@@ -75,6 +75,7 @@ export class KanaService {
     this.singleRandomKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', x))
     return this.singleRandomKana
   }
+
   getSingleHiraganaById(id: number):AngularFirestoreCollection<Kana>{
     this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', id))
     return this.singleRandomKana

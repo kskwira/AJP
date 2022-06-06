@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import {Kanji} from "../../models/kanji.model";
 import {KanaService} from "../../services/kana.service";
-import {Kana} from "../../models/kana.model";
-import {map} from "rxjs/operators";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
+import {map} from "rxjs/operators";
 
 @Component({
-  selector: 'app-hiragana-learning',
-  templateUrl: './hiragana-learning.component.html',
-  styleUrls: ['./hiragana-learning.component.css']
+  selector: 'app-kanji-learning',
+  templateUrl: './kanji-learning.component.html',
+  styleUrls: ['./kanji-learning.component.css']
 })
-export class HiraganaLearningComponent implements OnInit {
+export class KanjiLearningComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser: any;
 
-  hiraganaQuizArray: Kana[] = [];
-  hiraganaLearnArray: Kana[] = [];
+  kanjiQuizArray: Kanji[] = [];
+  kanjiLearnArray: Kanji[] = [];
   result = '';
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
@@ -28,7 +28,6 @@ export class HiraganaLearningComponent implements OnInit {
   learningEnd = false;
   quizEnd = false;
   doLevelUp: any;
-
 
   constructor(private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
     this.afAuth.onAuthStateChanged((user) => {
@@ -65,8 +64,8 @@ export class HiraganaLearningComponent implements OnInit {
   }
 
   levelUp(): void {
-    this.currentUser.progressHiragana.level += 1;
-    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.currentUser.progressKanji.level += 1;
+    this.userService.updateUserProgressKanji(this.currentUser.uid, this.currentUser.progressKanji);
   }
 
   //The Fisher-Yates algorithm
@@ -90,37 +89,37 @@ export class HiraganaLearningComponent implements OnInit {
     this.sortedIdArrayIndex += 1;
 
     if (this.sortedIdArrayIndex <= this.sortedIdArray.length) {
-      this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
+      this.kanaService.getSingleKanjiById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
             ({id: c.payload.doc.id, ...c.payload.doc.data()})
           )
         )
       ).subscribe(data => {
-        this.hiraganaLearnArray = data;
+        this.kanjiLearnArray = data;
       });
     }
     else {
       this.result = '';
       this.answered = false;
       this.learningEnd = true;
-      this.hiraganaLearnArray.splice(0, this.hiraganaLearnArray.length);
-      this.kanaService.getSingleHiraganaById(id).snapshotChanges().pipe(
+      this.kanjiLearnArray.splice(0, this.kanjiLearnArray.length);
+      this.kanaService.getSingleKanjiById(id).snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
             ({id: c.payload.doc.id, ...c.payload.doc.data()})
           )
         )
       ).subscribe(data => {
-        this.hiraganaQuizArray = data;
+        this.kanjiQuizArray = data;
       });
     }
   }
 
-  answering(answer: string, reading: string) {
+  answering(answer: string, meaning: string[]) {
     this.answered = !this.answered;
 
-    if (reading == answer) {
+    if (meaning.includes(answer.toLowerCase())) {
       this.result = "Poprawna odpowiedź";
       this.randomizedIdArray.splice(this.randomizedIdArrayIndex, 1);
       this.numberAnswered = this.numberAnswered + 1

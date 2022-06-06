@@ -24,7 +24,7 @@ export class KatakanaLearningComponent implements OnInit {
   constructor(private kanaService: KanaService) { }
 
   ngOnInit(): void {
-    for (let v of this.kanaService.kanaSetList) {
+    for (let v of this.kanaService.idSetList) {
       // @ts-ignore
       this.orderArray.push(v);
       console.log(v);

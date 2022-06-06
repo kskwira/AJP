@@ -7,8 +7,8 @@
   <form [formGroup]="hiraganaForm" (ngSubmit)="onSubmit('hiragana')">
     <div class="checkbox-row">
       <label formArrayName="signs" *ngFor="let sign of hiraganaSignsFormArray.controls; let i = index">
-        <mat-checkbox [disabled]="checkDisableKana(singsData[i].id, 'hiragana')" [formControlName]="i">
-          {{singsData[i].name}}
+        <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'hiragana')" [formControlName]="i">
+          {{kanaSingsData[i].name}}
         </mat-checkbox>
       </label>
       <br>
@@ -23,8 +23,24 @@
   <form [formGroup]="katakanaForm" (ngSubmit)="onSubmit('katakana')">
     <div class="checkbox-row">
       <label formArrayName="signs" *ngFor="let sign of katakanaSignsFormArray.controls; let i = index">
-        <mat-checkbox [disabled]="checkDisableKana(singsData[i].id, 'katakana')" [formControlName]="i">
-          {{singsData[i].name}}
+        <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'katakana')" [formControlName]="i">
+          {{kanaSingsData[i].name}}
+        </mat-checkbox>
+      </label>
+      <br>
+      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+    </div>
+    <br><br>
+  </form>
+  <mat-divider></mat-divider>
+
+  <mat-list-item>Kanji</mat-list-item>
+
+  <form [formGroup]="kanjiForm" (ngSubmit)="onSubmit('kanji')">
+    <div class="checkbox-row">
+      <label formArrayName="signs" *ngFor="let sign of kanjiSignsFormArray.controls; let i = index">
+        <mat-checkbox [disabled]="checkDisableKana(kanjiSingsData[i].id, 'kanji')" [formControlName]="i">
+          {{kanjiSingsData[i].name}}
         </mat-checkbox>
       </label>
       <br>

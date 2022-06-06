@@ -3,23 +3,33 @@
 </div>
 <mat-grid-list cols="2" rowHeight="580px" gutterSize="4px">
   <mat-grid-tile>
-    <mat-card *ngFor="let hiraganaLearn of hiraganaLearnArray" class="user-card">
+    <mat-card *ngFor="let kanjiLearn of kanjiLearnArray">
       <mat-card-content *ngIf="!learningEnd">
         <flip-card>
           <flip-card-front>
-            <p>{{ hiraganaLearn.sign}}</p>
+            <p class="kanji-front">{{ kanjiLearn.sign}}</p>
           </flip-card-front>
           <flip-card-back>
-            <p>{{ hiraganaLearn.reading}}</p>
+            <p class="kanji-back-meaning" *ngFor="let meaning of kanjiLearn.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="kanji-back">Kunyomi: {{kanjiLearn.kunyomi!.join(", ")}}</p>
+            <p class="kanji-back">Onyomi: {{kanjiLearn.onyomi!.join(", ")}}</p>
           </flip-card-back>
         </flip-card>
         <br/>
         <flip-card [toggleProperty]="true">
           <flip-card-front>
-            <p>{{ hiraganaLearn.sign}}</p>
+            <p class="kanji-front">{{ kanjiLearn.sign}}</p>
           </flip-card-front>
           <flip-card-back>
-            <p>{{ hiraganaLearn.reading}}</p>
+            <p class="kanji-back-meaning" *ngFor="let meaning of kanjiLearn.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="kanji-back">Kunyomi: {{kanjiLearn.kunyomi!.join(", ")}}</p>
+            <p class="kanji-back">Onyomi: {{kanjiLearn.onyomi!.join(", ")}}</p>
           </flip-card-back>
         </flip-card>
         <mat-card-actions>
@@ -30,19 +40,24 @@
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
-    <mat-card *ngFor="let hiragana of hiraganaQuizArray" class="user-card">
+    <mat-card *ngFor="let kanji of kanjiQuizArray">
       <mat-card-content>
         <flip-card [toggleProperty] = answered>
           <flip-card-front>
-            <p>{{ hiragana.sign}}</p>
+            <p class="kanji-front">{{ kanji.sign}}</p>
           </flip-card-front>
           <flip-card-back>
-            <p>{{ hiragana.reading}}</p>
+            <p class="kanji-back-meaning" *ngFor="let meaning of kanji.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="kanji-back">Kunyomi: {{kanji.kunyomi!.join(", ")}}</p>
+            <p class="kanji-back">Onyomi: {{kanji.onyomi!.join(", ")}}</p>
           </flip-card-back>
         </flip-card>
         <mat-card-actions>
           <input matInput type="text" id="single" #guess>
-          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading!)" [disabled]="answered">Sprawdź</button>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, kanji.meaning!)" [disabled]="answered">Sprawdź</button>
           <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="learnSession(randomizedIdArray[randomizedIdArrayIndex])" [disabled]="!answered">Następny znak Quiz</button>
           <br/>
           <mat-error>{{result}}</mat-error>
