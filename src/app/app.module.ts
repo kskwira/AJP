@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -37,11 +36,10 @@ import { KanaDetailsComponent } from './components/kana-details/kana-details.com
 import { SelectQuizLevelComponent } from './components/select-quiz-level/select-quiz-level.component';
 import { HiraganaQuizComponent } from './components/hiragana-quiz/hiragana-quiz.component';
 import { SelectLearningLevelComponent } from './components/select-learning-level/select-learning-level.component';
-import {MatCheckboxModule} from "@angular/material/checkbox";
 import { HiraganaLearningComponent } from './components/hiragana-learning/hiragana-learning.component';
 import { KatakanaLearningComponent } from './components/katakana-learning/katakana-learning.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { HelpComponent } from './help/help.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { HelpComponent } from './components/help/help.component';
 import { KanjiQuizComponent } from './components/kanji-quiz/kanji-quiz.component';
 import { KanjiLearningComponent } from './components/kanji-learning/kanji-learning.component';
 
@@ -79,7 +77,6 @@ import { KanjiLearningComponent } from './components/kanji-learning/kanji-learni
         BrowserModule,
         BrowserAnimationsModule,
         DragDropModule,
-
         FormsModule,
         AngularFireAuthModule,
         AngularFireModule.initializeApp(environment.firebase),
@@ -92,8 +89,6 @@ import { KanjiLearningComponent } from './components/kanji-learning/kanji-learni
         AppRoutingModule,
         AngularMaterialModule,
         ReactiveFormsModule,
-        MatCheckboxModule
-
     ],
   providers: [AuthService],
   bootstrap: [AppComponent]

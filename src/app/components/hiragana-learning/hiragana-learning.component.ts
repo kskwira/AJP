@@ -4,6 +4,7 @@ import {Kana} from "../../models/kana.model";
 import {map} from "rxjs/operators";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-hiragana-learning',
@@ -13,7 +14,7 @@ import {UserService} from "../../services/user.service";
 export class HiraganaLearningComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   hiraganaQuizArray: Kana[] = [];
   hiraganaLearnArray: Kana[] = [];
@@ -65,8 +66,8 @@ export class HiraganaLearningComponent implements OnInit {
   }
 
   levelUp(): void {
-    this.currentUser.progressHiragana.level += 1;
-    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.currentUser!.progressHiragana.level += 1;
+    this.userService.updateUserProgressHiragana(this.currentUser!.uid, this.currentUser!.progressHiragana);
   }
 
   //The Fisher-Yates algorithm

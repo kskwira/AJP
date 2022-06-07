@@ -4,6 +4,7 @@ import {KanaService} from "../../services/kana.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
 import {map} from "rxjs/operators";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-kanji-learning',
@@ -13,7 +14,7 @@ import {map} from "rxjs/operators";
 export class KanjiLearningComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   kanjiQuizArray: Kanji[] = [];
   kanjiLearnArray: Kanji[] = [];
@@ -64,8 +65,8 @@ export class KanjiLearningComponent implements OnInit {
   }
 
   levelUp(): void {
-    this.currentUser.progressKanji.level += 1;
-    this.userService.updateUserProgressKanji(this.currentUser.uid, this.currentUser.progressKanji);
+    this.currentUser!.progressKanji.level += 1;
+    this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
   }
 
   //The Fisher-Yates algorithm

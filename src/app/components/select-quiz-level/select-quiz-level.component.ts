@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-select-quiz-level',
@@ -10,7 +11,7 @@ import {UserService} from "../../services/user.service";
 export class SelectQuizLevelComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   constructor(public afAuth: AngularFireAuth, private userService: UserService) {
     this.afAuth.onAuthStateChanged((user) => {

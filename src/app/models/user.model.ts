@@ -4,7 +4,8 @@ import UserInfo = firebase.UserInfo;
 export interface Progress {
   level: number;
   [signID: number]: {
-    reading: string;
+    reading?: string;
+    meaning?: string[];
     sign: string;
     timesCorrect: Array<number>;
     timesAnswered: number;

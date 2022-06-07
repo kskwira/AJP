@@ -2,6 +2,7 @@
   <mat-icon>local_fire_department</mat-icon>
   <span routerLink="/">Tanuki</span>
   <button *ngIf="(afAuth.user | async)" mat-button [matMenuTriggerFor]="belowMenu">Użytkownik</button>
+
   <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
     <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="sign-in">Logowanie</button>
     <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="register-user">Rejestracja</button>
@@ -10,20 +11,17 @@
   </mat-menu>
 
   <button *ngIf="!(afAuth.user | async)" mat-button [matMenuTriggerFor]="belowMenu">Logowanie</button>
+
   <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
     <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="sign-in">Logowanie</button>
     <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="register-user">Rejestracja</button>
     <button *ngIf="(afAuth.user | async)" mat-menu-item routerLink="dashboard">Panel użytkownika</button>
     <button *ngIf="(afAuth.user | async)" (click)="authService.SignOut()" mat-menu-item routerLink="sign-in">Wyloguj</button>
   </mat-menu>
-<!--  <button mat-button routerLink="kanban"> Kanban</button>-->
-<!--  <button mat-button routerLink="kana">Kana</button>-->
-<!--  <button mat-button routerLink="katakana">Katakana</button>-->
-<!--  <button mat-button routerLink="hiragana">Hiragana</button>-->
-<!--  <button mat-button routerLink="add">Add</button>-->
+
   <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-learning-level">Nauka</button>
   <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-quiz-level">Quiz</button>
-  <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-quiz-level">Materiały</button>
+  <button *ngIf="(afAuth.user | async)" mat-button routerLink="about-us">Materiały</button>
   <button mat-button routerLink="about-us">O nas</button>
   <button mat-button routerLink="help">Pomoc</button>
 </mat-toolbar>

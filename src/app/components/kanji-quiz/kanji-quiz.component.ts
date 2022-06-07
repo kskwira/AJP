@@ -5,6 +5,7 @@ import {KanaService} from "../../services/kana.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
 import {map} from "rxjs/operators";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-kanji-quiz',
@@ -14,7 +15,7 @@ import {map} from "rxjs/operators";
 export class KanjiQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   kanjiArray: Kanji[] = [];
   result = '';
@@ -106,7 +107,7 @@ export class KanjiQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
-    this.userService.updateUserProgressKanji(this.currentUser.uid, this.currentUser.progressKanji);
+    this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
   }
 
   testSession(id: number): void {
@@ -132,19 +133,19 @@ export class KanjiQuizComponent implements OnInit {
       this.numberAnswered = this.numberAnswered +1;
       this.numberAnsweredCorrect = this.numberAnsweredCorrect +1;
 
-      if (typeof this.currentUser.progressKanji[id] === 'undefined') {
-        this.currentUser.progressKanji[id] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [1]};
+      if (typeof this.currentUser!.progressKanji[Number(id)] === 'undefined') {
+        this.currentUser!.progressKanji[Number(id)] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [1]};
         console.log("new progress success")
       }
       else {
-        this.currentUser.progressKanji[id].timesAnswered += 1;
+        this.currentUser!.progressKanji[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser.progressKanji[id].timesCorrect.length >=5) {
-          this.currentUser.progressKanji[id].timesCorrect.shift();
-          this.currentUser.progressKanji[id].timesCorrect.push(1);
+        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >=5) {
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.shift();
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.push(1);
         }
         else {
-          this.currentUser.progressKanji[id].timesCorrect.push(1);
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.push(1);
         }
         console.log("old progress success")
       }
@@ -154,19 +155,19 @@ export class KanjiQuizComponent implements OnInit {
       this.result = "Zła odpowiedź";
       this.numberAnswered = this.numberAnswered +1;
 
-      if (typeof this.currentUser.progressKanji[id] === 'undefined') {
-        this.currentUser.progressKanji[id] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [0]};
+      if (typeof this.currentUser!.progressKanji[Number(id)] === 'undefined') {
+        this.currentUser!.progressKanji[Number(id)] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [0]};
         console.log("new progress fail")
       }
       else {
-        this.currentUser.progressKanji[id].timesAnswered += 1;
+        this.currentUser!.progressKanji[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser.progressKanji[id].timesCorrect.length >=5) {
-          this.currentUser.progressKanji[id].timesCorrect.shift();
-          this.currentUser.progressKanji[id].timesCorrect.push(0);
+        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >=5) {
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.shift();
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.push(0);
         }
         else {
-          this.currentUser.progressKanji[id].timesCorrect.push(0);
+          this.currentUser!.progressKanji[Number(id)].timesCorrect.push(0);
         }
         console.log("old progress fail")
       }
@@ -174,7 +175,7 @@ export class KanjiQuizComponent implements OnInit {
 
     if (this.numberAnswered >= this.idArray.length) {
       this.quizEnd = true;
-      console.log(this.currentUser.progressKanji);
+      console.log(this.currentUser!.progressKanji);
       this.signProgressUp();
     }
   }

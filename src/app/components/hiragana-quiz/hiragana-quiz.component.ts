@@ -5,6 +5,7 @@ import {Kana} from "../../models/kana.model";
 import {ActivatedRoute} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-hiragana-quiz',
@@ -14,7 +15,7 @@ import {UserService} from "../../services/user.service";
 export class HiraganaQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   hiraganaArray: Kana[] = [];
   result = '';
@@ -82,7 +83,7 @@ export class HiraganaQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
-    this.userService.updateUserProgressHiragana(this.currentUser.uid, this.currentUser.progressHiragana);
+    this.userService.updateUserProgressHiragana(this.currentUser!.uid, this.currentUser!.progressHiragana);
   }
 
   testSession(id: number): void {
@@ -108,19 +109,19 @@ export class HiraganaQuizComponent implements OnInit {
       this.numberAnswered = this.numberAnswered +1;
       this.numberAnsweredCorrect = this.numberAnsweredCorrect +1;
 
-      if (typeof this.currentUser.progressHiragana[id] === 'undefined') {
-        this.currentUser.progressHiragana[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [1]};
+      if (typeof this.currentUser!.progressHiragana[Number(id)] === 'undefined') {
+        this.currentUser!.progressHiragana[Number(id)] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [1]};
         console.log("new progress success")
       }
       else {
-        this.currentUser.progressHiragana[id].timesAnswered += 1;
+        this.currentUser!.progressHiragana[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser.progressHiragana[id].timesCorrect.length >=5) {
-          this.currentUser.progressHiragana[id].timesCorrect.shift();
-          this.currentUser.progressHiragana[id].timesCorrect.push(1);
+        if (this.currentUser!.progressHiragana[Number(id)].timesCorrect.length >=5) {
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.shift();
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.push(1);
         }
         else {
-          this.currentUser.progressHiragana[id].timesCorrect.push(1);
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.push(1);
         }
         console.log("old progress success")
       }
@@ -130,19 +131,19 @@ export class HiraganaQuizComponent implements OnInit {
       this.result = "Zła odpowiedź";
       this.numberAnswered = this.numberAnswered +1;
 
-      if (typeof this.currentUser.progressHiragana[id] === 'undefined') {
-        this.currentUser.progressHiragana[id] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [0]};
+      if (typeof this.currentUser!.progressHiragana[Number(id)] === 'undefined') {
+        this.currentUser!.progressHiragana[Number(id)] = {reading: reading, sign: sign, timesAnswered: 1, timesCorrect: [0]};
         console.log("new progress fail")
       }
       else {
-        this.currentUser.progressHiragana[id].timesAnswered += 1;
+        this.currentUser!.progressHiragana[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser.progressHiragana[id].timesCorrect.length >=5) {
-          this.currentUser.progressHiragana[id].timesCorrect.shift();
-          this.currentUser.progressHiragana[id].timesCorrect.push(0);
+        if (this.currentUser!.progressHiragana[Number(id)].timesCorrect.length >=5) {
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.shift();
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.push(0);
         }
         else {
-          this.currentUser.progressHiragana[id].timesCorrect.push(0);
+          this.currentUser!.progressHiragana[Number(id)].timesCorrect.push(0);
         }
         console.log("old progress fail")
       }
@@ -150,7 +151,7 @@ export class HiraganaQuizComponent implements OnInit {
 
     if (this.numberAnswered >= this.idArray.length) {
       this.quizEnd = true;
-      console.log(this.currentUser.progressHiragana);
+      console.log(this.currentUser!.progressHiragana);
       this.signProgressUp();
     }
 

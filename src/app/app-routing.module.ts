@@ -15,8 +15,8 @@ import {SelectQuizLevelComponent} from "./components/select-quiz-level/select-qu
 import {SelectLearningLevelComponent} from "./components/select-learning-level/select-learning-level.component";
 import {HiraganaLearningComponent} from "./components/hiragana-learning/hiragana-learning.component";
 import {KatakanaLearningComponent} from "./components/katakana-learning/katakana-learning.component";
-import {AboutUsComponent} from "./about-us/about-us.component";
-import {HelpComponent} from "./help/help.component";
+import {AboutUsComponent} from "./components/about-us/about-us.component";
+import {HelpComponent} from "./components/help/help.component";
 import {KanjiQuizComponent} from "./components/kanji-quiz/kanji-quiz.component";
 import {KanjiLearningComponent} from "./components/kanji-learning/kanji-learning.component";
 

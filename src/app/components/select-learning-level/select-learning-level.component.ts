@@ -4,6 +4,7 @@ import {KanaService} from "../../services/kana.service";
 import {Router} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
+import {UserModel} from "../../models/user.model";
 
 @Component({
   selector: 'app-select-learning-level',
@@ -13,7 +14,7 @@ import {UserService} from "../../services/user.service";
 export class SelectLearningLevelComponent implements OnInit {
 
   userData: any; // Save logged in user data
-  currentUser: any;
+  currentUser?: UserModel;
 
   idSetList = new Set<number>();
   hiraganaLevel = 0;
@@ -50,7 +51,7 @@ export class SelectLearningLevelComponent implements OnInit {
     { id: 22, name: "rya" },
     { id: 23, name: "gya" },
     { id: 24, name: "ja" },
-    { id: 25, name: "dja" },
+    { id: 25, name: "(ja)" },
     { id: 26, name: "bya" },
     { id: 27, name: "pya" }
   ];
@@ -127,10 +128,10 @@ export class SelectLearningLevelComponent implements OnInit {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
-        this.hiraganaLevel = this.currentUser.progressHiragana.level;
-        this.katakanaLevel = this.currentUser.progressKatakana.level;
-        this.kanjiLevel = this.currentUser.progressKanji.level;
-        this.vocabularyLevel = this.currentUser.progressVocabulary.level;
+        this.hiraganaLevel = this.currentUser!.progressHiragana.level;
+        this.katakanaLevel = this.currentUser!.progressKatakana.level;
+        this.kanjiLevel = this.currentUser!.progressKanji.level;
+        this.vocabularyLevel = this.currentUser!.progressVocabulary.level;
       });
   }
 

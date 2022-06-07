@@ -1,26 +1,26 @@
-<div class="row" *ngIf="userData as user">
-  <mat-card class="user-card">
-    <mat-card-header>
-      <div mat-card-avatar class="user-header-image"></div>
-      <mat-card-title><h1>Hello: <strong>{{user.displayName }}</strong></h1></mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>UserModel ID: <strong>{{user.uid}}</strong></p>
-      <p>Email: <strong>{{user.email}}</strong></p>
-      <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-      <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
-      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
-      <p>Last sign in time: <strong>{{user.metadata.lastSignInTime}}</strong></p>
-      <p>Creation time: <strong>{{user.metadata.creationTime}}</strong></p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<!--<div class="row" *ngIf="userData as user">-->
+<!--  <mat-card class="user-card">-->
+<!--    <mat-card-header>-->
+<!--      <div mat-card-avatar class="user-header-image"></div>-->
+<!--      <mat-card-title><h1>Hello: <strong>{{user.displayName }}</strong></h1></mat-card-title>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
+<!--      <p>UserModel ID: <strong>{{user.uid}}</strong></p>-->
+<!--      <p>Email: <strong>{{user.email}}</strong></p>-->
+<!--      <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>-->
+<!--      <p>Photo URL: <strong>{{user.photoURL}}</strong></p>-->
+<!--      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>-->
+<!--      <p>Last sign in time: <strong>{{user.metadata.lastSignInTime}}</strong></p>-->
+<!--      <p>Creation time: <strong>{{user.metadata.creationTime}}</strong></p>-->
+<!--    </mat-card-content>-->
+<!--    <mat-card-actions>-->
+<!--      <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>-->
+<!--    </mat-card-actions>-->
+<!--  </mat-card>-->
+<!--</div>-->
 
 
-<div class="row" *ngIf="currentUser as user" >
+<div class="row" *ngIf="currentUser as user">
   <mat-card class="user-card">
     <mat-card-header>
       <div mat-card-avatar class="user-header-image"></div>
@@ -33,8 +33,42 @@
       <p>Last Name: <strong>{{user.lastName}}</strong></p>
       <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
       <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
-      <p>Hiragana Progress Level: <strong>{{user.progressHiragana.level}}</strong></p>
-      <p>Hiragana Progress Object: <strong>{{user.progressHiragana | json}}</strong></p>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Hiragana Progress
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>level: <strong>{{user.progressHiragana.level}}</strong></p>
+        <p>signs: <strong>{{user.progressHiragana | json}}</strong></p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Katakana Progress
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>level: <strong>{{user.progressKatakana.level}}</strong></p>
+        <p>signs: <strong>{{user.progressKatakana | json}}</strong></p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Kanji Progress
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>level: <strong>{{user.progressKanji.level}}</strong></p>
+        <p>signs: <strong>{{user.progressKanji | json}}</strong></p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Vocabulary Progress
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>level: <strong>{{user.progressVocabulary.level}}</strong></p>
+        <p>signs: <strong>{{user.progressVocabulary | json}}</strong></p>
+      </mat-expansion-panel>
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
@@ -42,6 +76,5 @@
   </mat-card>
 </div>
 
-<p>{{currentUser | json}}</p>
-<button mat-stroked-button color="primary" (click)="update()">Level Up Hiragana</button>
-<button mat-stroked-button color="primary" (click)="uploadKanji()">Upload Kanji to Firestore</button>
+<!--<button mat-stroked-button color="primary" (click)="update()">Level Up Hiragana</button>-->
+<!--<button mat-stroked-button color="primary" (click)="uploadKanji()">Upload Kanji to Firestore</button>-->

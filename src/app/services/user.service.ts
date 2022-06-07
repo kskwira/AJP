@@ -37,6 +37,12 @@ export class UserService {
     });
   }
 
+  updateUserProgressKatakana(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressKatakana: progressData
+    });
+  }
+
   updateUserProgressKanji(userID: string, progressData: any): Promise<void> {
     return this.userRef.doc(userID).update({
       progressKanji: progressData

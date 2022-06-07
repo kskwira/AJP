@@ -1,53 +1,62 @@
-<p *ngIf="userData as user">{{user.uid}}</p>
+<p *ngIf="userData as user">{{user.displayName}}</p>
 
-<mat-list>
+<mat-accordion>
 
-  <mat-list-item>Hiragana</mat-list-item>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Hiragana
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="hiraganaForm" (ngSubmit)="onSubmit('hiragana')">
+      <div class="checkbox-row">
+        <label formArrayName="signs" *ngFor="let sign of hiraganaSignsFormArray.controls; let i = index">
+          <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'hiragana')" [formControlName]="i">
+            {{kanaSingsData[i].name}}
+          </mat-checkbox>
+        </label>
+        <br>
+        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
 
-  <form [formGroup]="hiraganaForm" (ngSubmit)="onSubmit('hiragana')">
-    <div class="checkbox-row">
-      <label formArrayName="signs" *ngFor="let sign of hiraganaSignsFormArray.controls; let i = index">
-        <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'hiragana')" [formControlName]="i">
-          {{kanaSingsData[i].name}}
-        </mat-checkbox>
-      </label>
-      <br>
-      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-    </div>
-    <br><br>
-  </form>
-  <mat-divider></mat-divider>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Katakana
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="katakanaForm" (ngSubmit)="onSubmit('katakana')">
+      <div class="checkbox-row">
+        <label formArrayName="signs" *ngFor="let sign of katakanaSignsFormArray.controls; let i = index">
+          <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'katakana')" [formControlName]="i">
+            {{kanaSingsData[i].name}}
+          </mat-checkbox>
+        </label>
+        <br>
+        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
 
-  <mat-list-item>Katakana</mat-list-item>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Kanji
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form [formGroup]="kanjiForm" (ngSubmit)="onSubmit('kanji')">
+      <div class="checkbox-row">
+        <label formArrayName="signs" *ngFor="let sign of kanjiSignsFormArray.controls; let i = index">
+          <mat-checkbox [disabled]="checkDisableKana(kanjiSingsData[i].id, 'kanji')" [formControlName]="i">
+            {{kanjiSingsData[i].name}}
+          </mat-checkbox>
+        </label>
+        <br>
+        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
 
-  <form [formGroup]="katakanaForm" (ngSubmit)="onSubmit('katakana')">
-    <div class="checkbox-row">
-      <label formArrayName="signs" *ngFor="let sign of katakanaSignsFormArray.controls; let i = index">
-        <mat-checkbox [disabled]="checkDisableKana(kanaSingsData[i].id, 'katakana')" [formControlName]="i">
-          {{kanaSingsData[i].name}}
-        </mat-checkbox>
-      </label>
-      <br>
-      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-    </div>
-    <br><br>
-  </form>
-  <mat-divider></mat-divider>
-
-  <mat-list-item>Kanji</mat-list-item>
-
-  <form [formGroup]="kanjiForm" (ngSubmit)="onSubmit('kanji')">
-    <div class="checkbox-row">
-      <label formArrayName="signs" *ngFor="let sign of kanjiSignsFormArray.controls; let i = index">
-        <mat-checkbox [disabled]="checkDisableKana(kanjiSingsData[i].id, 'kanji')" [formControlName]="i">
-          {{kanjiSingsData[i].name}}
-        </mat-checkbox>
-      </label>
-      <br>
-      <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-    </div>
-    <br><br>
-  </form>
-  <mat-divider></mat-divider>
-
-</mat-list>
+</mat-accordion>
