@@ -441,7 +441,7 @@
   },
   {
     "id": 45,
-    "sign": ["女"],
+    "sign": "女",
     "onyomi": ["ジョ"],
     "onyomiRomaji": ["jo"],
     "kunyomi": ["おんな", "め"],
