@@ -58,11 +58,15 @@ export class HiraganaQuizComponent implements OnInit {
         this.idArray = Array.from({length: 46}, (_, i) => i + 1);
         this.shuffleArray(this.idArray)
         console.log("arr: ", this.idArray);
-    } else {
-        this.idArray = Array.from({length: 61}, (_, i) => i + 47);
+    } else if (level == 2) {
+        this.idArray = Array.from({length: 25}, (_, i) => i + 47);
         this.shuffleArray(this.idArray)
         console.log("arr: ", this.idArray);
-    }
+    } else if (level == 3) {
+        this.idArray = Array.from({length: 36}, (_, i) => i + 72);
+        this.shuffleArray(this.idArray)
+        console.log("arr: ", this.idArray);
+      }
   }
 
   //The Fisher-Yates algorithm
