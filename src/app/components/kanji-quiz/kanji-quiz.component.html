@@ -2,7 +2,7 @@
   <button mat-stroked-button color="primary" (click)="testSession(idArray[0])">Rozpocznij quiz</button>
 </div>
 
-<mat-grid-list cols="2" rowHeight="480px" gutterSize="4px">
+<mat-grid-list cols="1" rowHeight="480px" gutterSize="4px">
   <mat-grid-tile *ngFor="let kanji of kanjiArray">
     <mat-card >
       <mat-card-content>
@@ -30,6 +30,13 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let number of nineAnswers">
+  <button>{{ number }}</button>
+  </mat-grid-tile>
+</mat-grid-list>
+
 <div *ngIf="quizEnd">
   <mat-card>
     <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>

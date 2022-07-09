@@ -1,7 +1,7 @@
 <div>
   <button mat-stroked-button color="primary" (click)="learnSession(sortedIdArray[sortedIdArrayIndex])">Rozpocznij naukę</button>
 </div>
-<mat-grid-list cols="2" rowHeight="580px" gutterSize="4px">
+<mat-grid-list cols="1" rowHeight="580px" gutterSize="4px">
   <mat-grid-tile>
     <mat-card *ngFor="let katakanaLearn of katakanaLearnArray" class="user-card">
       <mat-card-content *ngIf="!learningEnd">

@@ -16,7 +16,7 @@ export class KanjiQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
-
+  nineAnswers: number[] = [];
   kanjiArray: Kanji[] = [];
   result = '';
   routeParam: number = 0;
@@ -123,6 +123,7 @@ export class KanjiQuizComponent implements OnInit {
       this.kanjiArray = data;
     });
     console.log(this.numberAnswered);
+    this.nineAnswers.push(1,2,3,4,5,6,7,8,9)
   }
 
   answering(answer: string, meaning: string[], sign: string, id: string) {
