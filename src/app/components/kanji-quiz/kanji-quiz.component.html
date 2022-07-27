@@ -31,13 +31,34 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list cols="3" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let number of nineAnswers">
-  <button>{{ number }}</button>
+<mat-grid-list cols="3" rowHeight="fit" style="height: 300px" gutterSize="10px" *ngIf="!quizEnd">
+  <mat-grid-tile *ngFor="let answer of nineAnswers">
+    <div class="example-ripple-container mat-elevation-z4"
+         *ngFor="let kanji of kanjiArray"
+         matRipple
+         [hidden]="answered"
+         [matRippleCentered]="centered"
+         [matRippleDisabled]="disabled"
+         [matRippleUnbounded]="unbounded"
+         [matRippleRadius]="radius"
+         [matRippleColor]="color"
+         (click)="answering(answer.meaning![0], kanji.meaning!, kanji.sign!, kanji.id!)"
+    >{{ answer.meaning![0] }}</div>
   </mat-grid-tile>
 </mat-grid-list>
 
 <div *ngIf="quizEnd">
+<!--  <h1 mat-dialog-title>Koniec Quiz'u</h1>-->
+<!--  <div mat-dialog-content>-->
+<!--    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>-->
+<!--    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>-->
+<!--    <p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>-->
+<!--  </div>-->
+<!--  <div mat-dialog-actions>-->
+<!--    <button mat-button (click)="dialog.closeAll()" >Zamknij</button>-->
+<!--  </div>-->
+
+
   <mat-card>
     <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
     <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>

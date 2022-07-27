@@ -6,6 +6,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
 import {map} from "rxjs/operators";
 import {UserModel} from "../../models/user.model";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-kanji-quiz',
@@ -16,7 +17,7 @@ export class KanjiQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
-  nineAnswers: number[] = [];
+  nineAnswers: Kanji[] = [];
   kanjiArray: Kanji[] = [];
   result = '';
   routeParam: number = 0;
@@ -25,15 +26,22 @@ export class KanjiQuizComponent implements OnInit {
   idArray: number[] = [];
   answered = false;
   quizEnd = false;
+  xxx: Kanji[] = [];
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number = 0;
+  color: string = '';
+
 
   constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth,
-              private userService: UserService) {
+              private userService: UserService, public dialog: MatDialog) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;
         this.retrieveUserDocumentById(user.uid);
-      }
-      else {
+      } else {
         console.log("User failed to load");
       }
     });
@@ -44,7 +52,22 @@ export class KanjiQuizComponent implements OnInit {
       this.routeParam = params['level'];
     });
     this.generateArray(this.routeParam)
+    this.getAllKanji()
   }
+
+  getAllKanji(): void {
+    this.kanaService.getAllKanji().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+        )
+      )
+    ).subscribe(data => {
+      // @ts-ignore
+      this.xxx = data;
+    });
+  }
+
 
   retrieveUserDocumentById(userId: string): void {
     this.userService.getSingleUserDocumentById(userId).ref.get()
@@ -89,6 +112,22 @@ export class KanjiQuizComponent implements OnInit {
     }
   }
 
+  prepareAnswers(id: Kanji[]) {
+    var set = new Set();
+
+    while (set.size < 9) {
+      set.add(Math.floor(Math.random() * (this.idArray.length - 1 + 1)) + 1)
+    }
+
+    console.log(set)
+    var tessss = Array.from(set)
+
+    this.nineAnswers = Array.from({length: 9}, (_, i) =>
+      // @ts-ignore
+      id[tessss[i]]);
+    console.log(tessss)
+  }
+
   //The Fisher-Yates algorithm
   shuffleArray(array: Array<number>): Array<number> {
     let m = array.length, t, i;
@@ -112,6 +151,7 @@ export class KanjiQuizComponent implements OnInit {
 
   testSession(id: number): void {
     this.answered = false;
+    this.quizEnd = false;
     this.result = '';
     this.kanaService.getSingleKanjiById(id).snapshotChanges().pipe(
       map(changes =>
@@ -123,7 +163,8 @@ export class KanjiQuizComponent implements OnInit {
       this.kanjiArray = data;
     });
     console.log(this.numberAnswered);
-    this.nineAnswers.push(1,2,3,4,5,6,7,8,9)
+    this.prepareAnswers(this.xxx)
+    console.log(this.nineAnswers)
   }
 
   answering(answer: string, meaning: string[], sign: string, id: string) {
@@ -131,43 +172,48 @@ export class KanjiQuizComponent implements OnInit {
 
     if (meaning.includes(answer.toLowerCase())) {
       this.result = "Poprawna odpowiedź";
-      this.numberAnswered = this.numberAnswered +1;
-      this.numberAnsweredCorrect = this.numberAnsweredCorrect +1;
+      this.numberAnswered = this.numberAnswered + 1;
+      this.numberAnsweredCorrect = this.numberAnsweredCorrect + 1;
 
       if (typeof this.currentUser!.progressKanji[Number(id)] === 'undefined') {
-        this.currentUser!.progressKanji[Number(id)] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [1]};
+        this.currentUser!.progressKanji[Number(id)] = {
+          meaning: meaning,
+          sign: sign,
+          timesAnswered: 1,
+          timesCorrect: [1]
+        };
         console.log("new progress success")
-      }
-      else {
+      } else {
         this.currentUser!.progressKanji[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >=5) {
+        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >= 5) {
           this.currentUser!.progressKanji[Number(id)].timesCorrect.shift();
           this.currentUser!.progressKanji[Number(id)].timesCorrect.push(1);
-        }
-        else {
+        } else {
           this.currentUser!.progressKanji[Number(id)].timesCorrect.push(1);
         }
         console.log("old progress success")
       }
 
-    }
-    else {
+    } else {
       this.result = "Zła odpowiedź";
-      this.numberAnswered = this.numberAnswered +1;
+      this.numberAnswered = this.numberAnswered + 1;
 
       if (typeof this.currentUser!.progressKanji[Number(id)] === 'undefined') {
-        this.currentUser!.progressKanji[Number(id)] = {meaning: meaning, sign: sign, timesAnswered: 1, timesCorrect: [0]};
+        this.currentUser!.progressKanji[Number(id)] = {
+          meaning: meaning,
+          sign: sign,
+          timesAnswered: 1,
+          timesCorrect: [0]
+        };
         console.log("new progress fail")
-      }
-      else {
+      } else {
         this.currentUser!.progressKanji[Number(id)].timesAnswered += 1;
 
-        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >=5) {
+        if (this.currentUser!.progressKanji[Number(id)].timesCorrect.length >= 5) {
           this.currentUser!.progressKanji[Number(id)].timesCorrect.shift();
           this.currentUser!.progressKanji[Number(id)].timesCorrect.push(0);
-        }
-        else {
+        } else {
           this.currentUser!.progressKanji[Number(id)].timesCorrect.push(0);
         }
         console.log("old progress fail")
@@ -181,8 +227,7 @@ export class KanjiQuizComponent implements OnInit {
     }
   }
 
-  score(correct: number, total: number): number{
+  score(correct: number, total: number): number {
     return correct / total;
   }
-
 }

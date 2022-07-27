@@ -40,8 +40,10 @@ import { HiraganaLearningComponent } from './components/hiragana-learning/hiraga
 import { KatakanaLearningComponent } from './components/katakana-learning/katakana-learning.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HelpComponent } from './components/help/help.component';
-import { KanjiQuizComponent } from './components/kanji-quiz/kanji-quiz.component';
+import {KanjiQuizComponent} from './components/kanji-quiz/kanji-quiz.component';
 import { KanjiLearningComponent } from './components/kanji-learning/kanji-learning.component';
+import {MatRippleModule} from "@angular/material/core";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -89,6 +91,7 @@ import { KanjiLearningComponent } from './components/kanji-learning/kanji-learni
         AppRoutingModule,
         AngularMaterialModule,
         ReactiveFormsModule,
+        MatRippleModule,
     ],
   providers: [AuthService],
   bootstrap: [AppComponent]
