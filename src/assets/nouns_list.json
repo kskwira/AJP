@@ -1,0 +1,3827 @@
+[
+ {
+   "id": 1,
+   "word": "ペン",
+   "kana": "",
+   "romaji": "pen",
+   "meaning": ["długopis", "pióro"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 2,
+   "word": "ボールペン",
+   "kana": "",
+   "romaji": "boorupen",
+   "meaning": ["długopis"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 3,
+   "word": "万年筆",
+   "kana": "まんねんひつ",
+   "romaji": "mannenhitsu",
+   "meaning": ["wieczne pióro"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 4,
+   "word": "鉛筆",
+   "kana": "えんぴつ",
+   "romaji": "enpitsu",
+   "meaning": ["ołówek"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 5,
+   "word": "ノート",
+   "kana": "",
+   "romaji": "nooto",
+   "meaning": ["notes", "notatnik", "zeszyt"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 6,
+   "word": "漢字",
+   "kana": "かんじ",
+   "romaji": "kanji",
+   "meaning": ["kanji"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 7,
+   "word": "文章",
+   "kana": "ぶんしょう",
+   "romaji": "bunshou",
+   "meaning": ["zdanie"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 8,
+   "word": "言葉",
+   "kana": "ことば",
+   "romaji": "kotoba",
+   "meaning": ["słowo", "słowa", "język"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 9,
+   "word": "ニュース",
+   "kana": "",
+   "romaji": "nyuusu",
+   "meaning": ["wiadomość", "wieści"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 10,
+   "word": "ページ",
+   "kana": "",
+   "romaji": "peeji",
+   "meaning": ["strona"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 11,
+   "word": "コピー",
+   "kana": "",
+   "romaji": "kopii",
+   "meaning": ["kopia", "kopiowanie"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 12,
+   "word": "絵",
+   "kana": "え",
+   "romaji": "e",
+   "meaning": ["rysunek", "obraz", "ilustracja"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 13,
+   "word": "映画",
+   "kana": "えいが",
+   "romaji": "eiga",
+   "meaning": ["film"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 14,
+   "word": "カメラ",
+   "kana": "",
+   "romaji": "kamera",
+   "meaning": ["aparat fotograficzny", "kamera"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 15,
+   "word": "フィルム",
+   "kana": "",
+   "romaji": "firumu",
+   "meaning": ["klisza fotograficzna"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 16,
+   "word": "写真",
+   "kana": "しゃしん",
+   "romaji": "shashin",
+   "meaning": ["zdjęcie", "fotografia"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 17,
+   "word": "テープ",
+   "kana": "",
+   "romaji": "teepu",
+   "meaning": ["kaseta", "taśma"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 18,
+   "word": "テープレコーダー",
+   "kana": "",
+   "romaji": "teepu rekoodaa",
+   "meaning": ["magnetofon"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 19,
+   "word": "レコード",
+   "kana": "",
+   "romaji": "rekoodo",
+   "meaning": ["płyta gramofonowa", "rekord"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 20,
+   "word": "紙",
+   "kana": "かみ",
+   "romaji": "kami",
+   "meaning": ["papier"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 21,
+   "word": "封筒",
+   "kana": "ふうとう",
+   "romaji": "fuutou",
+   "meaning": ["koperta"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 22,
+   "word": "葉書",
+   "kana": "はがき",
+   "romaji": "hagaki",
+   "meaning": ["pocztówka", "kartka pocztowa"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 23,
+   "word": "切手",
+   "kana": "きって",
+   "romaji": "kitte",
+   "meaning": ["znaczek pocztowy"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 24,
+   "word": "名前",
+   "kana": "なまえ",
+   "romaji": "namae",
+   "meaning": ["imię", "pełne imię i nazwisko"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 25,
+   "word": "手紙",
+   "kana": "てがみ",
+   "romaji": "tegami",
+   "meaning": ["list"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 26,
+   "word": "誕生日",
+   "kana": "たんじょうび",
+   "romaji": "tanjoubi",
+   "meaning": ["urodziny"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 27,
+   "word": "番号",
+   "kana": "ばんごう",
+   "romaji": "bangou",
+   "meaning": ["numer"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 28,
+   "word": "新聞",
+   "kana": "しんぶん",
+   "romaji": "shinbun",
+   "meaning": ["gazeta"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 29,
+   "word": "雑誌",
+   "kana": "ざっし",
+   "romaji": "zasshi",
+   "meaning": ["magazyn", "czasopismo"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 30,
+   "word": "時計",
+   "kana": "とけい",
+   "romaji": "tokei",
+   "meaning": ["zegar", "zegarek"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 31,
+   "word": "ギター",
+   "kana": "",
+   "romaji": "gitaa",
+   "meaning": ["gitara"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 32,
+   "word": "たばこ",
+   "kana": "",
+   "romaji": "tabako",
+   "meaning": ["tytoń", "papieros"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 33,
+   "word": "灰皿",
+   "kana": "はいざら",
+   "romaji": "haizara",
+   "meaning": ["popielniczka"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 34,
+   "word": "箱",
+   "kana": "はこ",
+   "romaji": "hako",
+   "meaning": ["pudełko", "pojemnik", "skrzynia"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 35,
+   "word": "花瓶",
+   "kana": "かびん",
+   "romaji": "kabin",
+   "meaning": ["wazon"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 36,
+   "word": "荷物",
+   "kana": "にもつ",
+   "romaji": "nimotsu",
+   "meaning": ["bagaż"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 37,
+   "word": "切符",
+   "kana": "きっぷ",
+   "romaji": "kippu",
+   "meaning": ["bilet"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 38,
+   "word": "エレベーター",
+   "kana": "",
+   "romaji": "erebeetaa",
+   "meaning": ["winda"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 39,
+   "word": "ボタン",
+   "kana": "",
+   "romaji": "botan",
+   "meaning": ["guzik", "przycisk"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 40,
+   "word": "日記",
+   "kana": "にっき",
+   "romaji": "nikki",
+   "meaning": ["pamiętnik", "dziennik"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 41,
+   "word": "鍵",
+   "kana": "かぎ",
+   "romaji": "kagi",
+   "meaning": ["klucz"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 42,
+   "word": "傘",
+   "kana": "かさ",
+   "romaji": "kasa",
+   "meaning": ["parasolka", "parasol"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 43,
+   "word": "財布",
+   "kana": "さいふ",
+   "romaji": "saifu",
+   "meaning": ["portfel", "portmonetka"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 44,
+   "word": "お金",
+   "kana": "おかね",
+   "romaji": "okane",
+   "meaning": ["pieniądze"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 45,
+   "word": "ハンカチ",
+   "kana": "",
+   "romaji": "hankachi",
+   "meaning": ["chusteczka"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 46,
+   "word": "橋",
+   "kana": "はし",
+   "romaji": "hashi",
+   "meaning": ["most"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 47,
+   "word": "門",
+   "kana": "もん",
+   "romaji": "mon",
+   "meaning": ["brama"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 48,
+   "word": "物",
+   "kana": "もの",
+   "romaji": "mono",
+   "meaning": ["rzecz", "przedmiot"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 49,
+   "word": "一",
+   "kana": "いち",
+   "romaji": "ichi",
+   "meaning": ["jeden", "1", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 50,
+   "word": "二",
+   "kana": "に",
+   "romaji": "ni",
+   "meaning": ["dwa", "2", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 51,
+   "word": "三",
+   "kana": "さん",
+   "romaji": "san",
+   "meaning": ["trzy", "3", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 52,
+   "word": "四",
+   "kana": "し / よん",
+   "romaji": "shi / yon",
+   "meaning": ["cztery", "4", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 53,
+   "word": "五",
+   "kana": "ご",
+   "romaji": "go",
+   "meaning": ["pięć", "5", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 54,
+   "word": "六",
+   "kana": "ろく",
+   "romaji": "roku",
+   "meaning": ["sześć", "6", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 55,
+   "word": "七",
+   "kana": "しち / なな",
+   "romaji": "shichi / nana",
+   "meaning": ["siedem", "7", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 56,
+   "word": "八",
+   "kana": "はち",
+   "romaji": "hachi",
+   "meaning": ["osiem", "8", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 57,
+   "word": "九",
+   "kana": "きゅう / く",
+   "romaji": "kyuu / ku",
+   "meaning": ["dziewięć", "9", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 58,
+   "word": "十",
+   "kana": "じゅう",
+   "romaji": "juu",
+   "meaning": ["dziesięć", "10", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 59,
+   "word": "零",
+   "kana": "れい",
+   "romaji": "rei",
+   "meaning": ["zero", "0", "(czyt. onyomi)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 60,
+   "word": "百",
+   "kana": "ひゃく",
+   "romaji": "hyaku",
+   "meaning": ["sto", "100"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 61,
+   "word": "千",
+   "kana": "せん",
+   "romaji": "sen",
+   "meaning": ["tysiąc", "1000"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 62,
+   "word": "万",
+   "kana": "まん",
+   "romaji": "man",
+   "meaning": ["dziesięć tysięcy", "10000"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 63,
+   "word": "月曜日",
+   "kana": "げつようび",
+   "romaji": "getsuyoubi",
+   "meaning": ["poniedziałek"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 64,
+   "word": "火曜日",
+   "kana": "かようび",
+   "romaji": "kayoubi",
+   "meaning": ["wtorek"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 65,
+   "word": "水曜日",
+   "kana": "すいようび",
+   "romaji": "suiyoubi",
+   "meaning": ["środa"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 66,
+   "word": "木曜日",
+   "kana": "もくようび",
+   "romaji": "mokuyoubi",
+   "meaning": ["czwartek"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 67,
+   "word": "金曜日",
+   "kana": "きんようび",
+   "romaji": "kinyoubi",
+   "meaning": ["piątek"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 68,
+   "word": "土曜日",
+   "kana": "どようび",
+   "romaji": "doyoubi",
+   "meaning": ["sobota"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 69,
+   "word": "日曜日",
+   "kana": "にちようび",
+   "romaji": "nichiyoubi",
+   "meaning": ["niedziela"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 70,
+   "word": "春",
+   "kana": "はる",
+   "romaji": "haru",
+   "meaning": ["wiosna"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 71,
+   "word": "夏",
+   "kana": "なつ",
+   "romaji": "natsu",
+   "meaning": ["lato"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 72,
+   "word": "秋",
+   "kana": "あき",
+   "romaji": "aki",
+   "meaning": ["jesień"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 73,
+   "word": "冬",
+   "kana": "ふゆ",
+   "romaji": "fuyu",
+   "meaning": ["zima"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 74,
+   "word": "天気",
+   "kana": "てんき",
+   "romaji": "tenki",
+   "meaning": ["pogoda", "żywioły"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 75,
+   "word": "空",
+   "kana": "そら",
+   "romaji": "sora",
+   "meaning": ["niebo"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 76,
+   "word": "晴れ",
+   "kana": "はれ",
+   "romaji": "hare",
+   "meaning": ["słoneczna pogoda", "ładna pogoda"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 77,
+   "word": "曇り",
+   "kana": "くもり",
+   "romaji": "kumori",
+   "meaning": ["pochmurna pogoda", "zachmurzenie"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 78,
+   "word": "風",
+   "kana": "かぜ",
+   "romaji": "kaze",
+   "meaning": ["wiatr"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 79,
+   "word": "雨",
+   "kana": "あめ",
+   "romaji": "ame",
+   "meaning": ["deszcz"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 80,
+   "word": "雪",
+   "kana": "ゆき",
+   "romaji": "yuki",
+   "meaning": ["śnieg"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 81,
+   "word": "公園",
+   "kana": "こうえん",
+   "romaji": "kouen",
+   "meaning": ["park"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 82,
+   "word": "庭",
+   "kana": "にわ",
+   "romaji": "niwa",
+   "meaning": ["ogród"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 83,
+   "word": "花",
+   "kana": "はな",
+   "romaji": "hana",
+   "meaning": ["kwiat"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 84,
+   "word": "木",
+   "kana": "き",
+   "romaji": "ki",
+   "meaning": ["drzewo", "krzew", "krzak", "drewno"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 85,
+   "word": "池",
+   "kana": "いけ",
+   "romaji": "ike",
+   "meaning": ["staw"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 86,
+   "word": "川",
+   "kana": "かわ",
+   "romaji": "kawa",
+   "meaning": ["rzeka", "strumień"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 87,
+   "word": "海",
+   "kana": "うみ",
+   "romaji": "umi",
+   "meaning": ["morze"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 88,
+   "word": "山",
+   "kana": "やま",
+   "romaji": "yama",
+   "meaning": ["góra", "wzgórze", "pagórek"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 89,
+   "word": "色",
+   "kana": "いろ",
+   "romaji": "iro",
+   "meaning": ["kolor", "odcień", "barwa"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 90,
+   "word": "赤",
+   "kana": "あか",
+   "romaji": "aka",
+   "meaning": ["kolor czerwony", "czerwień"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 91,
+   "word": "青",
+   "kana": "あお",
+   "romaji": "ao",
+   "meaning": ["kolor niebieski", "błękit"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 92,
+   "word": "白",
+   "kana": "しろ",
+   "romaji": "shiro",
+   "meaning": ["kolor biały", "biel"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 93,
+   "word": "黒",
+   "kana": "くろ",
+   "romaji": "kuro",
+   "meaning": ["kolor czarny", "czerń"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 94,
+   "word": "緑",
+   "kana": "みどり",
+   "romaji": "midori",
+   "meaning": ["zielony"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 95,
+   "word": "茶色",
+   "kana": "ちゃいろ",
+   "romaji": "chairo",
+   "meaning": ["kolor brązowy"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 96,
+   "word": "動物",
+   "kana": "どうぶつ",
+   "romaji": "doubutsu",
+   "meaning": ["zwierzę"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 97,
+   "word": "ペット",
+   "kana": "",
+   "romaji": "petto",
+   "meaning": ["zwierzę domowe"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 98,
+   "word": "犬",
+   "kana": "いぬ",
+   "romaji": "inu",
+   "meaning": ["pies"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 99,
+   "word": "猫",
+   "kana": "ねこ",
+   "romaji": "neko",
+   "meaning": ["kot"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 100,
+   "word": "鳥",
+   "kana": "とり",
+   "romaji": "tori",
+   "meaning": ["ptak", "drób"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 101,
+   "word": "建物",
+   "kana": "たてもの",
+   "romaji": "tatemono",
+   "meaning": ["budynek"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 102,
+   "word": "アパート",
+   "kana": "",
+   "romaji": "apaato",
+   "meaning": ["mieszkanie", "blok mieszkalny"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 103,
+   "word": "家",
+   "kana": "いえ",
+   "romaji": "ie",
+   "meaning": ["dom", "mieszkanie", "rodzina"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 104,
+   "word": "ドア",
+   "kana": "",
+   "romaji": "doa",
+   "meaning": ["drzwi"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 105,
+   "word": "窓",
+   "kana": "まど",
+   "romaji": "mado",
+   "meaning": ["okno"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 106,
+   "word": "部屋",
+   "kana": "へや",
+   "romaji": "heya",
+   "meaning": ["pokój"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 107,
+   "word": "机",
+   "kana": "つくえ",
+   "romaji": "tsukue",
+   "meaning": ["biurko"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 108,
+   "word": "椅子",
+   "kana": "いす",
+   "romaji": "isu",
+   "meaning": ["krzesło"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 109,
+   "word": "本",
+   "kana": "ほん",
+   "romaji": "hon",
+   "meaning": ["książka", "tom"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 110,
+   "word": "本棚",
+   "kana": "ほんだな",
+   "romaji": "hondana",
+   "meaning": ["półka na książki"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 111,
+   "word": "辞書",
+   "kana": "じしょ",
+   "romaji": "jisho",
+   "meaning": ["słownik"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 112,
+   "word": "ラジオ",
+   "kana": "",
+   "romaji": "rajiio",
+   "meaning": ["radio"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 113,
+   "word": "ベッド",
+   "kana": "",
+   "romaji": "beddo",
+   "meaning": ["łóżko"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 114,
+   "word": "電話",
+   "kana": "でんわ",
+   "romaji": "denwa",
+   "meaning": ["telefon", "rozmowa telefoniczna"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 115,
+   "word": "電気",
+   "kana": "でんき",
+   "romaji": "denki",
+   "meaning": ["prąd", "elektryczność", "światło", "(elektryczne)"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 116,
+   "word": "テレビ",
+   "kana": "",
+   "romaji": "terebi",
+   "meaning": ["telewizor", "telewizja"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 117,
+   "word": "台所",
+   "kana": "だいどころ",
+   "romaji": "daidokoro",
+   "meaning": ["kuchnia"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 118,
+   "word": "テーブル",
+   "kana": "",
+   "romaji": "teeburu",
+   "meaning": ["stół"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 119,
+   "word": "冷蔵庫",
+   "kana": "れいぞうこ",
+   "romaji": "reizouko",
+   "meaning": ["lodówka"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 120,
+   "word": "ストーブ",
+   "kana": "",
+   "romaji": "sutoobu",
+   "meaning": ["grzejnik", "kuchenka", "piec"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 121,
+   "word": "お手洗い",
+   "kana": "おてあらい",
+   "romaji": "otearai",
+   "meaning": ["toaleta"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 122,
+   "word": "トイレ",
+   "kana": "",
+   "romaji": "toire",
+   "meaning": ["toaleta", "łazienka"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 123,
+   "word": "お風呂",
+   "kana": "おふろ",
+   "romaji": "ofuro",
+   "meaning": ["kąpiel", "wanna"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 124,
+   "word": "シャワー",
+   "kana": "",
+   "romaji": "shawaa",
+   "meaning": ["prysznic"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 125,
+   "word": "石鹼",
+   "kana": "せっけん",
+   "romaji": "sekken",
+   "meaning": ["mydło"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 126,
+   "word": "洗濯",
+   "kana": "せんたく",
+   "romaji": "sentaku",
+   "meaning": ["pranie"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 127,
+   "word": "階段",
+   "kana": "かいだん",
+   "romaji": "kaidan",
+   "meaning": ["schody", "klatka schodowa"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 128,
+   "word": "廊下",
+   "kana": "ろうか",
+   "romaji": "rouka",
+   "meaning": ["korytarz", "przejście"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 129,
+   "word": "戸",
+   "kana": "と",
+   "romaji": "to",
+   "meaning": ["drzwi", "(szczególnie w japońskim stylu)", "okiennica"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 130,
+   "word": "玄関",
+   "kana": "げんかん",
+   "romaji": "genkan",
+   "meaning": ["przedpokój", "wejście", "przedsionek"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 131,
+   "word": "ポスト",
+   "kana": "",
+   "romaji": "posuto",
+   "meaning": ["skrzynka pocztowa"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 132,
+   "word": "体",
+   "kana": "からだ",
+   "romaji": "karada",
+   "meaning": ["ciało"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 133,
+   "word": "足",
+   "kana": "あし",
+   "romaji": "ashi",
+   "meaning": ["noga", "stopa"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 134,
+   "word": "手",
+   "kana": "て",
+   "romaji": "te",
+   "meaning": ["dłoń", "ręka"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 135,
+   "word": "頭",
+   "kana": "あたま",
+   "romaji": "atama",
+   "meaning": ["głowa"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 136,
+   "word": "耳",
+   "kana": "みみ",
+   "romaji": "mimi",
+   "meaning": ["ucho", "słuch"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 137,
+   "word": "目",
+   "kana": "め",
+   "romaji": "me",
+   "meaning": ["oko", "wzrok"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 138,
+   "word": "鼻",
+   "kana": "はな",
+   "romaji": "hana",
+   "meaning": ["nos"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 139,
+   "word": "口",
+   "kana": "くち",
+   "romaji": "kuchi",
+   "meaning": ["usta", "otwór"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 140,
+   "word": "歯",
+   "kana": "は",
+   "romaji": "ha",
+   "meaning": ["ząb", "zęby"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 141,
+   "word": "お腹",
+   "kana": "おなか",
+   "romaji": "onaka",
+   "meaning": ["brzuch"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 142,
+   "word": "背",
+   "kana": "せ",
+   "romaji": "se",
+   "meaning": ["wzrost", "postawa", "plecy"],
+   "level": 10,
+   "quizGroup": 4
+ },
+ {
+   "id": 143,
+   "word": "時間",
+   "kana": "じかん",
+   "romaji": "jikan",
+   "meaning": ["czas", "godzina"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 144,
+   "word": "時",
+   "kana": "とき",
+   "romaji": "toki",
+   "meaning": ["czas", "moment", "okazja"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 145,
+   "word": "時々",
+   "kana": "ときどき",
+   "romaji": "tokidoki",
+   "meaning": ["czasami", "od czasu do czasu"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 146,
+   "word": "年",
+   "kana": "とし",
+   "romaji": "toshi",
+   "meaning": ["rok", "wiek"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 147,
+   "word": "今",
+   "kana": "いま",
+   "romaji": "ima",
+   "meaning": ["teraz", "obecnie", "zaraz"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 148,
+   "word": "午後",
+   "kana": "ごご",
+   "romaji": "gogo",
+   "meaning": ["po południu", "popołudnie", "pm"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 149,
+   "word": "午前",
+   "kana": "ごぜん",
+   "romaji": "gozen",
+   "meaning": ["przed południem", "przedpołudnie", "am"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 150,
+   "word": "朝",
+   "kana": "あさ",
+   "romaji": "asa",
+   "meaning": ["rano", "poranek"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 151,
+   "word": "昼",
+   "kana": "ひる",
+   "romaji": "hiru",
+   "meaning": ["południe", "pora dzienna"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 152,
+   "word": "晩",
+   "kana": "ばん",
+   "romaji": "ban",
+   "meaning": ["wieczór", "noc"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 153,
+   "word": "夜",
+   "kana": "よる",
+   "romaji": "yoru",
+   "meaning": ["noc"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 154,
+   "word": "夕方",
+   "kana": "ゆうがた",
+   "romaji": "yuugata",
+   "meaning": ["wieczór", "zmierzch"],
+   "level": 11,
+   "quizGroup": 4
+ },
+ {
+   "id": 155,
+   "word": "今朝",
+   "kana": "けさ",
+   "romaji": "kesa",
+   "meaning": ["dzisiejszy poranek", "dziś rano"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 156,
+   "word": "今晩",
+   "kana": "こんばん",
+   "romaji": "konban",
+   "meaning": ["dzisiejszy wieczór", "dziś wieczorem"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 157,
+   "word": "今日",
+   "kana": "きょう",
+   "romaji": "kyou",
+   "meaning": ["dziś", "dzisiaj"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 158,
+   "word": "昨夜",
+   "kana": "ゆうべ",
+   "romaji": "yuube",
+   "meaning": ["wczorajszy wieczór", "wczorajsza noc", "zeszłej nocy"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 159,
+   "word": "明日",
+   "kana": "あした",
+   "romaji": "ashita",
+   "meaning": ["jutro"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 160,
+   "word": "昨日",
+   "kana": "きのう",
+   "romaji": "kinou",
+   "meaning": ["wczoraj"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 161,
+   "word": "明後日",
+   "kana": "あさって",
+   "romaji": "asatte",
+   "meaning": ["pojutrze"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 162,
+   "word": "一昨日",
+   "kana": "おととい",
+   "romaji": "ototoi",
+   "meaning": ["przedwczoraj"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 163,
+   "word": "毎朝",
+   "kana": "まいあさ",
+   "romaji": "maiasa",
+   "meaning": ["każdego poranka", "co rano"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 164,
+   "word": "毎晩",
+   "kana": "まいばん",
+   "romaji": "maiban",
+   "meaning": ["każdej nocy", "co wieczór"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 165,
+   "word": "毎日",
+   "kana": "まいにち",
+   "romaji": "mainichi",
+   "meaning": ["każdego dnia", "codziennie"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 166,
+   "word": "毎週",
+   "kana": "まいしゅう",
+   "romaji": "maishuu",
+   "meaning": ["każdego tygodnia", "co tydzień"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 167,
+   "word": "毎月",
+   "kana": "まいつき",
+   "romaji": "maitsuki",
+   "meaning": ["każdego miesiąca", "co miesiąc"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 168,
+   "word": "毎年",
+   "kana": "まいとし / まいねん",
+   "romaji": "maitoshi / mainen",
+   "meaning": ["każdego roku", "co rok"],
+   "level": 12,
+   "quizGroup": 4
+ },
+ {
+   "id": 169,
+   "word": "先",
+   "kana": "さき",
+   "romaji": "saki",
+   "meaning": ["przed", "z wyprzedzeniem", "poprzedni", "przyszłość"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 170,
+   "word": "後",
+   "kana": "あと",
+   "romaji": "ato",
+   "meaning": ["za", "po", "później"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 171,
+   "word": "今週",
+   "kana": "こんしゅう",
+   "romaji": "konshuu",
+   "meaning": ["obecny tydzień", "ten tydzień"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 172,
+   "word": "今月",
+   "kana": "こんげつ",
+   "romaji": "kongetsu",
+   "meaning": ["obecny miesiąc", "ten miesiąc"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 173,
+   "word": "今年",
+   "kana": "ことし",
+   "romaji": "kotoshi",
+   "meaning": ["obecny rok", "ten rok"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 174,
+   "word": "先月",
+   "kana": "せんげつ",
+   "romaji": "sengetsu",
+   "meaning": ["zeszły miesiąc"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 175,
+   "word": "先週",
+   "kana": "せんしゅう",
+   "romaji": "senshuu",
+   "meaning": ["zeszły tydzień"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 176,
+   "word": "去年",
+   "kana": "きょねん",
+   "romaji": "kyonen",
+   "meaning": ["zeszły rok", "ubiegły rok"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 177,
+   "word": "来週",
+   "kana": "らいしゅう",
+   "romaji": "raishuu",
+   "meaning": ["przyszły tydzień"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 178,
+   "word": "来月",
+   "kana": "らいげつ",
+   "romaji": "raigetsu",
+   "meaning": ["przyszły miesiąc"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 179,
+   "word": "来年",
+   "kana": "らいねん",
+   "romaji": "rainen",
+   "meaning": ["przyszły rok"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 180,
+   "word": "一昨年",
+   "kana": "おととし",
+   "romaji": "ototoshi",
+   "meaning": ["dwa lata temu"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 181,
+   "word": "再来年",
+   "kana": "さらいねん",
+   "romaji": "sarainen",
+   "meaning": ["rok po przyszłym roku", "za dwa lata"],
+   "level": 13,
+   "quizGroup": 4
+ },
+ {
+   "id": 182,
+   "word": "北",
+   "kana": "きた",
+   "romaji": "kita",
+   "meaning": ["północ", "(kierunek geograficzny)"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 183,
+   "word": "南",
+   "kana": "みなみ",
+   "romaji": "minami",
+   "meaning": ["południe", "(kierunek geograficzny)"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 184,
+   "word": "東",
+   "kana": "ひがし",
+   "romaji": "higashi",
+   "meaning": ["wschód", "(kierunek geograficzny)"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 185,
+   "word": "西",
+   "kana": "にし",
+   "romaji": "nishi",
+   "meaning": ["zachód", "(kierunek geograficzny)"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 186,
+   "word": "地図",
+   "kana": "ちず",
+   "romaji": "chizu",
+   "meaning": ["mapa"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 187,
+   "word": "国",
+   "kana": "くに",
+   "romaji": "kuni",
+   "meaning": ["kraj", "państwo", "region"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 188,
+   "word": "外国",
+   "kana": "がいこく",
+   "romaji": "gaikoku",
+   "meaning": ["obcy kraj", "zagranica"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 189,
+   "word": "外国人",
+   "kana": "がいこくじん",
+   "romaji": "gaikokujin",
+   "meaning": ["obcokrajowiec", "cudzoziemiec"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 190,
+   "word": "町",
+   "kana": "まち",
+   "romaji": "machi",
+   "meaning": ["miasto", "dzielnica"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 191,
+   "word": "村",
+   "kana": "むら",
+   "romaji": "mura",
+   "meaning": ["wioska"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 192,
+   "word": "左",
+   "kana": "ひだり",
+   "romaji": "hidari",
+   "meaning": ["lewo", "(kierunek)", "lewa strona"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 193,
+   "word": "右",
+   "kana": "みぎ",
+   "romaji": "migi",
+   "meaning": ["prawo", "(kierunek)", "prawa strona"],
+   "level": 14,
+   "quizGroup": 5
+ },
+ {
+   "id": 194,
+   "word": "前",
+   "kana": "まえ",
+   "romaji": "mae",
+   "meaning": ["przed", "przód", "front"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 195,
+   "word": "後ろ",
+   "kana": "うしろ",
+   "romaji": "ushiro",
+   "meaning": ["tył", "z tyłu"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 196,
+   "word": "上",
+   "kana": "うえ",
+   "romaji": "ue",
+   "meaning": ["powyżej", "nad", "góra", "górna część"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 197,
+   "word": "下",
+   "kana": "した",
+   "romaji": "shita",
+   "meaning": ["pod", "dół", "poniżej", "spód"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 198,
+   "word": "真っ直ぐ",
+   "kana": "まっすぐ",
+   "romaji": "massugu",
+   "meaning": ["prosto", "na wprost", "bezpośrednio"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 199,
+   "word": "中",
+   "kana": "なか",
+   "romaji": "naka",
+   "meaning": ["wewnątrz", "wnętrze", "środek", "wśród"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 200,
+   "word": "そば",
+   "kana": "",
+   "romaji": "soba",
+   "meaning": ["obok", "bliski", "w pobliżu"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 201,
+   "word": "外",
+   "kana": "そと",
+   "romaji": "soto",
+   "meaning": ["na zewnątrz"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 202,
+   "word": "向こう",
+   "kana": "むこう",
+   "romaji": "mukou",
+   "meaning": ["przeciwna strona", "przeciwny kierunek", "tam", "daleko"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 203,
+   "word": "隣",
+   "kana": "となり",
+   "romaji": "tonari",
+   "meaning": ["obok", "po sąsiedzku", "w sąsiedztwie"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 204,
+   "word": "辺",
+   "kana": "へん",
+   "romaji": "hen",
+   "meaning": ["okolica", "obszar", "rejon"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 205,
+   "word": "出口",
+   "kana": "でぐち",
+   "romaji": "deguchi",
+   "meaning": ["wyjście"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 206,
+   "word": "入口",
+   "kana": "いりぐち",
+   "romaji": "iriguchi",
+   "meaning": ["wejście", "brama"],
+   "level": 15,
+   "quizGroup": 5
+ },
+ {
+   "id": 207,
+   "word": "バス",
+   "kana": "",
+   "romaji": "basu",
+   "meaning": ["autobus"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 208,
+   "word": "電車",
+   "kana": "でんしゃ",
+   "romaji": "densha",
+   "meaning": ["pociąg", "kolejka elektryczna"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 209,
+   "word": "飛行機",
+   "kana": "ひこうき",
+   "romaji": "hikouki",
+   "meaning": ["samolot"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 210,
+   "word": "車",
+   "kana": "くるま",
+   "romaji": "kuruma",
+   "meaning": ["samochód", "pojazd", "wóz"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 211,
+   "word": "自動車",
+   "kana": "じどうしゃ",
+   "romaji": "jidousha",
+   "meaning": ["samochód", "automobil"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 212,
+   "word": "自転車",
+   "kana": "じてんしゃ",
+   "romaji": "jitensha",
+   "meaning": ["rower"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 213,
+   "word": "タクシー",
+   "kana": "",
+   "romaji": "takushii",
+   "meaning": ["taksówka"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 214,
+   "word": "旅行",
+   "kana": "りょこう",
+   "romaji": "ryokou",
+   "meaning": ["podróż", "wyjazd", "wycieczka"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 215,
+   "word": "留学生",
+   "kana": "りゅうがくせい",
+   "romaji": "ryuugakusei",
+   "meaning": ["zagraniczny student", "student z wymiany"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 216,
+   "word": "道",
+   "kana": "みち",
+   "romaji": "michi",
+   "meaning": ["droga", "ulica", "ścieżka"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 217,
+   "word": "角",
+   "kana": "かど",
+   "romaji": "kado",
+   "meaning": ["róg", "krawędź"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 218,
+   "word": "交差点",
+   "kana": "こうさてん",
+   "romaji": "kousaten",
+   "meaning": ["skrzyżowanie", "(dróg)"],
+   "level": 16,
+   "quizGroup": 5
+ },
+ {
+   "id": 219,
+   "word": "食べ物",
+   "kana": "たべもの",
+   "romaji": "tabemono",
+   "meaning": ["jedzenie", "żywność"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 220,
+   "word": "料理",
+   "kana": "りょうり",
+   "romaji": "ryouri",
+   "meaning": ["potrawa", "gotowanie"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 221,
+   "word": "朝ご飯",
+   "kana": "あさごはん",
+   "romaji": "asagohan",
+   "meaning": ["śniadanie"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 222,
+   "word": "昼ご飯",
+   "kana": "ひるごはん",
+   "romaji": "hirugohan",
+   "meaning": ["obiad", "lunch"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 223,
+   "word": "晩ご飯",
+   "kana": "ばんごはん",
+   "romaji": "bangohan",
+   "meaning": ["kolacja", "wieczorny posiłek"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 224,
+   "word": "夕飯",
+   "kana": "ゆうはん",
+   "romaji": "yuuhan",
+   "meaning": ["kolacja", "wieczorny posiłek", "(bardziej formalnie)"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 225,
+   "word": "ご飯",
+   "kana": "ごはん",
+   "romaji": "gohan",
+   "meaning": ["posiłek", "jedzenie", "gotowany ryż"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 226,
+   "word": "お皿",
+   "kana": "おさら",
+   "romaji": "osara",
+   "meaning": ["talerz", "naczynie"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 227,
+   "word": "カップ",
+   "kana": "",
+   "romaji": "kappu",
+   "meaning": ["filiżanka"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 228,
+   "word": "コップ",
+   "kana": "",
+   "romaji": "koppu",
+   "meaning": ["szklanka"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 229,
+   "word": "茶碗",
+   "kana": "ちゃわん",
+   "romaji": "chawan",
+   "meaning": ["miseczka", "czarka"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 230,
+   "word": "箸",
+   "kana": "はし",
+   "romaji": "hashi",
+   "meaning": ["pałeczki", "(do jedzenia)"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 231,
+   "word": "ナイフ",
+   "kana": "",
+   "romaji": "naifu",
+   "meaning": ["nóż"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 232,
+   "word": "フォーク",
+   "kana": "",
+   "romaji": "fooku",
+   "meaning": ["widelec"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 233,
+   "word": "スプーン",
+   "kana": "",
+   "romaji": "supuun",
+   "meaning": ["łyżka"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 234,
+   "word": "お弁当",
+   "kana": "おべんとう",
+   "romaji": "obentou",
+   "meaning": ["pudełko na jedzenie", "bento"],
+   "level": 17,
+   "quizGroup": 6
+ },
+ {
+   "id": 235,
+   "word": "飲み物",
+   "kana": "のみもの",
+   "romaji": "nomimono",
+   "meaning": ["napój", "picie"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 236,
+   "word": "水",
+   "kana": "みず",
+   "romaji": "mizu",
+   "meaning": ["woda", "płyn", "ciecz"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 237,
+   "word": "紅茶",
+   "kana": "こうちゃ",
+   "romaji": "koucha",
+   "meaning": ["czarna herbata"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 238,
+   "word": "お茶",
+   "kana": "おちゃ",
+   "romaji": "ocha",
+   "meaning": ["zielona herbata"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 239,
+   "word": "お酒",
+   "kana": "おさけ",
+   "romaji": "osake",
+   "meaning": ["alkohol", "sake"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 240,
+   "word": "コーヒー",
+   "kana": "",
+   "romaji": "koohii",
+   "meaning": ["kawa"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 241,
+   "word": "喫茶店",
+   "kana": "きっさてん",
+   "romaji": "kissaten",
+   "meaning": ["kawiarnia"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 242,
+   "word": "飴",
+   "kana": "あめ",
+   "romaji": "ame",
+   "meaning": ["słodycze", "cukierek"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 243,
+   "word": "お菓子",
+   "kana": "おかし",
+   "romaji": "okashi",
+   "meaning": ["ciastko", "słodycze", "cukierki"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 244,
+   "word": "食堂",
+   "kana": "しょくどう",
+   "romaji": "shokudou",
+   "meaning": ["stołówka", "jadalnia"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 245,
+   "word": "レストラン",
+   "kana": "",
+   "romaji": "resutoran",
+   "meaning": ["restauracja"],
+   "level": 18,
+   "quizGroup": 6
+ },
+ {
+   "id": 246,
+   "word": "肉",
+   "kana": "にく",
+   "romaji": "niku",
+   "meaning": ["mięso"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 247,
+   "word": "豚肉",
+   "kana": "ぶたにく",
+   "romaji": "butaniku",
+   "meaning": ["wieprzowina"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 248,
+   "word": "牛肉",
+   "kana": "ぎゅうにく",
+   "romaji": "gyuuniku",
+   "meaning": ["wołowina"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 249,
+   "word": "鶏肉",
+   "kana": "とりにく",
+   "romaji": "toriniku",
+   "meaning": ["mięso z kurczaka"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 250,
+   "word": "魚",
+   "kana": "さかな",
+   "romaji": "sakana",
+   "meaning": ["ryba"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 251,
+   "word": "果物",
+   "kana": "くだもの",
+   "romaji": "kudamono",
+   "meaning": ["owoc"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 252,
+   "word": "野菜",
+   "kana": "やさい",
+   "romaji": "yasai",
+   "meaning": ["warzywo"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 253,
+   "word": "パン",
+   "kana": "",
+   "romaji": "pan",
+   "meaning": ["chleb"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 254,
+   "word": "バター",
+   "kana": "",
+   "romaji": "bataa",
+   "meaning": ["masło"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 255,
+   "word": "卵",
+   "kana": "たまご",
+   "romaji": "tamago",
+   "meaning": ["jajo", "jajko"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 256,
+   "word": "牛乳",
+   "kana": "ぎゅうにゅう",
+   "romaji": "gyuunyuu",
+   "meaning": ["mleko", "(krowie)"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 257,
+   "word": "カレー",
+   "kana": "",
+   "romaji": "karee",
+   "meaning": ["curry"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 258,
+   "word": "醬油",
+   "kana": "しょうゆ",
+   "romaji": "shouyu",
+   "meaning": ["sos sojowy"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 259,
+   "word": "砂糖",
+   "kana": "さとう",
+   "romaji": "satou",
+   "meaning": ["cukier"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 260,
+   "word": "塩",
+   "kana": "しお",
+   "romaji": "shio",
+   "meaning": ["sól"],
+   "level": 19,
+   "quizGroup": 6
+ },
+ {
+   "id": 261,
+   "word": "上手",
+   "kana": "じょうず",
+   "romaji": "jouzu",
+   "meaning": ["umiejętny", "sprawny", "biegły", "dobry w"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 262,
+   "word": "下手",
+   "kana": "へた",
+   "romaji": "heta",
+   "meaning": ["kiepski", "słaby w", "niezdolny"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 263,
+   "word": "一番",
+   "kana": "いちばん",
+   "romaji": "ichiban",
+   "meaning": ["numer jeden", "pierwsze miejsce", "najlepszy"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 264,
+   "word": "色々",
+   "kana": "いろいろ",
+   "romaji": "iroiro",
+   "meaning": ["różny", "różnorodny", "rozmaity"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 265,
+   "word": "勉強",
+   "kana": "べんきょう",
+   "romaji": "benkyou",
+   "meaning": ["nauka", "studia"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 266,
+   "word": "授業",
+   "kana": "じゅぎょう",
+   "romaji": "jugyou",
+   "meaning": ["lekcja", "zajęcia", "nauczanie"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 267,
+   "word": "問題",
+   "kana": "もんだい",
+   "romaji": "mondai",
+   "meaning": ["problem", "zagadnienie", "pytanie"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 268,
+   "word": "質問",
+   "kana": "しつもん",
+   "romaji": "shitsumon",
+   "meaning": ["pytanie", "zapytanie"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 269,
+   "word": "英語",
+   "kana": "えいご",
+   "romaji": "eigo",
+   "meaning": ["język angielski"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 270,
+   "word": "練習",
+   "kana": "れんしゅう",
+   "romaji": "renshuu",
+   "meaning": ["praktyka", "ćwiczenia", "trening"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 271,
+   "word": "テスト",
+   "kana": "",
+   "romaji": "tesuto",
+   "meaning": ["test", "egzamin"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 272,
+   "word": "クラス",
+   "kana": "",
+   "romaji": "kurasu",
+   "meaning": ["klasa"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 273,
+   "word": "宿題",
+   "kana": "しゅくだい",
+   "romaji": "shukudai",
+   "meaning": ["praca domowa", "zadanie domowe"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 274,
+   "word": "作文",
+   "kana": "さくぶん",
+   "romaji": "sakubun",
+   "meaning": ["wypracowanie", "esej"],
+   "level": 20,
+   "quizGroup": 7
+ },
+ {
+   "id": 275,
+   "word": "意味",
+   "kana": "いみ",
+   "romaji": "imi",
+   "meaning": ["znaczenie", "sens"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 276,
+   "word": "話",
+   "kana": "はなし",
+   "romaji": "hanashi",
+   "meaning": ["rozmowa", "mowa", "konwersacja", "dyskusja"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 277,
+   "word": "声",
+   "kana": "こえ",
+   "romaji": "koe",
+   "meaning": ["głos"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 278,
+   "word": "仕事",
+   "kana": "しごと",
+   "romaji": "shigoto",
+   "meaning": ["praca", "zajęcie", "zawód"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 279,
+   "word": "スポーツ",
+   "kana": "",
+   "romaji": "supootsu",
+   "meaning": ["sport"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 280,
+   "word": "マッチ",
+   "kana": "",
+   "romaji": "macchi",
+   "meaning": ["mecz", "gra"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 281,
+   "word": "歌",
+   "kana": "うた",
+   "romaji": "uta",
+   "meaning": ["piosenka"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 282,
+   "word": "音楽",
+   "kana": "おんがく",
+   "romaji": "ongaku",
+   "meaning": ["muzyka"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 283,
+   "word": "パーティー",
+   "kana": "",
+   "romaji": "paatii",
+   "meaning": ["przyjęcie", "impreza"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 284,
+   "word": "散歩",
+   "kana": "さんぽ",
+   "romaji": "sanpo",
+   "meaning": ["spacer"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 285,
+   "word": "買い物",
+   "kana": "かいもの",
+   "romaji": "kaimono",
+   "meaning": ["zakupy", "robienie zakupów", "zakupione towary"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 286,
+   "word": "掃除",
+   "kana": "そうじ",
+   "romaji": "souji",
+   "meaning": ["sprzątanie"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 287,
+   "word": "休み",
+   "kana": "やすみ",
+   "romaji": "yasumi",
+   "meaning": ["odpoczynek", "przerwa", "wakacje", "urlop"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 288,
+   "word": "夏休み",
+   "kana": "なつやすみ",
+   "romaji": "natsuyasumi",
+   "meaning": ["letnie wakacje"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 289,
+   "word": "暇",
+   "kana": "ひま",
+   "romaji": "hima",
+   "meaning": ["niezajęty", "wolny", "czas wolny"],
+   "level": 21,
+   "quizGroup": 7
+ },
+ {
+   "id": 290,
+   "word": "服",
+   "kana": "ふく",
+   "romaji": "fuku",
+   "meaning": ["ubranie", "odzież"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 291,
+   "word": "洋服",
+   "kana": "ようふく",
+   "romaji": "youfuku",
+   "meaning": ["odzież", "(w stylu zachodnim)"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 292,
+   "word": "コート",
+   "kana": "",
+   "romaji": "kooto",
+   "meaning": ["płaszcz"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 293,
+   "word": "セーター",
+   "kana": "",
+   "romaji": "seetaa",
+   "meaning": ["sweter"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 294,
+   "word": "シャツ",
+   "kana": "",
+   "romaji": "shatsu",
+   "meaning": ["koszulka", "koszula"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 295,
+   "word": "ワイシャツ",
+   "kana": "",
+   "romaji": "wai shatsu",
+   "meaning": ["koszula"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 296,
+   "word": "スカート",
+   "kana": "",
+   "romaji": "sukaato",
+   "meaning": ["spódniczka", "spódnica"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 297,
+   "word": "スリッパ",
+   "kana": "",
+   "romaji": "surippa",
+   "meaning": ["kapeć", "kapcie"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 298,
+   "word": "ネクタイ",
+   "kana": "",
+   "romaji": "nekutai",
+   "meaning": ["krawat"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 299,
+   "word": "ズボン",
+   "kana": "",
+   "romaji": "zubon",
+   "meaning": ["spodnie"],
+   "level": 29,
+   "quizGroup": 7
+ },
+ {
+   "id": 300,
+   "word": "靴",
+   "kana": "くつ",
+   "romaji": "kutsu",
+   "meaning": ["but", "buty", "obuwie"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 301,
+   "word": "靴下",
+   "kana": "くつした",
+   "romaji": "kutsushita",
+   "meaning": ["skarpetka", "skarpetki"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 302,
+   "word": "帽子",
+   "kana": "ぼうし",
+   "romaji": "boushi",
+   "meaning": ["czapka", "kapelusz"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 303,
+   "word": "鞄",
+   "kana": "かばん",
+   "romaji": "kaban",
+   "meaning": ["torba", "teczka", "koszyk"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 304,
+   "word": "眼鏡",
+   "kana": "めがね",
+   "romaji": "megane",
+   "meaning": ["okulary"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 305,
+   "word": "背広",
+   "kana": "せびろ",
+   "romaji": "sebiro",
+   "meaning": ["garnitur"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 306,
+   "word": "上着",
+   "kana": "うわぎ",
+   "romaji": "uwagi",
+   "meaning": ["płaszcz", "marynarka", "ubranie wierzchnie"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 307,
+   "word": "ポケット",
+   "kana": "",
+   "romaji": "poketto",
+   "meaning": ["kieszeń"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 308,
+   "word": "下着",
+   "kana": "したぎ",
+   "romaji": "shitagi",
+   "meaning": ["bielizna"],
+   "level": 30,
+   "quizGroup": 7
+ },
+ {
+   "id": 309,
+   "word": "一つ",
+   "kana": "ひとつ",
+   "romaji": "hitotsu",
+   "meaning": ["jeden", "1", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 310,
+   "word": "二つ",
+   "kana": "ふたつ",
+   "romaji": "futatsu",
+   "meaning": ["dwa", "2", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 311,
+   "word": "三つ",
+   "kana": "みっつ",
+   "romaji": "mittsu",
+   "meaning": ["trzy", "3", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 312,
+   "word": "四つ",
+   "kana": "よつ",
+   "romaji": "yotsu",
+   "meaning": ["cztery", "4", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 313,
+   "word": "五つ",
+   "kana": "いつつ",
+   "romaji": "itsutsu",
+   "meaning": ["pięć", "5", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 314,
+   "word": "六つ",
+   "kana": "むっつ",
+   "romaji": "muttsu",
+   "meaning": ["sześć", "6", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 315,
+   "word": "七つ",
+   "kana": "ななつ",
+   "romaji": "nanatsu",
+   "meaning": ["siedem", "7", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 316,
+   "word": "八つ",
+   "kana": "やっつ",
+   "romaji": "yattsu",
+   "meaning": ["osiem", "8", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 317,
+   "word": "九つ",
+   "kana": "ここのつ",
+   "romaji": "kokonotsu",
+   "meaning": ["dziewięć", "9", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 318,
+   "word": "十",
+   "kana": "とお ",
+   "romaji": "too",
+   "meaning": ["dziesięć", "10", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 319,
+   "word": "ゼロ",
+   "kana": "",
+   "romaji": "zero",
+   "meaning": ["zero", "0", "(czyt. kunyomi)"],
+   "level": 22,
+   "quizGroup": 8
+ },
+ {
+   "id": 320,
+   "word": "カレンダー",
+   "kana": "",
+   "romaji": "karendaa",
+   "meaning": ["kalendarz"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 321,
+   "word": "一日",
+   "kana": "ついたち",
+   "romaji": "tsuitachi",
+   "meaning": ["pierwszy dzień miesiąca"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 322,
+   "word": "二日",
+   "kana": "ふつか",
+   "romaji": "futsuka",
+   "meaning": ["drugi dzień miesiąca", "dwa dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 323,
+   "word": "三日",
+   "kana": "みっか",
+   "romaji": "mikka",
+   "meaning": ["trzeci dzień miesiąca", "trzy dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 324,
+   "word": "四日",
+   "kana": "よっか",
+   "romaji": "yokka",
+   "meaning": ["czwarty dzień miesiąca", "cztery dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 325,
+   "word": "五日",
+   "kana": "いつか",
+   "romaji": "itsuka",
+   "meaning": ["piąty dzień miesiąca", "pięć dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 326,
+   "word": "六日",
+   "kana": "むいか",
+   "romaji": "muika",
+   "meaning": ["szósty dzień miesiąca", "sześć dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 327,
+   "word": "七日",
+   "kana": "なのか",
+   "romaji": "nanoka",
+   "meaning": ["siódmy dzień miesiąca", "siedem dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 328,
+   "word": "八日",
+   "kana": "ようか",
+   "romaji": "youka",
+   "meaning": ["ósmy dzień miesiąca", "osiem dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 329,
+   "word": "九日",
+   "kana": "ここのか",
+   "romaji": "kokonoka",
+   "meaning": ["dziewiąty dzień miesiąca", "dziewięć dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 330,
+   "word": "十日",
+   "kana": "とおか",
+   "romaji": "tooka",
+   "meaning": ["dziesiąty dzień miesiąca", "10 dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 331,
+   "word": "一日",
+   "kana": "いちにち",
+   "romaji": "ichinichi",
+   "meaning": ["jeden dzień", "cały dzień"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 332,
+   "word": "二十日",
+   "kana": "はつか",
+   "romaji": "hatsuka",
+   "meaning": ["dwudziesty dzień miesiąca", "dwadzieścia dni"],
+   "level": 23,
+   "quizGroup": 8
+ },
+ {
+   "id": 333,
+   "word": "所",
+   "kana": "ところ",
+   "romaji": "tokoro",
+   "meaning": ["miejsce"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 334,
+   "word": "店",
+   "kana": "みせ",
+   "romaji": "mise",
+   "meaning": ["sklep", "restauracja"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 335,
+   "word": "八百屋",
+   "kana": "やおや",
+   "romaji": "yaoya",
+   "meaning": ["sklep warzywniczy", "warzywniak", "sklep z owocami i warzywami"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 336,
+   "word": "デパート",
+   "kana": "",
+   "romaji": "depaato",
+   "meaning": ["dom towarowy", "departament"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 337,
+   "word": "学校",
+   "kana": "がっこう",
+   "romaji": "gakkou",
+   "meaning": ["szkoła"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 338,
+   "word": "大学",
+   "kana": "だいがく",
+   "romaji": "daigaku",
+   "meaning": ["uniwersytet", "szkoła wyższa"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 339,
+   "word": "教室",
+   "kana": "きょうしつ",
+   "romaji": "kyoushitsu",
+   "meaning": ["sala lekcyjna"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 340,
+   "word": "図書館",
+   "kana": "としょかん",
+   "romaji": "toshokan",
+   "meaning": ["biblioteka"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 341,
+   "word": "駅",
+   "kana": "えき",
+   "romaji": "eki",
+   "meaning": ["stacja kolejowa", "dworzec kolejowy"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 342,
+   "word": "地下鉄",
+   "kana": "ちかてつ",
+   "romaji": "chikatetsu",
+   "meaning": ["metro", "kolej podziemna"],
+   "level": 24,
+   "quizGroup": 8
+ },
+ {
+   "id": 343,
+   "word": "映画館",
+   "kana": "えいがかん",
+   "romaji": "eigakan",
+   "meaning": ["kino"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 344,
+   "word": "ホテル",
+   "kana": "",
+   "romaji": "hoteru",
+   "meaning": ["hotel"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 345,
+   "word": "プール",
+   "kana": "",
+   "romaji": "puuru",
+   "meaning": ["basen"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 346,
+   "word": "交番",
+   "kana": "こうばん",
+   "romaji": "kouban",
+   "meaning": ["posterunek policji", "budka policyjna"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 347,
+   "word": "郵便局",
+   "kana": "ゆうびんきょく",
+   "romaji": "yuubinkyoku",
+   "meaning": ["poczta", "urząd pocztowy"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 348,
+   "word": "銀行",
+   "kana": "ぎんこう",
+   "romaji": "ginkou",
+   "meaning": ["bank"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 349,
+   "word": "大使館",
+   "kana": "たいしかん",
+   "romaji": "taishikan",
+   "meaning": ["ambasada"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 350,
+   "word": "会社",
+   "kana": "かいしゃ",
+   "romaji": "kaisha",
+   "meaning": ["firma", "korporacja"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 351,
+   "word": "病院",
+   "kana": "びょういん",
+   "romaji": "byouin",
+   "meaning": ["szpital", "przychodnia"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 352,
+   "word": "病気",
+   "kana": "びょうき",
+   "romaji": "byouki",
+   "meaning": ["choroba", "schorzenie"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 353,
+   "word": "風邪",
+   "kana": "かぜ",
+   "romaji": "kaze",
+   "meaning": ["przeziębienie", "grypa"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 354,
+   "word": "薬",
+   "kana": "くすり",
+   "romaji": "kusuri",
+   "meaning": ["lek", "lekarstwo"],
+   "level": 25,
+   "quizGroup": 8
+ },
+ {
+   "id": 355,
+   "word": "母",
+   "kana": "はは",
+   "romaji": "haha",
+   "meaning": ["matka", "(formalnie, o własnej rodzinie)"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 356,
+   "word": "父",
+   "kana": "ちち",
+   "romaji": "chichi",
+   "meaning": ["ojciec", "(formalnie, o własnej rodzinie)"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 357,
+   "word": "お母さん",
+   "kana": "おかあさん",
+   "romaji": "okaasan",
+   "meaning": ["matka", "mama", "żona"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 358,
+   "word": "お父さん",
+   "kana": "おとうさん",
+   "romaji": "otousan",
+   "meaning": ["ojciec", "tata", "mąż"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 359,
+   "word": "おばあさん",
+   "kana": "",
+   "romaji": "obaasan",
+   "meaning": ["babcia", "starsza kobieta"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 360,
+   "word": "おじいさん",
+   "kana": "",
+   "romaji": "ojiisan",
+   "meaning": ["dziadek", "starszy mężczyzna"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 361,
+   "word": "姉",
+   "kana": "あね",
+   "romaji": "ane",
+   "meaning": ["starsza siostra", "(formalnie, o własnej rodzinie)"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 362,
+   "word": "兄",
+   "kana": "あに",
+   "romaji": "ani",
+   "meaning": ["starszy brat", "(formalnie, o własnej rodzinie)"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 363,
+   "word": "お姉さん",
+   "kana": "おねえさん",
+   "romaji": "oneesan",
+   "meaning": ["starsza siostra", "młody kobieta"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 364,
+   "word": "お兄さん",
+   "kana": "おにいさん",
+   "romaji": "oniisan",
+   "meaning": ["starszy brat", "młody mężczyzna"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 365,
+   "word": "妹",
+   "kana": "いもうと",
+   "romaji": "imouto",
+   "meaning": ["młodsza siostra"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 366,
+   "word": "弟",
+   "kana": "おとうと",
+   "romaji": "otouto",
+   "meaning": ["młodszy brat"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 367,
+   "word": "伯母さん",
+   "kana": "おばさん",
+   "romaji": "obasan",
+   "meaning": ["ciocia"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 368,
+   "word": "伯父さん",
+   "kana": "おじさん",
+   "romaji": "ojisan",
+   "meaning": ["wujek"],
+   "level": 26,
+   "quizGroup": 9
+ },
+ {
+   "id": 369,
+   "word": "両親",
+   "kana": "りょうしん",
+   "romaji": "ryoushin",
+   "meaning": ["rodzice"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 370,
+   "word": "兄弟",
+   "kana": "きょうだい",
+   "romaji": "kyoudai",
+   "meaning": ["rodzeństwo"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 371,
+   "word": "家庭",
+   "kana": "かてい",
+   "romaji": "katei",
+   "meaning": ["gospodarstwo domowe", "rodzina"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 372,
+   "word": "家族",
+   "kana": "かぞく",
+   "romaji": "kazoku",
+   "meaning": ["rodzina", "członkowie rodziny"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 373,
+   "word": "奥さん",
+   "kana": "おくさん",
+   "romaji": "okusan",
+   "meaning": ["żona"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 374,
+   "word": "結婚",
+   "kana": "けっこん",
+   "romaji": "kekkon",
+   "meaning": ["ślub", "małżeństwo"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 375,
+   "word": "子供",
+   "kana": "こども",
+   "romaji": "kodomo",
+   "meaning": ["dziecko"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 376,
+   "word": "女",
+   "kana": "おんな",
+   "romaji": "onna",
+   "meaning": ["kobieta"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 377,
+   "word": "男",
+   "kana": "おとこ",
+   "romaji": "otoko",
+   "meaning": ["mężczyzna"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 378,
+   "word": "女の子",
+   "kana": "おんなのこ",
+   "romaji": "onnanoko",
+   "meaning": ["dziewczyna", "dziewczynka"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 379,
+   "word": "男の子",
+   "kana": "おとこのこ",
+   "romaji": "otokonoko",
+   "meaning": ["chłopak", "chłopiec"],
+   "level": 27,
+   "quizGroup": 9
+ },
+ {
+   "id": 380,
+   "word": "人",
+   "kana": "ひと",
+   "romaji": "hito",
+   "meaning": ["człowiek", "osoba", "ludzie"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 381,
+   "word": "大人",
+   "kana": "おとな",
+   "romaji": "otona",
+   "meaning": ["dorosły", "osoba dorosła"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 382,
+   "word": "一人",
+   "kana": "ひとり",
+   "romaji": "hitori",
+   "meaning": ["jedna osoba", "sam", "samotny"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 383,
+   "word": "二人",
+   "kana": "ふたり",
+   "romaji": "futari",
+   "meaning": ["dwoje ludzi", "para"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 384,
+   "word": "友達",
+   "kana": "ともだち",
+   "romaji": "tomodachi",
+   "meaning": ["przyjaciel", "kolega"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 385,
+   "word": "先生",
+   "kana": "せんせい",
+   "romaji": "sensei",
+   "meaning": ["nauczyciel", "instruktor", "mistrz"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 386,
+   "word": "学生",
+   "kana": "がくせい",
+   "romaji": "gakusei",
+   "meaning": ["student"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 387,
+   "word": "生徒",
+   "kana": "せいと",
+   "romaji": "seito",
+   "meaning": ["uczeń", "student"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 388,
+   "word": "医者",
+   "kana": "いしゃ",
+   "romaji": "isha",
+   "meaning": ["lekarz"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 389,
+   "word": "警官",
+   "kana": "けいかん",
+   "romaji": "keikan",
+   "meaning": ["policjant", "policja"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 390,
+   "word": "お巡りさん",
+   "kana": "おまわりさん",
+   "romaji": "omawarisan",
+   "meaning": ["policjant"],
+   "level": 28,
+   "quizGroup": 9
+ },
+ {
+   "id": 391,
+   "word": "好き",
+   "kana": "すき",
+   "romaji": "suki",
+   "meaning": ["lubić", "ulubiony", "ukochany"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 392,
+   "word": "嫌い",
+   "kana": "きらい",
+   "romaji": "kirai",
+   "meaning": ["nielubiany", "znienawidzony"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 393,
+   "word": "大切",
+   "kana": "たいせつ",
+   "romaji": "taisetsu",
+   "meaning": ["ważny", "cenny", "wartościowy"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 394,
+   "word": "大変",
+   "kana": "たいへん",
+   "romaji": "taihen",
+   "meaning": ["poważny", "straszny", "trudny"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 395,
+   "word": "結構",
+   "kana": "けっこう",
+   "romaji": "kekkou",
+   "meaning": ["wspaniały", "znakomity", "całkiem", "dość"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 396,
+   "word": "嫌",
+   "kana": "いや",
+   "romaji": "iya",
+   "meaning": ["niemiły", "nieprzyjemny"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 397,
+   "word": "元気",
+   "kana": "げんき",
+   "romaji": "genki",
+   "meaning": ["zdrowie", "energia", "dobre samopoczucie"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 398,
+   "word": "有名",
+   "kana": "ゆうめい",
+   "romaji": "yuumei",
+   "meaning": ["sławny", "słynny", "dobrze znany"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 399,
+   "word": "一緒",
+   "kana": "いっしょ",
+   "romaji": "issho",
+   "meaning": ["razem", "wspólnie", "taki sam", "identyczny"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 400,
+   "word": "みんな",
+   "kana": "",
+   "romaji": "minna",
+   "meaning": ["wszyscy", "każdy"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 401,
+   "word": "皆さん",
+   "kana": "みなさん",
+   "romaji": "minasan",
+   "meaning": ["wszyscy", "każdy", "(uprzejmie)"],
+   "level": 31,
+   "quizGroup": 10
+ },
+ {
+   "id": 402,
+   "word": "方",
+   "kana": "かた",
+   "romaji": "kata",
+   "meaning": ["osoba", "(pan/pani)", "sposób robienia czegoś", "(jako przyrostek)"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 403,
+   "word": "同じ",
+   "kana": "おなじ",
+   "romaji": "onaji",
+   "meaning": ["taki sam", "to samo", "identyczny"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 404,
+   "word": "ほか",
+   "kana": "",
+   "romaji": "hoka",
+   "meaning": ["inny", "inne", "(np. miejsce, rzecz)", "pozostały"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 405,
+   "word": "本当",
+   "kana": "ほんとう",
+   "romaji": "hontou",
+   "meaning": ["prawda", "prawdziwy"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 406,
+   "word": "次",
+   "kana": "つぎ",
+   "romaji": "tsugi",
+   "meaning": ["następny", "kolejny"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 407,
+   "word": "二十歳",
+   "kana": "はたち",
+   "romaji": "hatachi",
+   "meaning": ["dwudziestoletni", "w wieku dwudziestu lat"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 408,
+   "word": "どなた",
+   "kana": "",
+   "romaji": "donata",
+   "meaning": ["kto"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 409,
+   "word": "ええ",
+   "kana": "",
+   "romaji": "ee",
+   "meaning": ["tak", "zgadza się", "tak jest"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 410,
+   "word": "はい",
+   "kana": "",
+   "romaji": "hai",
+   "meaning": ["tak", "zgadza się", "tak jest", "(uprzejmie)"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 411,
+   "word": "こっち",
+   "kana": "",
+   "romaji": "kocchi",
+   "meaning": ["tutaj", "tędy", "w tym kierunku", "(mniej formalnie)"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 412,
+   "word": "こちら",
+   "kana": "",
+   "romaji": "kochira",
+   "meaning": ["tutaj", "tędy", "w tym kierunku", "(bardziej formalnie)"],
+   "level": 32,
+   "quizGroup": 10
+ },
+ {
+   "id": 413,
+   "word": "グラム",
+   "kana": "",
+   "romaji": "guramu",
+   "meaning": ["gram"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 414,
+   "word": "メートル",
+   "kana": "",
+   "romaji": "meetoru",
+   "meaning": ["metr"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 415,
+   "word": "キログラム",
+   "kana": "",
+   "romaji": "kiroguramu",
+   "meaning": ["kilogram"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 416,
+   "word": "キロメートル",
+   "kana": "",
+   "romaji": "kiromeetoru",
+   "meaning": ["kilometr"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 417,
+   "word": "半",
+   "kana": "はん",
+   "romaji": "han",
+   "meaning": ["pół", "wpół"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 418,
+   "word": "半分",
+   "kana": "はんぶん",
+   "romaji": "hanbun",
+   "meaning": ["połowa", "połówka"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 419,
+   "word": "いくら",
+   "kana": "",
+   "romaji": "ikura",
+   "meaning": ["ile", "jak dużo"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 420,
+   "word": "大勢",
+   "kana": "おおぜい",
+   "romaji": "oozei",
+   "meaning": ["wiele osób", "tłum"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 421,
+   "word": "少し",
+   "kana": "すこし",
+   "romaji": "sukoshi",
+   "meaning": ["trochę", "odrobinę", "mała ilość"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 422,
+   "word": "沢山",
+   "kana": "たくさん",
+   "romaji": "takusan",
+   "meaning": ["dużo", "wiele", "wielka ilość"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 423,
+   "word": "縦",
+   "kana": "たて",
+   "romaji": "tate",
+   "meaning": ["wysokość", "długość", "od przodu od tyłu"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 424,
+   "word": "横",
+   "kana": "よこ",
+   "romaji": "yoko",
+   "meaning": ["poziomy", "bok", "szerokość"],
+   "level": 33,
+   "quizGroup": 10
+ },
+ {
+   "id": 425,
+   "word": "全部",
+   "kana": "ぜんぶ",
+   "romaji": "zenbu",
+   "meaning": ["wszystko"],
+   "level": 33,
+   "quizGroup": 10
+ }
+]

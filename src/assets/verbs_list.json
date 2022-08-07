@@ -1,0 +1,1073 @@
+[
+ {
+   "id": 1,
+   "word": "言う",
+   "kana": "いう",
+   "romaji": "iu",
+   "meaning": ["mówić", "nazywać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 2,
+   "word": "聞く",
+   "kana": "きく",
+   "romaji": "kiku",
+   "meaning": ["słyszeć", "słuchać", "pytać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 3,
+   "word": "話す",
+   "kana": "はなす",
+   "romaji": "hanasu",
+   "meaning": ["mówić", "rozmawiać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 4,
+   "word": "書く",
+   "kana": "かく",
+   "romaji": "kaku",
+   "meaning": ["pisać", "komponować", "rysować"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 5,
+   "word": "読む",
+   "kana": "よむ",
+   "romaji": "yomu",
+   "meaning": ["czytać", "zgadywać", "przewidywać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 6,
+   "word": "呼ぶ",
+   "kana": "よぶ",
+   "romaji": "yobu",
+   "meaning": ["wołać", "(kogoś)", "wezwać", "zapraszać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 7,
+   "word": "見る",
+   "kana": "みる",
+   "romaji": "miru",
+   "meaning": ["widzieć", "patrzeć", "oglądać", "obserwować"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 8,
+   "word": "見せる",
+   "kana": "みせる",
+   "romaji": "miseru",
+   "meaning": ["pokazywać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 9,
+   "word": "食べる",
+   "kana": "たべる",
+   "romaji": "taberu",
+   "meaning": ["jeść"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 10,
+   "word": "飲む",
+   "kana": "のむ",
+   "romaji": "nomu",
+   "meaning": ["pić"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 11,
+   "word": "行く",
+   "kana": "いく",
+   "romaji": "iku",
+   "meaning": ["iść"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 12,
+   "word": "来る",
+   "kana": "くる",
+   "romaji": "kuru",
+   "meaning": ["przyjść", "przybyć"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 13,
+   "word": "歩く",
+   "kana": "あるく",
+   "romaji": "aruku",
+   "meaning": ["iść pieszo"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 14,
+   "word": "走る",
+   "kana": "はしる",
+   "romaji": "hashiru",
+   "meaning": ["biegać"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 15,
+   "word": "止まる",
+   "kana": "とまる",
+   "romaji": "tomaru",
+   "meaning": ["zatrzymać się"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 16,
+   "word": "入る",
+   "kana": "はいる",
+   "romaji": "hairu",
+   "meaning": ["wejść"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 17,
+   "word": "入れる",
+   "kana": "いれる",
+   "romaji": "ireru",
+   "meaning": ["wstawić", "wpuścić", "wnieść"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 18,
+   "word": "出す",
+   "kana": "だす",
+   "romaji": "dasu",
+   "meaning": ["wyjmować", "wystawiać", "wyciągać"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 19,
+   "word": "出る",
+   "kana": "でる",
+   "romaji": "deru",
+   "meaning": ["wychodzić", "wyruszać", "pojawić się"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 20,
+   "word": "出かける",
+   "kana": "でかける",
+   "romaji": "dekakeru",
+   "meaning": ["wyjść", "wyruszyć"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 21,
+   "word": "帰る",
+   "kana": "かえる",
+   "romaji": "kaeru",
+   "meaning": ["wrarać", "wracać do domu"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 22,
+   "word": "会う",
+   "kana": "あう",
+   "romaji": "au",
+   "meaning": ["spotykać", "napotkać"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 23,
+   "word": "遊ぶ",
+   "kana": "あそぶ",
+   "romaji": "asobu",
+   "meaning": ["bawić się", "miło spędzać czas"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 24,
+   "word": "弾く",
+   "kana": "ひく",
+   "romaji": "hiku",
+   "meaning": ["grać", "(na instrumencie klawiszowym lub strunowym)"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 25,
+   "word": "歌う",
+   "kana": "うたう",
+   "romaji": "utau",
+   "meaning": ["śpiewać"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 26,
+   "word": "泳ぐ",
+   "kana": "およぐ",
+   "romaji": "oyogu",
+   "meaning": ["pływać"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 27,
+   "word": "働く",
+   "kana": "はたらく",
+   "romaji": "hataraku",
+   "meaning": ["pracować"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 28,
+   "word": "休む",
+   "kana": "やすむ",
+   "romaji": "yasumu",
+   "meaning": ["być nieobecnym", "wziąć dzień wolny", "odpocząć"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 29,
+   "word": "仕事",
+   "kana": "しごと",
+   "romaji": "shigoto",
+   "meaning": ["praca", "zajęcie", "zawód"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 30,
+   "word": "上げる",
+   "kana": "あげる",
+   "romaji": "ageru",
+   "meaning": ["podnieść", "wznieść"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 31,
+   "word": "置く",
+   "kana": "おく",
+   "romaji": "oku",
+   "meaning": ["kłaść", "położyć"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 32,
+   "word": "始まる",
+   "kana": "はじまる",
+   "romaji": "hajimaru",
+   "meaning": ["zacząć"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 33,
+   "word": "終る",
+   "kana": "おわる",
+   "romaji": "owaru",
+   "meaning": ["skończyć się", "kończyć się"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 34,
+   "word": "開ける",
+   "kana": "あける",
+   "romaji": "akeru",
+   "meaning": ["otwierać", "(np. drzwi)", "rozpakowywać", "(np. paczkę)"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 35,
+   "word": "開く",
+   "kana": "あく",
+   "romaji": "aku",
+   "meaning": ["otwierać się"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 36,
+   "word": "閉める",
+   "kana": "しめる",
+   "romaji": "shimeru",
+   "meaning": ["zamykać", "zamknąć"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 37,
+   "word": "閉まる",
+   "kana": "しまる",
+   "romaji": "shimaru",
+   "meaning": ["zamykać się", "być zamkniętym"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 38,
+   "word": "締める",
+   "kana": "しめる",
+   "romaji": "shimeru",
+   "meaning": ["zawiązać", "zapiąć", "zacisnąć"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 39,
+   "word": "勉強",
+   "kana": "べんきょう",
+   "romaji": "benkyou",
+   "meaning": ["uczyć się"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 40,
+   "word": "教える",
+   "kana": "おしえる",
+   "romaji": "oshieru",
+   "meaning": ["uczyć", "(kogoś)"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 41,
+   "word": "習う",
+   "kana": "ならう",
+   "romaji": "narau",
+   "meaning": ["brać lekcję", "uczyć się", "(od kogoś)"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 42,
+   "word": "授業",
+   "kana": "じゅぎょう",
+   "romaji": "jugyou",
+   "meaning": ["lekcja", "zajęcia", "nauczanie"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 43,
+   "word": "晴れる",
+   "kana": "はれる",
+   "romaji": "hareru",
+   "meaning": ["być słonecznie", "rozpogodzić się"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 44,
+   "word": "曇る",
+   "kana": "くもる",
+   "romaji": "kumoru",
+   "meaning": ["zachmurzyć", "być pochmurnym"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 45,
+   "word": "降る",
+   "kana": "ふる",
+   "romaji": "furu",
+   "meaning": ["padać", "(deszcz, śnieg, itp.)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 46,
+   "word": "吹く",
+   "kana": "ふく",
+   "romaji": "fuku",
+   "meaning": ["wiać", "dmuchać", "grać", "(na instrumencie dętym)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 47,
+   "word": "履く",
+   "kana": "はく",
+   "romaji": "haku",
+   "meaning": ["nosić", "zakładać", "(odzież poniżej pasa, np. spodnie, obuwie)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 48,
+   "word": "着る",
+   "kana": "きる",
+   "romaji": "kiru",
+   "meaning": ["nosić", "zakładać", "(odzież od ramion w dół, np. koszula, kimono)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 49,
+   "word": "切る",
+   "kana": "きる",
+   "romaji": "kiru",
+   "meaning": ["ciąć", "kroić"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 50,
+   "word": "脱ぐ",
+   "kana": "ぬぐ",
+   "romaji": "nugu",
+   "meaning": ["zdejmować ubranie"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 51,
+   "word": "浴びる",
+   "kana": "あびる",
+   "romaji": "abiru",
+   "meaning": ["wziąć kąpiel", "wziąć prysznic"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 52,
+   "word": "洗う",
+   "kana": "あらう",
+   "romaji": "arau",
+   "meaning": ["myć", "prać", "zmywać"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 53,
+   "word": "磨く",
+   "kana": "みがく",
+   "romaji": "migaku",
+   "meaning": ["polerować", "nabłyszczać", "szczotkować", "(np. zęby)"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 54,
+   "word": "洗濯",
+   "kana": "せんたく",
+   "romaji": "sentaku",
+   "meaning": ["pranie"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 55,
+   "word": "掃除",
+   "kana": "そうじ",
+   "romaji": "souji",
+   "meaning": ["sprzątanie"],
+   "level": 4,
+   "quizGroup": 2
+ },
+ {
+   "id": 56,
+   "word": "並べる",
+   "kana": "ならべる",
+   "romaji": "naraberu",
+   "meaning": ["uszeregować", "ustawić"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 57,
+   "word": "並ぶ",
+   "kana": "ならぶ",
+   "romaji": "narabu",
+   "meaning": ["ustawiać się w rzędzie", "ustawiać się w kolejce"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 58,
+   "word": "寝る",
+   "kana": "ねる",
+   "romaji": "neru",
+   "meaning": ["spać", "iść spać", "położyć się"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 59,
+   "word": "起きる",
+   "kana": "おきる",
+   "romaji": "okiru",
+   "meaning": ["obudzić się", "wstać"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 60,
+   "word": "曲がる",
+   "kana": "まがる",
+   "romaji": "magaru",
+   "meaning": ["skręcać", "zginać"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 61,
+   "word": "登る",
+   "kana": "のぼる",
+   "romaji": "noboru",
+   "meaning": ["wspinać się"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 62,
+   "word": "渡る",
+   "kana": "わたる",
+   "romaji": "wataru",
+   "meaning": ["przejść na drugą stronę", "(np. most, ulica)"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 63,
+   "word": "飛ぶ",
+   "kana": "とぶ",
+   "romaji": "tobu",
+   "meaning": ["latać", "skakać"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 64,
+   "word": "立つ",
+   "kana": "たつ",
+   "romaji": "tatsu",
+   "meaning": ["stać", "wstać"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 65,
+   "word": "座る",
+   "kana": "すわる",
+   "romaji": "suwaru",
+   "meaning": ["siadać"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 66,
+   "word": "乗る",
+   "kana": "のる",
+   "romaji": "noru",
+   "meaning": ["wsiąść", "(pociąg, samolot, autobus, statek itp.)"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 67,
+   "word": "降りる",
+   "kana": "おりる",
+   "romaji": "oriru",
+   "meaning": ["wysiąść"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 68,
+   "word": "着く",
+   "kana": "つく",
+   "romaji": "tsuku",
+   "meaning": ["dotrzeć", "przybyć"],
+   "level": 5,
+   "quizGroup": 2
+ },
+ {
+   "id": 69,
+   "word": "練習",
+   "kana": "れんしゅう",
+   "romaji": "renshuu",
+   "meaning": ["praktyka", "ćwiczenia", "trening"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 70,
+   "word": "テスト",
+   "kana": "",
+   "romaji": "tesuto",
+   "meaning": ["test", "egzamin"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 71,
+   "word": "旅行",
+   "kana": "りょこう",
+   "romaji": "ryokou",
+   "meaning": ["podróż", "wyjazd", "wycieczka"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 72,
+   "word": "料理",
+   "kana": "りょうり",
+   "romaji": "ryouri",
+   "meaning": ["potrawa", "gotowanie"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 73,
+   "word": "結婚",
+   "kana": "けっこん",
+   "romaji": "kekkon",
+   "meaning": ["ślub", "małżeństwo"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 74,
+   "word": "コピー",
+   "kana": "",
+   "romaji": "kopii",
+   "meaning": ["kopia", "kopiowanie"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 75,
+   "word": "散歩",
+   "kana": "さんぽ",
+   "romaji": "sanpo",
+   "meaning": ["spacer"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 76,
+   "word": "質問",
+   "kana": "しつもん",
+   "romaji": "shitsumon",
+   "meaning": ["pytanie", "zapytanie"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 77,
+   "word": "分かる",
+   "kana": "わかる",
+   "romaji": "wakaru",
+   "meaning": ["rozumieć", "pojmować", "wiedzieć"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 78,
+   "word": "知る",
+   "kana": "しる",
+   "romaji": "shiru",
+   "meaning": ["wiedzieć", "rozumieć", "znać"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 79,
+   "word": "覚える",
+   "kana": "おぼえる",
+   "romaji": "oboeru",
+   "meaning": ["zapamiętać", "pamiętać"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 80,
+   "word": "忘れる",
+   "kana": "わすれる",
+   "romaji": "wasureru",
+   "meaning": ["zapomnieć"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 81,
+   "word": "違う",
+   "kana": "ちがう",
+   "romaji": "chigau",
+   "meaning": ["różnić się", "pomylić się"],
+   "level": 6,
+   "quizGroup": 2
+ },
+ {
+   "id": 82,
+   "word": "持つ",
+   "kana": "もつ",
+   "romaji": "motsu",
+   "meaning": ["trzymać", "nosić", "posiadać"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 83,
+   "word": "貸す",
+   "kana": "かす",
+   "romaji": "kasu",
+   "meaning": ["pożyczać", "(komuś)"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 84,
+   "word": "借りる",
+   "kana": "かりる",
+   "romaji": "kariru",
+   "meaning": ["pożyczać", "(od kogoś)"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 85,
+   "word": "返す",
+   "kana": "かえす",
+   "romaji": "kaesu",
+   "meaning": ["zwrócić", "oddać"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 86,
+   "word": "買う",
+   "kana": "かう",
+   "romaji": "kau",
+   "meaning": ["kupować"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 87,
+   "word": "売る",
+   "kana": "うる",
+   "romaji": "uru",
+   "meaning": ["sprzedawać", "sprzedać"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 88,
+   "word": "点ける",
+   "kana": "つける",
+   "romaji": "tsukeru",
+   "meaning": ["włączyć", "oświetlić"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 89,
+   "word": "消す",
+   "kana": "けす",
+   "romaji": "kesu",
+   "meaning": ["usunąć", "wyłączyć"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 90,
+   "word": "消える",
+   "kana": "きえる",
+   "romaji": "kieru",
+   "meaning": ["znikać", "wyłączyć się"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 91,
+   "word": "使う",
+   "kana": "つかう",
+   "romaji": "tsukau",
+   "meaning": ["używać"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 92,
+   "word": "作る",
+   "kana": "つくる",
+   "romaji": "tsukuru",
+   "meaning": ["zrobić", "tworzyć", "produkować"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 93,
+   "word": "渡す",
+   "kana": "わたす",
+   "romaji": "watasu",
+   "meaning": ["przekazywać", "dawać"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 94,
+   "word": "無くす",
+   "kana": "なくす",
+   "romaji": "nakusu",
+   "meaning": ["zgubić", "(coś)"],
+   "level": 7,
+   "quizGroup": 3
+ },
+ {
+   "id": 95,
+   "word": "貼る",
+   "kana": "はる",
+   "romaji": "haru",
+   "meaning": ["przykleić", "wkleić"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 96,
+   "word": "押す",
+   "kana": "おす",
+   "romaji": "osu",
+   "meaning": ["naciskać", "pchać"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 97,
+   "word": "引く",
+   "kana": "ひく",
+   "romaji": "hiku",
+   "meaning": ["ciągnąć"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 98,
+   "word": "取る",
+   "kana": "とる",
+   "romaji": "toru",
+   "meaning": ["brać", "wziąć", "zgromadzić", "wybierać"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 99,
+   "word": "ある",
+   "kana": "",
+   "romaji": "aru",
+   "meaning": ["być", "mieć", "(nieożywiony)"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 100,
+   "word": "居る",
+   "kana": "いる",
+   "romaji": "iru",
+   "meaning": ["być", "mieć", "istnieć", "(ożywiony)"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 101,
+   "word": "要る",
+   "kana": "いる",
+   "romaji": "iru",
+   "meaning": ["potrzebować"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 102,
+   "word": "やる",
+   "kana": "",
+   "romaji": "yaru",
+   "meaning": ["robić"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 103,
+   "word": "掛かる",
+   "kana": "かかる",
+   "romaji": "kakaru",
+   "meaning": ["zajmować", "(np. czas, pieniądze)", "wisieć", "być zawieszonym"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 104,
+   "word": "掛ける",
+   "kana": "かける",
+   "romaji": "kakeru",
+   "meaning": ["wieszać", "dzwonić", "(wykonywać połączenie telefoniczne)"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 105,
+   "word": "生まれる",
+   "kana": "うまれる",
+   "romaji": "umareru",
+   "meaning": ["urodzić się"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 106,
+   "word": "死ぬ",
+   "kana": "しぬ",
+   "romaji": "shinu",
+   "meaning": ["umierać"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 107,
+   "word": "住む",
+   "kana": "すむ",
+   "romaji": "sumu",
+   "meaning": ["żyć", "mieszkać"],
+   "level": 8,
+   "quizGroup": 3
+ },
+ {
+   "id": 108,
+   "word": "困る",
+   "kana": "こまる",
+   "romaji": "komaru",
+   "meaning": ["być zakłopotanym", "mieć trudności"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 109,
+   "word": "頼む",
+   "kana": "たのむ",
+   "romaji": "tanomu",
+   "meaning": ["prosić", "błagać"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 110,
+   "word": "答える",
+   "kana": "こたえる",
+   "romaji": "kotaeru",
+   "meaning": ["odpowiadać"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 111,
+   "word": "疲れる",
+   "kana": "つかれる",
+   "romaji": "tsukareru",
+   "meaning": ["zmęczyć się", "być wyczerpanym"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 112,
+   "word": "勤める",
+   "kana": "つとめる",
+   "romaji": "tsutomeru",
+   "meaning": ["pracować dla", "być zatrudnionym"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 113,
+   "word": "待つ",
+   "kana": "まつ",
+   "romaji": "matsu",
+   "meaning": ["czekać"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 114,
+   "word": "撮る",
+   "kana": "とる",
+   "romaji": "toru",
+   "meaning": ["robić zdjęcie", "nagrywać", "(wideo, dźwięk)"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 115,
+   "word": "電話",
+   "kana": "でんわ",
+   "romaji": "denwa",
+   "meaning": ["telefon", "rozmowa telefoniczna"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 116,
+   "word": "鳴く",
+   "kana": "なく",
+   "romaji": "naku",
+   "meaning": ["wydawać dźwięk", "(o zwierzęciu)", "ćwierkać"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 117,
+   "word": "咲く",
+   "kana": "さく",
+   "romaji": "saku",
+   "meaning": ["kwitnąć", "rozkwitać"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 118,
+   "word": "差す",
+   "kana": "さす",
+   "romaji": "sasu",
+   "meaning": ["trzymać", "(parasol)"],
+   "level": 9,
+   "quizGroup": 3
+ },
+ {
+   "id": 119,
+   "word": "吸う",
+   "kana": "すう",
+   "romaji": "suu",
+   "meaning": ["palić", "wdychać"],
+   "level": 9,
+   "quizGroup": 3
+ }
+]

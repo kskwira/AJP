@@ -1,0 +1,218 @@
+[
+ {
+   "id": 1,
+   "word": "元気",
+   "kana": "げんき",
+   "romaji": "genki",
+   "meaning": ["pełen życia", "pełen ducha", "zdrowy"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 2,
+   "word": "便利",
+   "kana": "べんり",
+   "romaji": "benri",
+   "meaning": ["wygodny", "poręczny", "użyteczny"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 3,
+   "word": "丈夫",
+   "kana": "じょうぶ",
+   "romaji": "joubu",
+   "meaning": ["mocny", "silny", "wytrzymały"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 4,
+   "word": "上手",
+   "kana": "じょうず",
+   "romaji": "jouzu",
+   "meaning": ["umiejętny", "sprawny", "biegły", "dobry w"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 5,
+   "word": "下手",
+   "kana": "へた",
+   "romaji": "heta",
+   "meaning": ["kiepski", "słaby w", "niezdolny"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 6,
+   "word": "本当",
+   "kana": "ほんとう",
+   "romaji": "hontou",
+   "meaning": ["prawda", "prawdziwy"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 7,
+   "word": "色々",
+   "kana": "いろいろ",
+   "romaji": "iroiro",
+   "meaning": ["różny", "różnorodny"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 8,
+   "word": "真っ直ぐ",
+   "kana": "まっすぐ",
+   "romaji": "massugu",
+   "meaning": ["na wprost", "bezpośredni"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 9,
+   "word": "沢山",
+   "kana": "たくさん",
+   "romaji": "takusan",
+   "meaning": ["dużo", "sporo", "wiele", "dosyć"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 10,
+   "word": "結構",
+   "kana": "けっこう",
+   "romaji": "kekkou",
+   "meaning": ["wspaniały", "znakomity", "całkiem", "dość"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 11,
+   "word": "暇",
+   "kana": "ひま",
+   "romaji": "hima",
+   "meaning": ["niezajęty", "wolny"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 12,
+   "word": "多分",
+   "kana": "たぶん",
+   "romaji": "tabun",
+   "meaning": ["być może", "prawdopodobnie"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 13,
+   "word": "静か",
+   "kana": "しずか",
+   "romaji": "shizuka",
+   "meaning": ["cichy", "spokojny"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 14,
+   "word": "賑やか",
+   "kana": "にぎやか",
+   "romaji": "nigiyaka",
+   "meaning": ["tętniący życiem", "pełen ludzi"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 15,
+   "word": "綺麗",
+   "kana": "きれい",
+   "romaji": "kirei",
+   "meaning": ["ładny", "śliczny", "czysty", "schludny"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 16,
+   "word": "有名",
+   "kana": "ゆうめい",
+   "romaji": "yuumei",
+   "meaning": ["sławny", "dobrze znany"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 17,
+   "word": "立派",
+   "kana": "りっぱ",
+   "romaji": "rippa",
+   "meaning": ["znakomity", "wspaniały", "przystojny", "elegancki"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 18,
+   "word": "好き",
+   "kana": "すき",
+   "romaji": "suki",
+   "meaning": ["lubić", "ulubiony", "ukochany"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 19,
+   "word": "大好き",
+   "kana": "だいすき",
+   "romaji": "daisuki",
+   "meaning": ["kochać", "bardzo lubić"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 20,
+   "word": "大丈夫",
+   "kana": "だいじょうぶ",
+   "romaji": "daijoubu",
+   "meaning": ["pewny", "bezpieczny", "w porządku"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 21,
+   "word": "大切",
+   "kana": "たいせつ",
+   "romaji": "taisetsu",
+   "meaning": ["ważny", "cenny", "wartościowy"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 22,
+   "word": "大変",
+   "kana": "たいへん",
+   "romaji": "taihen",
+   "meaning": ["poważny", "straszny", "trudny"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 23,
+   "word": "嫌い",
+   "kana": "きらい",
+   "romaji": "kirai",
+   "meaning": ["nielubiany", "znienawidzony"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 24,
+   "word": "嫌",
+   "kana": "いや",
+   "romaji": "iya",
+   "meaning": ["niemiły", "nieprzyjemny"],
+   "level": 2,
+   "quizGroup": 1
+ }
+]

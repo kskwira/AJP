@@ -1,0 +1,317 @@
+[
+ {
+   "id": 1,
+   "word": "ちょっと",
+   "kana": "",
+   "romaji": "chotto",
+   "meaning": ["trochę", "odrobinę"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 2,
+   "word": "少し",
+   "kana": "すこし",
+   "romaji": "sukoshi",
+   "meaning": ["trochę", "odrobinę", "kilka", "w małej ilości"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 3,
+   "word": "丁度",
+   "kana": "ちょうど",
+   "romaji": "choudo",
+   "meaning": ["dokładnie", "w sam raz"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 4,
+   "word": "結構",
+   "kana": "けっこう",
+   "romaji": "kekkou",
+   "meaning": ["znakomity", "całkiem", "dość"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 5,
+   "word": "よく",
+   "kana": "",
+   "romaji": "yoku",
+   "meaning": ["często", "dobrze", "umiejętnie"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 6,
+   "word": "大丈夫",
+   "kana": "だいじょうぶ",
+   "romaji": "daijoubu",
+   "meaning": ["OK", "w porządku"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 7,
+   "word": "大変",
+   "kana": "たいへん",
+   "romaji": "taihen",
+   "meaning": ["bardzo", "ogromnie", "strasznie"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 8,
+   "word": "どう",
+   "kana": "",
+   "romaji": "dou",
+   "meaning": ["jak", "w jaki sposób"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 9,
+   "word": "どうして",
+   "kana": "",
+   "romaji": "doushite",
+   "meaning": ["dlaczego", "z jakiego powodu"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 10,
+   "word": "何故",
+   "kana": "なぜ",
+   "romaji": "naze",
+   "meaning": ["jak", "dlaczego"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 11,
+   "word": "どうぞ",
+   "kana": "",
+   "romaji": "douzo",
+   "meaning": ["proszę", "(np. podając coś lub dając przyzwolenie)"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 12,
+   "word": "どうも",
+   "kana": "",
+   "romaji": "doumo",
+   "meaning": ["dziękuję"],
+   "level": 1,
+   "quizGroup": 1
+ },
+ {
+   "id": 13,
+   "word": "一人",
+   "kana": "ひとり",
+   "romaji": "hitori",
+   "meaning": ["jedna osoba", "sam", "samotny"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 14,
+   "word": "一番",
+   "kana": "いちばん",
+   "romaji": "ichiban",
+   "meaning": ["numer jeden", "pierwsze miejsce", "najlepszy"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 15,
+   "word": "一緒に",
+   "kana": "いっしょに",
+   "romaji": "issho ni",
+   "meaning": ["razem"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 16,
+   "word": "みんな",
+   "kana": "",
+   "romaji": "minna",
+   "meaning": ["każdy", "wszyscy"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 17,
+   "word": "いかが",
+   "kana": "",
+   "romaji": "ikaga",
+   "meaning": ["jak", "w jaki sposób", "co sądzisz o"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 18,
+   "word": "いくら",
+   "kana": "",
+   "romaji": "ikura",
+   "meaning": ["ile", "jak dużo"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 19,
+   "word": "いくつ",
+   "kana": "",
+   "romaji": "ikutsu",
+   "meaning": ["ile", "jak stary", "(wiek)"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 20,
+   "word": "色々",
+   "kana": "いろいろ",
+   "romaji": "iroiro",
+   "meaning": ["różny", "różnorodny", "rozmaity"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 21,
+   "word": "ゆっくり",
+   "kana": "",
+   "romaji": "yukkuri",
+   "meaning": ["powoli", "bez pośpiechu"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 22,
+   "word": "直ぐに",
+   "kana": "すぐに ",
+   "romaji": "sugu ni",
+   "meaning": ["od razu", "natychmiast"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 23,
+   "word": "だんだん",
+   "kana": "",
+   "romaji": "dandan",
+   "meaning": ["stopniowo"],
+   "level": 2,
+   "quizGroup": 1
+ },
+ {
+   "id": 24,
+   "word": "初めて",
+   "kana": "はじめて",
+   "romaji": "hajimete",
+   "meaning": ["pierwszy raz"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 25,
+   "word": "いつも",
+   "kana": "",
+   "romaji": "itsumo",
+   "meaning": ["zawsze", "zwykle", "zazwyczaj"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 26,
+   "word": "時々",
+   "kana": "ときどき",
+   "romaji": "tokidoki",
+   "meaning": ["czasami", "od czasu do czasu"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 27,
+   "word": "まだ",
+   "kana": "",
+   "romaji": "mada",
+   "meaning": ["wciąż", "nadal", "jak dotąd"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 28,
+   "word": "まだ～ていません",
+   "kana": "",
+   "romaji": "mada ~te imasen",
+   "meaning": ["jeszcze nie", "(+czasownik)"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 29,
+   "word": "前に",
+   "kana": "まえに",
+   "romaji": "mae ni",
+   "meaning": ["zanim", "przed", "z przodu"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 30,
+   "word": "真っ直ぐ",
+   "kana": "まっすぐ",
+   "romaji": "massugu",
+   "meaning": ["prosto", "na wprost", "bezpośrednio"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 31,
+   "word": "もっと",
+   "kana": "",
+   "romaji": "motto",
+   "meaning": ["więcej", "jeszcze bardziej", "dłużej", "dalej"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 32,
+   "word": "もう",
+   "kana": "",
+   "romaji": "mou",
+   "meaning": ["już", "nie więcej", "ponownie", "inny"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 33,
+   "word": "同じ",
+   "kana": "おなじ",
+   "romaji": "onaji",
+   "meaning": ["taki sam", "to samo", "identyczny"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 34,
+   "word": "多分",
+   "kana": "たぶん",
+   "romaji": "tabun",
+   "meaning": ["być może", "prawdopodobnie"],
+   "level": 3,
+   "quizGroup": 1
+ },
+ {
+   "id": 35,
+   "word": "とても",
+   "kana": "",
+   "romaji": "totemo",
+   "meaning": ["bardzo", "nadzwyczaj", "niezmiernie"],
+   "level": 3,
+   "quizGroup": 1
+ }
+]

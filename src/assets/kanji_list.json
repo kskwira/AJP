@@ -246,7 +246,7 @@
     "onyomiRomaji": ["tou"],
     "kunyomi": ["ひがし"],
     "kunyomiRomaji": ["higashi"],
-    "meaning": ["wschód", "(kierunek świata)"],
+    "meaning": ["wschód", "(kierunek geograficzny)"],
     "level": 3
   },
   {
@@ -456,7 +456,7 @@
     "onyomiRomaji": ["hoku"],
     "kunyomi": ["きた"],
     "kunyomiRomaji": ["kita"],
-    "meaning": ["północ", "(kierunek świata)"],
+    "meaning": ["północ", "(kierunek geograficzny)"],
     "level": 5
   },
   {
@@ -566,7 +566,7 @@
     "onyomiRomaji": ["sei", "sai"],
     "kunyomi": ["にし"],
     "kunyomiRomaji": ["nishi"],
-    "meaning": ["zachód", "(kierunek świata)"],
+    "meaning": ["zachód", "(kierunek geograficzny)"],
     "level": 6
   },
   {
@@ -666,7 +666,7 @@
     "onyomiRomaji": ["nan", "na"],
     "kunyomi": ["みなみ"],
     "kunyomiRomaji": ["minami"],
-    "meaning": ["południe", "(kierunek świata)"],
+    "meaning": ["południe", "(kierunek geograficzny)"],
     "level": 7
   },
   {
@@ -736,7 +736,7 @@
     "onyomiRomaji": ["u", "yuu"],
     "kunyomi": ["みぎ"],
     "kunyomiRomaji": ["migi"],
-    "meaning": ["prawo", "(kierunek)"],
+    "meaning": ["prawo", "(kierunek)", "prawa strona"],
     "level": 8
   },
   {
@@ -766,7 +766,7 @@
     "onyomiRomaji": ["sa", "sha"],
     "kunyomi": ["ひだり"],
     "kunyomiRomaji": ["hidari"],
-    "meaning": ["lewo", "(kierunek)"],
+    "meaning": ["lewo", "(kierunek)", "lewa strona"],
     "level": 8
   },
   {
