@@ -31,21 +31,23 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list cols="3" rowHeight="fit" style="height: 300px" gutterSize="10px" *ngIf="!quizEnd">
-  <mat-grid-tile *ngFor="let answer of nineAnswers">
-    <div class="example-ripple-container mat-elevation-z4"
-         *ngFor="let kanji of kanjiArray"
-         matRipple
-         [hidden]="answered"
-         [matRippleCentered]="centered"
-         [matRippleDisabled]="disabled"
-         [matRippleUnbounded]="unbounded"
-         [matRippleRadius]="radius"
-         [matRippleColor]="color"
-         (click)="answering(answer.meaning![0], kanji.meaning!, kanji.sign!, kanji.id!)"
-    >{{ answer.meaning![0] }}</div>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="answers-container">
+  <mat-grid-list cols="3" rowHeight="90px" gutterSize="6px" *ngIf="!quizEnd">
+    <mat-grid-tile *ngFor="let answer of nineAnswers">
+      <div class="example-ripple-container mat-elevation-z4"
+           *ngFor="let kanji of kanjiArray"
+           matRipple
+           [hidden]="answered"
+           [matRippleCentered]="centered"
+           [matRippleDisabled]="disabled"
+           [matRippleUnbounded]="unbounded"
+           [matRippleRadius]="radius"
+           [matRippleColor]="color"
+           (click)="answering(answer.meaning![0], kanji.meaning!, kanji.sign!, kanji.id!)"
+      >{{ answer.meaning!.join(", ") }}</div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
 
 <div *ngIf="quizEnd">
 <!--  <h1 mat-dialog-title>Koniec Quiz'u</h1>-->

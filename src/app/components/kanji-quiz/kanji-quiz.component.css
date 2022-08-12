@@ -21,13 +21,26 @@ p.kanji-back {
   font-size: 15px;
   font-style: italic;
 }
+
+.answers-container {
+  width: 50%;
+  margin: auto;
+  min-width: 540px;
+  padding: 10px;
+}
+
 .example-ripple-container {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  font-size: 15px;
 
-  width: 200px;
-  height: 100px;
-  line-height: 100px;
+  width: 180px;
+  height: 90px;
+  background-color: #128bea;
+  color: #fff;
 
   user-select: none;
   -webkit-user-select: none;
@@ -36,4 +49,3 @@ p.kanji-back {
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
 }
-

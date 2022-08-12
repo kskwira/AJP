@@ -174,8 +174,8 @@ export class KanaService {
     return this.kanjiRef.add({ ...kanji})
   }
 
-  getAllKanji(): AngularFirestoreCollection<Kana>{
-    return this.db.collection(this.kanjiDbPath)
+  getAllKanji(): AngularFirestoreCollection<Kanji>{
+    return this.kanjiRef
   }
 
 }

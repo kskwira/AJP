@@ -19,6 +19,7 @@ export class KanjiQuizComponent implements OnInit {
   currentUser?: UserModel;
   nineAnswers: Kanji[] = [];
   kanjiArray: Kanji[] = [];
+  allKanjiList: Kanji[] = [];
   result = '';
   routeParam: number = 0;
   numberAnswered = 0;
@@ -26,11 +27,10 @@ export class KanjiQuizComponent implements OnInit {
   idArray: number[] = [];
   answered = false;
   quizEnd = false;
-  xxx: Kanji[] = [];
+
   centered = false;
   disabled = false;
   unbounded = false;
-
   radius: number = 0;
   color: string = '';
 
@@ -63,8 +63,7 @@ export class KanjiQuizComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      // @ts-ignore
-      this.xxx = data;
+      this.allKanjiList = data;
     });
   }
 
@@ -113,23 +112,27 @@ export class KanjiQuizComponent implements OnInit {
   }
 
   prepareAnswers(id: Kanji[]) {
-    var set = new Set();
+    this.nineAnswers.splice(0);
+    const kanjiIdSet = new Set<number>();
+    kanjiIdSet.add(this.idArray[this.numberAnswered])
 
-    while (set.size < 9) {
-      set.add(Math.floor(Math.random() * (this.idArray.length - 1 + 1)) + 1)
+    while (kanjiIdSet.size < 9) {
+      kanjiIdSet.add(Math.floor(Math.random() * (this.routeParam * 10)) + 1)
     }
 
-    console.log(set)
-    var tessss = Array.from(set)
+    console.log("kanjiIdSet from prepareAnswers: ", kanjiIdSet)
 
-    this.nineAnswers = Array.from({length: 9}, (_, i) =>
-      // @ts-ignore
-      id[tessss[i]]);
-    console.log(tessss)
+    kanjiIdSet.forEach( (value) => {
+      const firstKanji = id.find((kanji) => {
+        return kanji.id == value.toString()})
+      this.nineAnswers.push(firstKanji!)
+    })
+
+    this.shuffleArray(this.nineAnswers)
   }
 
   //The Fisher-Yates algorithm
-  shuffleArray(array: Array<number>): Array<number> {
+  shuffleArray(array: Array<any>): Array<any> {
     let m = array.length, t, i;
 
     // While there remain elements to shuffle…
@@ -163,8 +166,8 @@ export class KanjiQuizComponent implements OnInit {
       this.kanjiArray = data;
     });
     console.log(this.numberAnswered);
-    this.prepareAnswers(this.xxx)
-    console.log(this.nineAnswers)
+    this.prepareAnswers(this.allKanjiList)
+    console.log("nineAnswers from testSession", this.nineAnswers)
   }
 
   answering(answer: string, meaning: string[], sign: string, id: string) {
