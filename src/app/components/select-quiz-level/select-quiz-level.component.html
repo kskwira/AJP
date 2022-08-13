@@ -27,14 +27,14 @@
   <mat-list-item>Kanji</mat-list-item>
   <section>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/1">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/2">Level 2</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/3">Level 3</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/4">Level 4</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/5">Level 5</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/6">Level 6</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/7">Level 7</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/8">Level 8</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/1" [disabled]="checkDisable(1)">Level 1</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/2" [disabled]="checkDisable(2)">Level 2</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/3" [disabled]="checkDisable(3)">Level 3</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/4" [disabled]="checkDisable(4)">Level 4</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/5" [disabled]="checkDisable(5)">Level 5</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/6" [disabled]="checkDisable(6)">Level 6</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/7" [disabled]="checkDisable(7)">Level 7</button>
+      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/8" [disabled]="checkDisable(8)">Level 8</button>
     </div>
     <br />
   </section>

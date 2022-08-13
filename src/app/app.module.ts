@@ -42,8 +42,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HelpComponent } from './components/help/help.component';
 import {KanjiQuizComponent} from './components/kanji-quiz/kanji-quiz.component';
 import { KanjiLearningComponent } from './components/kanji-learning/kanji-learning.component';
-import {MatRippleModule} from "@angular/material/core";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {DashboardDialog} from "./login/dashboard/dashboard.component";
 
 
 @NgModule({
@@ -73,26 +72,26 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
     HelpComponent,
     KanjiQuizComponent,
     KanjiLearningComponent,
+    DashboardDialog
   ],
-    imports: [
-        CommonModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        DragDropModule,
-        FormsModule,
-        AngularFireAuthModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideDatabase(() => getDatabase()),
-        provideFirestore(() => getFirestore()),
-        FlipCardModule,
-        provideAuth(() => getAuth()),
-        AppRoutingModule,
-        AngularMaterialModule,
-        ReactiveFormsModule,
-        MatRippleModule,
-    ],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    FlipCardModule,
+    provideAuth(() => getAuth()),
+    AppRoutingModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+  ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

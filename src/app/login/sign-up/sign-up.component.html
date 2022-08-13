@@ -79,7 +79,7 @@
                 <input matInput type="text" class="formControl" placeholder="Imię" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
                 <mat-error *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
                   <mat-error *ngIf="f['firstName'].errors['required']">Imię jest wymagane</mat-error>
-                  <mat-error *ngIf="f['firstName'].errors['minlength']">Imię musi mieć przynajmniej 6 znaków</mat-error>
+                  <mat-error *ngIf="f['firstName'].errors['minlength']">Imię musi mieć przynajmniej 3 znaki</mat-error>
                   <mat-error *ngIf="f['firstName'].errors['maxlength']">Imię nie może przekraczać 20 znaków</mat-error>
                 </mat-error>
               </mat-form-field>
@@ -89,7 +89,7 @@
                 <input matInput type="text" class="formControl" placeholder="Nazwisko" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
                 <mat-error *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
                   <mat-error *ngIf="f['lastName'].errors['required']">Nazwisko jest wymagane</mat-error>
-                  <mat-error *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 6 znaków</mat-error>
+                  <mat-error *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 3 znaki</mat-error>
                   <mat-error *ngIf="f['lastName'].errors['maxlength']">Nazwisko nie może przekraczać 20 znaków</mat-error>
                 </mat-error>
               </mat-form-field>

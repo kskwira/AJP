@@ -13,6 +13,10 @@ export class SelectQuizLevelComponent implements OnInit {
   userData: any; // Save logged in user data
   currentUser?: UserModel;
 
+  hiraganaLevel = 0;
+  katakanaLevel = 0;
+  kanjiLevel = 0;
+
   constructor(public afAuth: AngularFireAuth, private userService: UserService) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
@@ -33,7 +37,14 @@ export class SelectQuizLevelComponent implements OnInit {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data();
+        this.hiraganaLevel = this.currentUser!.progressHiragana.level;
+        this.katakanaLevel = this.currentUser!.progressKatakana.level;
+        this.kanjiLevel = this.currentUser!.progressKanji.level;
       });
+  }
+
+  checkDisable(level: number): boolean {
+    return level > this.kanjiLevel
   }
 
 }

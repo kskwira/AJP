@@ -15,9 +15,14 @@ export interface Progress {
 export interface UserModel extends UserInfo {
   firstName: string;
   lastName: string;
+  answerType: string;
   isAdmin: boolean;
   progressHiragana: Progress;
   progressKatakana: Progress;
   progressKanji: Progress;
-  progressVocabulary: Progress;
+  progressNoun: Progress;
+  progressVerb: Progress;
+  progressAdverb: Progress;
+  progressNaAdjective: Progress;
+  progressIAdjective: Progress;
 }

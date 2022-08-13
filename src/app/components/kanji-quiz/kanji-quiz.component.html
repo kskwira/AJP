@@ -19,19 +19,21 @@
             <p class="kanji-back">Onyomi: {{kanji.onyomi!.join(", ")}}</p>
           </flip-card-back>
         </flip-card>
-        <mat-card-actions >
+        <br/>
+        <mat-error>{{result}}</mat-error>
+        <button style="float: right" mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
+        <br/>
+        <br/>
+        <mat-card-actions *ngIf="checkAnswerType('input')">
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, kanji.meaning!, kanji.sign!, kanji.id!)" [disabled]="answered">Sprawdź</button>
-          <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
-          <br/>
-          <mat-error>{{result}}</mat-error>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
-<div class="answers-container">
+<div class="answers-container" *ngIf="checkAnswerType('select')">
   <mat-grid-list cols="3" rowHeight="90px" gutterSize="6px" *ngIf="!quizEnd">
     <mat-grid-tile *ngFor="let answer of nineAnswers">
       <div class="example-ripple-container mat-elevation-z4"

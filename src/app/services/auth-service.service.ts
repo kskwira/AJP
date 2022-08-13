@@ -123,12 +123,17 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       displayName: formData.firstName,
       photoURL: user.photoURL,
       phoneNumber: "",
+      answerType: "select",
       providerId: "",
       isAdmin: false,
       progressHiragana: { level: 1 },
       progressKatakana: { level: 1 },
-      progressKanji: { level: 1 },
-      progressVocabulary: { level: 1 }
+      progressKanji: { level: 0 },
+      progressNoun: { level: 0 },
+      progressVerb: { level: 0 },
+      progressAdverb: { level: 0 },
+      progressNaAdjective: { level: 0 },
+      progressIAdjective: { level: 0 },
     }
     return userRef.set(userData, {
       merge: true
@@ -145,12 +150,17 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       displayName: "aaa bbb",
       photoURL: user.photoURL,
       phoneNumber: "",
+      answerType: "select",
       providerId: "",
       isAdmin: false,
       progressHiragana: { level: 1 },
       progressKatakana: { level: 1 },
-      progressKanji: { level: 1 },
-      progressVocabulary: { level: 1 }
+      progressKanji: { level: 0 },
+      progressNoun: { level: 0 },
+      progressVerb: { level: 0 },
+      progressAdverb: { level: 0 },
+      progressNaAdjective: { level: 0 },
+      progressIAdjective: { level: 0 },
     }
     return userRef.set(userData, {
       merge: true

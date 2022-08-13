@@ -111,6 +111,10 @@ export class KanjiQuizComponent implements OnInit {
     }
   }
 
+  checkAnswerType(type: string): boolean {
+    return this.currentUser?.answerType == type;
+}
+
   prepareAnswers(id: Kanji[]) {
     this.nineAnswers.splice(0);
     const kanjiIdSet = new Set<number>();

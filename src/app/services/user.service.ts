@@ -31,6 +31,17 @@ export class UserService {
     return this.userRefDocument = this.db.doc(`users/${id}`);
   }
 
+  updateUserDetails(userID: string, userData: UserModel): Promise<void> {
+    return this.userRef.doc(userID).update({
+      displayName: userData.firstName,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
+      phoneNumber: userData.phoneNumber,
+      photoURL: userData.photoURL,
+      answerType: userData.answerType
+    })
+  }
+
   updateUserProgressHiragana(userID: string, progressData: any): Promise<void> {
     return this.userRef.doc(userID).update({
       progressHiragana: progressData

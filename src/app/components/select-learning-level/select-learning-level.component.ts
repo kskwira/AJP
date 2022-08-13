@@ -20,7 +20,6 @@ export class SelectLearningLevelComponent implements OnInit {
   hiraganaLevel = 0;
   katakanaLevel = 0;
   kanjiLevel = 0;
-  vocabularyLevel = 0;
 
   hiraganaForm: FormGroup;
   katakanaForm: FormGroup;
@@ -131,7 +130,6 @@ export class SelectLearningLevelComponent implements OnInit {
         this.hiraganaLevel = this.currentUser!.progressHiragana.level;
         this.katakanaLevel = this.currentUser!.progressKatakana.level;
         this.kanjiLevel = this.currentUser!.progressKanji.level;
-        this.vocabularyLevel = this.currentUser!.progressVocabulary.level;
       });
   }
 

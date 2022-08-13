@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Edycja Profilu</h1>
+<mat-dialog-content>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Imie</mat-label>
+      <input matInput formControlName="firstName" />
+      <mat-error *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+        <mat-error *ngIf="f['firstName'].errors['required']">Imię jest wymagane</mat-error>
+        <mat-error *ngIf="f['firstName'].errors['minlength']">Imię musi mieć przynajmniej 3 znaki</mat-error>
+        <mat-error *ngIf="f['firstName'].errors['maxlength']">Imię nie może przekraczać 20 znaków</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nazwisko</mat-label>
+      <input matInput formControlName="lastName" />
+      <mat-error *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+        <mat-error *ngIf="f['lastName'].errors['required']">Nazwisko jest wymagane</mat-error>
+        <mat-error *ngIf="f['lastName'].errors['minlength']">Nazwisko musi mieć przynajmniej 3 znaki</mat-error>
+        <mat-error *ngIf="f['lastName'].errors['maxlength']">Nazwisko nie może przekraczać 20 znaków</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Numer telefonu</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>URL zdjęcia</mat-label>
+      <input matInput formControlName="photoURL" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tryb udzielania odpowiedzi</mat-label>
+      <mat-select formControlName="answerType">
+        <mat-option value="select">Wybierz odpowiedź</mat-option>
+        <mat-option value="input">Wprowadź tekst</mat-option>
+          </mat-select>
+      <mat-error *ngIf="submitted && f['answerType'].errors" class="invalid-feedback">
+        <mat-error *ngIf="f['answerType'].errors['required']">Prosze wybrac typ odpowiedzi</mat-error>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-dialog-actions>
+      <button mat-stroked-button color="warn" (click)="onCancel()">Anuluj</button>
+      <button mat-stroked-button type="submit" color="primary">Zapisz</button>
+    </mat-dialog-actions>
+  </form>
+
+</mat-dialog-content>
