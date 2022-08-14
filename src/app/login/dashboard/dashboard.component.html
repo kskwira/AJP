@@ -1,71 +1,120 @@
-<!--<div class="row" *ngIf="userData as user">-->
-<!--  <mat-card class="user-card">-->
-<!--    <mat-card-header>-->
-<!--      <div mat-card-avatar class="user-header-image"></div>-->
-<!--      <mat-card-title><h1>Hello: <strong>{{user.displayName }}</strong></h1></mat-card-title>-->
-<!--    </mat-card-header>-->
-<!--    <mat-card-content>-->
-<!--      <p>UserModel ID: <strong>{{user.uid}}</strong></p>-->
-<!--      <p>Email: <strong>{{user.email}}</strong></p>-->
-<!--      <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>-->
-<!--      <p>Photo URL: <strong>{{user.photoURL}}</strong></p>-->
-<!--      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>-->
-<!--      <p>Last sign in time: <strong>{{user.metadata.lastSignInTime}}</strong></p>-->
-<!--      <p>Creation time: <strong>{{user.metadata.creationTime}}</strong></p>-->
-<!--    </mat-card-content>-->
-<!--    <mat-card-actions>-->
-<!--      <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>-->
-<!--    </mat-card-actions>-->
-<!--  </mat-card>-->
-<!--</div>-->
 
+<div *ngIf="currentUser as user">
 
-<div class="row" *ngIf="currentUser as user">
   <mat-card class="user-card">
     <mat-card-header>
-      <div mat-card-avatar class="user-header-image"></div>
-      <mat-card-title><h1>Hello: <strong>{{user.displayName}}</strong></h1></mat-card-title>
+      <img mat-card-avatar [src]="user.photoURL"  alt="image URL" />
+      <mat-card-title><h1>Witaj: <strong>{{user.displayName}}</strong></h1></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>UserModel ID: <strong>{{user.uid}}</strong></p>
+      <p>Imie: <strong>{{user.firstName}}</strong></p>
+      <p>Nazwisko: <strong>{{user.lastName}}</strong></p>
       <p>Email: <strong>{{user.email}}</strong></p>
-      <p>First Name: <strong>{{user.firstName}}</strong></p>
-      <p>Last Name: <strong>{{user.lastName}}</strong></p>
-      <p>Photo URL: <strong>{{user.photoURL}}</strong></p>
-      <p>Phone Number: <strong>{{user.phoneNumber}}</strong></p>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Hiragana Progress
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>level: <strong>{{user.progressHiragana.level}}</strong></p>
-        <p>signs: <strong>{{user.progressHiragana | json}}</strong></p>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Katakana Progress
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>level: <strong>{{user.progressKatakana.level}}</strong></p>
-        <p>signs: <strong>{{user.progressKatakana | json}}</strong></p>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Kanji Progress
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>level: <strong>{{user.progressKanji.level}}</strong></p>
-        <p>signs: <strong>{{user.progressKanji | json}}</strong></p>
-      </mat-expansion-panel>
+      <p>Numer telefonu: <strong>{{user.phoneNumber}}</strong></p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>
       <button mat-stroked-button color="primary" style="float: right" (click)="openDialog()">Edytuj Profil</button>
     </mat-card-actions>
   </mat-card>
+
+  <mat-card class="user-card">
+    <mat-card-header>
+      <div mat-card-avatar class="material-icons">monitoring</div>
+      <mat-card-title><h1><strong>Statystyki</strong></h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Hiragana</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressHiragana.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of hiraganaProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Katakana</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressKatakana.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of katakanaProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Rzeczowniki</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressNoun.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of nounProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Czasowniki</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressVerb.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of verbProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Przymiotniki "-i"</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressIAdjective.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of iAdjectiveProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Przymiotniki "-na"</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressNaAdjective.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of naAdjectiveProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Przysłówki</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressAdverb.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of adverbProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Kanji</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p><strong>Poziom: </strong>{{user.progressKanji.level}}</p>
+        <br/>
+        <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
+        <p *ngFor="let property of kanjiProgressArray">
+          {{property[0] + " - " + property[1] + " - " + property[2] + " - " + property[3] + "/" + property[4]}}
+        </p>
+      </mat-expansion-panel>
+    </mat-card-content>
+  </mat-card>
+
 </div>
 
 <!--<button mat-stroked-button color="primary" (click)="update()">Level Up Hiragana</button>-->

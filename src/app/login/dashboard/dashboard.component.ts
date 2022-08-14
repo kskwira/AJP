@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth-service.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {UserModel} from "../../models/user.model";
+import {Progress, UserModel} from "../../models/user.model";
 import {UserService} from "../../services/user.service";
 import {KanaService} from "../../services/kana.service";
 import {Kanji} from "../../models/kanji.model";
@@ -21,6 +21,16 @@ export class DashboardComponent implements OnInit {
 
   users: UserModel[] = [];
   kanjiList: Kanji[] = kanji;
+
+  hiraganaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
+  katakanaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
+  nounProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  verbProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  iAdjectiveProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  naAdjectiveProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  adverbProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  kanjiProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+
 
   constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService,
               public dialog: MatDialog, private kanaService: KanaService) {
@@ -51,13 +61,20 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   retrieveUserDocumentById(userId: string): void {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
+        this.progressUpdate(this.currentUser!.progressHiragana, "hiragana");
+        this.progressUpdate(this.currentUser!.progressKatakana, "katakana");
+        this.progressUpdate(this.currentUser!.progressNoun, "noun");
+        this.progressUpdate(this.currentUser!.progressVerb, "verb");
+        this.progressUpdate(this.currentUser!.progressIAdjective, "iAdjective");
+        this.progressUpdate(this.currentUser!.progressNaAdjective, "naAdjective");
+        this.progressUpdate(this.currentUser!.progressAdverb, "adverb");
+        this.progressUpdate(this.currentUser!.progressKanji, "kanji");
       });
   }
 
@@ -65,6 +82,74 @@ export class DashboardComponent implements OnInit {
     this.userService.updateUserDetails(this.currentUser!.uid, data).then(() => {
       window.location.reload();
     });
+  }
+
+  progressUpdate(progress: Progress, type: string) {
+    for (let pKey in progress) {
+
+      if (pKey == 'level')
+        continue
+
+      let id = pKey;
+      let sign = progress[pKey as unknown as number].sign;
+      let reading = ""
+      let meaning = ""
+      let timesCorrect = progress[pKey as unknown as number].timesCorrect
+      let length = progress[pKey as unknown as number].timesCorrect.length
+      let sum = 0
+
+      if (type == "hiragana" || type == "katakana")
+        reading = progress[pKey as unknown as number].reading!
+      else
+        meaning = progress[pKey as unknown as number].meaning![0]
+
+      timesCorrect.forEach((element: number) => {
+        sum += element
+      })
+
+      switch (type) {
+        case "hiragana": {
+          this.hiraganaProgressArray.push([id, sign, reading, sum, length])
+          break
+        }
+        case "katakana": {
+          this.katakanaProgressArray.push([id, sign, reading, sum, length])
+          break
+        }
+        case "noun": {
+          this.nounProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+        case "verb": {
+          this.verbProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+        case "iAdjective": {
+          this.iAdjectiveProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+        case "naAdjective": {
+          this.naAdjectiveProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+        case "adverb": {
+          this.adverbProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+        case "kanji": {
+          this.kanjiProgressArray.push([id, sign, meaning, sum, length])
+          break
+        }
+      }
+    }
+    console.log("hiragana: ", this.hiraganaProgressArray)
+    console.log("katakana: ", this.katakanaProgressArray)
+    console.log("noun: ", this.nounProgressArray)
+    console.log("verb: ", this.verbProgressArray)
+    console.log("iAdjective: ", this.iAdjectiveProgressArray)
+    console.log("naAdjective: ", this.naAdjectiveProgressArray)
+    console.log("adverb: ", this.adverbProgressArray)
+    console.log("kanji: ", this.kanjiProgressArray)
   }
 
   // update(): void {
@@ -113,7 +198,7 @@ export class DashboardDialog {
       }
     });
 
-    this.dialogRef.backdropClick().subscribe(event => {
+    this.dialogRef.backdropClick().subscribe(() => {
       this.onCancel();
     })
   }
