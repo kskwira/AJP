@@ -43,6 +43,8 @@ import { HelpComponent } from './components/help/help.component';
 import {KanjiQuizComponent} from './components/kanji-quiz/kanji-quiz.component';
 import { KanjiLearningComponent } from './components/kanji-learning/kanji-learning.component';
 import {DashboardDialog} from "./login/dashboard/dashboard.component";
+import {RouterModule} from "@angular/router";
+import {RouterTestingModule} from "@angular/router/testing";
 
 
 @NgModule({
@@ -91,6 +93,8 @@ import {DashboardDialog} from "./login/dashboard/dashboard.component";
     AppRoutingModule,
     AngularMaterialModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([]),
+    RouterTestingModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
