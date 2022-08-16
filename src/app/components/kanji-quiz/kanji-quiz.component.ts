@@ -17,6 +17,7 @@ export class KanjiQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
+
   nineAnswers: Kanji[] = [];
   kanjiArray: Kanji[] = [];
   allKanjiList: Kanji[] = [];
@@ -27,13 +28,6 @@ export class KanjiQuizComponent implements OnInit {
   idArray: number[] = [];
   answered = false;
   quizEnd = false;
-
-  centered = false;
-  disabled = false;
-  unbounded = false;
-  radius: number = 0;
-  color: string = '';
-
 
   constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth,
               private userService: UserService, public dialog: MatDialog) {

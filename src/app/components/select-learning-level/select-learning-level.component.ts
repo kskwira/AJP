@@ -17,61 +17,65 @@ export class SelectLearningLevelComponent implements OnInit {
   currentUser?: UserModel;
 
   idSetList = new Set<number>();
-  hiraganaLevel = 0;
-  katakanaLevel = 0;
-  kanjiLevel = 0;
+  hiraganaLearningLevel = 0;
+  katakanaLearningLevel = 0;
+  kanjiLearningLevel = 0;
+
+  hiraganaQuizLevel = 0
+  katakanaQuizLevel = 0
+  kanjiQuizLevel = 0
 
   hiraganaForm: FormGroup;
   katakanaForm: FormGroup;
   kanjiForm: FormGroup;
 
   kanaSingsData = [
-    { id: 1, name: "a" },
-    { id: 2, name: "ka" },
-    { id: 3, name: "sa" },
-    { id: 4, name: "ta" },
-    { id: 5, name: "na" },
-    { id: 6, name: "ha" },
-    { id: 7, name: "ma" },
-    { id: 8, name: "ya" },
-    { id: 9, name: "ra" },
-    { id: 10, name: "wa" },
-    { id: 11, name: "ga" },
-    { id: 12, name: "za" },
-    { id: 13, name: "da" },
-    { id: 14, name: "ba" },
-    { id: 15, name: "pa" },
-    { id: 16, name: "kya" },
-    { id: 17, name: "sha" },
-    { id: 18, name: "cha" },
-    { id: 19, name: "nya" },
-    { id: 20, name: "hya" },
-    { id: 21, name: "mya" },
-    { id: 22, name: "rya" },
-    { id: 23, name: "gya" },
-    { id: 24, name: "ja" },
-    { id: 25, name: "(ja)" },
-    { id: 26, name: "bya" },
-    { id: 27, name: "pya" }
+    { id: 1, name: "a" , level: 0 },
+    { id: 2, name: "ka", level: 0 },
+    { id: 3, name: "sa", level: 0 },
+    { id: 4, name: "ta", level: 0 },
+    { id: 5, name: "na", level: 0 },
+    { id: 6, name: "ha", level: 0 },
+    { id: 7, name: "ma", level: 0 },
+    { id: 8, name: "ya", level: 0 },
+    { id: 9, name: "ra", level: 0 },
+    { id: 10, name: "wa", level: 0 },
+    { id: 11, name: "ga", level: 1 },
+    { id: 12, name: "za", level: 1 },
+    { id: 13, name: "da", level: 1 },
+    { id: 14, name: "ba", level: 1 },
+    { id: 15, name: "pa", level: 1 },
+    { id: 16, name: "kya", level: 2 },
+    { id: 17, name: "sha", level: 2 },
+    { id: 18, name: "cha", level: 2 },
+    { id: 19, name: "nya", level: 2 },
+    { id: 20, name: "hya", level: 2 },
+    { id: 21, name: "mya", level: 2 },
+    { id: 22, name: "rya", level: 2 },
+    { id: 23, name: "gya", level: 2 },
+    { id: 24, name: "ja", level: 2 },
+    { id: 25, name: "(ja)", level: 2 },
+    { id: 26, name: "bya", level: 2 },
+    { id: 27, name: "pya", level: 2 }
   ];
 
   kanjiSingsData = [
-    { id: 1, name: "kanji 1-5" },
-    { id: 2, name: "kanji 6-10" },
-    { id: 3, name: "kanji 11-15" },
-    { id: 4, name: "kanji 16-20" },
-    { id: 5, name: "kanji 21-25" },
-    { id: 6, name: "kanji 26-30" },
-    { id: 7, name: "kanji 31-35" },
-    { id: 8, name: "kanji 36-40" },
-    { id: 9, name: "kanji 41-45" },
-    { id: 10, name: "kanji 46-50" },
-    { id: 11, name: "kanji 51-55" },
-    { id: 12, name: "kanji 56-60" },
-    { id: 13, name: "kanji 61-65" },
-    { id: 14, name: "kanji 66-70" },
-    { id: 15, name: "kanji 71-75" },
-    { id: 16, name: "kanji 76-80" }
+    { id: 1, name: "kanji 1-5", level: 0 },
+    { id: 2, name: "kanji 6-10", level: 0 },
+    { id: 3, name: "kanji 11-15", level: 1 },
+    { id: 4, name: "kanji 16-20", level: 1 },
+    { id: 5, name: "kanji 21-25", level: 2 },
+    { id: 6, name: "kanji 26-30", level: 2 },
+    { id: 7, name: "kanji 31-35", level: 3 },
+    { id: 8, name: "kanji 36-40", level: 3 },
+    { id: 9, name: "kanji 41-45", level: 4 },
+    { id: 10, name: "kanji 46-50", level: 4 },
+    { id: 11, name: "kanji 51-55", level: 5 },
+    { id: 12, name: "kanji 56-60", level: 5 },
+    { id: 13, name: "kanji 61-65", level: 6 },
+    { id: 14, name: "kanji 66-70", level: 6 },
+    { id: 15, name: "kanji 71-75", level: 7 },
+    { id: 16, name: "kanji 76-80", level: 7 }
   ];
 
   get hiraganaSignsFormArray() {
@@ -127,21 +131,24 @@ export class SelectLearningLevelComponent implements OnInit {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
-        this.hiraganaLevel = this.currentUser!.progressHiragana.level;
-        this.katakanaLevel = this.currentUser!.progressKatakana.level;
-        this.kanjiLevel = this.currentUser!.progressKanji.level;
+        this.hiraganaLearningLevel = this.currentUser!.progressHiragana.learningLevel;
+        this.katakanaLearningLevel = this.currentUser!.progressKatakana.learningLevel;
+        this.kanjiLearningLevel = this.currentUser!.progressKanji.learningLevel;
+        this.hiraganaQuizLevel = this.currentUser!.progressHiragana.quizLevel;
+        this.katakanaQuizLevel = this.currentUser!.progressKatakana.quizLevel;
+        this.kanjiQuizLevel = this.currentUser!.progressKanji.quizLevel;
       });
   }
 
-  checkDisableKana(signId: number, type: string): boolean {
+  checkDisable(signId: number, level: number, type: string): boolean {
     if (type == "hiragana") {
-      return (signId > this.hiraganaLevel);
+      return ((signId > this.hiraganaLearningLevel) || (level > this.hiraganaQuizLevel));
     }
     else if (type == "katakana") {
-      return (signId > this.katakanaLevel);
+      return ((signId > this.katakanaLearningLevel) || (level > this.katakanaQuizLevel));
     }
     else if (type == "kanji") {
-      return (signId > this.kanjiLevel);
+      return ((signId > this.kanjiLearningLevel) || (level > this.kanjiQuizLevel));
     }
     return true;
   }
@@ -247,7 +254,7 @@ export class SelectLearningLevelComponent implements OnInit {
           this.idSetList.add(105).add(106).add(107)
       }
       console.log("Set in Hiragana: ", this.idSetList);
-      if (selectedHiraganaSignIds.includes(this.hiraganaLevel))
+      if (selectedHiraganaSignIds.includes(this.hiraganaLearningLevel))
         this.kanaService.changeLevelUpValue(true);
       else
         this.kanaService.changeLevelUpValue(false);
@@ -337,7 +344,7 @@ export class SelectLearningLevelComponent implements OnInit {
           this.idSetList.add(105).add(106).add(107)
       }
       console.log("Set in Katakana: ", this.idSetList);
-      if (selectedKatakanaSignIds.includes(this.katakanaLevel))
+      if (selectedKatakanaSignIds.includes(this.katakanaLearningLevel))
         this.kanaService.changeLevelUpValue(true);
       else
         this.kanaService.changeLevelUpValue(false);
@@ -352,7 +359,7 @@ export class SelectLearningLevelComponent implements OnInit {
       }
 
       console.log("Set in Kanji: ", this.idSetList);
-      if (selectedKanjiSignIds.includes(this.kanjiLevel))
+      if (selectedKanjiSignIds.includes(this.kanjiLearningLevel))
         this.kanaService.changeLevelUpValue(true);
       else
         this.kanaService.changeLevelUpValue(false);

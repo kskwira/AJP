@@ -2,7 +2,8 @@ import firebase from "firebase/compat";
 import UserInfo = firebase.UserInfo;
 
 export interface Progress {
-  level: number;
+  learningLevel: number;
+  quizLevel: number;
   [signID: number]: {
     reading?: string;
     meaning?: string[];

@@ -54,6 +54,32 @@ export class UserService {
     });
   }
 
+  updateUserProgressNoun(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressNoun: progressData
+    });
+  }
+
+  updateUserProgressVerb(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressVerb: progressData
+    });
+  }
+  updateUserProgressIAdjective(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressIAdjective: progressData
+    });
+  }
+  updateUserProgressNaAdjective(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressNaAdjective: progressData
+    });
+  }
+  updateUserProgressAdverb(userID: string, progressData: any): Promise<void> {
+    return this.userRef.doc(userID).update({
+      progressAdverb: progressData
+    });
+  }
   updateUserProgressKanji(userID: string, progressData: any): Promise<void> {
     return this.userRef.doc(userID).update({
       progressKanji: progressData

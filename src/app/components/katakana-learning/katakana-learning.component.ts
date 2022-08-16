@@ -65,7 +65,7 @@ export class KatakanaLearningComponent implements OnInit {
   }
 
   levelUp(): void {
-    this.currentUser!.progressKatakana.level += 1;
+    this.currentUser!.progressKatakana.learningLevel += 1;
     this.userService.updateUserProgressKatakana(this.currentUser!.uid, this.currentUser!.progressKatakana);
   }
 

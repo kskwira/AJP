@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
   progressUpdate(progress: Progress, type: string) {
     for (let pKey in progress) {
 
-      if (pKey == 'level')
+      if ((pKey == 'quizLevel') || (pKey == 'learningLevel'))
         continue
 
       let id = pKey;

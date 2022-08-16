@@ -4,72 +4,72 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>Hiragana</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/hiragana/1" [disabled]="checkDisable('hiragana', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/hiragana/2" [disabled]="checkDisable('hiragana', 2)">Level 2</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/hiragana/3" [disabled]="checkDisable('hiragana', 3)">Level 3</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('hiragana', 0)" routerLink="/quiz/hiragana/1" [disabled]="checkDisable('hiragana', milestones.hiragana[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('hiragana', 1)" routerLink="/quiz/hiragana/2" [disabled]="checkDisable('hiragana', milestones.hiragana[1])">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('hiragana', 2)" routerLink="/quiz/hiragana/3" [disabled]="checkDisable('hiragana', milestones.hiragana[2])">Level 3</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Katakana</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/katakana/1" [disabled]="checkDisable('katakana', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/katakana/2" [disabled]="checkDisable('katakana', 2)">Level 2</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/katakana/3" [disabled]="checkDisable('katakana', 3)">Level 3</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('katakana', 0)" routerLink="/quiz/katakana/1" [disabled]="checkDisable('katakana', milestones.katakana[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('katakana', 1)" routerLink="/quiz/katakana/2" [disabled]="checkDisable('katakana', milestones.katakana[1])">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('katakana', 2)" routerLink="/quiz/katakana/3" [disabled]="checkDisable('katakana', milestones.katakana[2])">Level 3</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Rzeczowniki</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/noun/1" [disabled]="checkDisable('noun', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/noun/2" [disabled]="checkDisable('noun', 2)">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('noun', 0)" routerLink="/quiz/noun/1" [disabled]="checkDisable('noun', milestones.noun[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('noun', 1)" routerLink="/quiz/noun/2" [disabled]="checkDisable('noun', milestones.noun[1])">Level 2</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Czasowniki</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/verb/1" [disabled]="checkDisable('verb', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/verb/2" [disabled]="checkDisable('verb', 2)">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('verb', 0)" routerLink="/quiz/verb/1" [disabled]="checkDisable('verb', milestones.verb[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('verb', 1)" routerLink="/quiz/verb/2" [disabled]="checkDisable('verb', milestones.verb[1])">Level 2</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Przymiotniki "-i"</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/iAdjective/1" [disabled]="checkDisable('iAdjective', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/iAdjective/2" [disabled]="checkDisable('iAdjective', 2)">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('iAdjective', 0)" routerLink="/quiz/iAdjective/1" [disabled]="checkDisable('iAdjective', milestones.iAdjective[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('iAdjective', 1)" routerLink="/quiz/iAdjective/2" [disabled]="checkDisable('iAdjective', milestones.iAdjective[1])">Level 2</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Przymiotniki "-na"</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/naAdjective/1" [disabled]="checkDisable('naAdjective', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/naAdjective/2" [disabled]="checkDisable('naAdjective', 2)">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('naAdjective', 0)" routerLink="/quiz/naAdjective/1" [disabled]="checkDisable('naAdjective', milestones.naAdjective[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('naAdjective', 1)" routerLink="/quiz/naAdjective/2" [disabled]="checkDisable('naAdjective', milestones.naAdjective[1])">Level 2</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Przysłówki</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/adverb/1" [disabled]="checkDisable('adverb', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/adverb/2" [disabled]="checkDisable('adverb', 2)">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('adverb', 0)" routerLink="/quiz/adverb/1" [disabled]="checkDisable('adverb', milestones.adverb[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('adverb', 1)" routerLink="/quiz/adverb/2" [disabled]="checkDisable('adverb', milestones.adverb[1])">Level 2</button>
     </div>
   </mat-expansion-panel>
 
   <mat-expansion-panel>
     <mat-expansion-panel-header>Kanji</mat-expansion-panel-header>
     <div class="button-row">
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/1" [disabled]="checkDisable('kanji', 1)">Level 1</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/2" [disabled]="checkDisable('kanji', 2)">Level 2</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/3" [disabled]="checkDisable('kanji', 3)">Level 3</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/4" [disabled]="checkDisable('kanji', 4)">Level 4</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/5" [disabled]="checkDisable('kanji', 5)">Level 5</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/6" [disabled]="checkDisable('kanji', 6)">Level 6</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/7" [disabled]="checkDisable('kanji', 7)">Level 7</button>
-      <button mat-stroked-button color="primary" routerLink="/quiz/kanji/8" [disabled]="checkDisable('kanji', 8)">Level 8</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 0)" routerLink="/quiz/kanji/1" [disabled]="checkDisable('kanji', milestones.kanji[0])">Level 1</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 1)" routerLink="/quiz/kanji/2" [disabled]="checkDisable('kanji', milestones.kanji[1])">Level 2</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 2)" routerLink="/quiz/kanji/3" [disabled]="checkDisable('kanji', milestones.kanji[2])">Level 3</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 3)" routerLink="/quiz/kanji/4" [disabled]="checkDisable('kanji', milestones.kanji[3])">Level 4</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 4)" routerLink="/quiz/kanji/5" [disabled]="checkDisable('kanji', milestones.kanji[4])">Level 5</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 5)" routerLink="/quiz/kanji/6" [disabled]="checkDisable('kanji', milestones.kanji[5])">Level 6</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 6)" routerLink="/quiz/kanji/7" [disabled]="checkDisable('kanji', milestones.kanji[6])">Level 7</button>
+      <button mat-stroked-button color="primary" (click)="checkLevelUp('kanji', 7)" routerLink="/quiz/kanji/8" [disabled]="checkDisable('kanji', milestones.kanji[7])">Level 8</button>
     </div>
   </mat-expansion-panel>
 

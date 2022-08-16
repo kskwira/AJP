@@ -1,7 +1,6 @@
 mat-grid-tile{
   height: fit-content;
   align-content: flex-start;
-
 }
 
 mat-grid-list {
@@ -29,23 +28,12 @@ p.kanji-back {
   padding: 10px;
 }
 
-.example-ripple-container {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 15px;
-
-  width: 180px;
-  height: 90px;
+.answers-button {
+  white-space: pre-wrap;
+  line-height: 1.25rem;
+  font-size: 14px;
+  width: 200px;
+  height: 105px;
   background-color: #128bea;
   color: #fff;
-
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-
-  -webkit-user-drag: none;
-  -webkit-tap-highlight-color: transparent;
 }

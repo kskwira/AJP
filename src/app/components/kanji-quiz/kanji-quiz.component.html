@@ -34,19 +34,14 @@
 </mat-grid-list>
 
 <div class="answers-container" *ngIf="checkAnswerType('select')">
-  <mat-grid-list cols="3" rowHeight="90px" gutterSize="6px" *ngIf="!quizEnd">
+  <mat-grid-list cols="3" rowHeight="105px" gutterSize="6px" *ngIf="!quizEnd">
     <mat-grid-tile *ngFor="let answer of nineAnswers">
-      <div class="example-ripple-container mat-elevation-z4"
-           *ngFor="let kanji of kanjiArray"
-           matRipple
-           [hidden]="answered"
-           [matRippleCentered]="centered"
-           [matRippleDisabled]="disabled"
-           [matRippleUnbounded]="unbounded"
-           [matRippleRadius]="radius"
-           [matRippleColor]="color"
-           (click)="answering(answer.meaning![0], kanji.meaning!, kanji.sign!, kanji.id!)"
-      >{{ answer.meaning!.join(", ") }}</div>
+      <button mat-raised-button class="answers-button"
+              *ngFor="let kanji of kanjiArray"
+              [disabled]="answered"
+              (click)="answering(answer.meaning![0], kanji.meaning!, kanji.sign!, kanji.id!)">
+        {{ answer.meaning!.join("\n") }}
+      </button>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

@@ -65,7 +65,7 @@ export class KanjiLearningComponent implements OnInit {
   }
 
   levelUp(): void {
-    this.currentUser!.progressKanji.level += 1;
+    this.currentUser!.progressKanji.learningLevel += 1;
     this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
   }
 
