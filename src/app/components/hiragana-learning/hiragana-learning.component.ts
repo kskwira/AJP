@@ -18,6 +18,8 @@ export class HiraganaLearningComponent implements OnInit {
 
   hiraganaQuizArray: Kana[] = [];
   hiraganaLearnArray: Kana[] = [];
+  nineAnswers: Kana[] = [];
+  allHiraganaList: Kana[] = [];
   result = '';
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
@@ -29,7 +31,6 @@ export class HiraganaLearningComponent implements OnInit {
   learningEnd = false;
   quizEnd = false;
   doLevelUp: any;
-
 
   constructor(private kanaService: KanaService, public afAuth: AngularFireAuth, private userService: UserService) {
     this.afAuth.onAuthStateChanged((user) => {
@@ -51,11 +52,24 @@ export class HiraganaLearningComponent implements OnInit {
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.shuffleArray(this.randomizedIdArray);
+    this.getAllHiragana();
 
     this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
     console.log("levelUp onInit: ", this.doLevelUp);
     console.log(this.sortedIdArray);
     console.log(this.randomizedIdArray);
+  }
+
+  getAllHiragana(): void {
+    this.kanaService.getAllHiragana().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+        )
+      )
+    ).subscribe(data => {
+      this.allHiraganaList = data;
+    });
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -65,13 +79,32 @@ export class HiraganaLearningComponent implements OnInit {
       });
   }
 
-  levelUp(): void {
-    this.currentUser!.progressHiragana.learningLevel += 1;
-    this.userService.updateUserProgressHiragana(this.currentUser!.uid, this.currentUser!.progressHiragana);
+  checkAnswerType(type: string): boolean {
+    return this.currentUser?.answerType == type;
+  }
+
+  prepareAnswers(id: Kana[]) {
+    this.nineAnswers.splice(0);
+    const hiraganaIdSet = new Set<number>();
+    hiraganaIdSet.add(this.randomizedIdArray[this.randomizedIdArrayIndex])
+
+    while (hiraganaIdSet.size < 9) {
+      hiraganaIdSet.add(Math.floor(Math.random() * 107) + 1)
+    }
+
+    console.log("hiraganaIdSet from prepareAnswers: ", hiraganaIdSet)
+
+    hiraganaIdSet.forEach( (value) => {
+      const firstHiragana = id.find((hiragana) => {
+        return hiragana.id == value.toString()})
+      this.nineAnswers.push(firstHiragana!)
+    })
+
+    this.shuffleArray(this.nineAnswers)
   }
 
   //The Fisher-Yates algorithm
-  shuffleArray(array: Array<number>): Array<number> {
+  shuffleArray(array: Array<any>): Array<any> {
     let m = array.length, t, i;
 
     // While there remain elements to shuffle…
@@ -85,6 +118,11 @@ export class HiraganaLearningComponent implements OnInit {
       array[i] = t;
     }
     return array;
+  }
+
+  levelUp(): void {
+    this.currentUser!.progressHiragana.learningLevel += 1;
+    this.userService.updateUserProgressHiragana(this.currentUser!.uid, this.currentUser!.progressHiragana);
   }
 
   learnSession(id: number): void {
@@ -115,6 +153,7 @@ export class HiraganaLearningComponent implements OnInit {
       ).subscribe(data => {
         this.hiraganaQuizArray = data;
       });
+      this.prepareAnswers(this.allHiraganaList)
     }
   }
 

@@ -40,21 +40,37 @@
             <p>{{ hiragana.reading}}</p>
           </flip-card-back>
         </flip-card>
-        <mat-card-actions>
+        <br/>
+        <mat-error>{{result}}</mat-error>
+        <button style="float: right" mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="learnSession(randomizedIdArray[randomizedIdArrayIndex])" [disabled]="!answered">Następny znak Quiz</button>
+        <br/>
+        <br/>
+        <mat-card-actions *ngIf="checkAnswerType('input')">
           <input matInput type="text" id="single" #guess>
           <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, hiragana.reading!)" [disabled]="answered">Sprawdź</button>
-          <button mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="learnSession(randomizedIdArray[randomizedIdArrayIndex])" [disabled]="!answered">Następny znak Quiz</button>
-          <br/>
-          <mat-error>{{result}}</mat-error>
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<div class="answers-container" *ngIf="checkAnswerType('select')">
+  <mat-grid-list cols="3" rowHeight="105px" gutterSize="6px" *ngIf="!quizEnd">
+    <mat-grid-tile *ngFor="let answer of nineAnswers">
+      <button mat-raised-button class="answers-button-kana"
+              *ngFor="let hiragana of hiraganaQuizArray"
+              [disabled]="answered"
+              (click)="answering(answer.reading!, hiragana.reading!)">
+        {{ answer.reading }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
 <div *ngIf="quizEnd">
   <mat-card>
     <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
     <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
-    <p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Twój wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
   </mat-card>
 </div>

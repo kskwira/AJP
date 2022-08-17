@@ -18,6 +18,8 @@ export class KanjiLearningComponent implements OnInit {
 
   kanjiQuizArray: Kanji[] = [];
   kanjiLearnArray: Kanji[] = [];
+  nineAnswers: Kanji[] = [];
+  allKanjiList: Kanji[] = [];
   result = '';
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
@@ -50,11 +52,24 @@ export class KanjiLearningComponent implements OnInit {
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.shuffleArray(this.randomizedIdArray);
+    this.getAllKanji();
 
     this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
     console.log("levelUp onInit: ", this.doLevelUp);
     console.log(this.sortedIdArray);
     console.log(this.randomizedIdArray);
+  }
+
+  getAllKanji(): void {
+    this.kanaService.getAllKanji().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+        )
+      )
+    ).subscribe(data => {
+      this.allKanjiList = data;
+    });
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -64,13 +79,32 @@ export class KanjiLearningComponent implements OnInit {
       });
   }
 
-  levelUp(): void {
-    this.currentUser!.progressKanji.learningLevel += 1;
-    this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
+  checkAnswerType(type: string): boolean {
+    return this.currentUser?.answerType == type;
+  }
+
+  prepareAnswers(id: Kanji[]) {
+    this.nineAnswers.splice(0);
+    const kanjiIdSet = new Set<number>();
+    kanjiIdSet.add(this.randomizedIdArray[this.randomizedIdArrayIndex])
+
+    while (kanjiIdSet.size < 9) {
+      kanjiIdSet.add(Math.floor(Math.random() * 80) + 1)
+    }
+
+    console.log("kanjiIdSet from prepareAnswers: ", kanjiIdSet)
+
+    kanjiIdSet.forEach( (value) => {
+      const firstKanji = id.find((kanji) => {
+        return kanji.id == value.toString()})
+      this.nineAnswers.push(firstKanji!)
+    })
+
+    this.shuffleArray(this.nineAnswers)
   }
 
   //The Fisher-Yates algorithm
-  shuffleArray(array: Array<number>): Array<number> {
+  shuffleArray(array: Array<any>): Array<any> {
     let m = array.length, t, i;
 
     // While there remain elements to shuffle…
@@ -84,6 +118,11 @@ export class KanjiLearningComponent implements OnInit {
       array[i] = t;
     }
     return array;
+  }
+
+  levelUp(): void {
+    this.currentUser!.progressKanji.learningLevel += 1;
+    this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
   }
 
   learnSession(id: number): void {
@@ -114,6 +153,7 @@ export class KanjiLearningComponent implements OnInit {
       ).subscribe(data => {
         this.kanjiQuizArray = data;
       });
+      this.prepareAnswers(this.allKanjiList)
     }
   }
 

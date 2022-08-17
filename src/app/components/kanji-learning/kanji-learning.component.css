@@ -1,3 +1,12 @@
+mat-grid-tile{
+  height: fit-content;
+  align-content: flex-start;
+}
+
+mat-grid-list {
+  margin-top: 4px;
+}
+
 p.kanji-front {
   font-size: 120px;
 }
@@ -10,4 +19,21 @@ p.kanji-back-meaning {
 p.kanji-back {
   font-size: 15px;
   font-style: italic;
+}
+
+.answers-container {
+  width: 50%;
+  margin: auto;
+  min-width: 540px;
+  padding: 10px;
+}
+
+.answers-button {
+  white-space: pre-wrap;
+  line-height: 1.25rem;
+  font-size: 14px;
+  width: 200px;
+  height: 105px;
+  background-color: #128bea;
+  color: #fff;
 }

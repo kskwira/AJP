@@ -18,6 +18,8 @@ export class KatakanaLearningComponent implements OnInit {
 
   katakanaQuizArray: Kana[] = [];
   katakanaLearnArray: Kana[] = [];
+  nineAnswers: Kana[] = [];
+  allKatakanaList: Kana[] = [];
   result = '';
   numberAnswered = 0;
   numberAnsweredCorrect = 0;
@@ -50,11 +52,24 @@ export class KatakanaLearningComponent implements OnInit {
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.randomizedIdArray.push(...this.sortedIdArray);
     this.shuffleArray(this.randomizedIdArray);
+    this.getAllKatakana();
 
     this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
     console.log("levelUp onInit: ", this.doLevelUp);
     console.log(this.sortedIdArray);
     console.log(this.randomizedIdArray);
+  }
+
+  getAllKatakana(): void {
+    this.kanaService.getAllKatakana().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+        )
+      )
+    ).subscribe(data => {
+      this.allKatakanaList = data;
+    });
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -64,13 +79,32 @@ export class KatakanaLearningComponent implements OnInit {
       });
   }
 
-  levelUp(): void {
-    this.currentUser!.progressKatakana.learningLevel += 1;
-    this.userService.updateUserProgressKatakana(this.currentUser!.uid, this.currentUser!.progressKatakana);
+  checkAnswerType(type: string): boolean {
+    return this.currentUser?.answerType == type;
+  }
+
+  prepareAnswers(id: Kana[]) {
+    this.nineAnswers.splice(0);
+    const katakanaIdSet = new Set<number>();
+    katakanaIdSet.add(this.randomizedIdArray[this.randomizedIdArrayIndex])
+
+    while (katakanaIdSet.size < 9) {
+      katakanaIdSet.add(Math.floor(Math.random() * 107) + 1)
+    }
+
+    console.log("katakanaIdSet from prepareAnswers: ", katakanaIdSet)
+
+    katakanaIdSet.forEach( (value) => {
+      const firstKatakana = id.find((katakana) => {
+        return katakana.id == value.toString()})
+      this.nineAnswers.push(firstKatakana!)
+    })
+
+    this.shuffleArray(this.nineAnswers)
   }
 
   //The Fisher-Yates algorithm
-  shuffleArray(array: Array<number>): Array<number> {
+  shuffleArray(array: Array<any>): Array<any> {
     let m = array.length, t, i;
 
     // While there remain elements to shuffle…
@@ -84,6 +118,11 @@ export class KatakanaLearningComponent implements OnInit {
       array[i] = t;
     }
     return array;
+  }
+
+  levelUp(): void {
+    this.currentUser!.progressKatakana.learningLevel += 1;
+    this.userService.updateUserProgressKatakana(this.currentUser!.uid, this.currentUser!.progressKatakana);
   }
 
   learnSession(id: number): void {
@@ -114,6 +153,7 @@ export class KatakanaLearningComponent implements OnInit {
       ).subscribe(data => {
         this.katakanaQuizArray = data;
       });
+      this.prepareAnswers(this.allKatakanaList)
     }
   }
 
