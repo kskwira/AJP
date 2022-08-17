@@ -28,7 +28,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Hiragana</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressHiragana.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressHiragana.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressHiragana.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of hiraganaProgressArray">
@@ -39,7 +40,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Katakana</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressKatakana.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressKatakana.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressKatakana.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of katakanaProgressArray">
@@ -50,7 +52,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Rzeczowniki</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressNoun.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressNoun.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressNoun.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of nounProgressArray">
@@ -61,7 +64,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Czasowniki</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressVerb.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressVerb.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressVerb.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of verbProgressArray">
@@ -72,7 +76,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Przymiotniki "-i"</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressIAdjective.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressIAdjective.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressIAdjective.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of iAdjectiveProgressArray">
@@ -83,7 +88,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Przymiotniki "-na"</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressNaAdjective.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressNaAdjective.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressNaAdjective.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of naAdjectiveProgressArray">
@@ -94,7 +100,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Przysłówki</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressAdverb.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressAdverb.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressAdverb.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of adverbProgressArray">
@@ -105,7 +112,8 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Kanji</mat-panel-title>
         </mat-expansion-panel-header>
-        <p><strong>Poziom: </strong>{{user.progressKanji.learningLevel}}</p>
+        <p><strong>Poziom nauki: </strong>{{user.progressKanji.learningLevel}}</p>
+        <p><strong>Poziom quizu: </strong>{{user.progressKanji.quizLevel}}</p>
         <br/>
         <p><strong>Id - Znak - Znaczenie - Poprawne/Udzielone: </strong></p>
         <p *ngFor="let property of kanjiProgressArray">

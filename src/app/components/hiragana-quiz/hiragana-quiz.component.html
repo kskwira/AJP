@@ -43,8 +43,9 @@
 
 <div *ngIf="quizEnd">
   <mat-card>
-  <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
-  <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
-<p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+    <p>Twój wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Wynik oczekiwany do zaliczenia: 100.00%</p>
   </mat-card>
 </div>

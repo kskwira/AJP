@@ -17,7 +17,9 @@ export class KatakanaQuizComponent implements OnInit {
   userData: any; // Save logged in user data
   currentUser?: UserModel;
 
+  nineAnswers: Kana[] = [];
   katakanaArray: Kana[] = [];
+  allKatakanaList: Kana[] = [];
   result = '';
   routeParam: number = 0;
   numberAnswered = 0;
@@ -25,6 +27,7 @@ export class KatakanaQuizComponent implements OnInit {
   idArray: number[] = [];
   answered = false;
   quizEnd = false;
+  doLevelUp: any;
 
   constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth,
               private userService: UserService) {
@@ -43,7 +46,22 @@ export class KatakanaQuizComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.routeParam = params['level'];
     });
+    this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
+    console.log("levelUp onInit: ", this.doLevelUp)
     this.generateArray(this.routeParam)
+    this.getAllKatakana()
+  }
+
+  getAllKatakana(): void {
+    this.kanaService.getAllKatakana().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({id: c.payload.doc.id, ...c.payload.doc.data()})
+        )
+      )
+    ).subscribe(data => {
+      this.allKatakanaList = data;
+    });
   }
 
   retrieveUserDocumentById(userId: string): void {
@@ -69,8 +87,38 @@ export class KatakanaQuizComponent implements OnInit {
     }
   }
 
+  checkAnswerType(type: string): boolean {
+    return this.currentUser?.answerType == type;
+  }
+
+  prepareAnswers(id: Kana[]) {
+    this.nineAnswers.splice(0);
+    const katakanaIdSet = new Set<number>();
+    katakanaIdSet.add(this.idArray[this.numberAnswered])
+
+    while (katakanaIdSet.size < 9) {
+      if (this.routeParam == 1) {
+        katakanaIdSet.add(Math.floor(Math.random() * 46) + 1)
+      } else if (this.routeParam == 2) {
+        katakanaIdSet.add(Math.floor(Math.random() * 71) + 1)
+      } else if (this.routeParam == 3) {
+        katakanaIdSet.add(Math.floor(Math.random() * 107) + 1)
+      }
+    }
+
+    console.log("katakanaIdSet from prepareAnswers: ", katakanaIdSet)
+
+    katakanaIdSet.forEach( (value) => {
+      const firstKatakana = id.find((katakana) => {
+        return katakana.id == value.toString()})
+      this.nineAnswers.push(firstKatakana!)
+    })
+
+    this.shuffleArray(this.nineAnswers)
+  }
+
   //The Fisher-Yates algorithm
-  shuffleArray(array: Array<number>): Array<number> {
+  shuffleArray(array: Array<any>): Array<any> {
     let m = array.length, t, i;
 
     // While there remain elements to shuffle…
@@ -87,6 +135,28 @@ export class KatakanaQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
+    if (this.score(this.numberAnsweredCorrect, this.numberAnswered) == 1) {
+      if ((this.currentUser!.progressKatakana.quizLevel == 2) && (this.currentUser!.progressHiragana.quizLevel == 3)) {
+        this.currentUser!.progressNoun.learningLevel += 1;
+        this.currentUser!.progressVerb.learningLevel += 1;
+        this.currentUser!.progressIAdjective.learningLevel += 1;
+        this.currentUser!.progressNaAdjective.learningLevel += 1;
+        this.currentUser!.progressAdverb.learningLevel += 1;
+        this.currentUser!.progressKanji.learningLevel += 1;
+
+        this.userService.updateUserProgressNoun(this.currentUser!.uid, this.currentUser!.progressNoun);
+        this.userService.updateUserProgressVerb(this.currentUser!.uid, this.currentUser!.progressVerb);
+        this.userService.updateUserProgressIAdjective(this.currentUser!.uid, this.currentUser!.progressIAdjective);
+        this.userService.updateUserProgressNaAdjective(this.currentUser!.uid, this.currentUser!.progressNaAdjective);
+        this.userService.updateUserProgressAdverb(this.currentUser!.uid, this.currentUser!.progressAdverb);
+        this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
+      }
+
+      if (this.doLevelUp) {
+        this.currentUser!.progressKatakana.quizLevel += 1;
+      }
+    }
+
     this.userService.updateUserProgressKatakana(this.currentUser!.uid, this.currentUser!.progressKatakana);
   }
 
@@ -103,6 +173,8 @@ export class KatakanaQuizComponent implements OnInit {
       this.katakanaArray = data;
     });
     console.log(this.numberAnswered);
+    this.prepareAnswers(this.allKatakanaList)
+    console.log("nineAnswers from testSession")
   }
 
   answering(answer: string, reading: string, sign: string, id: string) {
@@ -158,7 +230,6 @@ export class KatakanaQuizComponent implements OnInit {
       console.log(this.currentUser!.progressKatakana);
       this.signProgressUp();
     }
-
   }
 
   score(correct: number, total: number): number{

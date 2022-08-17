@@ -28,6 +28,7 @@ export class KanjiQuizComponent implements OnInit {
   idArray: number[] = [];
   answered = false;
   quizEnd = false;
+  doLevelUp: any;
 
   constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth,
               private userService: UserService, public dialog: MatDialog) {
@@ -45,6 +46,8 @@ export class KanjiQuizComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.routeParam = params['level'];
     });
+    this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
+    console.log("levelUp onInit: ", this.doLevelUp)
     this.generateArray(this.routeParam)
     this.getAllKanji()
   }
@@ -147,6 +150,10 @@ export class KanjiQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
+    if ((this.score(this.numberAnsweredCorrect, this.numberAnswered) == 1) && this.doLevelUp) {
+      this.currentUser!.progressKanji.quizLevel += 1;
+    }
+
     this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
   }
 

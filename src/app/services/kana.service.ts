@@ -56,10 +56,6 @@ export class KanaService {
     this.idSetList = id;
   }
 
-  getAllKatakana(): AngularFirestoreCollection<Kana> {
-    return this.katakanaLevelOne;
-  }
-
   getSingleRandomHiragana():AngularFirestoreCollection<Kana>{
     let x: number
     x = Math.floor(Math.random() * 107) + 1;
@@ -136,6 +132,11 @@ export class KanaService {
         return this.hiraganaLevelOne;
       else
         return this.hiraganaLevelTwo;
+  }
+
+
+  getAllKatakana(): AngularFirestoreCollection<Kana> {
+    return this.katakanaRef;
   }
 
   createKatakana(katakana: Kana): any {

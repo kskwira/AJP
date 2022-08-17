@@ -135,24 +135,26 @@ export class HiraganaQuizComponent implements OnInit {
   }
 
   signProgressUp(): void {
-    if ((this.currentUser!.progressHiragana.quizLevel == 2) && (this.currentUser!.progressKatakana.quizLevel == 3)) {
-      this.currentUser!.progressNoun.learningLevel += 1;
-      this.currentUser!.progressVerb.learningLevel += 1;
-      this.currentUser!.progressIAdjective.learningLevel += 1;
-      this.currentUser!.progressNaAdjective.learningLevel += 1;
-      this.currentUser!.progressAdverb.learningLevel += 1;
-      this.currentUser!.progressKanji.learningLevel += 1;
+    if (this.score(this.numberAnsweredCorrect, this.numberAnswered) == 1) {
+      if ((this.currentUser!.progressHiragana.quizLevel == 2) && (this.currentUser!.progressKatakana.quizLevel == 3)) {
+        this.currentUser!.progressNoun.learningLevel += 1;
+        this.currentUser!.progressVerb.learningLevel += 1;
+        this.currentUser!.progressIAdjective.learningLevel += 1;
+        this.currentUser!.progressNaAdjective.learningLevel += 1;
+        this.currentUser!.progressAdverb.learningLevel += 1;
+        this.currentUser!.progressKanji.learningLevel += 1;
 
-      this.userService.updateUserProgressNoun(this.currentUser!.uid, this.currentUser!.progressNoun);
-      this.userService.updateUserProgressVerb(this.currentUser!.uid, this.currentUser!.progressVerb);
-      this.userService.updateUserProgressIAdjective(this.currentUser!.uid, this.currentUser!.progressIAdjective);
-      this.userService.updateUserProgressNaAdjective(this.currentUser!.uid, this.currentUser!.progressNaAdjective);
-      this.userService.updateUserProgressAdverb(this.currentUser!.uid, this.currentUser!.progressAdverb);
-      this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
-    }
+        this.userService.updateUserProgressNoun(this.currentUser!.uid, this.currentUser!.progressNoun);
+        this.userService.updateUserProgressVerb(this.currentUser!.uid, this.currentUser!.progressVerb);
+        this.userService.updateUserProgressIAdjective(this.currentUser!.uid, this.currentUser!.progressIAdjective);
+        this.userService.updateUserProgressNaAdjective(this.currentUser!.uid, this.currentUser!.progressNaAdjective);
+        this.userService.updateUserProgressAdverb(this.currentUser!.uid, this.currentUser!.progressAdverb);
+        this.userService.updateUserProgressKanji(this.currentUser!.uid, this.currentUser!.progressKanji);
+      }
 
-    if (this.doLevelUp) {
-      this.currentUser!.progressHiragana.quizLevel += 1;
+      if (this.doLevelUp) {
+        this.currentUser!.progressHiragana.quizLevel += 1;
+      }
     }
 
     this.userService.updateUserProgressHiragana(this.currentUser!.uid, this.currentUser!.progressHiragana);
@@ -231,6 +233,7 @@ export class HiraganaQuizComponent implements OnInit {
   }
 
   score(correct: number, total: number): number{
+    console.log(correct / total)
     return correct / total;
   }
 
