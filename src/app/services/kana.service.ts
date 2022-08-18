@@ -5,14 +5,22 @@ import firebase from "firebase/compat/app";
 import firestore = firebase.firestore;
 import {BehaviorSubject} from "rxjs";
 import {Kanji} from "../models/kanji.model";
+import {Vocabulary} from "../models/vocabulary.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class KanaService {
-  private katakanaDbPath = '/katakana';
+
   private hiraganaDbPath = '/hiragana';
+  private katakanaDbPath = '/katakana';
+  private nounDbPath = '/noun';
+  private verbDbPath = '/verb';
+  private iAdjectiveDbPath = '/iAdjective';
+  private naAdjectiveDbPath = '/naAdjective';
+  private adverbDbPath = '/adverb';
   private kanjiDbPath = '/kanji';
+
   idSetList = new Set<number>();
 
   private levelUpSource = new BehaviorSubject<boolean>(false);
@@ -22,12 +30,17 @@ export class KanaService {
     this.levelUpSource.next(value);
   }
 
-  katakanaRef: AngularFirestoreCollection<Kana>;
   hiraganaLevelOne: AngularFirestoreCollection<Kana>;
   hiraganaLevelTwo: AngularFirestoreCollection<Kana>;
   katakanaLevelOne: AngularFirestoreCollection<Kana>;
   katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
+  katakanaRef: AngularFirestoreCollection<Kana>;
+  nounRef: AngularFirestoreCollection<Vocabulary>;
+  verbRef: AngularFirestoreCollection<Vocabulary>;
+  iAdjectiveRef: AngularFirestoreCollection<Vocabulary>;
+  naAdjectiveRef: AngularFirestoreCollection<Vocabulary>;
+  adverbRef: AngularFirestoreCollection<Vocabulary>;
   kanjiRef: AngularFirestoreCollection<Kanji>;
   singleKanaRef: AngularFirestoreCollection<Kana>;
   singleRandomKana: AngularFirestoreCollection<Kana> | undefined;
@@ -37,6 +50,11 @@ export class KanaService {
   constructor(private db: AngularFirestore) {
     this.katakanaRef = db.collection(this.katakanaDbPath);
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
+    this.nounRef = db.collection(this.nounDbPath);
+    this.verbRef = db.collection(this.verbDbPath);
+    this.iAdjectiveRef = db.collection(this.iAdjectiveDbPath);
+    this.naAdjectiveRef = db.collection(this.naAdjectiveDbPath);
+    this.adverbRef = db.collection(this.adverbDbPath);
     this.kanjiRef = db.collection(this.kanjiDbPath);
     this.singleKanaRef = db.collection(this.hiraganaDbPath,
         ref => ref.where(firestore.FieldPath.documentId(), '==', 'uERNQsV8GNkmjIhXhd2X'));
@@ -134,13 +152,8 @@ export class KanaService {
         return this.hiraganaLevelTwo;
   }
 
-
   getAllKatakana(): AngularFirestoreCollection<Kana> {
     return this.katakanaRef;
-  }
-
-  createKatakana(katakana: Kana): any {
-    return this.katakanaRef.add({ ...katakana})
   }
 
   updateKatakana(id: string, data: any): Promise<void> {
@@ -155,10 +168,6 @@ export class KanaService {
     return this.hiraganaRef;
   }
 
-  createHiragana(hiragana: Kana): any {
-    return this.hiraganaRef.add({ ...hiragana})
-  }
-
   updateHiragana(id: string, data: any): Promise<void> {
     return this.hiraganaRef.doc(id).update(data);
   }
@@ -171,12 +180,41 @@ export class KanaService {
     return this.singleKanaRef;
   }
 
-  createKanji(kanji: Kanji): any {
-    return this.kanjiRef.add({ ...kanji})
-  }
-
   getAllKanji(): AngularFirestoreCollection<Kanji>{
     return this.kanjiRef
   }
+
+  // // Used to upload json assets to Firebase
+  // createHiragana(hiragana: Kana): any {
+  //   return this.hiraganaRef.add({ ...hiragana})
+  // }
+  //
+  // createKatakana(katakana: Kana): any {
+  //   return this.katakanaRef.add({ ...katakana})
+  // }
+  //
+  // createNoun(noun: Vocabulary): any {
+  //   return this.nounRef.add({ ...noun})
+  // }
+  //
+  // createVerb(verb: Vocabulary): any {
+  //   return this.verbRef.add({ ...verb})
+  // }
+  //
+  // createIAdjective(iAdjective: Vocabulary): any {
+  //   return this.iAdjectiveRef.add({ ...iAdjective})
+  // }
+  //
+  // createNaAdjective(naAdjective: Vocabulary): any {
+  //   return this.naAdjectiveRef.add({ ...naAdjective})
+  // }
+  //
+  // createAdverb(adverb: Vocabulary): any {
+  //   return this.adverbRef.add({ ...adverb})
+  // }
+  //
+  // createKanji(kanji: Kanji): any {
+  //   return this.kanjiRef.add({ ...kanji})
+  // }
 
 }
