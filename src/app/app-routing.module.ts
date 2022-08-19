@@ -16,6 +16,7 @@ import { KanjiQuizComponent } from "./components/kanji-quiz/kanji-quiz.component
 import { HiraganaLearningComponent } from "./components/hiragana-learning/hiragana-learning.component";
 import { KatakanaLearningComponent } from "./components/katakana-learning/katakana-learning.component";
 import { KanjiLearningComponent } from "./components/kanji-learning/kanji-learning.component";
+import {MaterialsComponent} from "./materials/materials.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'quiz/kanji/:level', component: KanjiQuizComponent },
   { path: 'learning/hiragana', component: HiraganaLearningComponent },
   { path: 'learning/katakana', component: KatakanaLearningComponent },
-  { path: 'learning/kanji', component: KanjiLearningComponent }
+  { path: 'learning/kanji', component: KanjiLearningComponent },
+  { path: 'materials', component: MaterialsComponent }
 ];
 
 @NgModule({

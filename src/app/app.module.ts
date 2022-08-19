@@ -37,6 +37,7 @@ import { KanjiLearningComponent } from './components/kanji-learning/kanji-learni
 import { DashboardDialog } from "./login/dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
+import { MaterialsComponent } from './materials/materials.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { RouterTestingModule } from "@angular/router/testing";
     HelpComponent,
     KanjiQuizComponent,
     KanjiLearningComponent,
-    DashboardDialog
+    DashboardDialog,
+    MaterialsComponent
   ],
   imports: [
     CommonModule,

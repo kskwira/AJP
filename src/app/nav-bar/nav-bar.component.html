@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <mat-icon>local_fire_department</mat-icon>
+  <mat-icon>pets</mat-icon>
   <span routerLink="/">Tanuki</span>
   <button *ngIf="(afAuth.user | async)" mat-button [matMenuTriggerFor]="belowMenu">Użytkownik</button>
 
@@ -21,7 +21,7 @@
 
   <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-learning-level">Nauka</button>
   <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-quiz-level">Quiz</button>
-  <button *ngIf="(afAuth.user | async)" mat-button routerLink="about-us">Materiały</button>
+  <button *ngIf="(afAuth.user | async)" mat-button routerLink="materials">Materiały</button>
   <button mat-button routerLink="about-us">O nas</button>
   <button mat-button routerLink="help">Pomoc</button>
 </mat-toolbar>
