@@ -38,6 +38,7 @@ import { DashboardDialog } from "./login/dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { MaterialsComponent } from './materials/materials.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { MaterialsComponent } from './materials/materials.component';
     ReactiveFormsModule,
     RouterModule.forRoot([]),
     RouterTestingModule,
+    MatProgressBarModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

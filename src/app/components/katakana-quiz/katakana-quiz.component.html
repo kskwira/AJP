@@ -1,9 +1,15 @@
-<div>
+<div *ngIf="start">
   <button mat-stroked-button color="primary" (click)="testSession(idArray[0])">Rozpocznij quiz</button>
+</div>
+<div class="aaa" *ngIf="start === false" >
+    <mat-progress-bar mode="determinate"  color="accent" value="{{progressBar}}"> </mat-progress-bar>
+    {{progressBar | number : '1.0-0'}} %
 </div>
 
 <mat-grid-list cols="1" rowHeight="480px" gutterSize="4px">
-  <mat-grid-tile *ngFor="let katakana of katakanaArray">
+
+  <mat-grid-tile *ngFor="let katakana of katakanaArray" >
+
     <mat-card class="user-card">
       <mat-card-content>
         <flip-card [toggleProperty] = answered>
@@ -15,7 +21,11 @@
           </flip-card-back>
         </flip-card>
         <br/>
-        <mat-error>{{result}}</mat-error>
+        <mat-error>
+          <mat-icon>check_circle</mat-icon>
+          {{result}}
+        </mat-error>
+
         <button style="float: right" mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
         <br/>
         <br/>
@@ -29,6 +39,7 @@
 </mat-grid-list>
 
 <div class="answers-container" *ngIf="checkAnswerType('select')">
+
   <mat-grid-list cols="3" rowHeight="105px" gutterSize="6px" *ngIf="!quizEnd">
     <mat-grid-tile *ngFor="let answer of nineAnswers">
       <button mat-raised-button class="answers-button-kana"

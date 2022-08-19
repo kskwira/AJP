@@ -28,6 +28,8 @@ export class KatakanaQuizComponent implements OnInit {
   answered = false;
   quizEnd = false;
   doLevelUp: any;
+  progressBar: number = 0;
+  start: boolean = true;
 
   constructor(private route: ActivatedRoute, private kanaService: KanaService, public afAuth: AngularFireAuth,
               private userService: UserService) {
@@ -50,6 +52,7 @@ export class KatakanaQuizComponent implements OnInit {
     console.log("levelUp onInit: ", this.doLevelUp)
     this.generateArray(this.routeParam)
     this.getAllKatakana()
+    this.progressBar = 0;
   }
 
   getAllKatakana(): void {
@@ -161,6 +164,7 @@ export class KatakanaQuizComponent implements OnInit {
   }
 
   testSession(id: number): void {
+    this.start = false;
     this.answered = false;
     this.result = '';
     this.kanaService.getSingleKatakanaById(id).snapshotChanges().pipe(
@@ -223,6 +227,7 @@ export class KatakanaQuizComponent implements OnInit {
         }
         console.log("old progress fail")
       }
+
     }
 
     if (this.numberAnswered >= this.idArray.length) {
@@ -230,6 +235,8 @@ export class KatakanaQuizComponent implements OnInit {
       console.log(this.currentUser!.progressKatakana);
       this.signProgressUp();
     }
+
+    this.progressBar = (this.numberAnswered / this.idArray.length) *100
   }
 
   score(correct: number, total: number): number{
