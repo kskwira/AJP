@@ -1,0 +1,59 @@
+<div *ngIf="!quizStart">
+  <button mat-stroked-button color="primary" (click)="testSession(idArray[0])">Rozpocznij quiz</button>
+</div>
+
+<div class="progress-bar" *ngIf="quizStart" >
+  <mat-progress-bar mode="determinate"  color="accent" value="{{progressBar}}"> </mat-progress-bar>
+  {{progressBar | number : '1.0-0'}} %
+</div>
+
+<mat-grid-list [cols]=checkNumberOfColumns() rowHeight="480px" gutterSize="4px">
+
+  <mat-grid-tile *ngFor="let katakana of katakanaArray">
+    <mat-card>
+      <mat-card-content>
+        <flip-card [toggleProperty] = answered>
+          <flip-card-front>
+            <p>{{ katakana.sign}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p>{{ katakana.reading}}</p>
+          </flip-card-back>
+        </flip-card>
+        <br/>
+        <mat-error [ngClass]="icon">
+          <mat-icon *ngIf="answered">{{icon}}</mat-icon>
+          {{result}}
+        </mat-error>
+        <button style="float: right" mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="testSession(idArray[numberAnswered])" [disabled]="!answered">Następny znak</button>
+        <br/>
+        <br/>
+        <mat-card-actions *ngIf="checkAnswerType('input')">
+          <input matInput type="text" id="single" #guess>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, katakana.reading!, katakana.sign!, katakana.id!)" [disabled]="answered">Sprawdź</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile *ngIf="checkAnswerType('select')">
+    <div *ngFor="let katakana of katakanaArray">
+      <button mat-raised-button class="answers-button-kana"
+              *ngFor="let answer of nineAnswers"
+              [disabled]="answered"
+              (click)="answering(answer.reading!, katakana.reading!, katakana.sign!, katakana.id!)">
+        {{ answer.reading }}
+      </button>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+<div *ngIf="quizEnd">
+  <mat-card>
+    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+    <p>Twój wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+    <p>Wynik oczekiwany do zaliczenia: 100.00%</p>
+  </mat-card>
+</div>

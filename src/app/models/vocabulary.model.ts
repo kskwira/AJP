@@ -1,5 +1,5 @@
 export class Vocabulary {
-  id?: string;
+  uid?: number;
   word?: string;
   kana?: string;
   romaji?: string;

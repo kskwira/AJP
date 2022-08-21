@@ -1,0 +1,20 @@
+.check_circle {
+  color: forestgreen;
+}
+
+.answers-button-kana {
+  margin: 4px;
+  font-size: 24px;
+  width: 200px;
+  height: 105px;
+  background-color: #128bea;
+  color: #fff;
+}
+
+.progress-bar {
+  padding-top: 5px;
+  width: 50%;
+  align-content: center;
+  display: block;
+  padding-left: 25%;
+}

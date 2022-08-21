@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../services/user.service";
 import {UserModel} from "../../models/user.model";
+import {Vocabulary} from "../../models/vocabulary.model";
 
 @Component({
   selector: 'app-select-learning-level',
@@ -19,14 +20,31 @@ export class SelectLearningLevelComponent implements OnInit {
   idSetList = new Set<number>();
   hiraganaLearningLevel = 0;
   katakanaLearningLevel = 0;
+  nounLearningLevel = 0;
+  verbLearningLevel = 0;
+  iAdjectiveLearningLevel = 0;
+  naAdjectiveLearningLevel = 0;
+  adverbLearningLevel = 0;
   kanjiLearningLevel = 0;
 
   hiraganaQuizLevel = 0
   katakanaQuizLevel = 0
+  nounQuizLevel = 0
+  verbQuizLevel = 0
+  iAdjectiveQuizLevel = 0
+  naAdjectiveQuizLevel = 0
+  adverbQuizLevel = 0
   kanjiQuizLevel = 0
+
+  nouns: Vocabulary[] = []
 
   hiraganaForm: FormGroup;
   katakanaForm: FormGroup;
+  nounForm: FormGroup;
+  verbForm: FormGroup;
+  iAdjectiveForm: FormGroup;
+  naAdjectiveForm: FormGroup;
+  adverbForm: FormGroup;
   kanjiForm: FormGroup;
 
   kanaSingsData = [
@@ -59,6 +77,74 @@ export class SelectLearningLevelComponent implements OnInit {
     { id: 27, name: "pya", level: 2 }
   ];
 
+  nounSingsData = [
+    { id: 1, name: "rzeczowniki 1", level: 0 },
+    { id: 2, name: "rzeczowniki 2", level: 0 },
+    { id: 3, name: "rzeczowniki 3", level: 0 },
+    { id: 4, name: "rzeczowniki 4", level: 1 },
+    { id: 5, name: "rzeczowniki 5", level: 1 },
+    { id: 6, name: "rzeczowniki 6", level: 1 },
+    { id: 7, name: "rzeczowniki 7", level: 2 },
+    { id: 8, name: "rzeczowniki 8", level: 2 },
+    { id: 9, name: "rzeczowniki 9", level: 2 },
+    { id: 10, name: "rzeczowniki 10", level: 3 },
+    { id: 11, name: "rzeczowniki 11", level: 3 },
+    { id: 12, name: "rzeczowniki 12", level: 3 },
+    { id: 13, name: "rzeczowniki 13", level: 3 },
+    { id: 14, name: "rzeczowniki 14", level: 4 },
+    { id: 15, name: "rzeczowniki 15", level: 4 },
+    { id: 16, name: "rzeczowniki 16", level: 4 },
+    { id: 17, name: "rzeczowniki 17", level: 5 },
+    { id: 18, name: "rzeczowniki 18", level: 5 },
+    { id: 19, name: "rzeczowniki 19", level: 5 },
+    { id: 20, name: "rzeczowniki 20", level: 6 },
+    { id: 21, name: "rzeczowniki 21", level: 6 },
+    { id: 22, name: "rzeczowniki 22", level: 6 },
+    { id: 23, name: "rzeczowniki 23", level: 6 },
+    { id: 24, name: "rzeczowniki 24", level: 7 },
+    { id: 25, name: "rzeczowniki 25", level: 7 },
+    { id: 26, name: "rzeczowniki 26", level: 7 },
+    { id: 27, name: "rzeczowniki 27", level: 7 },
+    { id: 28, name: "rzeczowniki 28", level: 8 },
+    { id: 29, name: "rzeczowniki 29", level: 8 },
+    { id: 30, name: "rzeczowniki 30", level: 8 },
+    { id: 31, name: "rzeczowniki 31", level: 9 },
+    { id: 32, name: "rzeczowniki 32", level: 9 },
+    { id: 33, name: "rzeczowniki 33", level: 9 }
+  ];
+
+  verbSingsData = [
+    { id: 1, name: "czasowniki 1", level: 0 },
+    { id: 2, name: "czasowniki 2", level: 0 },
+    { id: 3, name: "czasowniki 3", level: 0 },
+    { id: 4, name: "czasowniki 4", level: 1 },
+    { id: 5, name: "czasowniki 5", level: 1 },
+    { id: 6, name: "czasowniki 6", level: 1 },
+    { id: 7, name: "czasowniki 7", level: 2 },
+    { id: 8, name: "czasowniki 8", level: 2 },
+    { id: 9, name: "czasowniki 9", level: 2 }
+    ];
+
+  iAdjectiveSingsData = [
+    { id: 1, name: "przymiotniki \"-i\" 1", level: 0 },
+    { id: 2, name: "przymiotniki \"-i\" 2", level: 0 },
+    { id: 3, name: "przymiotniki \"-i\" 3", level: 0 },
+    { id: 4, name: "przymiotniki \"-i\" 4", level: 1 },
+    { id: 5, name: "przymiotniki \"-i\" 5", level: 1 },
+    { id: 6, name: "przymiotniki \"-i\" 6", level: 1 }
+    ];
+
+  naAdjectiveSingsData = [
+    { id: 1, name: "przymiotniki \"-na\" 1", level: 0 },
+    { id: 2, name: "przymiotniki \"-na\" 2", level: 0 }
+  ];
+
+  adverbSingsData = [
+    { id: 1, name: "przysłówki 1", level: 0 },
+    { id: 2, name: "przysłówki 2", level: 0 },
+    { id: 3, name: "przysłówki 3", level: 0 }
+  ];
+
   kanjiSingsData = [
     { id: 1, name: "kanji 1-5", level: 0 },
     { id: 2, name: "kanji 6-10", level: 0 },
@@ -86,6 +172,26 @@ export class SelectLearningLevelComponent implements OnInit {
     return this.katakanaForm.controls['signs'] as FormArray;
   }
 
+  get nounSignsFormArray() {
+    return this.nounForm.controls['signs'] as FormArray;
+  }
+
+  get verbSignsFormArray() {
+    return this.verbForm.controls['signs'] as FormArray;
+  }
+
+  get iAdjectiveSignsFormArray() {
+    return this.iAdjectiveForm.controls['signs'] as FormArray;
+  }
+
+  get naAdjectiveSignsFormArray() {
+    return this.naAdjectiveForm.controls['signs'] as FormArray;
+  }
+
+  get adverbSignsFormArray() {
+    return this.adverbForm.controls['signs'] as FormArray;
+  }
+
   get kanjiSignsFormArray() {
     return this.kanjiForm.controls['signs'] as FormArray;
   }
@@ -111,6 +217,26 @@ export class SelectLearningLevelComponent implements OnInit {
       signs: new FormArray([])
     });
 
+    this.nounForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
+    this.verbForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
+    this.iAdjectiveForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
+    this.naAdjectiveForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
+    this.adverbForm = this.fb.group({
+      signs: new FormArray([])
+    });
+
     this.kanjiForm = this.fb.group({
       signs: new FormArray([])
     });
@@ -124,6 +250,11 @@ export class SelectLearningLevelComponent implements OnInit {
   private addCheckboxesToForm() {
     this.kanaSingsData.forEach(() => this.hiraganaSignsFormArray.push(new FormControl(false)));
     this.kanaSingsData.forEach(() => this.katakanaSignsFormArray.push(new FormControl(false)));
+    this.nounSingsData.forEach(() => this.nounSignsFormArray.push(new FormControl(false)));
+    this.verbSingsData.forEach(() => this.verbSignsFormArray.push(new FormControl(false)));
+    this.iAdjectiveSingsData.forEach(() => this.iAdjectiveSignsFormArray.push(new FormControl(false)));
+    this.naAdjectiveSingsData.forEach(() => this.naAdjectiveSignsFormArray.push(new FormControl(false)));
+    this.adverbSingsData.forEach(() => this.adverbSignsFormArray.push(new FormControl(false)));
     this.kanjiSingsData.forEach(() => this.kanjiSignsFormArray.push(new FormControl(false)));
   }
 
@@ -133,9 +264,20 @@ export class SelectLearningLevelComponent implements OnInit {
         this.currentUser = result.data()
         this.hiraganaLearningLevel = this.currentUser!.progressHiragana.learningLevel;
         this.katakanaLearningLevel = this.currentUser!.progressKatakana.learningLevel;
+        this.nounLearningLevel = this.currentUser!.progressNoun.learningLevel;
+        this.verbLearningLevel = this.currentUser!.progressVerb.learningLevel;
+        this.iAdjectiveLearningLevel = this.currentUser!.progressIAdjective.learningLevel;
+        this.naAdjectiveLearningLevel = this.currentUser!.progressNaAdjective.learningLevel;
+        this.adverbLearningLevel = this.currentUser!.progressAdverb.learningLevel;
         this.kanjiLearningLevel = this.currentUser!.progressKanji.learningLevel;
+
         this.hiraganaQuizLevel = this.currentUser!.progressHiragana.quizLevel;
         this.katakanaQuizLevel = this.currentUser!.progressKatakana.quizLevel;
+        this.nounQuizLevel = this.currentUser!.progressNoun.quizLevel;
+        this.verbQuizLevel = this.currentUser!.progressVerb.quizLevel;
+        this.iAdjectiveQuizLevel = this.currentUser!.progressIAdjective.quizLevel;
+        this.naAdjectiveQuizLevel = this.currentUser!.progressNaAdjective.quizLevel;
+        this.adverbQuizLevel = this.currentUser!.progressAdverb.quizLevel;
         this.kanjiQuizLevel = this.currentUser!.progressKanji.quizLevel;
       });
   }
@@ -146,6 +288,21 @@ export class SelectLearningLevelComponent implements OnInit {
     }
     else if (type == "katakana") {
       return ((signId > this.katakanaLearningLevel) || (level > this.katakanaQuizLevel));
+    }
+    else if (type == "noun") {
+      return ((signId > this.nounLearningLevel) || (level > this.nounQuizLevel));
+    }
+    else if (type == "verb") {
+      return ((signId > this.verbLearningLevel) || (level > this.verbQuizLevel));
+    }
+    else if (type == "iAdjective") {
+      return ((signId > this.iAdjectiveLearningLevel) || (level > this.iAdjectiveQuizLevel));
+    }
+    else if (type == "naAdjective") {
+      return ((signId > this.naAdjectiveLearningLevel) || (level > this.naAdjectiveQuizLevel));
+    }
+    else if (type == "adverb") {
+      return ((signId > this.adverbLearningLevel) || (level > this.adverbQuizLevel));
     }
     else if (type == "kanji") {
       return ((signId > this.kanjiLearningLevel) || (level > this.kanjiQuizLevel));
@@ -162,12 +319,37 @@ export class SelectLearningLevelComponent implements OnInit {
       .map((checked: any, i: number) => checked ? this.kanaSingsData[i].id : null)
       .filter((v: null) => v !== null);
 
+    const selectedNounSignIds = this.nounForm.value.signs
+      .map((checked: any, i: number) => checked ? this.nounSingsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    const selectedVerbSignIds = this.verbForm.value.signs
+      .map((checked: any, i: number) => checked ? this.verbSingsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    const selectedIAdjectiveSignIds = this.iAdjectiveForm.value.signs
+      .map((checked: any, i: number) => checked ? this.iAdjectiveSingsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    const selectedNaAdjectiveSignIds = this.naAdjectiveForm.value.signs
+      .map((checked: any, i: number) => checked ? this.naAdjectiveSingsData[i].id : null)
+      .filter((v: null) => v !== null);
+
+    const selectedAdverbSignIds = this.adverbForm.value.signs
+      .map((checked: any, i: number) => checked ? this.adverbSingsData[i].id : null)
+      .filter((v: null) => v !== null);
+
     const selectedKanjiSignIds = this.kanjiForm.value.signs
       .map((checked: any, i: number) => checked ? this.kanjiSingsData[i].id : null)
       .filter((v: null) => v !== null);
 
     console.log("Hiragana: ", selectedHiraganaSignIds);
     console.log("Katakana: ", selectedKatakanaSignIds);
+    console.log("Nouns: ", selectedNounSignIds);
+    console.log("Verbs: ", selectedVerbSignIds);
+    console.log("IAdjectives: ", selectedIAdjectiveSignIds);
+    console.log("NaAdjectives: ", selectedNaAdjectiveSignIds);
+    console.log("Adverbs: ", selectedAdverbSignIds);
     console.log("Kanji: ", selectedKanjiSignIds);
 
     if (type == "hiragana") {
@@ -349,6 +531,61 @@ export class SelectLearningLevelComponent implements OnInit {
       else
         this.kanaService.changeLevelUpValue(false);
     }
+    else if (type == "noun") {
+      for (let i = 0; i < selectedNounSignIds.length; i++) {
+        this.idSetList.add(selectedNounSignIds[i])
+      }
+
+      console.log("Set in Noun: ", this.idSetList);
+      if (selectedNounSignIds.includes(this.nounLearningLevel))
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
+    }
+    else if (type == "verb") {
+      for (let i = 0; i < selectedVerbSignIds.length; i++) {
+        this.idSetList.add(selectedVerbSignIds[i])
+      }
+
+      console.log("Set in Verb: ", this.idSetList);
+      if (selectedVerbSignIds.includes(this.verbLearningLevel))
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
+    }
+    else if (type == "iAdjective") {
+      for (let i = 0; i < selectedIAdjectiveSignIds.length; i++) {
+        this.idSetList.add(selectedIAdjectiveSignIds[i])
+      }
+
+      console.log("Set in iAdjective: ", this.idSetList);
+      if (selectedIAdjectiveSignIds.includes(this.iAdjectiveLearningLevel))
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
+    }
+    else if (type == "naAdjective") {
+      for (let i = 0; i < selectedNaAdjectiveSignIds.length; i++) {
+        this.idSetList.add(selectedNaAdjectiveSignIds[i])
+      }
+
+      console.log("Set in naAdjective: ", this.idSetList);
+      if (selectedNaAdjectiveSignIds.includes(this.naAdjectiveLearningLevel))
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
+    }
+    else if (type == "adverb") {
+      for (let i = 0; i < selectedAdverbSignIds.length; i++) {
+        this.idSetList.add(selectedAdverbSignIds[i])
+      }
+
+      console.log("Set in adverb: ", this.idSetList);
+      if (selectedAdverbSignIds.includes(this.adverbLearningLevel))
+        this.kanaService.changeLevelUpValue(true);
+      else
+        this.kanaService.changeLevelUpValue(false);
+    }
     else if (type == "kanji") {
       for (let i = 0; i < selectedKanjiSignIds.length; i++) {
         this.idSetList.add((selectedKanjiSignIds[i] * 5) - 4)
@@ -371,6 +608,16 @@ export class SelectLearningLevelComponent implements OnInit {
       this.router.navigate(['/learning/hiragana']);
     else if (type == "katakana")
       this.router.navigate(['/learning/katakana']);
+    else if (type == "noun")
+      this.router.navigate(['/learning/noun']);
+    else if (type == "verb")
+      this.router.navigate(['/learning/verb']);
+    else if (type == "iAdjective")
+      this.router.navigate(['/learning/iAdjective']);
+    else if (type == "naAdjective")
+      this.router.navigate(['/learning/naAdjective']);
+    else if (type == "adverb")
+      this.router.navigate(['/learning/adverb']);
     else if (type == "kanji")
       this.router.navigate(['/learning/kanji']);
   }

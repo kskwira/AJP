@@ -1,0 +1,103 @@
+<div *ngIf="sortedIdArrayIndex == 0">
+  <button mat-stroked-button color="primary" [disabled]="nounsByLevelUidSet.size == 0" (click)="learnSession(this.sortedIdArrayIndex)">Rozpocznij naukę</button>
+</div>
+
+<div class="progress-bar" *ngIf="quizStart" >
+  <mat-progress-bar mode="determinate"  color="accent" value="{{progressBar}}"> </mat-progress-bar>
+  {{progressBar | number : '1.0-0'}} %
+</div>
+
+<mat-grid-list [cols]=checkNumberOfColumns() rowHeight="580px" gutterSize="4px">
+
+  <mat-grid-tile>
+    <mat-card *ngFor="let wordLearn of nounLearnArray">
+      <mat-card-content *ngIf="!learningEnd">
+        <flip-card>
+          <flip-card-front>
+            <p class="vocabulary-word">{{wordLearn.word}}</p>
+            <br/>
+            <p class="vocabulary-kana">{{wordLearn.kana}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p class="vocabulary-meaning" *ngFor="let meaning of wordLearn.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="vocabulary-romaji">Romaji: {{wordLearn.romaji}}</p>
+          </flip-card-back>
+        </flip-card>
+        <br/>
+        <flip-card [toggleProperty]="true">
+          <flip-card-front>
+            <p class="vocabulary-word">{{wordLearn.word}}</p>
+            <br/>
+            <p class="vocabulary-kana">{{wordLearn.kana}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p class="vocabulary-meaning" *ngFor="let meaning of wordLearn.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="vocabulary-romaji">Romaji: {{wordLearn.romaji}}</p>
+          </flip-card-back>
+        </flip-card>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" *ngIf="sortedIdArrayIndex < sortedIdArray.length; else lastSign" (click)="learnSession(sortedIdArray[sortedIdArrayIndex])" >Następny znak nauka</button>
+          <ng-template #lastSign>
+            <button mat-raised-button color="primary" type="submit" (click)="learnSession(randomizedIdArray[randomizedIdArrayIndex])" >Start Quiz</button>
+          </ng-template>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngFor="let word of nounQuizArray">
+      <mat-card-content>
+        <flip-card [toggleProperty] = answered>
+          <flip-card-front>
+            <p class="vocabulary-word">{{word.word}}</p>
+            <br/>
+            <p class="vocabulary-kana">{{word.kana}}</p>
+          </flip-card-front>
+          <flip-card-back>
+            <p class="vocabulary-meaning" *ngFor="let meaning of word.meaning">
+              {{meaning}}
+            </p>
+            <br>
+            <p class="vocabulary-romaji">Romaji: {{word.romaji}}</p>
+          </flip-card-back>
+        </flip-card>
+        <br/>
+        <mat-error [ngClass]="icon">
+          <mat-icon *ngIf="answered">{{icon}}</mat-icon>
+          {{result}}
+        </mat-error>
+        <button style="float: right" mat-raised-button color="primary" type="submit" *ngIf="!quizEnd" (click)="learnSession(randomizedIdArray[randomizedIdArrayIndex])" [disabled]="!answered">Następny znak Quiz</button>
+        <br/>
+        <br/>
+        <mat-card-actions *ngIf="checkAnswerType('input')">
+          <input matInput type="text" id="single" #guess>
+          <button mat-raised-button color="primary" type="submit" (click)="answering(guess.value, word.meaning!)" [disabled]="answered">Sprawdź</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile *ngIf="checkAnswerType('select')">
+    <div *ngFor="let word of nounQuizArray">
+      <button mat-raised-button class="answers-button"
+              *ngFor="let answer of nineAnswers"
+              [disabled]="answered"
+              (click)="answering(answer.meaning![0], word.meaning!)">
+        {{ answer.meaning!.join("\n") }}
+      </button>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+<div *ngIf="quizEnd">
+  <mat-card>
+    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+    <p>Wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+  </mat-card>
+</div>

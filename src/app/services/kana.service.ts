@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
 import { Kana } from "../models/kana.model";
-import firebase from "firebase/compat/app";
-import firestore = firebase.firestore;
 import {BehaviorSubject} from "rxjs";
 import {Kanji} from "../models/kanji.model";
 import {Vocabulary} from "../models/vocabulary.model";
@@ -30,10 +28,6 @@ export class KanaService {
     this.levelUpSource.next(value);
   }
 
-  hiraganaLevelOne: AngularFirestoreCollection<Kana>;
-  hiraganaLevelTwo: AngularFirestoreCollection<Kana>;
-  katakanaLevelOne: AngularFirestoreCollection<Kana>;
-  katakanaLevelTwo: AngularFirestoreCollection<Kana>;
   hiraganaRef: AngularFirestoreCollection<Kana>;
   katakanaRef: AngularFirestoreCollection<Kana>;
   nounRef: AngularFirestoreCollection<Vocabulary>;
@@ -42,146 +36,121 @@ export class KanaService {
   naAdjectiveRef: AngularFirestoreCollection<Vocabulary>;
   adverbRef: AngularFirestoreCollection<Vocabulary>;
   kanjiRef: AngularFirestoreCollection<Kanji>;
-  singleKanaRef: AngularFirestoreCollection<Kana>;
-  singleRandomKana: AngularFirestoreCollection<Kana> | undefined;
-  singleRandomKanji: AngularFirestoreCollection<Kanji> | undefined;
-  singleRandomKanaByLevel: AngularFirestoreCollection<Kana> | undefined;
+  singleKana: AngularFirestoreCollection<Kana> | undefined;
+  singleKanji: AngularFirestoreCollection<Kanji> | undefined;
+  singleVocabulary: AngularFirestoreCollection<Vocabulary> | undefined;
+  vocabularyByLevel: AngularFirestoreCollection<Vocabulary> | undefined;
 
   constructor(private db: AngularFirestore) {
-    this.katakanaRef = db.collection(this.katakanaDbPath);
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
+    this.katakanaRef = db.collection(this.katakanaDbPath);
     this.nounRef = db.collection(this.nounDbPath);
     this.verbRef = db.collection(this.verbDbPath);
     this.iAdjectiveRef = db.collection(this.iAdjectiveDbPath);
     this.naAdjectiveRef = db.collection(this.naAdjectiveDbPath);
     this.adverbRef = db.collection(this.adverbDbPath);
     this.kanjiRef = db.collection(this.kanjiDbPath);
-    this.singleKanaRef = db.collection(this.hiraganaDbPath,
-        ref => ref.where(firestore.FieldPath.documentId(), '==', 'uERNQsV8GNkmjIhXhd2X'));
-    this.hiraganaLevelOne = db.collection(this.hiraganaDbPath,
-      ref => ref.where('level', '==',1))
-    this.hiraganaLevelTwo = db.collection(this.hiraganaDbPath,
-      ref => ref.where('level', '==',2))
-    this.katakanaLevelOne = db.collection(this.katakanaDbPath,
-        ref => ref.where('level', '==',1))
-    this.katakanaLevelTwo = db.collection(this.katakanaDbPath,
-      ref => ref.where('level', '==',2))
-    // this.firstNineKana = db.collection(this.hiraganaDbPath, ref => ref.where('id', '>=',1).orderBy('id').limit(1))
   }
-
 
   setLearningId(id: Set<number>) {
     this.idSetList = id;
   }
 
-  getSingleRandomHiragana():AngularFirestoreCollection<Kana>{
-    let x: number
-    x = Math.floor(Math.random() * 107) + 1;
-    console.log(x);
-    this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', x))
-    return this.singleRandomKana
+  getSingleHiraganaById(id: number):AngularFirestoreCollection<Kana> {
+    this.singleKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', id))
+    return this.singleKana
   }
 
-  getSingleRandomKatakana():AngularFirestoreCollection<Kana>{
-    let x: number
-    x = Math.floor(Math.random() * 107) + 1;
-    console.log(x);
-    this.singleRandomKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', x))
-    return this.singleRandomKana
+  getSingleKatakanaById(id: number):AngularFirestoreCollection<Kana> {
+    this.singleKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', id))
+    return this.singleKana
   }
 
-  getSingleHiraganaById(id: number):AngularFirestoreCollection<Kana>{
-    this.singleRandomKana = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', id))
-    return this.singleRandomKana
+  getSingleNounById(id: number):AngularFirestoreCollection<Vocabulary> {
+    this.singleVocabulary = this.db.collection(this.nounDbPath, ref => ref.where('uid', '==', id))
+    return this.singleVocabulary
   }
 
-  getSingleKatakanaById(id: number):AngularFirestoreCollection<Kana>{
-    this.singleRandomKana = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', id))
-    return this.singleRandomKana
+  getSingleVerbById(id: number):AngularFirestoreCollection<Vocabulary> {
+    this.singleVocabulary = this.db.collection(this.verbDbPath, ref => ref.where('uid', '==', id))
+    return this.singleVocabulary
   }
 
-  getSingleKanjiById(id: number):AngularFirestoreCollection<Kanji>{
-    this.singleRandomKanji = this.db.collection(this.kanjiDbPath, ref => ref.where('id', '==', id))
-    return this.singleRandomKanji
+  getSingleIAdjectiveById(id: number):AngularFirestoreCollection<Vocabulary> {
+    this.singleVocabulary = this.db.collection(this.iAdjectiveDbPath, ref => ref.where('uid', '==', id))
+    return this.singleVocabulary
   }
 
-  getSingleRandomHiraganaByLevel(level: number):AngularFirestoreCollection<Kana>{
-    if (level == 1) {
-      let x: number
-      x = Math.floor(Math.random() * 46) + 1;
-      console.log(x);
-      this.singleRandomKanaByLevel = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', x))
-      return this.singleRandomKanaByLevel
-    }
-    else {
-      let x: number
-      x = Math.floor(Math.random() * (107 - 47 + 1) + 47);
-      console.log(x);
-      this.singleRandomKanaByLevel = this.db.collection(this.hiraganaDbPath, ref => ref.where('id', '==', x))
-      return this.singleRandomKanaByLevel
-    }
+  getSingleNaAdjectiveById(id: number):AngularFirestoreCollection<Vocabulary> {
+    this.singleVocabulary = this.db.collection(this.naAdjectiveDbPath, ref => ref.where('uid', '==', id))
+    return this.singleVocabulary
   }
 
-  getSingleRandomKatakanaByLevel(level: number):AngularFirestoreCollection<Kana>{
-    if (level == 1) {
-      let x: number
-      x = Math.floor(Math.random() * 46) + 1;
-      console.log(x);
-      this.singleRandomKanaByLevel = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', x))
-      return this.singleRandomKanaByLevel
-    }
-    else {
-      let x: number
-      x = Math.floor(Math.random() * (107 - 47 + 1) + 47);
-      console.log(x);
-      this.singleRandomKanaByLevel = this.db.collection(this.katakanaDbPath, ref => ref.where('id', '==', x))
-      return this.singleRandomKanaByLevel
-    }
+  getSingleAdverbById(id: number):AngularFirestoreCollection<Vocabulary> {
+    this.singleVocabulary = this.db.collection(this.adverbDbPath, ref => ref.where('uid', '==', id))
+    return this.singleVocabulary
   }
 
-  getSpecificLevel(level: number, type: string): AngularFirestoreCollection<Kana>{
-    if (type == 'katakana') {
-      if (level == 1)
-        return this.katakanaLevelOne;
-      else
-        return this.katakanaLevelTwo;
-    }
-    else if (level == 1)
-        return this.hiraganaLevelOne;
-      else
-        return this.hiraganaLevelTwo;
-  }
-
-  getAllKatakana(): AngularFirestoreCollection<Kana> {
-    return this.katakanaRef;
-  }
-
-  updateKatakana(id: string, data: any): Promise<void> {
-    return this.katakanaRef.doc(id).update(data);
-  }
-
-  deleteKatakana(id: string): Promise<void> {
-    return this.katakanaRef.doc(id).delete();
+  getSingleKanjiById(id: number):AngularFirestoreCollection<Kanji> {
+    this.singleKanji = this.db.collection(this.kanjiDbPath, ref => ref.where('id', '==', id))
+    return this.singleKanji
   }
 
   getAllHiragana(): AngularFirestoreCollection<Kana> {
     return this.hiraganaRef;
   }
 
-  updateHiragana(id: string, data: any): Promise<void> {
-    return this.hiraganaRef.doc(id).update(data);
+  getAllKatakana(): AngularFirestoreCollection<Kana> {
+    return this.katakanaRef;
   }
 
-  deleteHiragana(id: string): Promise<void> {
-    return this.hiraganaRef.doc(id).delete();
+  getAllNouns(): AngularFirestoreCollection<Vocabulary> {
+    return this.nounRef
   }
 
-  getOneKana(): AngularFirestoreCollection<Kana> {
-    return this.singleKanaRef;
+  getAllVerbs(): AngularFirestoreCollection<Vocabulary> {
+    return this.verbRef
   }
 
-  getAllKanji(): AngularFirestoreCollection<Kanji>{
+  getAllIAdjectives(): AngularFirestoreCollection<Vocabulary> {
+    return this.iAdjectiveRef
+  }
+
+  getAllNaAdjectives(): AngularFirestoreCollection<Vocabulary> {
+    return this.naAdjectiveRef
+  }
+
+  getAllAdverbs(): AngularFirestoreCollection<Vocabulary> {
+    return this.adverbRef
+  }
+
+  getAllKanji(): AngularFirestoreCollection<Kanji> {
     return this.kanjiRef
+  }
+
+  getNounsByLevel(level: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.nounDbPath, ref => ref.where('level', '==', level))
+    return this.vocabularyByLevel
+  }
+
+  getVerbsByLevel(level: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.verbDbPath, ref => ref.where('level', '==', level))
+    return this.vocabularyByLevel
+  }
+
+  getIAdjectivesByLevel(level: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.iAdjectiveDbPath, ref => ref.where('level', '==', level))
+    return this.vocabularyByLevel
+  }
+
+  getNaAdjectivesByLevel(level: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.naAdjectiveDbPath, ref => ref.where('level', '==', level))
+    return this.vocabularyByLevel
+  }
+
+  getAdverbsByLevel(level: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.adverbDbPath, ref => ref.where('level', '==', level))
+    return this.vocabularyByLevel
   }
 
   // // Used to upload json assets to Firebase

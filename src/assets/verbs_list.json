@@ -1,6 +1,6 @@
 [
  {
-   "id": 1,
+   "uid": 1,
    "word": "言う",
    "kana": "いう",
    "romaji": "iu",
@@ -9,7 +9,7 @@
    "quizGroup": 1
  },
  {
-   "id": 2,
+   "uid": 2,
    "word": "聞く",
    "kana": "きく",
    "romaji": "kiku",
@@ -18,7 +18,7 @@
    "quizGroup": 1
  },
  {
-   "id": 3,
+   "uid": 3,
    "word": "話す",
    "kana": "はなす",
    "romaji": "hanasu",
@@ -27,7 +27,7 @@
    "quizGroup": 1
  },
  {
-   "id": 4,
+   "uid": 4,
    "word": "書く",
    "kana": "かく",
    "romaji": "kaku",
@@ -36,7 +36,7 @@
    "quizGroup": 1
  },
  {
-   "id": 5,
+   "uid": 5,
    "word": "読む",
    "kana": "よむ",
    "romaji": "yomu",
@@ -45,7 +45,7 @@
    "quizGroup": 1
  },
  {
-   "id": 6,
+   "uid": 6,
    "word": "呼ぶ",
    "kana": "よぶ",
    "romaji": "yobu",
@@ -54,7 +54,7 @@
    "quizGroup": 1
  },
  {
-   "id": 7,
+   "uid": 7,
    "word": "見る",
    "kana": "みる",
    "romaji": "miru",
@@ -63,7 +63,7 @@
    "quizGroup": 1
  },
  {
-   "id": 8,
+   "uid": 8,
    "word": "見せる",
    "kana": "みせる",
    "romaji": "miseru",
@@ -72,7 +72,7 @@
    "quizGroup": 1
  },
  {
-   "id": 9,
+   "uid": 9,
    "word": "食べる",
    "kana": "たべる",
    "romaji": "taberu",
@@ -81,7 +81,7 @@
    "quizGroup": 1
  },
  {
-   "id": 10,
+   "uid": 10,
    "word": "飲む",
    "kana": "のむ",
    "romaji": "nomu",
@@ -90,7 +90,7 @@
    "quizGroup": 1
  },
  {
-   "id": 11,
+   "uid": 11,
    "word": "行く",
    "kana": "いく",
    "romaji": "iku",
@@ -99,7 +99,7 @@
    "quizGroup": 1
  },
  {
-   "id": 12,
+   "uid": 12,
    "word": "来る",
    "kana": "くる",
    "romaji": "kuru",
@@ -108,7 +108,7 @@
    "quizGroup": 1
  },
  {
-   "id": 13,
+   "uid": 13,
    "word": "歩く",
    "kana": "あるく",
    "romaji": "aruku",
@@ -117,7 +117,7 @@
    "quizGroup": 1
  },
  {
-   "id": 14,
+   "uid": 14,
    "word": "走る",
    "kana": "はしる",
    "romaji": "hashiru",
@@ -126,7 +126,7 @@
    "quizGroup": 1
  },
  {
-   "id": 15,
+   "uid": 15,
    "word": "止まる",
    "kana": "とまる",
    "romaji": "tomaru",
@@ -135,7 +135,7 @@
    "quizGroup": 1
  },
  {
-   "id": 16,
+   "uid": 16,
    "word": "入る",
    "kana": "はいる",
    "romaji": "hairu",
@@ -144,7 +144,7 @@
    "quizGroup": 1
  },
  {
-   "id": 17,
+   "uid": 17,
    "word": "入れる",
    "kana": "いれる",
    "romaji": "ireru",
@@ -153,7 +153,7 @@
    "quizGroup": 1
  },
  {
-   "id": 18,
+   "uid": 18,
    "word": "出す",
    "kana": "だす",
    "romaji": "dasu",
@@ -162,7 +162,7 @@
    "quizGroup": 1
  },
  {
-   "id": 19,
+   "uid": 19,
    "word": "出る",
    "kana": "でる",
    "romaji": "deru",
@@ -171,7 +171,7 @@
    "quizGroup": 1
  },
  {
-   "id": 20,
+   "uid": 20,
    "word": "出かける",
    "kana": "でかける",
    "romaji": "dekakeru",
@@ -180,7 +180,7 @@
    "quizGroup": 1
  },
  {
-   "id": 21,
+   "uid": 21,
    "word": "帰る",
    "kana": "かえる",
    "romaji": "kaeru",
@@ -189,7 +189,7 @@
    "quizGroup": 1
  },
  {
-   "id": 22,
+   "uid": 22,
    "word": "会う",
    "kana": "あう",
    "romaji": "au",
@@ -198,7 +198,7 @@
    "quizGroup": 1
  },
  {
-   "id": 23,
+   "uid": 23,
    "word": "遊ぶ",
    "kana": "あそぶ",
    "romaji": "asobu",
@@ -207,7 +207,7 @@
    "quizGroup": 1
  },
  {
-   "id": 24,
+   "uid": 24,
    "word": "弾く",
    "kana": "ひく",
    "romaji": "hiku",
@@ -216,7 +216,7 @@
    "quizGroup": 1
  },
  {
-   "id": 25,
+   "uid": 25,
    "word": "歌う",
    "kana": "うたう",
    "romaji": "utau",
@@ -225,7 +225,7 @@
    "quizGroup": 1
  },
  {
-   "id": 26,
+   "uid": 26,
    "word": "泳ぐ",
    "kana": "およぐ",
    "romaji": "oyogu",
@@ -234,7 +234,7 @@
    "quizGroup": 1
  },
  {
-   "id": 27,
+   "uid": 27,
    "word": "働く",
    "kana": "はたらく",
    "romaji": "hataraku",
@@ -243,7 +243,7 @@
    "quizGroup": 1
  },
  {
-   "id": 28,
+   "uid": 28,
    "word": "休む",
    "kana": "やすむ",
    "romaji": "yasumu",
@@ -252,7 +252,7 @@
    "quizGroup": 1
  },
  {
-   "id": 29,
+   "uid": 29,
    "word": "仕事",
    "kana": "しごと",
    "romaji": "shigoto",
@@ -261,7 +261,7 @@
    "quizGroup": 1
  },
  {
-   "id": 30,
+   "uid": 30,
    "word": "上げる",
    "kana": "あげる",
    "romaji": "ageru",
@@ -270,7 +270,7 @@
    "quizGroup": 1
  },
  {
-   "id": 31,
+   "uid": 31,
    "word": "置く",
    "kana": "おく",
    "romaji": "oku",
@@ -279,7 +279,7 @@
    "quizGroup": 1
  },
  {
-   "id": 32,
+   "uid": 32,
    "word": "始まる",
    "kana": "はじまる",
    "romaji": "hajimaru",
@@ -288,7 +288,7 @@
    "quizGroup": 1
  },
  {
-   "id": 33,
+   "uid": 33,
    "word": "終る",
    "kana": "おわる",
    "romaji": "owaru",
@@ -297,7 +297,7 @@
    "quizGroup": 1
  },
  {
-   "id": 34,
+   "uid": 34,
    "word": "開ける",
    "kana": "あける",
    "romaji": "akeru",
@@ -306,7 +306,7 @@
    "quizGroup": 1
  },
  {
-   "id": 35,
+   "uid": 35,
    "word": "開く",
    "kana": "あく",
    "romaji": "aku",
@@ -315,7 +315,7 @@
    "quizGroup": 1
  },
  {
-   "id": 36,
+   "uid": 36,
    "word": "閉める",
    "kana": "しめる",
    "romaji": "shimeru",
@@ -324,7 +324,7 @@
    "quizGroup": 1
  },
  {
-   "id": 37,
+   "uid": 37,
    "word": "閉まる",
    "kana": "しまる",
    "romaji": "shimaru",
@@ -333,7 +333,7 @@
    "quizGroup": 1
  },
  {
-   "id": 38,
+   "uid": 38,
    "word": "締める",
    "kana": "しめる",
    "romaji": "shimeru",
@@ -342,7 +342,7 @@
    "quizGroup": 1
  },
  {
-   "id": 39,
+   "uid": 39,
    "word": "勉強",
    "kana": "べんきょう",
    "romaji": "benkyou",
@@ -351,7 +351,7 @@
    "quizGroup": 1
  },
  {
-   "id": 40,
+   "uid": 40,
    "word": "教える",
    "kana": "おしえる",
    "romaji": "oshieru",
@@ -360,7 +360,7 @@
    "quizGroup": 1
  },
  {
-   "id": 41,
+   "uid": 41,
    "word": "習う",
    "kana": "ならう",
    "romaji": "narau",
@@ -369,7 +369,7 @@
    "quizGroup": 1
  },
  {
-   "id": 42,
+   "uid": 42,
    "word": "授業",
    "kana": "じゅぎょう",
    "romaji": "jugyou",
@@ -378,7 +378,7 @@
    "quizGroup": 1
  },
  {
-   "id": 43,
+   "uid": 43,
    "word": "晴れる",
    "kana": "はれる",
    "romaji": "hareru",
@@ -387,7 +387,7 @@
    "quizGroup": 2
  },
  {
-   "id": 44,
+   "uid": 44,
    "word": "曇る",
    "kana": "くもる",
    "romaji": "kumoru",
@@ -396,7 +396,7 @@
    "quizGroup": 2
  },
  {
-   "id": 45,
+   "uid": 45,
    "word": "降る",
    "kana": "ふる",
    "romaji": "furu",
@@ -405,7 +405,7 @@
    "quizGroup": 2
  },
  {
-   "id": 46,
+   "uid": 46,
    "word": "吹く",
    "kana": "ふく",
    "romaji": "fuku",
@@ -414,7 +414,7 @@
    "quizGroup": 2
  },
  {
-   "id": 47,
+   "uid": 47,
    "word": "履く",
    "kana": "はく",
    "romaji": "haku",
@@ -423,7 +423,7 @@
    "quizGroup": 2
  },
  {
-   "id": 48,
+   "uid": 48,
    "word": "着る",
    "kana": "きる",
    "romaji": "kiru",
@@ -432,7 +432,7 @@
    "quizGroup": 2
  },
  {
-   "id": 49,
+   "uid": 49,
    "word": "切る",
    "kana": "きる",
    "romaji": "kiru",
@@ -441,7 +441,7 @@
    "quizGroup": 2
  },
  {
-   "id": 50,
+   "uid": 50,
    "word": "脱ぐ",
    "kana": "ぬぐ",
    "romaji": "nugu",
@@ -450,7 +450,7 @@
    "quizGroup": 2
  },
  {
-   "id": 51,
+   "uid": 51,
    "word": "浴びる",
    "kana": "あびる",
    "romaji": "abiru",
@@ -459,7 +459,7 @@
    "quizGroup": 2
  },
  {
-   "id": 52,
+   "uid": 52,
    "word": "洗う",
    "kana": "あらう",
    "romaji": "arau",
@@ -468,7 +468,7 @@
    "quizGroup": 2
  },
  {
-   "id": 53,
+   "uid": 53,
    "word": "磨く",
    "kana": "みがく",
    "romaji": "migaku",
@@ -477,7 +477,7 @@
    "quizGroup": 2
  },
  {
-   "id": 54,
+   "uid": 54,
    "word": "洗濯",
    "kana": "せんたく",
    "romaji": "sentaku",
@@ -486,7 +486,7 @@
    "quizGroup": 2
  },
  {
-   "id": 55,
+   "uid": 55,
    "word": "掃除",
    "kana": "そうじ",
    "romaji": "souji",
@@ -495,7 +495,7 @@
    "quizGroup": 2
  },
  {
-   "id": 56,
+   "uid": 56,
    "word": "並べる",
    "kana": "ならべる",
    "romaji": "naraberu",
@@ -504,7 +504,7 @@
    "quizGroup": 2
  },
  {
-   "id": 57,
+   "uid": 57,
    "word": "並ぶ",
    "kana": "ならぶ",
    "romaji": "narabu",
@@ -513,7 +513,7 @@
    "quizGroup": 2
  },
  {
-   "id": 58,
+   "uid": 58,
    "word": "寝る",
    "kana": "ねる",
    "romaji": "neru",
@@ -522,7 +522,7 @@
    "quizGroup": 2
  },
  {
-   "id": 59,
+   "uid": 59,
    "word": "起きる",
    "kana": "おきる",
    "romaji": "okiru",
@@ -531,7 +531,7 @@
    "quizGroup": 2
  },
  {
-   "id": 60,
+   "uid": 60,
    "word": "曲がる",
    "kana": "まがる",
    "romaji": "magaru",
@@ -540,7 +540,7 @@
    "quizGroup": 2
  },
  {
-   "id": 61,
+   "uid": 61,
    "word": "登る",
    "kana": "のぼる",
    "romaji": "noboru",
@@ -549,7 +549,7 @@
    "quizGroup": 2
  },
  {
-   "id": 62,
+   "uid": 62,
    "word": "渡る",
    "kana": "わたる",
    "romaji": "wataru",
@@ -558,7 +558,7 @@
    "quizGroup": 2
  },
  {
-   "id": 63,
+   "uid": 63,
    "word": "飛ぶ",
    "kana": "とぶ",
    "romaji": "tobu",
@@ -567,7 +567,7 @@
    "quizGroup": 2
  },
  {
-   "id": 64,
+   "uid": 64,
    "word": "立つ",
    "kana": "たつ",
    "romaji": "tatsu",
@@ -576,7 +576,7 @@
    "quizGroup": 2
  },
  {
-   "id": 65,
+   "uid": 65,
    "word": "座る",
    "kana": "すわる",
    "romaji": "suwaru",
@@ -585,7 +585,7 @@
    "quizGroup": 2
  },
  {
-   "id": 66,
+   "uid": 66,
    "word": "乗る",
    "kana": "のる",
    "romaji": "noru",
@@ -594,7 +594,7 @@
    "quizGroup": 2
  },
  {
-   "id": 67,
+   "uid": 67,
    "word": "降りる",
    "kana": "おりる",
    "romaji": "oriru",
@@ -603,7 +603,7 @@
    "quizGroup": 2
  },
  {
-   "id": 68,
+   "uid": 68,
    "word": "着く",
    "kana": "つく",
    "romaji": "tsuku",
@@ -612,7 +612,7 @@
    "quizGroup": 2
  },
  {
-   "id": 69,
+   "uid": 69,
    "word": "練習",
    "kana": "れんしゅう",
    "romaji": "renshuu",
@@ -621,7 +621,7 @@
    "quizGroup": 2
  },
  {
-   "id": 70,
+   "uid": 70,
    "word": "テスト",
    "kana": "",
    "romaji": "tesuto",
@@ -630,7 +630,7 @@
    "quizGroup": 2
  },
  {
-   "id": 71,
+   "uid": 71,
    "word": "旅行",
    "kana": "りょこう",
    "romaji": "ryokou",
@@ -639,7 +639,7 @@
    "quizGroup": 2
  },
  {
-   "id": 72,
+   "uid": 72,
    "word": "料理",
    "kana": "りょうり",
    "romaji": "ryouri",
@@ -648,7 +648,7 @@
    "quizGroup": 2
  },
  {
-   "id": 73,
+   "uid": 73,
    "word": "結婚",
    "kana": "けっこん",
    "romaji": "kekkon",
@@ -657,7 +657,7 @@
    "quizGroup": 2
  },
  {
-   "id": 74,
+   "uid": 74,
    "word": "コピー",
    "kana": "",
    "romaji": "kopii",
@@ -666,7 +666,7 @@
    "quizGroup": 2
  },
  {
-   "id": 75,
+   "uid": 75,
    "word": "散歩",
    "kana": "さんぽ",
    "romaji": "sanpo",
@@ -675,7 +675,7 @@
    "quizGroup": 2
  },
  {
-   "id": 76,
+   "uid": 76,
    "word": "質問",
    "kana": "しつもん",
    "romaji": "shitsumon",
@@ -684,7 +684,7 @@
    "quizGroup": 2
  },
  {
-   "id": 77,
+   "uid": 77,
    "word": "分かる",
    "kana": "わかる",
    "romaji": "wakaru",
@@ -693,7 +693,7 @@
    "quizGroup": 2
  },
  {
-   "id": 78,
+   "uid": 78,
    "word": "知る",
    "kana": "しる",
    "romaji": "shiru",
@@ -702,7 +702,7 @@
    "quizGroup": 2
  },
  {
-   "id": 79,
+   "uid": 79,
    "word": "覚える",
    "kana": "おぼえる",
    "romaji": "oboeru",
@@ -711,7 +711,7 @@
    "quizGroup": 2
  },
  {
-   "id": 80,
+   "uid": 80,
    "word": "忘れる",
    "kana": "わすれる",
    "romaji": "wasureru",
@@ -720,7 +720,7 @@
    "quizGroup": 2
  },
  {
-   "id": 81,
+   "uid": 81,
    "word": "違う",
    "kana": "ちがう",
    "romaji": "chigau",
@@ -729,7 +729,7 @@
    "quizGroup": 2
  },
  {
-   "id": 82,
+   "uid": 82,
    "word": "持つ",
    "kana": "もつ",
    "romaji": "motsu",
@@ -738,7 +738,7 @@
    "quizGroup": 3
  },
  {
-   "id": 83,
+   "uid": 83,
    "word": "貸す",
    "kana": "かす",
    "romaji": "kasu",
@@ -747,7 +747,7 @@
    "quizGroup": 3
  },
  {
-   "id": 84,
+   "uid": 84,
    "word": "借りる",
    "kana": "かりる",
    "romaji": "kariru",
@@ -756,7 +756,7 @@
    "quizGroup": 3
  },
  {
-   "id": 85,
+   "uid": 85,
    "word": "返す",
    "kana": "かえす",
    "romaji": "kaesu",
@@ -765,7 +765,7 @@
    "quizGroup": 3
  },
  {
-   "id": 86,
+   "uid": 86,
    "word": "買う",
    "kana": "かう",
    "romaji": "kau",
@@ -774,7 +774,7 @@
    "quizGroup": 3
  },
  {
-   "id": 87,
+   "uid": 87,
    "word": "売る",
    "kana": "うる",
    "romaji": "uru",
@@ -783,7 +783,7 @@
    "quizGroup": 3
  },
  {
-   "id": 88,
+   "uid": 88,
    "word": "点ける",
    "kana": "つける",
    "romaji": "tsukeru",
@@ -792,7 +792,7 @@
    "quizGroup": 3
  },
  {
-   "id": 89,
+   "uid": 89,
    "word": "消す",
    "kana": "けす",
    "romaji": "kesu",
@@ -801,7 +801,7 @@
    "quizGroup": 3
  },
  {
-   "id": 90,
+   "uid": 90,
    "word": "消える",
    "kana": "きえる",
    "romaji": "kieru",
@@ -810,7 +810,7 @@
    "quizGroup": 3
  },
  {
-   "id": 91,
+   "uid": 91,
    "word": "使う",
    "kana": "つかう",
    "romaji": "tsukau",
@@ -819,7 +819,7 @@
    "quizGroup": 3
  },
  {
-   "id": 92,
+   "uid": 92,
    "word": "作る",
    "kana": "つくる",
    "romaji": "tsukuru",
@@ -828,7 +828,7 @@
    "quizGroup": 3
  },
  {
-   "id": 93,
+   "uid": 93,
    "word": "渡す",
    "kana": "わたす",
    "romaji": "watasu",
@@ -837,7 +837,7 @@
    "quizGroup": 3
  },
  {
-   "id": 94,
+   "uid": 94,
    "word": "無くす",
    "kana": "なくす",
    "romaji": "nakusu",
@@ -846,7 +846,7 @@
    "quizGroup": 3
  },
  {
-   "id": 95,
+   "uid": 95,
    "word": "貼る",
    "kana": "はる",
    "romaji": "haru",
@@ -855,7 +855,7 @@
    "quizGroup": 3
  },
  {
-   "id": 96,
+   "uid": 96,
    "word": "押す",
    "kana": "おす",
    "romaji": "osu",
@@ -864,7 +864,7 @@
    "quizGroup": 3
  },
  {
-   "id": 97,
+   "uid": 97,
    "word": "引く",
    "kana": "ひく",
    "romaji": "hiku",
@@ -873,7 +873,7 @@
    "quizGroup": 3
  },
  {
-   "id": 98,
+   "uid": 98,
    "word": "取る",
    "kana": "とる",
    "romaji": "toru",
@@ -882,7 +882,7 @@
    "quizGroup": 3
  },
  {
-   "id": 99,
+   "uid": 99,
    "word": "ある",
    "kana": "",
    "romaji": "aru",
@@ -891,7 +891,7 @@
    "quizGroup": 3
  },
  {
-   "id": 100,
+   "uid": 100,
    "word": "居る",
    "kana": "いる",
    "romaji": "iru",
@@ -900,7 +900,7 @@
    "quizGroup": 3
  },
  {
-   "id": 101,
+   "uid": 101,
    "word": "要る",
    "kana": "いる",
    "romaji": "iru",
@@ -909,7 +909,7 @@
    "quizGroup": 3
  },
  {
-   "id": 102,
+   "uid": 102,
    "word": "やる",
    "kana": "",
    "romaji": "yaru",
@@ -918,7 +918,7 @@
    "quizGroup": 3
  },
  {
-   "id": 103,
+   "uid": 103,
    "word": "掛かる",
    "kana": "かかる",
    "romaji": "kakaru",
@@ -927,7 +927,7 @@
    "quizGroup": 3
  },
  {
-   "id": 104,
+   "uid": 104,
    "word": "掛ける",
    "kana": "かける",
    "romaji": "kakeru",
@@ -936,7 +936,7 @@
    "quizGroup": 3
  },
  {
-   "id": 105,
+   "uid": 105,
    "word": "生まれる",
    "kana": "うまれる",
    "romaji": "umareru",
@@ -945,7 +945,7 @@
    "quizGroup": 3
  },
  {
-   "id": 106,
+   "uid": 106,
    "word": "死ぬ",
    "kana": "しぬ",
    "romaji": "shinu",
@@ -954,7 +954,7 @@
    "quizGroup": 3
  },
  {
-   "id": 107,
+   "uid": 107,
    "word": "住む",
    "kana": "すむ",
    "romaji": "sumu",
@@ -963,7 +963,7 @@
    "quizGroup": 3
  },
  {
-   "id": 108,
+   "uid": 108,
    "word": "困る",
    "kana": "こまる",
    "romaji": "komaru",
@@ -972,7 +972,7 @@
    "quizGroup": 3
  },
  {
-   "id": 109,
+   "uid": 109,
    "word": "頼む",
    "kana": "たのむ",
    "romaji": "tanomu",
@@ -981,7 +981,7 @@
    "quizGroup": 3
  },
  {
-   "id": 110,
+   "uid": 110,
    "word": "答える",
    "kana": "こたえる",
    "romaji": "kotaeru",
@@ -990,7 +990,7 @@
    "quizGroup": 3
  },
  {
-   "id": 111,
+   "uid": 111,
    "word": "疲れる",
    "kana": "つかれる",
    "romaji": "tsukareru",
@@ -999,7 +999,7 @@
    "quizGroup": 3
  },
  {
-   "id": 112,
+   "uid": 112,
    "word": "勤める",
    "kana": "つとめる",
    "romaji": "tsutomeru",
@@ -1008,7 +1008,7 @@
    "quizGroup": 3
  },
  {
-   "id": 113,
+   "uid": 113,
    "word": "待つ",
    "kana": "まつ",
    "romaji": "matsu",
@@ -1017,7 +1017,7 @@
    "quizGroup": 3
  },
  {
-   "id": 114,
+   "uid": 114,
    "word": "撮る",
    "kana": "とる",
    "romaji": "toru",
@@ -1026,7 +1026,7 @@
    "quizGroup": 3
  },
  {
-   "id": 115,
+   "uid": 115,
    "word": "電話",
    "kana": "でんわ",
    "romaji": "denwa",
@@ -1035,7 +1035,7 @@
    "quizGroup": 3
  },
  {
-   "id": 116,
+   "uid": 116,
    "word": "鳴く",
    "kana": "なく",
    "romaji": "naku",
@@ -1044,7 +1044,7 @@
    "quizGroup": 3
  },
  {
-   "id": 117,
+   "uid": 117,
    "word": "咲く",
    "kana": "さく",
    "romaji": "saku",
@@ -1053,7 +1053,7 @@
    "quizGroup": 3
  },
  {
-   "id": 118,
+   "uid": 118,
    "word": "差す",
    "kana": "さす",
    "romaji": "sasu",
@@ -1062,7 +1062,7 @@
    "quizGroup": 3
  },
  {
-   "id": 119,
+   "uid": 119,
    "word": "吸う",
    "kana": "すう",
    "romaji": "suu",

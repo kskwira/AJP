@@ -1,0 +1,37 @@
+p.kanji-front {
+  font-size: 120px;
+}
+
+p.kanji-back-meaning {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p.kanji-back {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.check_circle {
+  color: forestgreen;
+}
+
+.answers-button {
+  display: inline-grid;
+  white-space: pre-wrap;
+  line-height: 1.25rem;
+  margin: 4px;
+  font-size: 14px;
+  width: 200px;
+  height: 105px;
+  background-color: #128bea;
+  color: #fff;
+}
+
+.progress-bar {
+  padding-top: 5px;
+  width: 50%;
+  align-content: center;
+  display: block;
+  padding-left: 25%;
+}

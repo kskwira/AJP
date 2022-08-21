@@ -1,6 +1,6 @@
 [
  {
-   "id": 1,
+   "uid": 1,
    "word": "元気",
    "kana": "げんき",
    "romaji": "genki",
@@ -9,7 +9,7 @@
    "quizGroup": 1
  },
  {
-   "id": 2,
+   "uid": 2,
    "word": "便利",
    "kana": "べんり",
    "romaji": "benri",
@@ -18,7 +18,7 @@
    "quizGroup": 1
  },
  {
-   "id": 3,
+   "uid": 3,
    "word": "丈夫",
    "kana": "じょうぶ",
    "romaji": "joubu",
@@ -27,7 +27,7 @@
    "quizGroup": 1
  },
  {
-   "id": 4,
+   "uid": 4,
    "word": "上手",
    "kana": "じょうず",
    "romaji": "jouzu",
@@ -36,7 +36,7 @@
    "quizGroup": 1
  },
  {
-   "id": 5,
+   "uid": 5,
    "word": "下手",
    "kana": "へた",
    "romaji": "heta",
@@ -45,7 +45,7 @@
    "quizGroup": 1
  },
  {
-   "id": 6,
+   "uid": 6,
    "word": "本当",
    "kana": "ほんとう",
    "romaji": "hontou",
@@ -54,7 +54,7 @@
    "quizGroup": 1
  },
  {
-   "id": 7,
+   "uid": 7,
    "word": "色々",
    "kana": "いろいろ",
    "romaji": "iroiro",
@@ -63,7 +63,7 @@
    "quizGroup": 1
  },
  {
-   "id": 8,
+   "uid": 8,
    "word": "真っ直ぐ",
    "kana": "まっすぐ",
    "romaji": "massugu",
@@ -72,7 +72,7 @@
    "quizGroup": 1
  },
  {
-   "id": 9,
+   "uid": 9,
    "word": "沢山",
    "kana": "たくさん",
    "romaji": "takusan",
@@ -81,7 +81,7 @@
    "quizGroup": 1
  },
  {
-   "id": 10,
+   "uid": 10,
    "word": "結構",
    "kana": "けっこう",
    "romaji": "kekkou",
@@ -90,7 +90,7 @@
    "quizGroup": 1
  },
  {
-   "id": 11,
+   "uid": 11,
    "word": "暇",
    "kana": "ひま",
    "romaji": "hima",
@@ -99,7 +99,7 @@
    "quizGroup": 1
  },
  {
-   "id": 12,
+   "uid": 12,
    "word": "多分",
    "kana": "たぶん",
    "romaji": "tabun",
@@ -108,7 +108,7 @@
    "quizGroup": 1
  },
  {
-   "id": 13,
+   "uid": 13,
    "word": "静か",
    "kana": "しずか",
    "romaji": "shizuka",
@@ -117,7 +117,7 @@
    "quizGroup": 1
  },
  {
-   "id": 14,
+   "uid": 14,
    "word": "賑やか",
    "kana": "にぎやか",
    "romaji": "nigiyaka",
@@ -126,7 +126,7 @@
    "quizGroup": 1
  },
  {
-   "id": 15,
+   "uid": 15,
    "word": "綺麗",
    "kana": "きれい",
    "romaji": "kirei",
@@ -135,7 +135,7 @@
    "quizGroup": 1
  },
  {
-   "id": 16,
+   "uid": 16,
    "word": "有名",
    "kana": "ゆうめい",
    "romaji": "yuumei",
@@ -144,7 +144,7 @@
    "quizGroup": 1
  },
  {
-   "id": 17,
+   "uid": 17,
    "word": "立派",
    "kana": "りっぱ",
    "romaji": "rippa",
@@ -153,7 +153,7 @@
    "quizGroup": 1
  },
  {
-   "id": 18,
+   "uid": 18,
    "word": "好き",
    "kana": "すき",
    "romaji": "suki",
@@ -162,7 +162,7 @@
    "quizGroup": 1
  },
  {
-   "id": 19,
+   "uid": 19,
    "word": "大好き",
    "kana": "だいすき",
    "romaji": "daisuki",
@@ -171,7 +171,7 @@
    "quizGroup": 1
  },
  {
-   "id": 20,
+   "uid": 20,
    "word": "大丈夫",
    "kana": "だいじょうぶ",
    "romaji": "daijoubu",
@@ -180,7 +180,7 @@
    "quizGroup": 1
  },
  {
-   "id": 21,
+   "uid": 21,
    "word": "大切",
    "kana": "たいせつ",
    "romaji": "taisetsu",
@@ -189,7 +189,7 @@
    "quizGroup": 1
  },
  {
-   "id": 22,
+   "uid": 22,
    "word": "大変",
    "kana": "たいへん",
    "romaji": "taihen",
@@ -198,7 +198,7 @@
    "quizGroup": 1
  },
  {
-   "id": 23,
+   "uid": 23,
    "word": "嫌い",
    "kana": "きらい",
    "romaji": "kirai",
@@ -207,7 +207,7 @@
    "quizGroup": 1
  },
  {
-   "id": 24,
+   "uid": 24,
    "word": "嫌",
    "kana": "いや",
    "romaji": "iya",
