@@ -19,6 +19,9 @@ export class AuthService {
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
   ) {
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+
+
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe(user => {
