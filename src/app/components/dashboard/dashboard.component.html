@@ -177,30 +177,37 @@
 
 </div>
 
-<!--&lt;!&ndash; Used to upload json assets to Firebase &ndash;&gt;-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadHiragana()">Załaduj Hiragana do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadKatakana()">Załaduj Katakana do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadNouns()">Załaduj Rzeczowniki do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadVerbs()">Załaduj Czasowniki do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadIAdjectives()">Załaduj Przymiotniki "-i" do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadNaAdjectives()">Załaduj Przymiotniki "-na" do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadAdverbs()">Załaduj Przysłówki do Firestore</button>-->
-<!--<br/>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadKanji()">Załaduj Kanji do Firestore</button>-->
-<!--<br/>-->
-<!--<button mat-stroked-button color="primary" (click)="uploadFunFact()">Załaduj ciekawostki do Firestore</button>-->
-<!--<br/>-->
+<!--Used to upload json assets to Firebase-->
+<div *ngIf="currentUser!.isAdmin">
+  <mat-card class="user-card">
+    <mat-card-title> <h2>Funkcjonalności Administratorskie </h2> </mat-card-title>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadHiragana()">Załaduj Hiragana do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadKatakana()">Załaduj Katakana do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadNouns()">Załaduj Rzeczowniki do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadVerbs()">Załaduj Czasowniki do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadIAdjectives()">Załaduj Przymiotniki "-i" do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadNaAdjectives()">Załaduj Przymiotniki "-na" do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadAdverbs()">Załaduj Przysłówki do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadKanji()">Załaduj Kanji do Firestore</button>
+<br/>
+<br/>
+<button mat-stroked-button color="primary" (click)="uploadFunFact()">Załaduj ciekawostki do Firestore</button>
+<br/>
+
+  </mat-card>
+</div>

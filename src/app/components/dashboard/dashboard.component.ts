@@ -8,19 +8,19 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 // // Used to upload json assets to Firebase
-// import {Kana} from "../../models/kana.model";
-// import {Vocabulary} from "../../models/vocabulary.model";
-// import {Kanji} from "../../models/kanji.model";
-// import hiragana from "../../../assets/hiragana_list.json";
-// import katakana from "../../../assets/katakana_list.json";
-// import nouns from "../../../assets/nouns_list.json";
-// import verbs from "../../../assets/verbs_list.json";
-// import iAdjectives from "../../../assets/i-adjectives_list.json";
-// import naAdjectives from "../../../assets/na-adjectives_list.json";
-// import adverbs from "../../../assets/adverbs_list.json";
-// import kanji from "../../../assets/kanji_list.json";
-// import funFacts from "../../../assets/funFacts.json";
-// import {FunFact} from "../../models/funFact.model";
+import {Kana} from "../../models/kana.model";
+import {Vocabulary} from "../../models/vocabulary.model";
+import {Kanji} from "../../models/kanji.model";
+import hiragana from "../../../assets/hiragana_list.json";
+import katakana from "../../../assets/katakana_list.json";
+import nouns from "../../../assets/nouns_list.json";
+import verbs from "../../../assets/verbs_list.json";
+import iAdjectives from "../../../assets/i-adjectives_list.json";
+import naAdjectives from "../../../assets/na-adjectives_list.json";
+import adverbs from "../../../assets/adverbs_list.json";
+import kanji from "../../../assets/kanji_list.json";
+import funFacts from "../../../assets/funFacts.json";
+import {FunFact} from "../../models/funFact.model";
 
 
 @Component({
@@ -31,15 +31,15 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "
 export class DashboardComponent implements OnInit {
 
   // // Used to upload json assets to Firebase
-  // hiraganaList: Kana[] = hiragana;
-  // katakanaList: Kana[] = katakana;
-  // nounList: Vocabulary[] = nouns;
-  // verbList: Vocabulary[] = verbs;
-  // iAdjectiveList: Vocabulary[] = iAdjectives;
-  // naAdjectiveList: Vocabulary[] = naAdjectives;
-  // adverbList: Vocabulary[] = adverbs;
-  // kanjiList: Kanji[] = kanji;
-  // funFactList: FunFact[] = funFacts;
+  hiraganaList: Kana[] = hiragana;
+  katakanaList: Kana[] = katakana;
+  nounList: Vocabulary[] = nouns;
+  verbList: Vocabulary[] = verbs;
+  iAdjectiveList: Vocabulary[] = iAdjectives;
+  naAdjectiveList: Vocabulary[] = naAdjectives;
+  adverbList: Vocabulary[] = adverbs;
+  kanjiList: Kanji[] = kanji;
+  funFactList: FunFact[] = funFacts;
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
@@ -179,40 +179,40 @@ export class DashboardComponent implements OnInit {
   }
 
   // // Used to upload json assets to Firebase
-  // uploadHiragana(): void {
-  //   this.hiraganaList.forEach((value) => this.kanaService.createHiragana(value))
-  // }
-  //
-  // uploadKatakana(): void {
-  //   this.katakanaList.forEach((value) => this.kanaService.createKatakana(value))
-  // }
-  //
-  // uploadNouns(): void {
-  //   this.nounList.forEach((value) => this.kanaService.createNoun(value))
-  // }
-  //
-  // uploadVerbs(): void {
-  //   this.verbList.forEach((value) => this.kanaService.createVerb(value))
-  // }
-  //
-  // uploadIAdjectives(): void {
-  //   this.iAdjectiveList.forEach((value) => this.kanaService.createIAdjective(value))
-  // }
-  //
-  // uploadNaAdjectives(): void {
-  //   this.naAdjectiveList.forEach((value) => this.kanaService.createNaAdjective(value))
-  // }
-  //
-  // uploadAdverbs(): void {
-  //   this.adverbList.forEach((value) => this.kanaService.createAdverb(value))
-  // }
-  //
-  // uploadKanji(): void {
-  //   this.kanjiList.forEach((value) => this.kanaService.createKanji(value))
-  // }
-  // uploadFunFact(): void {
-  //   this.funFactList.forEach((value) => this.kanaService.createFunFact(value))
-  // }
+  uploadHiragana(): void {
+    this.hiraganaList.forEach((value) => this.kanaService.createHiragana(value))
+  }
+
+  uploadKatakana(): void {
+    this.katakanaList.forEach((value) => this.kanaService.createKatakana(value))
+  }
+
+  uploadNouns(): void {
+    this.nounList.forEach((value) => this.kanaService.createNoun(value))
+  }
+
+  uploadVerbs(): void {
+    this.verbList.forEach((value) => this.kanaService.createVerb(value))
+  }
+
+  uploadIAdjectives(): void {
+    this.iAdjectiveList.forEach((value) => this.kanaService.createIAdjective(value))
+  }
+
+  uploadNaAdjectives(): void {
+    this.naAdjectiveList.forEach((value) => this.kanaService.createNaAdjective(value))
+  }
+
+  uploadAdverbs(): void {
+    this.adverbList.forEach((value) => this.kanaService.createAdverb(value))
+  }
+
+  uploadKanji(): void {
+    this.kanjiList.forEach((value) => this.kanaService.createKanji(value))
+  }
+  uploadFunFact(): void {
+    this.funFactList.forEach((value) => this.kanaService.createFunFact(value))
+  }
 
 }
 

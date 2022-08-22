@@ -183,39 +183,39 @@ export class KanaService {
   }
 
   // // Used to upload json assets to Firebase
-  // createHiragana(hiragana: Kana): any {
-  //   return this.hiraganaRef.add({ ...hiragana})
-  // }
-  //
-  // createKatakana(katakana: Kana): any {
-  //   return this.katakanaRef.add({ ...katakana})
-  // }
-  //
-  // createNoun(noun: Vocabulary): any {
-  //   return this.nounRef.add({ ...noun})
-  // }
-  //
-  // createVerb(verb: Vocabulary): any {
-  //   return this.verbRef.add({ ...verb})
-  // }
-  //
-  // createIAdjective(iAdjective: Vocabulary): any {
-  //   return this.iAdjectiveRef.add({ ...iAdjective})
-  // }
-  //
-  // createNaAdjective(naAdjective: Vocabulary): any {
-  //   return this.naAdjectiveRef.add({ ...naAdjective})
-  // }
-  //
-  // createAdverb(adverb: Vocabulary): any {
-  //   return this.adverbRef.add({ ...adverb})
-  // }
-  //
-  // createKanji(kanji: Kanji): any {
-  //   return this.kanjiRef.add({ ...kanji})
-  // }
-  // createFunFact(funFact: FunFact): any {
-  //   return this.funFactRef.add({...funFact})
-  // }
+  createHiragana(hiragana: Kana): any {
+    return this.hiraganaRef.add({ ...hiragana})
+  }
+
+  createKatakana(katakana: Kana): any {
+    return this.katakanaRef.add({ ...katakana})
+  }
+
+  createNoun(noun: Vocabulary): any {
+    return this.nounRef.add({ ...noun})
+  }
+
+  createVerb(verb: Vocabulary): any {
+    return this.verbRef.add({ ...verb})
+  }
+
+  createIAdjective(iAdjective: Vocabulary): any {
+    return this.iAdjectiveRef.add({ ...iAdjective})
+  }
+
+  createNaAdjective(naAdjective: Vocabulary): any {
+    return this.naAdjectiveRef.add({ ...naAdjective})
+  }
+
+  createAdverb(adverb: Vocabulary): any {
+    return this.adverbRef.add({ ...adverb})
+  }
+
+  createKanji(kanji: Kanji): any {
+    return this.kanjiRef.add({ ...kanji})
+  }
+  createFunFact(funFact: FunFact): any {
+    return this.funFactRef.add({...funFact})
+  }
 
 }
