@@ -3,3 +3,23 @@
   margin-left: 1.5%;
   margin-top: 1.5%;
 }
+img {
+  width: 6%;
+  padding-right: 1%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+img.mat-badge-disabled {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width: 6%;
+  padding-right: 1%;
+  filter: blur(8px);
+/*  filter: grayscale(100%);*/
+  opacity: 0.1;
+
+
+}
