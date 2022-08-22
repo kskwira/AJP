@@ -4,6 +4,7 @@ import { Kana } from "../models/kana.model";
 import {BehaviorSubject} from "rxjs";
 import {Kanji} from "../models/kanji.model";
 import {Vocabulary} from "../models/vocabulary.model";
+import {FunFact} from "../models/funFact.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class KanaService {
   private naAdjectiveDbPath = '/naAdjective';
   private adverbDbPath = '/adverb';
   private kanjiDbPath = '/kanji';
+  private funFactDbPath = '/fun-facts';
 
   idSetList = new Set<number>();
 
@@ -40,6 +42,7 @@ export class KanaService {
   singleKanji: AngularFirestoreCollection<Kanji> | undefined;
   singleVocabulary: AngularFirestoreCollection<Vocabulary> | undefined;
   vocabularyByLevel: AngularFirestoreCollection<Vocabulary> | undefined;
+  funFactRef: AngularFirestoreCollection<FunFact>;
 
   constructor(private db: AngularFirestore) {
     this.hiraganaRef = db.collection(this.hiraganaDbPath);
@@ -50,6 +53,7 @@ export class KanaService {
     this.naAdjectiveRef = db.collection(this.naAdjectiveDbPath);
     this.adverbRef = db.collection(this.adverbDbPath);
     this.kanjiRef = db.collection(this.kanjiDbPath);
+    this.funFactRef = db.collection(this.funFactDbPath);
   }
 
   setLearningId(id: Set<number>) {
@@ -185,5 +189,7 @@ export class KanaService {
   // createKanji(kanji: Kanji): any {
   //   return this.kanjiRef.add({ ...kanji})
   // }
-
+  // createFunFact(funFact: FunFact): any {
+  //   return this.funFactRef.add({...funFact})
+  // }
 }

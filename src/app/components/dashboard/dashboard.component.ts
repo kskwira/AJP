@@ -19,6 +19,8 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "
 // import naAdjectives from "../../../assets/na-adjectives_list.json";
 // import adverbs from "../../../assets/adverbs_list.json";
 // import kanji from "../../../assets/kanji_list.json";
+// import funFacts from "../../../assets/funFacts.json";
+// import {FunFact} from "../../models/funFact.model";
 
 
 @Component({
@@ -37,6 +39,7 @@ export class DashboardComponent implements OnInit {
   // naAdjectiveList: Vocabulary[] = naAdjectives;
   // adverbList: Vocabulary[] = adverbs;
   // kanjiList: Kanji[] = kanji;
+  // funFactList: FunFact[] = funFacts;
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
@@ -202,6 +205,9 @@ export class DashboardComponent implements OnInit {
   //
   // uploadKanji(): void {
   //   this.kanjiList.forEach((value) => this.kanaService.createKanji(value))
+  // }
+  // uploadFunFact(): void {
+  //   this.funFactList.forEach((value) => this.kanaService.createFunFact(value))
   // }
 
 }
