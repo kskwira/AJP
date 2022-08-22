@@ -1,5 +1,5 @@
 <div *ngIf="!quizStart">
-  <button mat-stroked-button color="primary" [disabled]="adverbsByLevelUidSet.size == 0" (click)="testSession(numberAnswered)">Rozpocznij quiz</button>
+  <button mat-stroked-button color="primary" [disabled]="naAdjectivesByLevelUidSet.size == 0" (click)="testSession(numberAnswered)">Rozpocznij quiz</button>
 </div>
 
 <div class="progress-bar" *ngIf="quizStart" >
@@ -9,7 +9,7 @@
 
 <mat-grid-list [cols]=checkNumberOfColumns() rowHeight="480px" gutterSize="4px">
 
-  <mat-grid-tile *ngFor="let word of adverbArray">
+  <mat-grid-tile *ngFor="let word of naAdjectiveArray">
     <mat-card>
       <mat-card-content>
         <flip-card [toggleProperty] = answered>
@@ -43,7 +43,7 @@
   </mat-grid-tile>
 
   <mat-grid-tile *ngIf="checkAnswerType('select')">
-    <div *ngFor="let word of adverbArray">
+    <div *ngFor="let word of naAdjectiveArray">
       <button mat-raised-button class="answers-button"
               *ngFor="let answer of nineAnswers"
               [disabled]="answered"

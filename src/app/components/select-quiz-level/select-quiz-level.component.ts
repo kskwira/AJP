@@ -35,11 +35,11 @@ export class SelectQuizLevelComponent implements OnInit {
   milestones = {
     hiragana: [11, 16, 28],
     katakana: [11, 16, 28],
-    noun: [],
-    verb: [],
-    iAdjective: [],
-    naAdjective: [],
-    adverb: [],
+    noun: [4, 7, 10, 14, 17, 20, 24, 28, 31, 34],
+    verb: [4, 7, 10],
+    iAdjective: [4, 7],
+    naAdjective: [3],
+    adverb: [4],
     kanji: [3, 5, 7, 9, 11, 13, 15, 17],
   }
 

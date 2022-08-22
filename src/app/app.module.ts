@@ -43,6 +43,10 @@ import { IAdjectiveLearningComponent } from './components/learning/i-adjective-l
 import { NaAdjectiveLearningComponent } from './components/learning/na-adjective-learning/na-adjective-learning.component';
 import { AdverbLearningComponent } from './components/learning/adverb-learning/adverb-learning.component';
 import { AdverbQuizComponent } from './components/quiz/adverb-quiz/adverb-quiz.component';
+import { NounQuizComponent } from './components/quiz/noun-quiz/noun-quiz.component';
+import { VerbQuizComponent } from './components/quiz/verb-quiz/verb-quiz.component';
+import { IAdjectiveQuizComponent } from './components/quiz/i-adjective-quiz/i-adjective-quiz.component';
+import { NaAdjectiveQuizComponent } from './components/quiz/na-adjective-quiz/na-adjective-quiz.component';
 
 
 @NgModule({
@@ -71,7 +75,11 @@ import { AdverbQuizComponent } from './components/quiz/adverb-quiz/adverb-quiz.c
     IAdjectiveLearningComponent,
     NaAdjectiveLearningComponent,
     AdverbLearningComponent,
-    AdverbQuizComponent
+    AdverbQuizComponent,
+    NounQuizComponent,
+    VerbQuizComponent,
+    IAdjectiveQuizComponent,
+    NaAdjectiveQuizComponent
   ],
   imports: [
     CommonModule,

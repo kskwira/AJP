@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {UserModel} from "../../../models/user.model";
+import {Vocabulary} from "../../../models/vocabulary.model";
 import {ActivatedRoute} from "@angular/router";
 import {KanaService} from "../../../services/kana.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {UserService} from "../../../services/user.service";
 import {MatDialog} from "@angular/material/dialog";
 import {map} from "rxjs/operators";
-import {Vocabulary} from "../../../models/vocabulary.model";
 
 @Component({
-  selector: 'app-adverb-quiz',
-  templateUrl: './adverb-quiz.component.html',
-  styleUrls: ['./adverb-quiz.component.css']
+  selector: 'app-noun-quiz',
+  templateUrl: './noun-quiz.component.html',
+  styleUrls: ['./noun-quiz.component.css']
 })
-export class AdverbQuizComponent implements OnInit {
+export class NounQuizComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
 
   nineAnswers: Vocabulary[] = [];
-  adverbArray: Vocabulary[] = [];
-  allAdverbList: Vocabulary[] = [];
-  adverbsByLevelUidSet: Set<number> = new Set<number>()
+  nounArray: Vocabulary[] = [];
+  allNounList: Vocabulary[] = [];
+  nounsByLevelUidSet: Set<number> = new Set<number>()
   result = '';
   icon = '';
   routeParam: number = 0;
@@ -52,25 +52,25 @@ export class AdverbQuizComponent implements OnInit {
     });
     this.kanaService.currentLevelUpValue.subscribe(value => this.doLevelUp = value);
     console.log("levelUp onInit: ", this.doLevelUp)
-    this.getAdverbsByQuizGroup(this.routeParam)
-    this.getAllAdverbs()
+    this.getNounsByQuizGroup(this.routeParam)
+    this.getAllNouns()
     this.progressBar = 0;
   }
 
-  getAllAdverbs(): void {
-    this.kanaService.getAllAdverbs().snapshotChanges().pipe(
+  getAllNouns(): void {
+    this.kanaService.getAllNouns().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data()})
         )
       )
     ).subscribe(data => {
-      this.allAdverbList = data;
+      this.allNounList = data;
     });
   }
 
-  getAdverbsByQuizGroup(level: number): void {
-    this.kanaService.getAdverbsByQuizGroup(level).snapshotChanges().pipe(
+  getNounsByQuizGroup(level: number): void {
+    this.kanaService.getNounsByQuizGroup(level).snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data()})
@@ -78,9 +78,9 @@ export class AdverbQuizComponent implements OnInit {
       )
     ).subscribe(data => {
       data.forEach(value => {
-        this.adverbsByLevelUidSet.add(value.uid!)
+        this.nounsByLevelUidSet.add(value.uid!)
       })
-      console.log("idSetByLevel:  ", this.adverbsByLevelUidSet)
+      console.log("idSetByLevel:  ", this.nounsByLevelUidSet)
     });
   }
 
@@ -104,21 +104,21 @@ export class AdverbQuizComponent implements OnInit {
 
   prepareAnswers(id: Vocabulary[]) {
     this.nineAnswers.splice(0);
-    const adverbIdSet = new Set<number>();
-    adverbIdSet.add(this.idArray[this.numberAnswered])
+    const nounIdSet = new Set<number>();
+    nounIdSet.add(this.idArray[this.numberAnswered])
 
-    const highestUid = Math.max(...this.adverbsByLevelUidSet)
+    const highestUid = Math.max(...this.nounsByLevelUidSet)
     console.log("highest ID: ", highestUid)
 
-    while (adverbIdSet.size < 9) {
-      adverbIdSet.add(Math.floor(Math.random() * highestUid) + 1)
+    while (nounIdSet.size < 9) {
+      nounIdSet.add(Math.floor(Math.random() * highestUid) + 1)
     }
 
-    console.log("idSet from prepareAnswers: ", adverbIdSet)
+    console.log("idSet from prepareAnswers: ", nounIdSet)
 
-    adverbIdSet.forEach( (value) => {
-      const firstSign = id.find((adverb) => {
-        return adverb.uid == value})
+    nounIdSet.forEach( (value) => {
+      const firstSign = id.find((noun) => {
+        return noun.uid == value})
       this.nineAnswers.push(firstSign!)
     })
 
@@ -144,15 +144,15 @@ export class AdverbQuizComponent implements OnInit {
 
   signProgressUp(): void {
     if ((this.score(this.numberAnsweredCorrect, this.numberAnswered) == 1) && this.doLevelUp) {
-      this.currentUser!.progressAdverb.quizLevel += 1;
+      this.currentUser!.progressNoun.quizLevel += 1;
     }
 
-    this.userService.updateUserProgressAdverb(this.currentUser!.uid, this.currentUser!.progressAdverb);
+    this.userService.updateUserProgressNoun(this.currentUser!.uid, this.currentUser!.progressNoun);
   }
 
   testSession(id: number): void {
     if (this.numberAnswered == 0) {
-      this.idArray = [...this.adverbsByLevelUidSet];
+      this.idArray = [...this.nounsByLevelUidSet];
       this.shuffleArray(this.idArray);
       console.log("idArray: ", this.idArray);
       id = this.idArray[0];
@@ -161,17 +161,17 @@ export class AdverbQuizComponent implements OnInit {
     this.answered = false;
     this.result = '';
     this.icon = '';
-    this.kanaService.getSingleAdverbById(id).snapshotChanges().pipe(
+    this.kanaService.getSingleNounById(id).snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({id: c.payload.doc.id, ...c.payload.doc.data()})
         )
       )
     ).subscribe(data => {
-      this.adverbArray = data;
+      this.nounArray = data;
     });
     console.log(this.numberAnswered);
-    this.prepareAnswers(this.allAdverbList)
+    this.prepareAnswers(this.allNounList)
     console.log("nineAnswers from testSession", this.nineAnswers)
   }
 
@@ -184,8 +184,8 @@ export class AdverbQuizComponent implements OnInit {
       this.numberAnswered = this.numberAnswered + 1;
       this.numberAnsweredCorrect = this.numberAnsweredCorrect + 1;
 
-      if (typeof this.currentUser!.progressAdverb[Number(uid)] === 'undefined') {
-        this.currentUser!.progressAdverb[Number(uid)] = {
+      if (typeof this.currentUser!.progressNoun[Number(uid)] === 'undefined') {
+        this.currentUser!.progressNoun[Number(uid)] = {
           meaning: meaning,
           sign: word,
           reading: kana,
@@ -194,13 +194,13 @@ export class AdverbQuizComponent implements OnInit {
         };
         console.log("new progress success")
       } else {
-        this.currentUser!.progressAdverb[Number(uid)].timesAnswered += 1;
+        this.currentUser!.progressNoun[Number(uid)].timesAnswered += 1;
 
-        if (this.currentUser!.progressAdverb[Number(uid)].timesCorrect.length >= 5) {
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.shift();
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.push(1);
+        if (this.currentUser!.progressNoun[Number(uid)].timesCorrect.length >= 5) {
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.shift();
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.push(1);
         } else {
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.push(1);
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.push(1);
         }
         console.log("old progress success")
       }
@@ -210,8 +210,8 @@ export class AdverbQuizComponent implements OnInit {
       this.icon = "cancel";
       this.numberAnswered = this.numberAnswered + 1;
 
-      if (typeof this.currentUser!.progressAdverb[Number(uid)] === 'undefined') {
-        this.currentUser!.progressAdverb[Number(uid)] = {
+      if (typeof this.currentUser!.progressNoun[Number(uid)] === 'undefined') {
+        this.currentUser!.progressNoun[Number(uid)] = {
           meaning: meaning,
           sign: word,
           reading: kana,
@@ -220,13 +220,13 @@ export class AdverbQuizComponent implements OnInit {
         };
         console.log("new progress fail")
       } else {
-        this.currentUser!.progressAdverb[Number(uid)].timesAnswered += 1;
+        this.currentUser!.progressNoun[Number(uid)].timesAnswered += 1;
 
-        if (this.currentUser!.progressAdverb[Number(uid)].timesCorrect.length >= 5) {
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.shift();
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.push(0);
+        if (this.currentUser!.progressNoun[Number(uid)].timesCorrect.length >= 5) {
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.shift();
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.push(0);
         } else {
-          this.currentUser!.progressAdverb[Number(uid)].timesCorrect.push(0);
+          this.currentUser!.progressNoun[Number(uid)].timesCorrect.push(0);
         }
         console.log("old progress fail")
       }
@@ -234,7 +234,7 @@ export class AdverbQuizComponent implements OnInit {
 
     if (this.numberAnswered >= this.idArray.length) {
       this.quizEnd = true;
-      console.log(this.currentUser!.progressAdverb);
+      console.log(this.currentUser!.progressNoun);
       this.signProgressUp();
     }
 

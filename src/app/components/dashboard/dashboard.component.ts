@@ -46,11 +46,11 @@ export class DashboardComponent implements OnInit {
 
   hiraganaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
   katakanaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
-  nounProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
-  verbProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
-  iAdjectiveProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
-  naAdjectiveProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
-  adverbProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
+  nounProgressArray: Array<[id: string, sign: string, reading: string, meaning: string, correctSum: number, answered: number]> = [];
+  verbProgressArray: Array<[id: string, sign: string, reading: string, meaning: string, correctSum: number, answered: number]> = [];
+  iAdjectiveProgressArray: Array<[id: string, sign: string, reading: string, meaning: string, correctSum: number, answered: number]> = [];
+  naAdjectiveProgressArray: Array<[id: string, sign: string, reading: string, meaning: string, correctSum: number, answered: number]> = [];
+  adverbProgressArray: Array<[id: string, sign: string, reading: string, meaning: string, correctSum: number, answered: number]> = [];
   kanjiProgressArray: Array<[id: string, sign: string, meaning: string, correctSum: number, answered: number]> = [];
 
 
@@ -122,8 +122,12 @@ export class DashboardComponent implements OnInit {
 
       if (type == "hiragana" || type == "katakana")
         reading = progress[pKey as unknown as number].reading!
-      else
+      else if (type == "kanji")
         meaning = progress[pKey as unknown as number].meaning![0]
+      else {
+        reading = progress[pKey as unknown as number].reading!
+        meaning = progress[pKey as unknown as number].meaning![0]
+      }
 
       timesCorrect.forEach((element: number) => {
         sum += element
@@ -139,23 +143,23 @@ export class DashboardComponent implements OnInit {
           break
         }
         case "noun": {
-          this.nounProgressArray.push([id, sign, meaning, sum, length])
+          this.nounProgressArray.push([id, sign, reading, meaning, sum, length])
           break
         }
         case "verb": {
-          this.verbProgressArray.push([id, sign, meaning, sum, length])
+          this.verbProgressArray.push([id, sign, reading, meaning, sum, length])
           break
         }
         case "iAdjective": {
-          this.iAdjectiveProgressArray.push([id, sign, meaning, sum, length])
+          this.iAdjectiveProgressArray.push([id, sign, reading, meaning, sum, length])
           break
         }
         case "naAdjective": {
-          this.naAdjectiveProgressArray.push([id, sign, meaning, sum, length])
+          this.naAdjectiveProgressArray.push([id, sign, reading, meaning, sum, length])
           break
         }
         case "adverb": {
-          this.adverbProgressArray.push([id, sign, meaning, sum, length])
+          this.adverbProgressArray.push([id, sign, reading, meaning, sum, length])
           break
         }
         case "kanji": {

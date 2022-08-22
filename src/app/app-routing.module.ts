@@ -20,10 +20,13 @@ import {MaterialsComponent} from "./components/materials/materials.component";
 import {NounLearningComponent} from "./components/learning/noun-learning/noun-learning.component";
 import {VerbLearningComponent} from "./components/learning/verb-learning/verb-learning.component";
 import {IAdjectiveLearningComponent} from "./components/learning/i-adjective-learning/i-adjective-learning.component";
-import {
-  NaAdjectiveLearningComponent
-} from "./components/learning/na-adjective-learning/na-adjective-learning.component";
+import {NaAdjectiveLearningComponent} from "./components/learning/na-adjective-learning/na-adjective-learning.component";
 import {AdverbLearningComponent} from "./components/learning/adverb-learning/adverb-learning.component";
+import {AdverbQuizComponent} from "./components/quiz/adverb-quiz/adverb-quiz.component";
+import {NounQuizComponent} from "./components/quiz/noun-quiz/noun-quiz.component";
+import {VerbQuizComponent} from "./components/quiz/verb-quiz/verb-quiz.component";
+import {IAdjectiveQuizComponent} from "./components/quiz/i-adjective-quiz/i-adjective-quiz.component";
+import {NaAdjectiveQuizComponent} from "./components/quiz/na-adjective-quiz/na-adjective-quiz.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -38,6 +41,11 @@ const routes: Routes = [
   { path: 'select-learning-level', component: SelectLearningLevelComponent, canActivate: [AuthGuard]},
   { path: 'quiz/hiragana/:level', component: HiraganaQuizComponent, canActivate: [AuthGuard] },
   { path: 'quiz/katakana/:level', component: KatakanaQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/noun/:level', component: NounQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/verb/:level', component: VerbQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/iAdjective/:level', component: IAdjectiveQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/naAdjective/:level', component: NaAdjectiveQuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/adverb/:level', component: AdverbQuizComponent, canActivate: [AuthGuard] },
   { path: 'quiz/kanji/:level', component: KanjiQuizComponent, canActivate: [AuthGuard] },
   { path: 'learning/hiragana', component: HiraganaLearningComponent, canActivate: [AuthGuard] },
   { path: 'learning/katakana', component: KatakanaLearningComponent, canActivate: [AuthGuard] },

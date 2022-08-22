@@ -157,6 +157,31 @@ export class KanaService {
     return this.vocabularyByLevel
   }
 
+  getNounsByQuizGroup(quizGroup: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.nounDbPath, ref => ref.where('quizGroup', '==', quizGroup))
+    return this.vocabularyByLevel
+  }
+
+  getVerbsByQuizGroup(quizGroup: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.verbDbPath, ref => ref.where('quizGroup', '==', quizGroup))
+    return this.vocabularyByLevel
+  }
+
+  getIAdjectivesByQuizGroup(quizGroup: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.iAdjectiveDbPath, ref => ref.where('quizGroup', '==', quizGroup))
+    return this.vocabularyByLevel
+  }
+
+  getNaAdjectivesByQuizGroup(quizGroup: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.naAdjectiveDbPath, ref => ref.where('quizGroup', '==', quizGroup))
+    return this.vocabularyByLevel
+  }
+
+  getAdverbsByQuizGroup(quizGroup: number): AngularFirestoreCollection<Vocabulary> {
+    this.vocabularyByLevel = this.db.collection(this.adverbDbPath, ref => ref.where('quizGroup', '==', quizGroup))
+    return this.vocabularyByLevel
+  }
+
   // // Used to upload json assets to Firebase
   // createHiragana(hiragana: Kana): any {
   //   return this.hiraganaRef.add({ ...hiragana})
@@ -192,4 +217,5 @@ export class KanaService {
   // createFunFact(funFact: FunFact): any {
   //   return this.funFactRef.add({...funFact})
   // }
+
 }
