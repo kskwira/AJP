@@ -43,6 +43,7 @@ export class DashboardComponent implements OnInit {
 
   userData: any; // Save logged in user data
   currentUser?: UserModel;
+  isAdmin = false;
 
   hiraganaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
   katakanaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
@@ -89,6 +90,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getSingleUserDocumentById(userId).ref.get()
       .then((result) => {
         this.currentUser = result.data()
+        this.isAdmin = this.currentUser!.isAdmin
         this.progressUpdate(this.currentUser!.progressHiragana, "hiragana");
         this.progressUpdate(this.currentUser!.progressKatakana, "katakana");
         this.progressUpdate(this.currentUser!.progressNoun, "noun");
