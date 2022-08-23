@@ -47,6 +47,7 @@ import { NounQuizComponent } from './components/quiz/noun-quiz/noun-quiz.compone
 import { VerbQuizComponent } from './components/quiz/verb-quiz/verb-quiz.component';
 import { IAdjectiveQuizComponent } from './components/quiz/i-adjective-quiz/i-adjective-quiz.component';
 import { NaAdjectiveQuizComponent } from './components/quiz/na-adjective-quiz/na-adjective-quiz.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { NaAdjectiveQuizComponent } from './components/quiz/na-adjective-quiz/na
     NounQuizComponent,
     VerbQuizComponent,
     IAdjectiveQuizComponent,
-    NaAdjectiveQuizComponent
+    NaAdjectiveQuizComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule,

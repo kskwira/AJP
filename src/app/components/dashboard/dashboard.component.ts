@@ -21,6 +21,7 @@ import adverbs from "../../../assets/adverbs_list.json";
 import kanji from "../../../assets/kanji_list.json";
 import funFacts from "../../../assets/funFacts.json";
 import {FunFact} from "../../models/funFact.model";
+import {AuthGuard} from "../../shared/guard/auth.guard";
 
 
 @Component({
@@ -56,7 +57,7 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService,
-              public dialog: MatDialog, private kanaService: KanaService) {
+              public dialog: MatDialog, private kanaService: KanaService, public authGuard: AuthGuard) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;

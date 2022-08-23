@@ -1,0 +1,20 @@
+mat-grid-list {
+  padding: 2%;
+  margin: 1%;
+
+}
+mat-grid-tile{
+  border-style: ridge;
+  border-radius: 25px;
+
+}
+.header{
+
+}
+.mat-grid-tile-content {
+  position: absolute;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+}

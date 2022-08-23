@@ -27,6 +27,7 @@ import {NounQuizComponent} from "./components/quiz/noun-quiz/noun-quiz.component
 import {VerbQuizComponent} from "./components/quiz/verb-quiz/verb-quiz.component";
 import {IAdjectiveQuizComponent} from "./components/quiz/i-adjective-quiz/i-adjective-quiz.component";
 import {NaAdjectiveQuizComponent} from "./components/quiz/na-adjective-quiz/na-adjective-quiz.component";
+import {HomePageComponent} from "./home-page/home-page.component";
 
 const routes: Routes = [
 /*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'help' , component: HelpComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent, canActivate: [AuthGuard] },
@@ -55,7 +56,8 @@ const routes: Routes = [
   { path: 'learning/naAdjective', component: NaAdjectiveLearningComponent, canActivate: [AuthGuard] },
   { path: 'learning/adverb', component: AdverbLearningComponent, canActivate: [AuthGuard] },
   { path: 'learning/kanji', component: KanjiLearningComponent, canActivate: [AuthGuard] },
-  { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuard] }
+  { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomePageComponent }
 ];
 
 @NgModule({

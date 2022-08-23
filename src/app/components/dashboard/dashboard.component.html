@@ -11,6 +11,14 @@
       <p>Nazwisko: <strong>{{user.lastName}}</strong></p>
       <p>Email: <strong>{{user.email}}</strong></p>
       <p>Numer telefonu: <strong>{{user.phoneNumber}}</strong></p>
+
+      <div *ngIf="!authGuard.isVerified">
+        <p> <strong>Twoje konto jest jeszcze niezweryfikowane</strong> </p>
+        <p> <strong>Masz ograniczony dostęp do aplikacji</strong> </p>
+        <p> <button mat-raised-button color="warn" (click)="authService.SendVerificationMail()">
+          Wyślij email verfikacyjny ponownie</button> </p>
+      </div>
+
     </mat-card-content>
     <mat-card-actions>
       <button mat-stroked-button color="warn" (click)="authService.SignOut()">Wyloguj</button>

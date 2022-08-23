@@ -1,0 +1,36 @@
+
+<mat-grid-list *ngIf="(afAuth.user | async)" cols="4" rowHeight="8%">
+  <mat-grid-tile colspan="4" rowspan="2" class="header">
+    <img src="assets/tanuki-icon.jpg" alt="tannuki_icon" width="140px">
+    <h1>Witaj na Tanuki</h1>
+    <img src="assets/tanuki-icon.jpg" alt="tannuki_icon" width="140px">
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" rowspan="7">
+    <h2>Co nowego: </h2><br>
+
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" rowspan="7">
+   <h2>Czy wiesz że? </h2> <br/>
+    <br>
+
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="2">
+  <h3>Polecamy:</h3>   <a href="https://www.facebook.com/JapanEmb.Poland">  <mat-icon>facebook</mat-icon> Ambasada Japonii w Polsce</a>
+      <a href="https://www.facebook.com/abroadinjapan"><mat-icon>facebook</mat-icon> Abroad in Japan [ENG]</a>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list *ngIf="!(afAuth.user | async)" cols="4" rowHeight="8%">
+  <mat-grid-tile colspan="4" rowspan="2">
+    <mat-card>Witaj na pierwszej darmowej, polskiej aplikacji do nauki języka japońskiego</mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" rowspan="7">
+    tekst2
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" rowspan="7">
+    tekst3
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="2">
+    tekst4
+  </mat-grid-tile>
+</mat-grid-list>
