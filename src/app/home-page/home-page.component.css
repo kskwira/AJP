@@ -5,16 +5,18 @@ mat-grid-list {
 }
 mat-grid-tile{
   border-style: ridge;
-  border-radius: 25px;
+  border-radius: 15px;
 
 }
-.header{
 
-}
-.mat-grid-tile-content {
+.mat-grid-tile-content.doYouKnow {
   position: absolute;
-  display: inline-flex;
+  display: block;
   align-items: flex-start;
   justify-content: flex-start;
   height: 100%;
+}
+
+img{
+  padding: 3%;
 }

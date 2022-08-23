@@ -6,13 +6,22 @@
     <img src="assets/tanuki-icon.jpg" alt="tannuki_icon" width="140px">
   </mat-grid-tile>
   <mat-grid-tile colspan="3" rowspan="7">
-    <h2>Co nowego: </h2><br>
+    <h2>Co nowego: </h2><br/>
+    23/08/2022 <br/>
+    Mamy stonę startową... Trochę dziwne ze czekaliśmy z tym na sam koniec ^^" <br/>
+
+    <br/>
+    21/08/2022 <br/>
+    ODZNAKI !!! - teraz aż 31 fajnych odznak do zdobycia za uzyskanie 100% w quiz'ach <br/>
+    Ukryliśmy je w Panelu użytkownika.
 
   </mat-grid-tile>
-  <mat-grid-tile colspan="1" rowspan="7">
-   <h2>Czy wiesz że? </h2> <br/>
-    <br>
+  <mat-grid-tile class="doYouKnow" colspan="1" rowspan="7">
 
+   <h2>Czy wiesz że? </h2> <br/>
+    <br/>
+    Możesz zmienić to jak udzielasz odpowiedzi w aplikacji?<br>
+    Udaj się do Panelu użytkownika i zmień tryb udzielania odpowiedzi na Twój preferowany.
   </mat-grid-tile>
   <mat-grid-tile colspan="4" rowspan="2">
   <h3>Polecamy:</h3>   <a href="https://www.facebook.com/JapanEmb.Poland">  <mat-icon>facebook</mat-icon> Ambasada Japonii w Polsce</a>
@@ -20,17 +29,19 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list *ngIf="!(afAuth.user | async)" cols="4" rowHeight="8%">
-  <mat-grid-tile colspan="4" rowspan="2">
-    <mat-card>Witaj na pierwszej darmowej, polskiej aplikacji do nauki języka japońskiego</mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="3" rowspan="7">
-    tekst2
+<mat-grid-list *ngIf="!(afAuth.user | async)" cols="1" rowHeight="8%">
+  <mat-grid-tile colspan="1" rowspan="2">
+    <img width="80px" src="assets/achievements_icons/japanese-flag-9023.svg">
+   <h1>Witaj na pierwszej darmowej, polskiej aplikacji do nauki języka japońskiego</h1> <img width="80px" src="assets/achievements_icons/japanese-flag-9023.svg">
   </mat-grid-tile>
   <mat-grid-tile colspan="1" rowspan="7">
-    tekst3
-  </mat-grid-tile>
-  <mat-grid-tile colspan="4" rowspan="2">
-    tekst4
+    <h3>
+    Aplikacja <strong>Tanuki</strong>  jest prostą aplikacją przeglądarkową, która może pomóc Ci w nauce jęyzka japońskiego. <br/>
+      <br/>
+    Jest w pełni darmowa aplikacja, stowrzoną przez 2 studentów informatyki - którzy może tak jak Ty - też obrali sobie za cel naukę tego języka. <br/>
+      <br/>
+    Załóż konto, spróbuj swoich sił. Materiał zawarty w tej aplikacji ułatwi Ci start od zera i wraz z postępami w nuace, obdlokuje nowe treści.
+    </h3>
+    <img src="assets/tanuki-icon.jpg" alt="tanunki icon">
   </mat-grid-tile>
 </mat-grid-list>
