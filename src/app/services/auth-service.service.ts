@@ -21,7 +21,6 @@ export class AuthService {
   ) {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
 
-
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe(user => {
@@ -39,7 +38,7 @@ export class AuthService {
   // Sign in with email/password
   SignIn(email: any, password: any  ) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
+      .then(() => {
         this.router.navigate(['dashboard']);
       }).catch((error) => {
         window.alert(error.message)
@@ -74,7 +73,7 @@ export class AuthService {
     return this.afAuth.currentUser.then((user) => {
       return user?.updateProfile({
         displayName: userData.firstName,
-        photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoMva5-CUwFU3POWm6uJbysmC86IdtGE4Gqg&usqp=CAU"});
+        photoURL: ''});
     })
   }
 
@@ -82,7 +81,7 @@ export class AuthService {
   ForgotPassword(passwordResetEmail: any) {
     return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
+        window.alert('Wiadomość e-mail z linkiem do zresetowania hasła została wysłana.');
       }).catch((error) => {
         window.alert(error)
       })
@@ -127,7 +126,7 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       photoURL: user.photoURL,
       phoneNumber: "",
       answerType: "select",
-      providerId: "",
+      providerId: "email",
       isAdmin: false,
       progressHiragana: { learningLevel: 1, quizLevel: 0 },
       progressKatakana: { learningLevel: 1, quizLevel: 0 },
@@ -148,13 +147,13 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
     const userData: UserModel = {
       uid: user.uid,
       email: user.email,
-      firstName: user.firstName='aaa',
-      lastName: user.lastName='bbb',
-      displayName: "aaa bbb",
+      firstName: '',
+      lastName: '',
+      displayName: '',
       photoURL: user.photoURL,
       phoneNumber: "",
       answerType: "select",
-      providerId: "",
+      providerId: "Google",
       isAdmin: false,
       progressHiragana: { learningLevel: 1, quizLevel: 0 },
       progressKatakana: { learningLevel: 1, quizLevel: 0 },
@@ -174,7 +173,7 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['']);
     })
   }
 }

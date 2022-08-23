@@ -17,8 +17,6 @@ export class SignUpComponent implements OnInit {
   });
   submitted = false;
 
-  // email = new FormControl('', [Validators.required, Validators.email])
-
   constructor(public authService: AuthService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -43,20 +41,11 @@ export class SignUpComponent implements OnInit {
     }
 
     this.authService.SignUp(this.form.value);
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
 
   onReset(): void {
     this.submitted = false;
     this.form.reset();
   }
-
-  // getErrorMessage() {
-  //   if (this.email.hasError('required')) {
-  //     return 'Prosze podać email';
-  //   }
-  //
-  //   return this.email.hasError('email') ? 'Niepoprawny email' : '';
-  // }
 
 }

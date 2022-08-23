@@ -29,7 +29,6 @@ import { HiraganaQuizComponent } from './components/quiz/hiragana-quiz/hiragana-
 import { SelectLearningLevelComponent } from './components/select-learning-level/select-learning-level.component';
 import { HiraganaLearningComponent } from './components/learning/hiragana-learning/hiragana-learning.component';
 import { KatakanaLearningComponent } from './components/learning/katakana-learning/katakana-learning.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HelpComponent } from './components/help/help.component';
 import { KanjiQuizComponent } from './components/quiz/kanji-quiz/kanji-quiz.component';
 import { KanjiLearningComponent } from './components/learning/kanji-learning/kanji-learning.component';
@@ -47,7 +46,7 @@ import { NounQuizComponent } from './components/quiz/noun-quiz/noun-quiz.compone
 import { VerbQuizComponent } from './components/quiz/verb-quiz/verb-quiz.component';
 import { IAdjectiveQuizComponent } from './components/quiz/i-adjective-quiz/i-adjective-quiz.component';
 import { NaAdjectiveQuizComponent } from './components/quiz/na-adjective-quiz/na-adjective-quiz.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 
 @NgModule({
@@ -65,7 +64,6 @@ import { HomePageComponent } from './home-page/home-page.component';
     SelectLearningLevelComponent,
     HiraganaLearningComponent,
     KatakanaLearningComponent,
-    AboutUsComponent,
     HelpComponent,
     KanjiQuizComponent,
     KanjiLearningComponent,

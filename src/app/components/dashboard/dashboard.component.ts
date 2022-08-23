@@ -6,6 +6,8 @@ import {UserService} from "../../services/user.service";
 import {KanaService} from "../../services/kana.service";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import funFacts from "../../../assets/funFacts.json";
+import {FunFact} from "../../models/funFact.model";
 
 // // Used to upload json assets to Firebase
 import {Kana} from "../../models/kana.model";
@@ -19,9 +21,6 @@ import iAdjectives from "../../../assets/i-adjectives_list.json";
 import naAdjectives from "../../../assets/na-adjectives_list.json";
 import adverbs from "../../../assets/adverbs_list.json";
 import kanji from "../../../assets/kanji_list.json";
-import funFacts from "../../../assets/funFacts.json";
-import {FunFact} from "../../models/funFact.model";
-import {AuthGuard} from "../../shared/guard/auth.guard";
 
 
 @Component({
@@ -45,6 +44,7 @@ export class DashboardComponent implements OnInit {
   userData: any; // Save logged in user data
   currentUser?: UserModel;
   isAdmin = false;
+  isVerified = false;
 
   hiraganaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
   katakanaProgressArray: Array<[id: string, sign: string, reading: string, correctSum: number, answered: number]> = [];
@@ -57,10 +57,11 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(public authService: AuthService, public afAuth: AngularFireAuth, private userService: UserService,
-              public dialog: MatDialog, private kanaService: KanaService, public authGuard: AuthGuard) {
+              public dialog: MatDialog, private kanaService: KanaService) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.userData = user;
+        this.isVerified = user.emailVerified;
         this.retrieveUserDocumentById(user.uid);
       }
       else {

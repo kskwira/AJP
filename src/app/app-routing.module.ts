@@ -5,7 +5,6 @@ import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './login/verify-email/verify-email.component';
-import { AboutUsComponent } from "./components/about-us/about-us.component";
 import { HelpComponent } from "./components/help/help.component";
 import { AuthGuard } from "./shared/guard/auth.guard";
 import { SelectQuizLevelComponent } from "./components/select-quiz-level/select-quiz-level.component";
@@ -27,16 +26,15 @@ import {NounQuizComponent} from "./components/quiz/noun-quiz/noun-quiz.component
 import {VerbQuizComponent} from "./components/quiz/verb-quiz/verb-quiz.component";
 import {IAdjectiveQuizComponent} from "./components/quiz/i-adjective-quiz/i-adjective-quiz.component";
 import {NaAdjectiveQuizComponent} from "./components/quiz/na-adjective-quiz/na-adjective-quiz.component";
-import {HomePageComponent} from "./home-page/home-page.component";
+import {HomePageComponent} from "./components/home-page/home-page.component";
 
 const routes: Routes = [
-/*  { path: '', redirectTo: '/sign-in', pathMatch: 'full'},*/
+  { path: '', component: HomePageComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'about-us', component: AboutUsComponent },
   { path: 'help' , component: HelpComponent },
   { path: 'select-quiz-level', component: SelectQuizLevelComponent, canActivate: [AuthGuard] },
   { path: 'select-learning-level', component: SelectLearningLevelComponent, canActivate: [AuthGuard]},
@@ -57,7 +55,6 @@ const routes: Routes = [
   { path: 'learning/adverb', component: AdverbLearningComponent, canActivate: [AuthGuard] },
   { path: 'learning/kanji', component: KanjiLearningComponent, canActivate: [AuthGuard] },
   { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuard] },
-  { path: '', component: HomePageComponent }
 ];
 
 @NgModule({

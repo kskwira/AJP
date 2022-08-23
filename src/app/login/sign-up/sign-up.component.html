@@ -1,69 +1,3 @@
-<!--<mat-tab-group mat-align-tabs="center">-->
-<!--  <mat-tab label="Rejestracja">-->
-<!--    <mat-grid-list cols="3" rowHeight="3:3">-->
-<!--      <mat-grid-tile >-->
-<!--        <mat-card class="user-card">-->
-<!--          <mat-card-header>-->
-<!--            <h2> Poznajmy się :) </h2>-->
-<!--          </mat-card-header>-->
-<!--          <mat-card-content>-->
-<!--            <ng-form [formGroup]="form" (ngSubmit)="onSubmit()">-->
-<!--              <mat-form-field class="formGroup" appearance="fill">-->
-<!--                <mat-label>Podaj swoje imię</mat-label>-->
-<!--                <input matInput type="text" class="formControl" placeholder="Imię"  #userFirstName required>-->
-<!--              </mat-form-field>-->
-<!--              <br/>-->
-<!--              <mat-form-field class="formGroup" appearance="fill">-->
-<!--                <mat-label>Podaj swoje nazwisko</mat-label>-->
-<!--                <input matInput type="text" class="formControl" placeholder="Nazwisko"  #userLastName required>-->
-<!--              </mat-form-field>-->
-<!--              <br/>-->
-<!--              <mat-form-field class="formGroup" appearance="fill">-->
-<!--                <mat-label>Podaj swój adres email</mat-label>-->
-<!--                <input matInput type="email" class="formControl" placeholder="pat@example.com" [formControl]="email" #userEmail required>-->
-<!--                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
-<!--              </mat-form-field>-->
-<!--              <br/>-->
-<!--              <mat-form-field class="formGroup" appearance="fill">-->
-<!--                <mat-label>Podaj swoje hasło</mat-label>-->
-<!--                <input matInput type="password" class="formControl" placeholder="Hasło"  #userPassword required>-->
-<!--              </mat-form-field>-->
-<!--            </ng-form>-->
-<!--          </mat-card-content>-->
-<!--          <mat-card-actions>-->
-<!--            <button mat-raised-button color="primary" (click)="authService.SignUp(userEmail.value, userPassword.value)">Zarejestruj</button>-->
-<!--          </mat-card-actions>-->
-<!--        </mat-card>-->
-<!--      </mat-grid-tile>-->
-<!--      <mat-grid-tile>-->
-<!--        <mat-card class="user-card">-->
-<!--          <div class="redirectToLogin">-->
-<!--        <span>-->
-<!--          <h2>Masz już konto?</h2>-->
-<!--            <h2>Zaloguj się tutaj</h2></span>-->
-<!--            <br/>-->
-<!--            <button mat-raised-button color="accent" routerLink="/sign-in"> Logowanie </button>-->
-<!--          </div>-->
-<!--        </mat-card>-->
-<!--      </mat-grid-tile>-->
-<!--      <mat-grid-tile>-->
-<!--        <mat-card class="user-card">-->
-<!--          <mat-card-header>-->
-<!--            <h2> Zaloguj się z Google </h2>-->
-<!--          </mat-card-header>-->
-<!--          <mat-card-content>-->
-<!--            <mat-card-actions>-->
-<!--              <button mat-raised-button (click)="authService.GoogleAuth()">-->
-<!--                <mat-icon>mail</mat-icon>  Google-->
-<!--              </button>-->
-<!--            </mat-card-actions>-->
-<!--          </mat-card-content>-->
-<!--        </mat-card>-->
-<!--      </mat-grid-tile>-->
-<!--    </mat-grid-list>-->
-<!--  </mat-tab>-->
-<!--</mat-tab-group>-->
-
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="Rejestracja">
     <mat-grid-list cols="3" rowHeight="3:3">
@@ -96,7 +30,7 @@
               <br/>
               <mat-form-field class="formGroup" appearance="fill">
                 <mat-label>Podaj swój adres email</mat-label>
-                <input matInput type="email" class="formControl" placeholder="pat@example.com" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                <input matInput type="email" class="formControl" placeholder="pat@google.com" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
                 <mat-error *ngIf="submitted && f['email'].errors" class="invalid-feedback">
                   <mat-error *ngIf="f['email'].errors['required']">Email jest wymagany</mat-error>
                   <mat-error *ngIf="f['email'].errors['email']">Nieprawidłowy email</mat-error>
@@ -114,7 +48,7 @@
               </mat-form-field>
               <mat-card-actions class="formGroup">
                 <button mat-raised-button type="submit" color="primary">Zarejestruj</button>
-                <button mat-raised-button type="button" color="warn" (click)="onReset()">Reset</button>
+                <button mat-raised-button type="button" color="warn" (click)="onReset()">Wyczyść formularz</button>
               </mat-card-actions>
             </form>
           </mat-card-content>
@@ -138,8 +72,8 @@
           </mat-card-header>
           <mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button (click)="authService.GoogleAuth()">
-                <mat-icon>mail</mat-icon>  Google
+              <button disabled="true" mat-raised-button (click)="authService.GoogleAuth()">
+                <mat-icon>mail</mat-icon> Zaloguj z Google
               </button>
             </mat-card-actions>
           </mat-card-content>

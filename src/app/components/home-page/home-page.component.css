@@ -1,0 +1,22 @@
+mat-grid-list {
+  padding: 2%;
+  margin: 1%;
+}
+
+mat-grid-tile {
+  border-style: ridge;
+  border-radius: 15px;
+}
+
+.container {
+  position: absolute;
+  left: 1%;
+}
+
+.footer {
+  text-align: center;
+}
+
+img {
+  padding: 3%;
+}

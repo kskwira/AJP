@@ -1,0 +1,62 @@
+
+<mat-grid-list *ngIf="(afAuth.user | async); else notLoggedIn" cols="5" rowHeight="8%">
+
+  <mat-grid-tile colspan="5" rowspan="2" class="header">
+    <img src="../../../assets/tanuki-icon.jpg" alt="tannuki_icon" width="140px">
+    <h1>Witaj na Tanuki</h1>
+    <img src="../../../assets/tanuki-icon.jpg" alt="tannuki_icon" width="140px">
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="3" rowspan="7">
+    <div class="container">
+      <h1> Co nowego: </h1>
+      <h3> 23/08/2022 </h3>
+      <span> Mamy stonę startową... Trochę dziwne, że czekaliśmy z tym na sam koniec... ^^" </span> <br/> <br/>
+      <h3> 21/08/2022 </h3>
+      <span>ODZNAKI !!!</span> <br/>
+      <span>Teraz aż 31 fajnych odznak do zdobycia za uzyskanie 100% w quiz'ach.</span> <br/>
+      <span>Ukryliśmy je w Panelu Użytkownika.</span>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2" rowspan="7">
+    <div class="container">
+      <h1>Czy wiesz że?</h1>
+      <span>Możesz zmienić to jak udzielasz odpowiedzi w aplikacji?</span> <br/>
+      <span>Udaj się do Panelu Użytkownika i zmień tryb udzielania odpowiedzi na Twój preferowany.</span>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="5" rowspan="2">
+    <div class="container-footer">
+    <h3>Polecamy:</h3>
+    <a href="https://www.facebook.com/JapanEmb.Poland"><mat-icon>facebook</mat-icon> Ambasada Japonii w Polsce</a>
+    <a href="https://www.facebook.com/abroadinjapan"><mat-icon>facebook</mat-icon> Abroad in Japan [ENG]</a>
+    </div>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #notLoggedIn>
+  <mat-grid-list cols="1" rowHeight="8%">
+
+    <mat-grid-tile colspan="1" rowspan="2">
+      <img width="80px" src="../../../assets/achievements_icons/japanese-flag-9023.svg" alt="japanese-flag">
+      <h1>Witaj na pierwszej darmowej, polskiej aplikacji do nauki języka japońskiego</h1>
+      <img width="80px" src="../../../assets/achievements_icons/japanese-flag-9023.svg" alt="japanese-flag">
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="7">
+      <h3>
+        Aplikacja <strong>Tanuki</strong>
+        jest prostą aplikacją przeglądarkową, która może pomóc Ci w nauce języka japońskiego. <br/> <br/>
+        Jest w pełni darmową aplikacją, stowrzoną przez 2 studentów informatyki którzy, może tak jak Ty,
+        obrali sobie za cel naukę tego języka. <br/> <br/>
+        Załóż konto i spróbuj swoich sił. Materiał zawarty w tej aplikacji ułatwi Ci start od zera
+        a Twoje postępy w nauce odblokują nowy materiał.
+      </h3>
+      <img src="../../../assets/tanuki-icon.jpg" alt="tanunki icon">
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</ng-template>

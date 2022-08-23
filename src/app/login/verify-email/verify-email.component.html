@@ -1,28 +1,30 @@
-<div class="displayTable">
-  <div class="displayTableCell">
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Weryfikacja e-mail">
+    <div class="displayTable">
+      <div class="displayTableCell">
 
-    <div class="authBlock">
-      <h3>Dziekujemy za rejetrację nowego konta</h3>
+        <div class="authBlock">
+          <h3>Dziekujemy za rejetrację nowego konta</h3>
 
-      <div class="formGroup" *ngIf="authService.userData as user">
-        <p class="text-center">Wysłaliśmy na adres  <strong>{{user.email}} </strong> email'a werfikikacyjnego.</p>
-        <p class="text-center">Sprawdź swoją pocztę i kliknij na link potwierdzający utowrzenie konta.</p>
-      </div>
+          <div class="formGroup" *ngIf="authService.userData as user">
+            <p class="text-center">Wysłaliśmy na adres  <strong>{{user.email}} </strong> email'a werfikikacyjnego.</p>
+            <p class="text-center">Sprawdź swoją pocztę i kliknij na link potwierdzający utowrzenie konta.</p>
+          </div>
 
-      <!-- Calling SendVerificationMail() method using authService Api -->
-      <div class="formGroup">
-        <button mat-raised-button color="accent" type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
-          <i class="fas fa-redo-alt"></i>
-          Prześlij email werfikacyjny ponownie
-        </button>
+          <!-- Calling SendVerificationMail() method using authService Api -->
+          <div class="formGroup">
+            <button mat-raised-button color="accent" type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+              <i class="fas fa-redo-alt"></i>
+              Prześlij email werfikacyjny ponownie
+            </button>
+          </div>
+        </div>
+    <br>
+        <div class="redirectToLogin">
+          <span>Wróć do strony logowania: <span class="redirect" routerLink="/sign-in">Zaloguj</span></span>
+        </div>
+
       </div>
     </div>
-<br>
-    <div class="redirectToLogin">
-      <span>Powrót?
-        <a class="redirect" routerLink="/sign-in">Zaloguj</a>
-      </span>
-    </div>
-
-  </div>
-</div>
+  </mat-tab>
+</mat-tab-group>

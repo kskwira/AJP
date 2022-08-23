@@ -1,4 +1,5 @@
-.displayTableCell{
-  padding-top: 2%;
-  padding-left: 2%;
+.redirect {
+  text-decoration: underline;
+  color: deepskyblue;
+  cursor: pointer;
 }

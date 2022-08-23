@@ -12,11 +12,11 @@
       <p>Email: <strong>{{user.email}}</strong></p>
       <p>Numer telefonu: <strong>{{user.phoneNumber}}</strong></p>
 
-      <div *ngIf="!authGuard.isVerified">
-        <p> <strong>Twoje konto jest jeszcze niezweryfikowane</strong> </p>
+      <div *ngIf="!isVerified">
+        <p> <strong>Twoje konto nie zostało zweryfikowane</strong> </p>
         <p> <strong>Masz ograniczony dostęp do aplikacji</strong> </p>
         <p> <button mat-raised-button color="warn" (click)="authService.SendVerificationMail()">
-          Wyślij email verfikacyjny ponownie</button> </p>
+          Wyślij email weryfikacyjny ponownie</button> </p>
       </div>
 
     </mat-card-content>

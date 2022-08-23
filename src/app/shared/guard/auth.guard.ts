@@ -14,44 +14,24 @@ export class AuthGuard implements CanActivate {
     public router: Router
   ){ }
 
-  isVerified(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return new Promise((resolve, reject) => {
-      this.angularfireAuthentication.authState.subscribe(user => {
-        if (user) {
-          if (user.emailVerified) {
-            resolve(true);
-          } else {
-            resolve(false);
-          }
-        } else {
-          resolve(false);
-        }
-      })
-    })
-  }
-
-
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.angularfireAuthentication.authState.subscribe(user => {
         if (user) {
           if (user.emailVerified) {
             resolve(true);
           } else {
             resolve(false);
-            this.router.navigate(['sign-in']);
+            this.router.navigate(['dashboard']);
           }
         } else {
           resolve(false);
-          this.router.navigate(['sign-in']);
+          this.router.navigate(['']);
         }
       })
     })
   }
-
-
-
 
 }

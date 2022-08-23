@@ -1,27 +1,25 @@
 <mat-toolbar color="primary">
   <mat-icon>pets</mat-icon>
-  <span routerLink="/">Tanuki</span>
-  <button *ngIf="(afAuth.user | async)" mat-button [matMenuTriggerFor]="belowMenu">Użytkownik</button>
+  <span style="cursor: pointer" routerLink="/">Tanuki</span>
 
-  <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
-    <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="sign-in">Logowanie</button>
-    <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="register-user">Rejestracja</button>
-    <button *ngIf="(afAuth.user | async)" mat-menu-item routerLink="dashboard">Panel użytkownika</button>
-    <button *ngIf="(afAuth.user | async)" (click)="authService.SignOut()" mat-menu-item routerLink="sign-in">Wyloguj</button>
-  </mat-menu>
+  <div *ngIf="(afAuth.user | async); else notLoggedIn">
+    <button mat-button [matMenuTriggerFor]="belowMenu">Użytkownik</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
+    <button mat-menu-item routerLink="dashboard">Panel użytkownika</button>
+    <button (click)="authService.SignOut()" mat-menu-item routerLink="sign-in">Wyloguj</button>
+    </mat-menu>
+    <button *ngIf="isVerified" mat-button routerLink="select-learning-level">Nauka</button>
+    <button *ngIf="isVerified" mat-button routerLink="select-quiz-level">Quiz</button>
+    <button *ngIf="isVerified" mat-button routerLink="materials">Materiały</button>
+  </div>
 
-  <button *ngIf="!(afAuth.user | async)" mat-button [matMenuTriggerFor]="belowMenu">Logowanie</button>
+  <ng-template #notLoggedIn>
+    <button mat-button [matMenuTriggerFor]="belowMenu">Logowanie</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
+      <button mat-menu-item routerLink="sign-in">Logowanie</button>
+      <button mat-menu-item routerLink="register-user">Rejestracja</button>
+    </mat-menu>
+  </ng-template>
 
-  <mat-menu #belowMenu="matMenu" yPosition="below" xPosition="after">
-    <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="sign-in">Logowanie</button>
-    <button *ngIf="!(afAuth.user | async)" mat-menu-item routerLink="register-user">Rejestracja</button>
-    <button *ngIf="(afAuth.user | async)" mat-menu-item routerLink="dashboard">Panel użytkownika</button>
-    <button *ngIf="(afAuth.user | async)" (click)="authService.SignOut()" mat-menu-item routerLink="sign-in">Wyloguj</button>
-  </mat-menu>
-
-  <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-learning-level">Nauka</button>
-  <button *ngIf="(afAuth.user | async)" mat-button routerLink="select-quiz-level">Quiz</button>
-  <button *ngIf="(afAuth.user | async)" mat-button routerLink="materials">Materiały</button>
-  <button mat-button routerLink="about-us">O nas</button>
   <button mat-button routerLink="help">Pomoc</button>
 </mat-toolbar>
