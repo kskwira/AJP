@@ -1,7 +1,11 @@
 {
   "hosting": {
-    "target":"AJP",
     "public": "dist/AJP",
+    "target": "AJP",
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
     "ignore": [
       "firebase.json",
       "**/.*",
