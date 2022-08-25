@@ -1,3 +1,9 @@
+.container-align-center {
+  display: grid;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 p.kanji-front {
   font-size: 120px;
 }
@@ -34,4 +40,13 @@ p.kanji-back {
   align-content: center;
   display: block;
   padding-left: 25%;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  color: #ff4081;
 }

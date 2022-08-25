@@ -55,6 +55,7 @@ const routes: Routes = [
   { path: 'learning/adverb', component: AdverbLearningComponent, canActivate: [AuthGuard] },
   { path: 'learning/kanji', component: KanjiLearningComponent, canActivate: [AuthGuard] },
   { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
-<div *ngIf="!quizStart">
-  <button mat-stroked-button color="primary" [disabled]="naAdjectivesByLevelUidSet.size == 0" (click)="testSession(numberAnswered)">Rozpocznij quiz</button>
+<div class="container-align-center" *ngIf="!quizStart">
+  <button mat-raised-button color="accent" [disabled]="naAdjectivesByLevelUidSet.size == 0" (click)="testSession(numberAnswered)">Rozpocznij quiz</button>
 </div>
 
 <div class="progress-bar" *ngIf="quizStart" >
@@ -55,11 +55,18 @@
 
 </mat-grid-list>
 
-<div *ngIf="quizEnd">
-  <mat-card>
-    <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
-    <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
-    <p>Twój wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
-    <p>Wynik oczekiwany do zaliczenia: 100.00%</p>
-  </mat-card>
-</div>
+<mat-card *ngIf="quizEnd">
+  <mat-card-header>
+    <div mat-card-avatar class="material-icons">emoji_events</div>
+    <mat-card-title><h1><strong>Wynik Quizu</strong></h1></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="container-align-center">
+      <p>Ilość udzielonych odpowiedzi: {{numberAnswered}} </p>
+      <p>Ilość poprawnych odpowiedzi: {{numberAnsweredCorrect}}</p>
+      <p>Twój wynik wynosi: {{score(numberAnsweredCorrect, numberAnswered) | percent:'1.2-2'}}</p>
+      <p>Wynik oczekiwany do zaliczenia: 100.00%</p>
+      <button mat-raised-button color="accent" routerLink="/dashboard">Zakończ</button>
+    </div>
+  </mat-card-content>
+</mat-card>

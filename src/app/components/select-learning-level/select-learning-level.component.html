@@ -1,156 +1,163 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">filter_5</mat-icon>
+      Nauka N5
+    </ng-template>
 
-<mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Hiragana
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="hiraganaForm" (ngSubmit)="onSubmit('hiragana')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of hiraganaSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(kanaSingsData[i].id, kanaSingsData[i].level, 'hiragana')" [formControlName]="i">
+                {{kanaSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Hiragana
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="hiraganaForm" (ngSubmit)="onSubmit('hiragana')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of hiraganaSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(kanaSingsData[i].id, kanaSingsData[i].level, 'hiragana')" [formControlName]="i">
-            {{kanaSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Katakana
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="katakanaForm" (ngSubmit)="onSubmit('katakana')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of katakanaSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(kanaSingsData[i].id, kanaSingsData[i].level, 'katakana')" [formControlName]="i">
+                {{kanaSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Katakana
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="katakanaForm" (ngSubmit)="onSubmit('katakana')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of katakanaSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(kanaSingsData[i].id, kanaSingsData[i].level, 'katakana')" [formControlName]="i">
-            {{kanaSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Rzeczowniki
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="nounForm" (ngSubmit)="onSubmit('noun')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of nounSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(nounSingsData[i].id, nounSingsData[i].level, 'noun')" [formControlName]="i">
+                {{nounSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Rzeczowniki
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="nounForm" (ngSubmit)="onSubmit('noun')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of nounSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(nounSingsData[i].id, nounSingsData[i].level, 'noun')" [formControlName]="i">
-            {{nounSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Czasowniki
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="verbForm" (ngSubmit)="onSubmit('verb')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of verbSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(verbSingsData[i].id, verbSingsData[i].level, 'verb')" [formControlName]="i">
+                {{verbSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Czasowniki
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="verbForm" (ngSubmit)="onSubmit('verb')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of verbSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(verbSingsData[i].id, verbSingsData[i].level, 'verb')" [formControlName]="i">
-            {{verbSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Przymiotniki "-i"
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="iAdjectiveForm" (ngSubmit)="onSubmit('iAdjective')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of iAdjectiveSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(iAdjectiveSingsData[i].id, iAdjectiveSingsData[i].level, 'iAdjective')" [formControlName]="i">
+                {{iAdjectiveSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Przymiotniki "-i"
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="iAdjectiveForm" (ngSubmit)="onSubmit('iAdjective')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of iAdjectiveSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(iAdjectiveSingsData[i].id, iAdjectiveSingsData[i].level, 'iAdjective')" [formControlName]="i">
-            {{iAdjectiveSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Przymiotniki "-na"
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="naAdjectiveForm" (ngSubmit)="onSubmit('naAdjective')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of naAdjectiveSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(naAdjectiveSingsData[i].id, naAdjectiveSingsData[i].level, 'naAdjective')" [formControlName]="i">
+                {{naAdjectiveSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Przymiotniki "-na"
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="naAdjectiveForm" (ngSubmit)="onSubmit('naAdjective')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of naAdjectiveSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(naAdjectiveSingsData[i].id, naAdjectiveSingsData[i].level, 'naAdjective')" [formControlName]="i">
-            {{naAdjectiveSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Przysłówki
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="adverbForm" (ngSubmit)="onSubmit('adverb')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of adverbSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(adverbSingsData[i].id, adverbSingsData[i].level, 'adverb')" [formControlName]="i">
+                {{adverbSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Przysłówki
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="adverbForm" (ngSubmit)="onSubmit('adverb')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of adverbSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(adverbSingsData[i].id, adverbSingsData[i].level, 'adverb')" [formControlName]="i">
-            {{adverbSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Kanji
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="kanjiForm" (ngSubmit)="onSubmit('kanji')">
+          <div class="checkbox-row">
+            <label formArrayName="signs" *ngFor="let sign of kanjiSignsFormArray.controls; let i = index">
+              <mat-checkbox [disabled]="checkDisable(kanjiSingsData[i].id, kanjiSingsData[i].level, 'kanji')" [formControlName]="i">
+                {{kanjiSingsData[i].name}}
+              </mat-checkbox>
+            </label>
+            <br>
+            <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Kanji
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <form [formGroup]="kanjiForm" (ngSubmit)="onSubmit('kanji')">
-      <div class="checkbox-row">
-        <label formArrayName="signs" *ngFor="let sign of kanjiSignsFormArray.controls; let i = index">
-          <mat-checkbox [disabled]="checkDisable(kanjiSingsData[i].id, kanjiSingsData[i].level, 'kanji')" [formControlName]="i">
-            {{kanjiSingsData[i].name}}
-          </mat-checkbox>
-        </label>
-        <br>
-        <button mat-stroked-button color="primary" type="submit" >Rozpocznij naukę</button>
-      </div>
-    </form>
-  </mat-expansion-panel>
-
-</mat-accordion>
+  </mat-tab>
+</mat-tab-group>

@@ -1,3 +1,9 @@
+.container-align-center {
+  display: grid;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 .check_circle {
   color: forestgreen;
 }
@@ -17,4 +23,13 @@
   align-content: center;
   display: block;
   padding-left: 25%;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  color: #ff4081;
 }
